@@ -1,0 +1,135 @@
+---
+const friends = [
+  {
+    name: 'Маша',
+    role: 'особенно близкий человек · художница',
+    description: 'Талантливая художница, которая вдохновляет своим творчеством. Спасибо за поддержку, любовь и веру в мои мечты. Ты моя вдохновляющая звезда.',
+    avatar: '/avatars/Masha.jpg',
+    links: [{ label: 'Telegram', href: 'https://t.me/E_R_R_035' }],
+    highlight: true,
+    color: 'from-pink-500/30 to-rose-500/20',
+    accentColor: '#ff1493',
+    easter: 'ILOVEHER'
+  },
+  {
+    name: 'Раффи',
+    role: 'верный друг · всегда рядом',
+    description: 'Надежный друг, на которого всегда можно рассчитывать. Спасибо за верность, поддержку и за то, что ты рядом во все времена.',
+    avatar: '/avatars/Raffi.jpg',
+    links: [{ label: 'Telegram', href: 'https://t.me/rayzontelegram' }],
+    color: 'from-blue-500/20 to-cyan-500/10'
+  },
+  {
+    name: 'Миша Казарновский',
+    role: 'одноклассник из школы',
+    description: 'Классный товарищ со школьных времён. Спасибо за поддержку, участие в моих начинаниях и за то, что ты рядом. Твоя дружба — бесценна.',
+    avatar: '/avatars/MishaKaz.jpg',
+    links: [{label: 'Telegram', href: 'https://t.me/Mishkka404'}],
+    color: 'from-violet-500/20 to-purple-500/10'
+  },
+  {
+    name: 'Юрий Кузнецов',
+    role: 'одноклассник из школы',
+    description: 'Верный боевой товарищ из школы. Спасибо за поддержку, помощь и за то, что ты рядом на этом пути. Вместе мы сильнее.',
+    avatar: '/avatars/YuriyKuz.jpg',
+    links: [{label: 'Telegram', href: 'https://t.me/Ukuznecov'}],
+    color: 'from-amber-500/20 to-orange-500/10'
+  },
+  {
+    name: 'T‑Образование',
+    role: 'сообщество и развитие',
+    description: 'Благодарю сообщество, которое помогло мне встать на ноги и открыло новые горизонты. Это не просто образовательная платформа — это дружеское сообщество, которое всегда рядом.',
+    avatar: '/avatars/Tbank_Education.jpg',
+    links: [{label: 'Сайт', href: 'https://edu.tbank.ru/'}, {label: 'Telegram', href: 'https://t.me/tbank_education'}],
+    color: 'from-green-500/20 to-emerald-500/10',
+    accentColor: '#FFDD2D',
+    easter: 'Т-БАНК ОН ТАКОЙ ОДИН'
+  },
+  {
+    name: 'Сообщество ФоксФорда',
+    role: 'сообщество — крепость и защита',
+    description: 'Компания попыталась разрушить мои идеи и проекты, но крепкое сообщество встало на защиту. Спасибо за то, что помогли мне уйти вовремя и сохранили то, во что я верил.',
+    avatar: '/avatars/Foxford.jpg',
+    links: [{label: 'Сообщество', href: 'https://foxford.ru/'}],
+    color: 'from-red-500/20 to-pink-500/10'
+  }
+];
+---
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {friends.map(f => (
+    <article 
+      class={`group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl relative ${
+        f.highlight 
+          ? 'ring-2 shadow-lg' 
+          : 'bg-white/5 backdrop-blur border border-white/10 hover:border-white/20 hover:shadow-xl'
+      }`}
+      style={f.highlight ? {
+        backgroundImage: `linear-gradient(135deg, rgba(255,105,180,0.15), rgba(0,255,209,0.1))`,
+        borderColor: `${f.accentColor}99`,
+        boxShadow: `0 0 20px ${f.accentColor}22, inset 0 0 20px ${f.accentColor}11`
+      } : undefined}
+    >
+      <!-- Easter egg overlay for Маша -->
+      {f.easter && (
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20 pointer-events-none rounded-2xl">
+          <div class="text-5xl font-black" style={{color: f.accentColor, textShadow: `0 0 20px ${f.accentColor}88`}}>
+            {f.easter}
+          </div>
+        </div>
+      )}
+
+      <!-- Header with avatar and glow effect -->
+      <div class="relative h-32 bg-linear-to-br from-white/10 to-transparent overflow-hidden">
+        <div class={`absolute inset-0 bg-linear-to-br ${f.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+        <img 
+          src={f.avatar} 
+          alt={f.name} 
+          class="absolute -bottom-2 left-4 w-24 h-24 rounded-xl object-cover border-4 border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300" 
+          loading="lazy" 
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="px-5 pb-5 pt-14">
+        <div>
+          <h3 class="font-extrabold text-xl leading-tight text-white">{f.name}</h3>
+          <p class={`text-sm font-medium mt-1 transition-colors duration-300 ${
+            f.highlight 
+              ? `group-hover:opacity-100 opacity-80` 
+              : 'text-white/60'
+          }`}
+          style={f.highlight ? {color: f.accentColor} : undefined}
+          >{f.role}</p>
+        </div>
+
+        <!-- Description -->
+        <p class="text-white/75 text-sm leading-relaxed mt-3">{f.description}</p>
+
+        <!-- Links -->
+        {f.links.length ? (
+          <div class="mt-4 flex gap-3 flex-wrap">
+            {f.links.map(l => (
+              <a 
+                class={`inline-block px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  f.highlight 
+                    ? 'border-2 text-white/90 hover:text-white' 
+                    : 'border border-white/20 bg-white/10 text-white/80 hover:bg-white/20 hover:border-white/40'
+                }`}
+                style={f.highlight ? {
+                  borderColor: f.accentColor,
+                  backgroundColor: `${f.accentColor}15`,
+                  color: f.accentColor
+                } : undefined}
+                href={l.href} 
+                target="_blank" 
+                rel="noopener"
+              >
+                {l.label} →
+              </a>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    </article>
+  ))}
+</div>

@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/* Accent gradient utilities */
+.accent-gradient { background-image: linear-gradient(135deg,#e11d48 0%,#7c3aed 100%); }
+.btn { @apply inline-flex items-center gap-2 rounded-lg px-4 py-2 border border-white/15 bg-white/10 hover:bg-white/20 transition; }
+.btn-primary { @apply text-white; background-image: linear-gradient(135deg,#e11d48 0%,#7c3aed 100%); border: none; }
+.card { @apply rounded-xl bg-white/5 backdrop-blur border border-white/10; }
+.section-title { @apply text-3xl md:text-4xl font-extrabold tracking-tight; }
+.section-sub { @apply text-lg text-white/70 mt-2; }
+
+/* Contacts */
+.contact-grid { @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-3; }
+.contact { @apply flex items-center gap-3 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 px-4 py-3; }
+.contact .icon { @apply w-5 h-5 opacity-80; }
+
+/* Carousel */
+.carousel-wrap { @apply relative; }
+.carousel-frame { @apply overflow-hidden rounded-xl border border-white/10; }
+.carousel-controls { @apply absolute inset-0 flex items-center justify-between px-3 pointer-events-none; }
+.carousel-controls button { @apply pointer-events-auto px-3 py-2 rounded-lg border border-white/15 bg-white/10 hover:bg-white/20; }
+.carousel-caption { @apply text-center text-white/70 mt-3; }
+.carousel-dots { @apply flex items-center justify-center gap-2 mt-2; }
+.carousel-dots button { @apply h-2 w-2 rounded-full bg-white/40; }
+.carousel-dots button[aria-selected="true"] { @apply bg-white; }
+.zoom-container { position: relative; overflow: hidden; cursor: grab; }
+.zoom-container.dragging { cursor: grabbing; }
+.zoom-image { transform-origin: center center; will-change: transform; transition: transform .1s ease-out; }
+/* prevent page scroll while zooming/panning */
+.zoom-container, .carousel-frame { overscroll-behavior: contain; touch-action: none; }
+
+/* Friendly base look */
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+code, pre { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+html { scroll-behavior: smooth; }
+
+/* Subtle gradient backdrop overlay on top of canvas */
+.backdrop-gradient { position: fixed; inset: 0; pointer-events:none; z-index:0;
+	background: radial-gradient(1200px 800px at 80% -10%, rgba(124,58,237,0.25), transparent 60%),
+							radial-gradient(1200px 800px at 10% 110%, rgba(225,29,72,0.25), transparent 60%);
+}

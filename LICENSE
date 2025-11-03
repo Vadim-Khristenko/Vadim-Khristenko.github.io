@@ -1,21 +1,112 @@
-MIT License
+# Vadim Khristenko Personal Project License (VKPPL)
 
-Copyright (c) 2024 VOLT_DIAMOND
+## Version 1.0 — Non-Commercial with AI Protection
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Copyright © 2025 Vadim Khristenko. All rights reserved.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+---
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## TERMS AND CONDITIONS
+
+### 1. PERMITTED USE (Non-Commercial Only)
+
+You are granted a non-exclusive, royalty-free license to use, copy, modify, and distribute this software and its documentation files (the "Software") ONLY for non-commercial purposes, provided that:
+
+- **1.1** You retain all copyright, patent, trademark, and attribution notices
+- **1.2** You do not sell, rent, lease, or otherwise monetize the Software or derivative works
+- **1.3** You do not use the Software as part of a commercial product or service
+- **1.4** You do not accept payment (monetary or otherwise) for providing the Software or its modifications
+- **1.5** Any derivative work remains subject to these same non-commercial restrictions
+
+### 2. PROHIBITED USE
+
+You are **strictly prohibited** from:
+
+- **2.1** Using this Software for any commercial purpose, including but not limited to:
+  - Selling the Software or products derived from it
+  - Offering services that incorporate this Software
+  - Using the Software in a paid application or service
+  - Generating revenue directly or indirectly from the Software
+  - Using the Software for commercial training or consulting
+
+- **2.2** Using this Software for AI/ML Training:
+  - You may not use the Software, its code, documentation, or any derivative works to train, fine-tune, or develop any artificial intelligence, machine learning, or large language models
+  - You may not feed this Software to any AI system for the purpose of learning patterns, code generation, or any other machine learning task
+  - This prohibition includes but is not limited to: ChatGPT, GPT-4, Claude, GitHub Copilot, or any similar AI/ML systems
+  - You may not create datasets from this Software for AI training purposes
+
+- **2.3** Removing or modifying license headers and copyright notices
+- **2.4** Sublicensing the Software under different terms
+- **2.5** Using the Software to build closed-source derivative works for profit
+
+### 3. COMMERCIAL LICENSE
+
+For commercial use, AI training purposes, or if you wish to relicense this Software under different terms, you must obtain a separate commercial license agreement from Vadim Khristenko.
+
+Contact: just@vai-prog.ru
+
+### 4. OPEN SOURCE AND ATTRIBUTION
+
+If you use this Software:
+
+- **4.1** You must provide clear attribution to Vadim Khristenko
+- **4.2** You must link to the original repository (<https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io>)
+- **4.3** You must include a copy of this license with all distributions
+- **4.4** You must document any modifications you make
+
+### 5. DISCLAIMER OF WARRANTY
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+### 6. LIMITATION OF LIABILITY
+
+IN NO EVENT SHALL VADIM KHRISTENKO BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+### 7. ENFORCEMENT
+
+- **7.1** Violations of this license automatically terminate your rights to use the Software
+- **7.2** Vadim Khristenko reserves the right to pursue legal action against any violation of these terms
+- **7.3** Each violation of sections 2.1 or 2.2 may result in penalties
+
+### 8. TERMINATION
+
+Your rights under this license will terminate automatically without notice from Vadim Khristenko if you fail to comply with any term(s) of this License. Upon termination:
+
+- **8.1** You must cease all use of the Software
+- **8.2** You must destroy all copies in your possession
+- **8.3** All provisions survive termination except the license grant
+
+### 9. MODIFICATION TO LICENSE
+
+Vadim Khristenko reserves the right to modify this license at any time. Changes will be effective immediately upon posting to the repository.
+
+### 10. GOVERNING LAW
+
+This License shall be governed by and construed in accordance with the laws of the jurisdiction where Vadim Khristenko resides, without regard to its conflict of law provisions.
+
+---
+
+## SUMMARY
+
+✅ **ALLOWED:**
+
+- Personal use and learning
+- Non-commercial projects
+- Open-source contributions (non-commercial)
+- Sharing and distributing (with attribution)
+- Educational use (without AI training)
+
+❌ **NOT ALLOWED:**
+
+- Commercial use or monetization
+- AI/ML training and fine-tuning
+- Using in paid products or services
+- Removing copyright notices
+- Closed-source derivative works for profit
+
+---
+
+**Questions?** Contact Vadim Khristenko for commercial licensing inquiries.
+
+**Version:** 1.0  
+**Last Updated:** November 3, 2025

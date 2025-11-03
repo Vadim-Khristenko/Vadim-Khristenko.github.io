@@ -1,0 +1,146 @@
+---
+// @ts-nocheck
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const posts = (await getCollection('posts'))
+  .filter((p: CollectionEntry<'posts'>) => !p.data.draft)
+  .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const featured = posts.filter(p => p.data.featured).slice(0, 1);
+const regular = posts.filter(p => !p.data.featured);
+const categories = [...new Set(posts.map((p: CollectionEntry<'posts'>) => p.data.category || 'Прочее'))];
+---
+<BaseLayout title="Блог — VAI‑PROG" description="Короткие заметки о коде, жизни и вдохновении.">
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <!-- Hero Section -->
+    <section class="mb-16">
+      <div class="relative overflow-hidden rounded-3xl bg-linear-to-br from-white/10 via-white/5 to-transparent p-12 border border-white/10 backdrop-blur">
+        <div class="absolute inset-0 bg-gradient-radial from-[#00ffd1]/20 via-transparent to-transparent opacity-30"></div>
+        <div class="relative z-10">
+          <h1 class="text-5xl md:text-6xl font-black mb-4">
+            <span class="gradient-text">Блог</span>
+          </h1>
+          <p class="text-xl text-white/80 max-w-2xl leading-relaxed">
+            Заметки о коде, творчестве и жизни. Здесь я делюсь опытом, идеями и размышлениями о пути разработчика.
+          </p>
+          <div class="mt-6 flex gap-2 flex-wrap">
+            <span class="px-4 py-2 rounded-full text-sm font-medium bg-[#00ffd1]/20 text-[#00ffd1] border border-[#00ffd1]/40">
+              {posts.length} постов
+            </span>
+            <span class="px-4 py-2 rounded-full text-sm font-medium bg-white/10 text-white/70 border border-white/20">
+              {categories.length} категорий
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    {featured.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-black mb-6 text-white">✨ Рекомендуемый пост</h2>
+        {featured.map(p => (
+          <a href={`/blog/${p.slug}`} class="block group">
+            <article class="rounded-3xl overflow-hidden bg-linear-to-br from-white/10 to-white/5 border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00ffd1]/30 backdrop-blur">
+              <div class="grid md:grid-cols-3 gap-8 p-8">
+                <div class="md:col-span-2">
+                  <div class="mb-4 flex items-center gap-2">
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#00ffd1]/30 text-[#00ffd1] border border-[#00ffd1]/50">⭐ Featured</span>
+                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/30 text-purple-200 border border-purple-500/50">{p.data.category || 'Прочее'}</span>
+                  </div>
+                  <h3 class="text-3xl font-black text-white group-hover:text-[#00ffd1] transition-colors mb-3">{p.data.title}</h3>
+                  <p class="text-white/70 text-lg mb-4">{p.data.description}</p>
+                  <div class="flex flex-wrap gap-4 text-sm text-white/60">
+                    <span>📅 {p.data.pubDate.toLocaleDateString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                    <span>📖 {p.data.readTime || Math.ceil((p.body?.length || 0) / 200)} мин</span>
+                    <span>✍️ {p.data.author}</span>
+                  </div>
+                </div>
+                <div class="md:col-span-1 flex items-center justify-center">
+                  <div class="w-32 h-32 rounded-2xl bg-linear-to-br from-[#00ffd1]/30 to-purple-500/20 flex items-center justify-center text-4xl">
+                    📚
+                  </div>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </section>
+    )}
+
+    <!-- Posts Grid -->
+    <section>
+      <h2 class="text-2xl font-black mb-6 text-white">Последние посты</h2>
+      <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {regular.map((p) => (
+            <li class="group">
+              <a href={`/blog/${p.slug}`} class="block h-full">
+                <article class="h-full rounded-2xl overflow-hidden bg-white/5 backdrop-blur border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00ffd1]/20 flex flex-col">
+                  
+                  <!-- Header Gradient -->
+                  <div class="h-32 bg-linear-to-br from-white/15 to-transparent relative overflow-hidden">
+                    <div class={`absolute inset-0 bg-linear-to-br ${p.data.color || 'from-emerald-500/20 to-teal-500/10'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                    <div class="absolute top-4 right-4 z-10">
+                      <span class={`px-3 py-1 rounded-full text-xs font-bold ${
+                        p.data.category === 'Код' ? 'bg-cyan-500/30 text-cyan-200 border border-cyan-500/50' :
+                        p.data.category === 'Жизнь' ? 'bg-pink-500/30 text-pink-200 border border-pink-500/50' :
+                        p.data.category === 'Творчество' ? 'bg-purple-500/30 text-purple-200 border border-purple-500/50' :
+                        'bg-emerald-500/30 text-emerald-200 border border-emerald-500/50'
+                      }`}>
+                        {p.data.category || 'Прочее'}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Content -->
+                  <div class="flex-1 px-6 py-6 flex flex-col">
+                    <h2 class="text-xl font-bold text-white group-hover:text-[#00ffd1] transition-colors duration-300 leading-snug">
+                      {p.data.title}
+                    </h2>
+                    
+                    {p.data.description && (
+                      <p class="text-white/70 text-sm mt-3 line-clamp-2 flex-1">
+                        {p.data.description}
+                      </p>
+                    )}
+
+                    <!-- Tags -->
+                    {p.data.tags && p.data.tags.length > 0 && (
+                      <div class="mt-3 flex flex-wrap gap-2">
+                        {p.data.tags.slice(0, 2).map(tag => (
+                          <span class="px-2 py-1 text-xs rounded bg-white/10 text-white/70 hover:bg-white/20 transition">#{tag}</span>
+                        ))}
+                        {p.data.tags.length > 2 && <span class="px-2 py-1 text-xs text-white/50">+{p.data.tags.length - 2}</span>}
+                      </div>
+                    )}
+
+                    <!-- Meta -->
+                    <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-white/50">
+                      <span>{p.data.pubDate.toLocaleDateString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                      <span class="flex items-center gap-1">
+                        📖 {p.data.readTime || Math.ceil((p.body?.length || 0) / 200)} мин
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </li>
+        ))}
+      </ul>
+
+      {posts.length === 0 && (
+        <div class="text-center py-16">
+          <p class="text-white/60 text-lg">Пока нет опубликованных постов...</p>
+        </div>
+      )}
+    </section>
+
+    <!-- Footer Navigation -->
+    <div class="mt-16 pt-8 border-t border-white/10 text-center">
+      <p class="text-white/60 mb-4">Готовы вернуться?</p>
+      <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white transition-all duration-300">
+        ← На главную
+      </a>
+    </div>
+  </main>
+</BaseLayout>

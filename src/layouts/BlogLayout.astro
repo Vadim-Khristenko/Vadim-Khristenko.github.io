@@ -1,0 +1,198 @@
+---
+// @ts-nocheck
+import BaseLayout from './BaseLayout.astro';
+import MarkdownContent from '../components/MarkdownContent.astro';
+const { title, description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Header Navigation -->
+    <header class="mb-8">
+      <div class="flex items-center gap-3">
+        <a href="/blog" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white/80 hover:text-white transition-all duration-300">
+          ← Все посты
+        </a>
+        <a href="/" class="text-white/50 hover:text-white/70 transition-colors">На главную</a>
+      </div>
+    </header>
+
+    <!-- Post Content Grid -->
+    <div class="grid lg:grid-cols-12 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-8">
+        <!-- Hero Header -->
+        <article>
+          <header class="mb-10">
+            <div class="mb-4">
+              <h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">
+                <span class="gradient-text">{title}</span>
+              </h1>
+              {description && <p class="text-lg text-white/70 leading-relaxed">{description}</p>}
+            </div>
+            
+            <!-- Meta Information -->
+            <div class="flex flex-wrap gap-4 pt-6 border-t border-white/10">
+              <div class="flex items-center gap-2 text-sm text-white/60">
+                <span>📅</span>
+                <span id="pubDate"></span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/60">
+                <span>📖</span>
+                <span id="readTime"></span>
+              </div>
+              <div class="flex items-center gap-2 text-sm text-white/60">
+                <span>✍️</span>
+                <span id="author">Вадим</span>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div id="tagsContainer" class="mt-4 flex-wrap gap-2 hidden">
+              <span class="text-xs text-white/50 uppercase tracking-wider">Теги:</span>
+              <div id="tags" class="flex flex-wrap gap-2"></div>
+            </div>
+          </header>
+
+          <!-- Article Content with Optimized Styling -->
+          <MarkdownContent>
+            <slot />
+          </MarkdownContent>
+        </article>
+
+        <!-- Post Footer -->
+        <footer class="mt-12 pt-8 border-t border-white/10">
+          <div class="text-center">
+            <p class="text-white/60 mb-6">Понравился пост? Поделитесь с друзьями 👇</p>
+            <div class="flex gap-4 justify-center">
+              <a href="https://twitter.com/share?url=window.location.href" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm transition-all">
+                X / Twitter
+              </a>
+              <a href="https://t.me/share/url?url=window.location.href" target="_blank" rel="noopener" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm transition-all">
+                Telegram
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4">
+        <!-- Post Info Card -->
+        <div class="sticky top-4 rounded-2xl bg-linear-to-br from-white/10 to-white/5 border border-white/10 p-6 space-y-6">
+          <div>
+            <h3 class="text-sm font-bold text-white/60 uppercase tracking-wider mb-2">О посте</h3>
+            <div class="space-y-4">
+              <div id="categoryContainer" class="hidden">
+                <p class="text-xs text-white/50 uppercase mb-1">Категория</p>
+                <span id="categoryBadge" class="inline-block px-3 py-1 rounded-full text-sm font-medium">
+                  
+                </span>
+              </div>
+              <div>
+                <p class="text-xs text-white/50 uppercase mb-1">Статус</p>
+                <span class="inline-block px-3 py-1 rounded-full text-sm font-medium bg-[#00ffd1]/20 text-[#00ffd1] border border-[#00ffd1]/40">
+                  ✨ Опубликовано
+                </span>
+              </div>
+              <div>
+                <p class="text-xs text-white/50 uppercase mb-1">Сложность чтения</p>
+                <div class="flex gap-1" id="readabilityLevel"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10">
+            <h3 class="text-sm font-bold text-white/60 uppercase tracking-wider mb-3">Быстрые ссылки</h3>
+            <div class="space-y-2">
+              <a href="/blog" class="block px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white text-sm transition-all">
+                ← Все посты
+              </a>
+              <a href="/" class="block px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/70 hover:text-white text-sm transition-all">
+                ← На главную
+              </a>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="pt-4 border-t border-white/10">
+            <p class="text-xs text-white/50 mb-3">Нужна помощь?</p>
+            <a href="/contact" class="block text-center px-4 py-2 rounded-lg bg-[#00ffd1]/20 hover:bg-[#00ffd1]/30 border border-[#00ffd1]/40 text-[#00ffd1] font-medium text-sm transition-all">
+              Написать мне
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // @ts-ignore
+    const postData = window.__POST_DATA__;
+    if (postData) {
+      // Set pub date
+      const pubDateEl = document.getElementById('pubDate');
+      if (pubDateEl && postData.pubDate) {
+        const date = new Date(postData.pubDate);
+        pubDateEl.textContent = date.toLocaleDateString('ru-RU', { year: 'numeric', month: 'short', day: 'numeric' });
+      }
+
+      // Set read time
+      const readTimeEl = document.getElementById('readTime');
+      if (readTimeEl) {
+        readTimeEl.textContent = (postData.readTime || Math.ceil((postData.body?.length || 0) / 200)) + ' мин чтения';
+      }
+
+      // Set author
+      const authorEl = document.getElementById('author');
+      if (authorEl && postData.author) {
+        authorEl.textContent = postData.author;
+      }
+
+      // Set readability level
+      const readabilityLevelEl = document.getElementById('readabilityLevel');
+      if (readabilityLevelEl) {
+        const level = postData.readLevel || 3;
+        // Color gradient: cyan (1) -> green (3) -> yellow (5) -> orange (6) -> red (8)
+        const getColor = (index: number) => {
+          if (index >= level) return 'bg-white/10'; // unfilled
+          if (level <= 2) return 'bg-cyan-500'; // easy - cyan
+          if (level <= 3) return 'bg-green-500'; // simple - green
+          if (level <= 4) return 'bg-yellow-500'; // medium - yellow
+          if (level <= 6) return 'bg-orange-500'; // hard - orange
+          return 'bg-red-500'; // very hard - red
+        };
+        readabilityLevelEl.innerHTML = Array.from({ length: 8 })
+          .map((_, i) => `<div class="w-2 h-6 rounded-full transition-colors ${getColor(i)}"></div>`)
+          .join('');
+      }
+
+      // Set category
+      if (postData.category) {
+        const categoryContainer = document.getElementById('categoryContainer');
+        const categoryBadge = document.getElementById('categoryBadge');
+        if (categoryContainer && categoryBadge) {
+          categoryContainer.classList.remove('hidden');
+          // @ts-ignore
+          const colors: Record<string, string> = {
+            'Код': 'bg-cyan-500/30 text-cyan-200 border border-cyan-500/50',
+            'Жизнь': 'bg-pink-500/30 text-pink-200 border border-pink-500/50',
+            'Творчество': 'bg-purple-500/30 text-purple-200 border border-purple-500/50',
+            'Размышления': 'bg-amber-500/30 text-amber-200 border border-amber-500/50'
+          };
+          categoryBadge.className = 'inline-block px-3 py-1 rounded-full text-sm font-medium ' + (colors[postData.category] || 'bg-emerald-500/30 text-emerald-200 border border-emerald-500/50');
+          categoryBadge.textContent = postData.category;
+        }
+      }
+
+      // Set tags
+      if (postData.tags && postData.tags.length > 0) {
+        const tagsContainer = document.getElementById('tagsContainer');
+        const tagsEl = document.getElementById('tags');
+        if (tagsContainer && tagsEl) {
+          tagsContainer.classList.remove('hidden');
+          tagsEl.innerHTML = postData.tags.map((tag: string) => `<span class="px-2 py-1 text-xs rounded bg-white/10 text-white/70 hover:bg-white/20 transition">#${tag}</span>`).join('');
+        }
+      }
+    }
+  </script>
+</BaseLayout>

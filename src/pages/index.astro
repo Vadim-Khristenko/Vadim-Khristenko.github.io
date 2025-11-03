@@ -1,0 +1,177 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Carousel from "../components/Carousel.jsx";
+import FriendsGrid from "../components/FriendsGrid.astro";
+import Timeline from "../components/Timeline.astro";
+
+const calcAge = (birth: string) => {
+	const b = new Date(birth);
+	const now = new Date();
+	let age = now.getFullYear() - b.getFullYear();
+	const m = now.getMonth() - b.getMonth();
+	if (m < 0 || (m === 0 && now.getDate() < b.getDate())) age--;
+	return age;
+};
+const birthDate = '2010-09-18';
+const age = calcAge(birthDate);
+---
+
+<BaseLayout>
+	<Navbar />
+	<main id="top">
+		<section class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<div class="grid md:grid-cols-2 gap-8 items-center">
+				<div>
+					<p class="text-white/70 mb-2">aka Вадим Христенко</p>
+					<h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+						<span class="gradient-text">VAI‑PROG</span>
+					</h1>
+					<p class="text-white/80 mt-4">Родился 18.09.2010 — сейчас мне <span id="age" class="font-bold text-white">{age}</span>.</p>
+					<div class="mt-6 flex gap-3">
+						<a href="#projects" class="px-4 py-2 rounded-lg bg-linear-to-r from-[#e11d48] to-[#7c3aed] text-white">Смотреть проекты</a>
+						<a href="#contact" class="px-4 py-2 rounded-lg border border-white/15 bg-white/10 hover:bg-white/20">Связаться</a>
+					</div>
+				</div>
+				<div class="flex justify-center">
+					<img src="/avatars/Me.jpg" alt="Аватар VAI-PROG" class="w-40 h-40 rounded-2xl border border-white/10 object-cover" />
+				</div>
+			</div>
+		</section>
+
+		<section id="vibes" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Арт и вайб</h2>
+			<p class="text-lg text-white/70 mt-2">Smooth карусель со свайпом и автоплеем</p>
+			<div class="mt-6">
+				<Carousel client:load />
+			</div>
+		</section>
+
+		<section id="about" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Обо мне</h2>
+			<p class="text-lg text-white/70 mt-2">Бэкенд с характером. Немного фронта. SAO вайб.</p>
+			<div class="mt-6 grid lg:grid-cols-3 gap-6">
+				<article class="rounded-xl bg-white/5 backdrop-blur border border-white/10 p-6 lg:col-span-2">
+					<p class="text-white/80">
+						Я молодой разработчик из России, влюблённый в бэкенд и системное программирование, но уверенный и во фронте. Я смотрю на код как на ремесло: ясный, лаконичный и надёжный.
+					</p>
+					<div class="mt-6 space-y-4 text-white/80">
+						<p><strong>Бэкенд:</strong> C++, Rust, Python, Kotlin — надёжные системы, API и микросервисы. Rust учит меня безопасности, C++ — дисциплине.</p>
+						<p><strong>Фронт:</strong> TypeScript/JavaScript — современный стек, типобезопасность и плавные анимации. Интерфейсы должны быть интуитивными.</p>
+						<p><strong>Инфраструктура:</strong> Docker, Git, простой CI/CD. Понимаю, как код живёт в проде.</p>
+					</div>
+				</article>
+				<aside class="rounded-xl bg-white/5 backdrop-blur border border-white/10 p-6">
+					<h3 class="font-bold text-lg mb-2">Философия</h3>
+					<p class="text-white/70">Код — это разговор. Ясность важнее хитрости. Ошибки — опыт. Технологии должны служить людям.</p>
+					<h3 class="font-bold text-lg mt-6 mb-2">Вайбы</h3>
+					<p class="text-white/70">SAO, VOCALOID и аниме. Музыка — вдохновение. Визуал — энергия.</p>
+				</aside>
+			</div>
+			<div class="mt-12">
+				<Timeline />
+			</div>
+		</section>
+
+		<section id="skills" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Навыки</h2>
+			<div class="mt-6 flex flex-wrap gap-2">
+				{['C++','Rust','Python','Kotlin','TypeScript','JavaScript','Go','PHP','Docker'].map(s => <span class="px-3 py-1 rounded-full bg-white/10 text-white/80 text-sm">{s}</span>)}
+			</div>
+		</section>
+
+		<section id="projects" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Проекты</h2>
+			<p class="text-lg text-white/70 mt-2">Каждый проект — это история, как я решаю проблемы и расту как разработчик.</p>
+			<div class="mt-6 grid gap-6 md:grid-cols-2">
+				<article class="card p-6">
+						<div class="flex items-center gap-2">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-green-500/15 border-green-400/20 text-green-300">🟢 Live</span>
+						</div>
+						<h3 class="font-bold text-xl">tedu-notes.ru</h3>
+					<p class="text-white/80 mt-2">Платформа с конспектами по IT и программированию: <strong>информация главнее всего</strong>. Бесплатно, без рекламы и шума — только чистые конспекты, чтобы быстро «читануть» перед контрольной или собеседованием.</p>
+					<p class="text-white/70 mt-2">Чистый фронт (Astro & Svelte), Github Pages deployment и продуманная структура контента. Каждый визит — польза для людей.</p>
+					<div class="mt-3"><a class="btn" href="https://tedu-notes.ru" target="_blank" rel="noopener">Открыть →</a></div>
+				</article>
+
+				<article class="card p-6">
+						<div class="mb-2 flex items-center gap-2 text-white/60">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-yellow-500/15 border-yellow-400/20 text-yellow-200">🟡 In Dev</span>
+						</div>
+						<h3 class="font-bold text-xl">VIA by VOLT Bot</h3>
+					<p class="text-white/80 mt-2">Телеграм‑бот для сообщества: помощь модерации, статистика, интерактивные команды. Растёт вместе с потребностями — слушаю фидбек и добавляю фичи.</p>
+					<p class="text-white/70 mt-2">Stack: Rust, Telegram API, асинхронщина.</p>
+					<div class="mt-3"><a class="btn" href="https://t.me/VIA_by_VOLT_BOT" target="_blank" rel="noopener">Открыть →</a></div>
+				</article>
+
+				<article class="card p-6">
+						<div class="mb-2 flex items-center gap-2 text-white/60">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-orange-500/15 border-orange-400/20 text-orange-200">🟠 Coming Soon</span>
+						</div>
+						<h3 class="font-bold text-xl">Kumir 3 (Rust)</h3>
+					<p class="text-white/80 mt-2">Переосмысление учебного языка «Кумир». Полный перепис на Rust: парсер, компилятор/интерпретатор, экосистема. Производительность и безопасность как стандарт.</p>
+					<div class="mt-3 text-white/60">Репозиторий будет опубликован при релизе</div>
+				</article>
+
+				<article class="card p-6">
+						<div class="mb-2 flex items-center gap-2 text-white/60">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-sky-500/15 border-sky-400/20 text-sky-200">💡 Ideation</span>
+						</div>
+						<h3 class="font-bold text-xl">CRM для контестов</h3>
+					<p class="text-white/80 mt-2">Открытая CRM для школ и кружков: задачи, контесты, прогресс студентов. Доступно, просто и бесплатно.</p>
+				</article>
+
+				<article class="card p-6">
+					   	<div class="mb-2 flex items-center gap-2 text-white/60">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-purple-500/15 border-purple-400/20 text-purple-200">🟡 In Development</span>
+						</div>
+					<h3 class="font-bold text-xl">Онлайн‑школа «WAIFUDZIN»</h3>
+					<p class="text-white/80 mt-2">Ученики в центре внимания, сообщество решает. Платформа, где знания = сила, а поддержка — норма.</p>
+				</article>
+
+				<article class="card p-6">
+						<div class="mb-2 flex items-center gap-2 text-white/60">
+							<span class="px-2 py-0.5 rounded-full text-xs border bg-cyan-500/15 border-cyan-400/20 text-cyan-200">🟡 In Development & Alpha Testing</span>
+						</div>
+					<h3 class="font-bold text-xl">Telegram Bot API Server + децентрализованный мессенджер</h3>
+					<p class="text-white/80 mt-2">Своя реализация, вдохновлённая Telegram: открытость, надёжность, свобода.</p>
+				</article>
+			</div>
+
+			<div class="mt-8 card p-6">
+				<h3 class="font-bold text-lg">Почему эти проекты?</h3>
+				<p class="text-white/80 mt-2">Каждый проект решает реальную проблему. Я верю: лучший код — тот, что приносит пользу людям. Есть идея? Напиши — открыт к коллабам.</p>
+			</div>
+		</section>
+
+		<section id="friends" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Друзья</h2>
+			<div class="mt-6">
+				<FriendsGrid />
+			</div>
+		</section>
+
+		<section id="contact" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Контакты</h2>
+			<div class="mt-6 contact-grid">
+				<a class="contact" href="https://github.com/Vadim-Khristenko" target="_blank" rel="noopener"><img class="icon" src="/icons/github.svg" alt="GitHub"/> <span>@Vadim-Khristenko</span></a>
+				<button class="contact" id="copyEmail"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg><span id="emailText">just@vai-prog.ru</span></button>
+				<a class="contact" href="https://t.me/vscreator_life" target="_blank" rel="noopener"><img class="icon" src="/icons/telegram.svg" alt="Telegram"/> <span>Telegram: @vscreator_life</span></a>
+				<a class="contact" href="https://t.me/vscreator_bio" target="_blank" rel="noopener"><img class="icon" src="/icons/telegram.svg" alt="Telegram"/> <span>Telegram: @vscreator_bio</span></a>
+				<a class="contact" href="https://patreon.com/VAI_PROG" target="_blank" rel="noopener"><img class="icon" src="/icons/patreon.svg" alt="Patreon"/> <span>Patreon</span></a>
+				<a class="contact" href="https://twitch.tv/VAI_PROG" target="_blank" rel="noopener"><img class="icon" src="/icons/twitch.svg" alt="Twitch"/> <span>Twitch</span></a>
+				<a class="contact" href="https://x.com/VAI_PROG" target="_blank" rel="noopener"><img class="icon" src="/icons/x.svg" alt="X"/> <span>X</span></a>
+				<a class="contact" href="https://youtube.com/@VAI_PROG" target="_blank" rel="noopener"><img class="icon" src="/icons/youtube.svg" alt="YouTube"/> <span>YouTube</span></a>
+				<a class="contact" href="https://dalink.to/vai_prog" target="_blank" rel="noopener" title="Поддержать на кофеёк"><img class="icon" src="/icons/coffee.svg" alt="Coffee"/> <span>На кофеёк</span></a>
+			</div>
+		</section>
+	</main>
+
+	<script>
+		const BIRTH = '2010-09-18';
+		const n=new Date(); const b=new Date(BIRTH+'T00:00:00'); let a=n.getFullYear()-b.getFullYear(); const m=n.getMonth()-b.getMonth(); if(m<0||(m===0&&n.getDate()<b.getDate())) a--;
+		const ageEl = document.getElementById('age'); if (ageEl) ageEl.textContent = String(a);
+		const btn = document.getElementById('copyEmail'); const span = document.getElementById('emailText');
+		if (btn && span) btn.addEventListener('click', async ()=>{ try{ await navigator.clipboard.writeText(span.textContent.trim()); const prev=span.textContent; span.textContent='Скопировано!'; setTimeout(()=> span.textContent=prev, 1200); }catch{} });
+	</script>
+</BaseLayout>

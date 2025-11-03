@@ -1,0 +1,48 @@
+---
+const { title = 'Vadim Khristenko — Developer', description = 'Вдохновляющая визитка молодого разработчика: Rust, C++, Python, TypeScript. Музыка, аниме и технологии для людей.' } = Astro.props;
+import "../styles/global.css";
+import "../styles/markdown.css";
+import BackgroundCanvas from "../components/BackgroundCanvas.astro";
+import EasterEggs from "../components/EasterEggs.astro";
+const year = new Date().getFullYear();
+---
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b0f14" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Vadim Khristenko" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <style>
+      :root { --bg: #0b0f14; --fg: #ffffff; }
+      html.dark { background: var(--bg); color: var(--fg); }
+      .gradient-text { background: linear-gradient(135deg,#e11d48 0%,#7c3aed 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      html.vocaloid .gradient-text { background: linear-gradient(135deg,#00ffd1 0%,#00a2ff 100%); }
+    </style>
+  </head>
+  <body class="min-h-screen selection:bg-white/20">
+    <div class="backdrop-gradient" aria-hidden="true"></div>
+    <BackgroundCanvas />
+    <EasterEggs />
+    <div class="relative z-10">
+      <slot />
+      <footer class="py-10 text-center text-white/60 text-sm">
+        <p>© {year} Vadim Khristenko · сделано с кодом и немного безумия</p>
+      </footer>
+    </div>
+  </body>
+</html>

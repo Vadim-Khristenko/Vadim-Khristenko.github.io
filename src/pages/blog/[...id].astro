@@ -1,0 +1,18 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+export async function getStaticPaths(){
+  const posts = await getCollection('posts') as CollectionEntry<'posts'>[];
+  // catch-all route params must be strings, not arrays; Astro handles nested paths via the slug string
+  return posts.map((p)=> ({ params: { id: p.slug }, props: { post: p } }));
+}
+const { post } = Astro.props as { post: CollectionEntry<'posts'> };
+const { Content } = await post.render();
+---
+<BlogLayout title={post.data.title} description={post.data.description}>
+  <Content />
+  <script define:vars={{ postData: JSON.stringify(post.data) }}>
+    window.__POST_DATA__ = JSON.parse(postData);
+  </script>
+</BlogLayout>
