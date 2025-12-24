@@ -100,12 +100,10 @@ const friends = [
             : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:shadow-xl hover:shadow-white/5'
       }`}
     >
-      {/* Special Glow for Highlighted (Masha) */}
       {f.highlight && (
         <div class="absolute inset-0 bg-linear-to-r from-pink-500/10 to-purple-600/10 opacity-50 animate-pulse pointer-events-none transition-opacity duration-1000" />
       )}
 
-      {/* Easter egg overlay */}
       {f.easter && (
         <div class="absolute inset-0 bg-black/70 backdrop-blur-md opacity-0 group-hover:opacity-100 group-[.show-easter]:opacity-100 transition-all duration-700 ease-in-out flex items-center justify-center z-30 pointer-events-none">
           <div class="text-3xl md:text-4xl font-black tracking-tighter text-center px-4 transform scale-75 group-hover:scale-100 group-[.show-easter]:scale-100 transition-transform duration-700 ease-out" 
@@ -115,14 +113,9 @@ const friends = [
         </div>
       )}
 
-      {/* Header with avatar */}
       <div class="relative h-36 overflow-hidden">
-        {/* Dynamic Background Gradient */}
         <div class={`absolute inset-0 bg-linear-to-br ${f.color} opacity-40 group-hover:opacity-70 transition-opacity duration-1000 ease-in-out`}></div>
-        
-        {/* Decorative Circle */}
         <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-1000"></div>
-
         <div class="absolute bottom-0 left-0 w-full h-20 bg-linear-to-t from-black/90 to-transparent transition-opacity duration-700"></div>
 
         <img 
@@ -133,7 +126,6 @@ const friends = [
         />
       </div>
 
-      {/* Content */}
       <div class="px-6 pb-6 pt-24 relative z-0">
         <div class="flex justify-between items-start">
           <div>
@@ -161,7 +153,6 @@ const friends = [
           {f.description}
         </p>
 
-        {/* Links */}
         {f.links && f.links.length > 0 && (
           <div class="mt-6 flex gap-2 flex-wrap">
             {f.links.map(l => (
@@ -197,7 +188,7 @@ const friends = [
       const start = () => {
         timer = setTimeout(() => {
           card.classList.add('show-easter');
-        }, 500); // 500ms для долгого нажатия
+        }, 500);
       };
 
       const stop = () => {
@@ -205,12 +196,9 @@ const friends = [
         card.classList.remove('show-easter');
       };
 
-      // Обработка касаний
       card.addEventListener('touchstart', start, { passive: true });
       card.addEventListener('touchend', stop);
       card.addEventListener('touchmove', stop);
-      
-      // Отключаем контекстное меню на мобилках, чтобы оно не мешало пасхалке
       card.addEventListener('contextmenu', (e) => {
         if (window.matchMedia('(pointer: coarse)').matches) {
           e.preventDefault();
@@ -218,9 +206,6 @@ const friends = [
       });
     });
   }
-
-  // Инициализация
   initLongPress();
-  // Переинициализация для Astro View Transitions (если используются)
   document.addEventListener('astro:after-swap', initLongPress);
 </script>

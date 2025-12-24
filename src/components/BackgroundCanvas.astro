@@ -1,6 +1,3 @@
----
-// No props
----
 <style is:global>
   #bg-canvas { position: fixed; inset: 0; z-index: 0; display:block; width:100%; height:100%; }
   @media (prefers-reduced-motion: reduce){ #bg-canvas { display:none; } }
@@ -8,7 +5,6 @@
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 <script>
   // @ts-nocheck
-  // Cosmic Background: Deep space, Nebulas, Stars, Constellations, Shooting Stars
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce) {
     const el = document.getElementById('bg-canvas');
@@ -22,7 +18,6 @@
     let W = 0, H = 0, T = 0;
     let last = 0;
 
-    // Palette: Deep Space vs Vocaloid Pop
     function isVocaloid() {
       try { return localStorage.getItem('vocaloidMode') === 'on'; } catch { return false; }
     }
@@ -30,7 +25,7 @@
     function getPalette() {
       const v = isVocaloid();
       return {
-        bg: v ? ['#1a0b2e', '#2d1b4e'] : ['#05070a', '#0b1021'], // Darker backgrounds
+        bg: v ? ['#1a0b2e', '#2d1b4e'] : ['#05070a', '#0b1021'],
         nebula: v 
           ? ['rgba(255,105,180,0.12)', 'rgba(0,255,209,0.1)', 'rgba(82,113,255,0.08)'] 
           : ['rgba(124,58,237,0.15)', 'rgba(56,189,248,0.12)', 'rgba(16,185,129,0.08)'],
@@ -39,7 +34,6 @@
       };
     }
 
-    // Pointer Parallax
     let pmx = 0, pmy = 0;
     let mx = 0, my = 0;
     window.addEventListener('pointermove', (e) => {
@@ -47,11 +41,9 @@
       pmy = (e.clientY / window.innerHeight) * 2 - 1;
     }, { passive: true });
 
-    // Stars
-    const STAR_COUNT = 200; // More stars
+    const STAR_COUNT = 200;
     let stars = [];
     
-    // Shooting Stars
     let shootingStar = {
       active: false,
       x: 0, y: 0,
@@ -65,28 +57,27 @@
       stars = Array.from({ length: STAR_COUNT }, () => ({
         x: Math.random(),
         y: Math.random(),
-        z: Math.random(), // depth 0..1
+        z: Math.random(),
         size: Math.random(),
-        tw: Math.random() * 2 + 0.5, // twinkle speed
+        tw: Math.random() * 2 + 0.5,
         ph: Math.random() * Math.PI * 2
       }));
     }
 
     function spawnShootingStar() {
-      if (Math.random() > 0.005 || shootingStar.active) return; // Low chance per frame
+      if (Math.random() > 0.005 || shootingStar.active) return;
       shootingStar = {
         active: true,
         x: Math.random() * W * 0.8 + W * 0.1,
         y: Math.random() * H * 0.5,
-        dx: -Math.random() * 4 - 2, // Move left
-        dy: Math.random() * 2 + 1,  // Move down
+        dx: -Math.random() * 4 - 2,
+        dy: Math.random() * 2 + 1,
         len: Math.random() * 80 + 40,
         speed: Math.random() * 10 + 15,
         life: 1.0
       };
     }
 
-    // Nebula Blobs
     const NEBULA = [
       { x: 0.2, y: 0.3, r: 0.4, s: 0.00005, p: 0 },
       { x: 0.8, y: 0.7, r: 0.5, s: -0.00004, p: 1 },
@@ -103,7 +94,6 @@
     }
 
     function drawBackground(pal) {
-      // Deep gradient fill
       const g = ctx.createLinearGradient(0, 0, 0, H);
       g.addColorStop(0, pal.bg[0]);
       g.addColorStop(1, pal.bg[1]);
@@ -113,8 +103,8 @@
 
     function drawNebula(pal) {
       ctx.save();
-      ctx.globalCompositeOperation = 'screen'; // Lighter blending for glow
-      ctx.filter = `blur(${40 * DPR}px)`; // Soften edges
+      ctx.globalCompositeOperation = 'screen'; 
+      ctx.filter = `blur(${40 * DPR}px)`;
       
       NEBULA.forEach((n, i) => {
         const col = pal.nebula[i % pal.nebula.length];
@@ -140,13 +130,11 @@
       ctx.globalCompositeOperation = 'lighter';
       
       stars.forEach(s => {
-        // Parallax
         const px = (s.x * W) + mx * (30 * s.z) * DPR;
         const py = (s.y * H) + my * (30 * s.z) * DPR;
         
-        // Twinkle
         const alpha = 0.3 + 0.7 * Math.abs(Math.sin(T * 0.001 * s.tw + s.ph));
-        const size = (0.5 + s.size * 1.5) * DPR * (1 - s.z * 0.5); // Closer stars are bigger
+        const size = (0.5 + s.size * 1.5) * DPR * (1 - s.z * 0.5);
         
         ctx.fillStyle = `rgba(${pal.star}, ${alpha})`;
         ctx.beginPath();
@@ -160,9 +148,7 @@
       ctx.save();
       ctx.lineWidth = 0.5 * DPR;
       ctx.globalCompositeOperation = 'lighter';
-      
-      // Only connect close stars
-      for (let i = 0; i < stars.length; i += 2) { // Optimization: skip some
+      for (let i = 0; i < stars.length; i += 2) {
         const s1 = stars[i];
         const x1 = (s1.x * W) + mx * (30 * s1.z) * DPR;
         const y1 = (s1.y * H) + my * (30 * s1.z) * DPR;
@@ -173,7 +159,7 @@
           const dy = (s2.y * H + my * 30 * s2.z * DPR) - y1;
           const dist = dx*dx + dy*dy;
           
-          if (dist < 8000 * DPR * DPR) { // Connection distance
+          if (dist < 8000 * DPR * DPR) {
             const alpha = (1 - dist / (8000 * DPR * DPR)) * 0.15;
             ctx.strokeStyle = pal.link + alpha + ')';
             ctx.beginPath();
@@ -195,7 +181,7 @@
       
       const grad = ctx.createLinearGradient(
         shootingStar.x, shootingStar.y, 
-        shootingStar.x + shootingStar.len, shootingStar.y - shootingStar.len // Trail tail
+        shootingStar.x + shootingStar.len, shootingStar.y - shootingStar.len
       );
       grad.addColorStop(0, 'rgba(255,255,255,1)');
       grad.addColorStop(1, 'rgba(255,255,255,0)');
@@ -203,10 +189,9 @@
       ctx.strokeStyle = grad;
       ctx.beginPath();
       ctx.moveTo(shootingStar.x, shootingStar.y);
-      ctx.lineTo(shootingStar.x - shootingStar.dx * 4, shootingStar.y - shootingStar.dy * 4); // Trail
+      ctx.lineTo(shootingStar.x - shootingStar.dx * 4, shootingStar.y - shootingStar.dy * 4);
       ctx.stroke();
-      
-      // Update
+
       shootingStar.x += shootingStar.dx;
       shootingStar.y += shootingStar.dy;
       shootingStar.life -= 0.02;
@@ -224,7 +209,6 @@
       last = now;
       T += dt;
 
-      // Smooth mouse
       mx += (pmx - mx) * 0.05;
       my += (pmy - my) * 0.05;
 

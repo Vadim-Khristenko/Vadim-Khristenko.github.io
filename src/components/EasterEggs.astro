@@ -1,10 +1,5 @@
----
-// No props; global easter eggs: Konami code → banner + WebAudio melody
----
 <script>
   // @ts-nocheck
-  // Global Easter Eggs Manager
-  // Features: Konami Code -> Vocaloid Mode (Theme + Music)
   
   const LS_KEY = 'vocaloid-mode';
   const KONAMI_SEQ = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
@@ -19,12 +14,10 @@
     }
 
     init() {
-      // Restore state
       if (localStorage.getItem(LS_KEY) === '1') {
-        this.setMode(true, false); // Restore without notification/sound
+        this.setMode(true, false);
       }
 
-      // Key listener
       window.addEventListener('keydown', (e) => {
         const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
         this.buffer.push(key);
@@ -32,7 +25,7 @@
         
         if (this.checkKonami()) {
           this.toggleMode();
-          this.buffer = []; // Reset buffer
+          this.buffer = [];
         }
       });
     }
@@ -55,7 +48,6 @@
       this.audioTrack.volume = 0.4;
       this.audioTrack.loop = true;
       this.audioTrack.onerror = () => {
-        // Fallback path if needed
         if (this.audioTrack) this.audioTrack.src = '/assets/Anamanaguchi_-_Miku_.mp3';
       };
       return this.audioTrack;
@@ -73,7 +65,6 @@
         root.classList.add('vocaloid');
         localStorage.setItem(LS_KEY, '1');
         
-        // Music
         const track = this.ensureMusic();
         track.currentTime = 0;
         track.play().catch(e => console.log('Autoplay blocked:', e));
@@ -86,7 +77,6 @@
         root.classList.remove('vocaloid');
         localStorage.removeItem(LS_KEY);
         
-        // Stop Music
         if (this.audioTrack) {
           this.audioTrack.pause();
           this.audioTrack.currentTime = 0;
@@ -99,7 +89,6 @@
       }
     }
 
-    // UI: Toast Notification using Tailwind classes
     showToast(text, type = 'neutral') {
       const existing = document.getElementById('egg-toast');
       if (existing) existing.remove();
@@ -108,7 +97,6 @@
       el.id = 'egg-toast';
       el.textContent = text;
       
-      // Styles
       const baseClasses = "fixed bottom-8 right-8 px-6 py-3 rounded-xl backdrop-blur-md border shadow-2xl z-50 font-bold tracking-wider transition-all duration-500 transform translate-y-10 opacity-0";
       const typeClasses = type === 'success' 
         ? "bg-pink-500/20 border-pink-400/30 text-pink-200 shadow-pink-500/20"
@@ -117,25 +105,20 @@
       el.className = `${baseClasses} ${typeClasses}`;
       document.body.appendChild(el);
 
-      // Animate in
       requestAnimationFrame(() => {
         el.classList.remove('translate-y-10', 'opacity-0');
       });
 
-      // Remove after delay
       setTimeout(() => {
         el.classList.add('translate-y-10', 'opacity-0');
         setTimeout(() => el.remove(), 500);
       }, 3000);
     }
 
-    // SFX: Activation Melody
     playOnSound() {
       try {
         const ctx = this.getAudioContext();
         const t = ctx.currentTime;
-        
-        // Happy Arpeggio
         const notes = [523.25, 659.25, 783.99, 1046.50]; // C E G C
         notes.forEach((freq, i) => {
           const osc = ctx.createOscillator();
@@ -156,7 +139,6 @@
       } catch (e) {}
     }
 
-    // SFX: Deactivation Sound (Power Down)
     playOffSound() {
       try {
         const ctx = this.getAudioContext();
@@ -165,14 +147,13 @@
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         
-        osc.type = 'sawtooth'; // Buzzier sound
+        osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(200, t);
-        osc.frequency.exponentialRampToValueAtTime(50, t + 0.4); // Pitch drop
+        osc.frequency.exponentialRampToValueAtTime(50, t + 0.4);
         
         gain.gain.setValueAtTime(0.05, t);
         gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
         
-        // Lowpass filter to dampen the sawtooth
         const filter = ctx.createBiquadFilter();
         filter.type = 'lowpass';
         filter.frequency.value = 1000;
@@ -186,7 +167,5 @@
       } catch (e) {}
     }
   }
-
-  // Initialize
   new EasterEggManager();
 </script>
