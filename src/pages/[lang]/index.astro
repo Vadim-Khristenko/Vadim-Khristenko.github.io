@@ -1,0 +1,11 @@
+---
+import { languages, defaultLang } from '../../i18n/translations';
+import MainPage from "../../components/MainPage.astro";
+
+export function getStaticPaths() {
+  return Object.keys(languages).filter(l => l !== defaultLang).map(lang => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+---
+<MainPage lang={lang} />

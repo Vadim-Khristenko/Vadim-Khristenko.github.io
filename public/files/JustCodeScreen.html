@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Just another Code ScreenShot</title>
+  <meta name="author" content="Vadim Khristenko">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link id="hljsTheme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <style>
+    :root {
+      --bg-app: #0c0c0e;
+      --sidebar-bg: #141416;
+      --sidebar-border: #252529;
+      --input-bg: #1c1c1f;
+      --input-border: #323238;
+      --accent: #6366f1;
+      --text-main: #efeff1;
+      --text-muted: #8e8e93;
+
+      --window-w: 800px;
+      --pad-inner: 40px;
+      --radius: 12px;
+      --shadow-blur: 50px;
+      --shadow-opacity: 0.5;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-app);
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    aside {
+      width: 380px;
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--sidebar-border);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--sidebar-border);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+
+    .scroll-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem;
+    }
+
+    .group { margin-bottom: 2rem; }
+    .group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    label { display: block; font-size: 12px; margin-bottom: 6px; color: var(--text-muted); }
+
+    select, input[type="text"], input[type="number"], textarea {
+      width: 100%;
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      appearance: none;
+      outline: none;
+    }
+    
+    select:focus, input:focus {
+      border-color: var(--accent);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+    }
+
+    option {
+      background-color: #1c1c1f !important;
+      color: white !important;
+    }
+
+    textarea {
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      background: var(--input-border);
+      border-radius: 2px;
+      margin: 12px 0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    .row { display: flex; gap: 10px; margin-bottom: 10px; }
+    .col { flex: 1; }
+
+    .bg-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .bg-item {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .bg-item:hover { transform: scale(1.05); }
+    .bg-item.active { border-color: #fff; }
+
+    .actions {
+      padding: 1.5rem;
+      border-top: 1px solid var(--sidebar-border);
+      display: flex; gap: 10px;
+    }
+    .btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* Custom File Input */
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+    .file-input-wrapper input[type="file"] {
+      position: absolute;
+      left: 0; top: 0; opacity: 0;
+      cursor: pointer;
+      width: 100%; height: 100%;
+    }
+    .btn-file {
+      background: var(--input-bg);
+      border: 1px dashed var(--input-border);
+      color: var(--text-muted);
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .file-input-wrapper:hover .btn-file {
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      position: relative;
+      overflow: auto;
+    }
+
+    #export-container {
+      padding: 80px;
+      display: inline-block;
+      transition: background 0.3s ease;
+      background-size: cover !important;
+      background-position: center !important;
+    }
+
+    .window {
+      width: var(--window-w);
+      background: rgba(13, 17, 23, 0.9);
+      border-radius: var(--radius);
+      box-shadow: 0 20px var(--shadow-blur) rgba(0,0,0,var(--shadow-opacity));
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .window-header {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      min-height: 44px;
+    }
+
+    .dots { display: flex; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-r { background: #ff5f56; }
+    .dot-y { background: #ffbd2e; }
+    .dot-g { background: #27c93f; }
+
+    .win-controls {
+      margin-left: auto;
+      display: flex; gap: 15px;
+      opacity: 0.6;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .window-title {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .window-content {
+      padding: var(--pad-inner);
+    }
+
+    pre { margin: 0; }
+    code {
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 15px;
+      line-height: 1.6;
+      background: transparent !important;
+      display: block;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <aside>
+    <div class="sidebar-header">
+      Just another Code ScreenShot
+      <div style="margin-top: 10px; display: flex; gap: 5px;">
+        <select id="langSwitcher" style="padding: 4px; font-size: 11px; width: auto;">
+          <option value="ru">RU</option>
+          <option value="en">EN</option>
+          <option value="zh">ZH</option>
+        </select>
+        <button id="btnDownloadProject" style="flex: 1; background: #252529; border: 1px solid #323238; color: #fff; border-radius: 6px; cursor: pointer; font-size: 11px;">Download HTML</button>
+      </div>
+    </div>
+    
+    <div class="scroll-area">
+      <div class="group">
+        <div class="group-title" data-t="group.content">Контент</div>
+        <label data-t="label.filename">Имя файла</label>
+        <input type="text" id="inpFilename" value="SimpleCode.cpp">
+        
+        <div class="row" style="margin-top: 10px;">
+          <div class="col">
+            <label data-t="label.language">Язык</label>
+            <select id="inpLang">
+              <option value="cpp">C++</option>
+              <option value="python">Python</option>
+              <option value="javascript">JavaScript</option>
+              <option value="typescript">TypeScript</option>
+              <option value="css">CSS</option>
+              <option value="html">HTML</option>
+            </select>
+          </div>
+          <div class="col">
+            <label data-t="label.theme">Тема</label>
+            <select id="inpTheme">
+              <option value="tokyo-night-dark">Tokyo Night</option>
+              <option value="github-dark">GitHub Dark</option>
+              <option value="atom-one-dark">Atom One Dark</option>
+              <option value="nord">Nord</option>
+              <option value="dracula">Dracula</option>
+              <option value="monokai">Monokai</option>
+            </select>
+          </div>
+        </div>
+
+        <label style="margin-top: 10px;" data-t="label.code">Код</label>
+        <textarea id="inpCode">#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}</textarea>
+      </div>
+
+      <div class="group">
+        <div class="group-title" data-t="group.window">Окно</div>
+        <div class="row">
+          <div class="col">
+            <label data-t="label.frame">Тип рамки</label>
+            <select id="inpFrame">
+              <option value="macos">macOS</option>
+              <option value="windows">Windows</option>
+              <option value="none" data-t="opt.none">Без рамки</option>
+            </select>
+          </div>
+          <div class="col">
+            <label data-t="label.width">Ширина (px)</label>
+            <input type="number" id="inpWidth" value="500">
+          </div>
+        </div>
+        <label data-t="label.padding">Отступ контента</label>
+        <input type="range" id="inpPadding" min="10" max="100" value="10">
+        <label data-t="label.radius">Скругление</label>
+        <input type="range" id="inpRadius" min="0" max="40" value="20">
+      </div>
+
+      <div class="group">
+        <div class="group-title" data-t="group.background">Фон</div>
+        <label data-t="label.presets">Пресеты</label>
+        <div class="bg-grid" id="bgGrid"></div>
+        
+        <label style="margin-top:15px;" data-t="label.customBg">Свой фон (Градиент/Цвет/URL)</label>
+        <input type="text" id="inpCustomBg" placeholder="linear-gradient(...) или #hex">
+        
+        <label style="margin-top:10px;" data-t="label.upload">Загрузить изображение</label>
+        <div class="file-input-wrapper">
+          <div class="btn-file" id="fileBtnText">Выберите файл...</div>
+          <input type="file" id="fileBg" accept="image/*">
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="btnDownload" data-t="btn.download">Скачать PNG</button>
+    </div>
+  </aside>
+
+  <main>
+    <div id="export-container">
+      <div class="window" id="windowEl">
+        <div class="window-header" id="winHeader">
+          <div class="dots" id="macosDots">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <div class="window-title" id="titleLabel">app.js</div>
+          <div class="win-controls hidden" id="winDots">
+            <span>─</span> <span>▢</span> <span>✕</span>
+          </div>
+        </div>
+        <div class="window-content">
+          <pre><code id="codeOutput"></code></pre>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const translations = {
+      ru: {
+        'group.content': 'Контент',
+        'label.filename': 'Имя файла',
+        'label.language': 'Язык',
+        'label.theme': 'Тема',
+        'label.code': 'Код',
+        'group.window': 'Окно',
+        'label.frame': 'Тип рамки',
+        'opt.none': 'Без рамки',
+        'label.width': 'Ширина (px)',
+        'label.padding': 'Отступ контента',
+        'label.radius': 'Скругление',
+        'group.background': 'Фон',
+        'label.presets': 'Пресеты',
+        'label.customBg': 'Свой фон (Градиент/Цвет/URL)',
+        'label.upload': 'Загрузить изображение',
+        'btn.download': 'Скачать PNG',
+        'btn.processing': 'Обработка...',
+        'file.select': 'Выберите файл...',
+        'btn.downloadProject': 'Скачать HTML'
+      },
+      en: {
+        'group.content': 'Content',
+        'label.filename': 'Filename',
+        'label.language': 'Language',
+        'label.theme': 'Theme',
+        'label.code': 'Code',
+        'group.window': 'Window',
+        'label.frame': 'Frame Type',
+        'opt.none': 'No Frame',
+        'label.width': 'Width (px)',
+        'label.padding': 'Content Padding',
+        'label.radius': 'Border Radius',
+        'group.background': 'Background',
+        'label.presets': 'Presets',
+        'label.customBg': 'Custom Background (Gradient/Color/URL)',
+        'label.upload': 'Upload Image',
+        'btn.download': 'Download PNG',
+        'btn.processing': 'Processing...',
+        'file.select': 'Choose file...',
+        'btn.downloadProject': 'Download HTML'
+      },
+      zh: {
+        'group.content': '内容',
+        'label.filename': '文件名',
+        'label.language': '语言',
+        'label.theme': '主题',
+        'label.code': '代码',
+        'group.window': '窗口',
+        'label.frame': '边框类型',
+        'opt.none': '无边框',
+        'label.width': '宽度 (px)',
+        'label.padding': '内容内边距',
+        'label.radius': '圆角',
+        'group.background': '背景',
+        'label.presets': '预设',
+        'label.customBg': '自定义背景 (渐变/颜色/URL)',
+        'label.upload': '上传图片',
+        'btn.download': '下载 PNG',
+        'btn.processing': '处理中...',
+        'file.select': '选择文件...',
+        'btn.downloadProject': '下载 HTML'
+      }
+    };
+
+    const presets = [
+      "linear-gradient(135deg, #434343 0%, #000000 100%)",
+      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      "linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)",
+      "linear-gradient(135deg, #2af598 0%, #009efd 100%)",
+      "linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)",
+      "#1a1a1a", "#6366f1", "#f43f5e", "#10b981", "#eab308"
+    ];
+
+    const elements = {
+      filename: document.getElementById('inpFilename'),
+      code: document.getElementById('inpCode'),
+      lang: document.getElementById('inpLang'),
+      theme: document.getElementById('inpTheme'),
+      frame: document.getElementById('inpFrame'),
+      width: document.getElementById('inpWidth'),
+      padding: document.getElementById('inpPadding'),
+      radius: document.getElementById('inpRadius'),
+      customBg: document.getElementById('inpCustomBg'),
+      fileBg: document.getElementById('fileBg'),
+      container: document.getElementById('export-container'),
+      window: document.getElementById('windowEl'),
+      titleLabel: document.getElementById('titleLabel'),
+      codeOutput: document.getElementById('codeOutput'),
+      winHeader: document.getElementById('winHeader'),
+      macosDots: document.getElementById('macosDots'),
+      winDots: document.getElementById('winDots'),
+      hljsTheme: document.getElementById('hljsTheme'),
+      fileBtnText: document.getElementById('fileBtnText'),
+      langSwitcher: document.getElementById('langSwitcher'),
+      btnDownloadProject: document.getElementById('btnDownloadProject')
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) lang = 'en';
+      currentLang = lang;
+      const t = translations[lang];
+      
+      document.querySelectorAll('[data-t]').forEach(el => {
+        const key = el.getAttribute('data-t');
+        if (t[key]) el.textContent = t[key];
+      });
+      
+      elements.fileBtnText.textContent = t['file.select'];
+      elements.btnDownloadProject.textContent = t['btn.downloadProject'];
+      elements.langSwitcher.value = lang;
+    }
+
+    function init() {
+      // Detect language
+      const userLang = navigator.language.slice(0, 2);
+      setLanguage(translations[userLang] ? userLang : 'en');
+
+      elements.langSwitcher.addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+
+      elements.btnDownloadProject.onclick = () => {
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'JustCodeScreen.html';
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+
+      presets.forEach((p, i) => {
+        const div = document.createElement('div');
+        div.className = 'bg-item';
+        div.style.background = p;
+        if(i === 0) {
+          div.classList.add('active');
+          elements.container.style.background = p;
+        }
+        div.onclick = () => {
+          document.querySelectorAll('.bg-item').forEach(el => el.classList.remove('active'));
+          div.classList.add('active');
+          elements.container.style.background = p;
+          elements.customBg.value = "";
+        };
+        document.getElementById('bgGrid').appendChild(div);
+      });
+
+      const inputs = [
+        elements.filename, elements.code, elements.lang, elements.theme, 
+        elements.frame, elements.width, elements.padding, elements.radius, elements.customBg
+      ];
+      
+      inputs.forEach(input => {
+        input.addEventListener('input', update);
+      });
+
+      elements.fileBg.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (f) => {
+            elements.container.style.background = `url(${f.target.result})`;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      update();
+    }
+
+    function update() {
+      elements.titleLabel.textContent = elements.filename.value;
+      elements.codeOutput.textContent = elements.code.value;
+      elements.codeOutput.className = `language-${elements.lang.value}`;
+      
+      delete elements.codeOutput.dataset.highlighted;
+
+      const themeUrl = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/${elements.theme.value}.min.css`;
+      if (elements.hljsTheme.getAttribute('href') !== themeUrl) {
+          elements.hljsTheme.setAttribute('href', themeUrl);
+          setTimeout(() => hljs.highlightElement(elements.codeOutput), 30);
+      } else {
+          hljs.highlightElement(elements.codeOutput);
+      }
+
+      const frameVal = elements.frame.value;
+      if (frameVal === 'macos') {
+        elements.winHeader.classList.remove('hidden');
+        elements.macosDots.classList.remove('hidden');
+        elements.winDots.classList.add('hidden');
+      } else if (frameVal === 'windows') {
+        elements.winHeader.classList.remove('hidden');
+        elements.macosDots.classList.add('hidden');
+        elements.winDots.classList.remove('hidden');
+      } else {
+        elements.winHeader.classList.add('hidden');
+      }
+
+      document.documentElement.style.setProperty('--window-w', `${elements.width.value}px`);
+      document.documentElement.style.setProperty('--pad-inner', `${elements.padding.value}px`);
+      document.documentElement.style.setProperty('--radius', `${elements.radius.value}px`);
+
+      if (elements.customBg.value) {
+        const val = elements.customBg.value.trim();
+        if (val.includes('url(') || val.startsWith('http')) {
+           elements.container.style.background = val.includes('url(') ? val : `url(${val})`;
+        } else {
+           elements.container.style.background = val;
+        }
+        document.querySelectorAll('.bg-item').forEach(el => el.classList.remove('active'));
+      }
+    }
+
+    document.getElementById('btnDownload').onclick = async () => {
+      const t = translations[currentLang];
+      const btn = document.getElementById('btnDownload');
+      btn.textContent = t['btn.processing'];
+      
+      try {
+        const canvas = await html2canvas(elements.container, {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: null,
+          logging: false
+        });
+        
+        const link = document.createElement('a');
+        link.download = `code-${Date.now()}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      } catch (err) {
+        console.error("Ошибка экспорта:", err);
+      } finally {
+        btn.textContent = t['btn.download'];
+      }
+    };
+
+    window.onload = init;
+  </script>
+</body>
+</html>

@@ -2,127 +2,191 @@
 // No props; global easter eggs: Konami code → banner + WebAudio melody
 ---
 <script>
-  // Persistent VOCALOID mode state and audio
-  let track: HTMLAudioElement | null = null;
+  // @ts-nocheck
+  // Global Easter Eggs Manager
+  // Features: Konami Code -> Vocaloid Mode (Theme + Music)
+  
   const LS_KEY = 'vocaloid-mode';
+  const KONAMI_SEQ = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  
+  class EasterEggManager {
+    constructor() {
+      this.buffer = [];
+      this.audioTrack = null;
+      this.audioCtx = null;
+      
+      this.init();
+    }
 
-  function ensureAudio(){
-    if (track) return track;
-    track = document.createElement('audio');
-    track.src = '/music/Anamanaguchi_Miku-Ft_Hatsune_Miku.mp3';
-    track.preload = 'auto';
-    track.volume = 0.4;
-    track.addEventListener('error', ()=>{
-      if (track && track.src.endsWith('/music/Anamanaguchi_Miku-Ft_Hatsune_Miku.mp3')){
-        track.src = '/assets/Anamanaguchi_-_Miku_.mp3';
+    init() {
+      // Restore state
+      if (localStorage.getItem(LS_KEY) === '1') {
+        this.setMode(true, false); // Restore without notification/sound
       }
-    });
-    document.body.appendChild(track);
-    return track;
-  }
 
-  function setVocaloid(on: boolean){
-    const root = document.documentElement;
-    if (on){
-      localStorage.setItem(LS_KEY,'1');
-      root.classList.add('vocaloid');
-      const a = ensureAudio();
-      a.currentTime = 0;
-      a.play().catch(()=>{});
-      bannerPopup('VOCALOID MODE: ON', true);
-    } else {
-      localStorage.removeItem(LS_KEY);
-      root.classList.remove('vocaloid');
-      try{ ensureAudio().pause(); }catch{}
-      bannerPopup('VOCALOID MODE: OFF', false);
+      // Key listener
+      window.addEventListener('keydown', (e) => {
+        const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        this.buffer.push(key);
+        if (this.buffer.length > KONAMI_SEQ.length) this.buffer.shift();
+        
+        if (this.checkKonami()) {
+          this.toggleMode();
+          this.buffer = []; // Reset buffer
+        }
+      });
+    }
+
+    checkKonami() {
+      return KONAMI_SEQ.every((k, i) => this.buffer[i] === k);
+    }
+
+    getAudioContext() {
+      if (!this.audioCtx) {
+        const Ctor = window.AudioContext || window.webkitAudioContext;
+        this.audioCtx = new Ctor();
+      }
+      return this.audioCtx;
+    }
+
+    ensureMusic() {
+      if (this.audioTrack) return this.audioTrack;
+      this.audioTrack = new Audio('/music/Anamanaguchi_Miku-Ft_Hatsune_Miku.mp3');
+      this.audioTrack.volume = 0.4;
+      this.audioTrack.loop = true;
+      this.audioTrack.onerror = () => {
+        // Fallback path if needed
+        if (this.audioTrack) this.audioTrack.src = '/assets/Anamanaguchi_-_Miku_.mp3';
+      };
+      return this.audioTrack;
+    }
+
+    toggleMode() {
+      const isActive = document.documentElement.classList.contains('vocaloid');
+      this.setMode(!isActive, true);
+    }
+
+    setMode(enable, notify = true) {
+      const root = document.documentElement;
+      
+      if (enable) {
+        root.classList.add('vocaloid');
+        localStorage.setItem(LS_KEY, '1');
+        
+        // Music
+        const track = this.ensureMusic();
+        track.currentTime = 0;
+        track.play().catch(e => console.log('Autoplay blocked:', e));
+
+        if (notify) {
+          this.playOnSound();
+          this.showToast('VOCALOID MODE: ACTIVATED', 'success');
+        }
+      } else {
+        root.classList.remove('vocaloid');
+        localStorage.removeItem(LS_KEY);
+        
+        // Stop Music
+        if (this.audioTrack) {
+          this.audioTrack.pause();
+          this.audioTrack.currentTime = 0;
+        }
+
+        if (notify) {
+          this.playOffSound();
+          this.showToast('VOCALOID MODE: DEACTIVATED', 'neutral');
+        }
+      }
+    }
+
+    // UI: Toast Notification using Tailwind classes
+    showToast(text, type = 'neutral') {
+      const existing = document.getElementById('egg-toast');
+      if (existing) existing.remove();
+
+      const el = document.createElement('div');
+      el.id = 'egg-toast';
+      el.textContent = text;
+      
+      // Styles
+      const baseClasses = "fixed bottom-8 right-8 px-6 py-3 rounded-xl backdrop-blur-md border shadow-2xl z-50 font-bold tracking-wider transition-all duration-500 transform translate-y-10 opacity-0";
+      const typeClasses = type === 'success' 
+        ? "bg-pink-500/20 border-pink-400/30 text-pink-200 shadow-pink-500/20"
+        : "bg-slate-800/60 border-slate-600/30 text-slate-300 shadow-black/40";
+
+      el.className = `${baseClasses} ${typeClasses}`;
+      document.body.appendChild(el);
+
+      // Animate in
+      requestAnimationFrame(() => {
+        el.classList.remove('translate-y-10', 'opacity-0');
+      });
+
+      // Remove after delay
+      setTimeout(() => {
+        el.classList.add('translate-y-10', 'opacity-0');
+        setTimeout(() => el.remove(), 500);
+      }, 3000);
+    }
+
+    // SFX: Activation Melody
+    playOnSound() {
+      try {
+        const ctx = this.getAudioContext();
+        const t = ctx.currentTime;
+        
+        // Happy Arpeggio
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C E G C
+        notes.forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          
+          osc.type = 'sine';
+          osc.frequency.value = freq;
+          
+          gain.gain.setValueAtTime(0.05, t + i * 0.1);
+          gain.gain.exponentialRampToValueAtTime(0.001, t + i * 0.1 + 0.3);
+          
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          
+          osc.start(t + i * 0.1);
+          osc.stop(t + i * 0.1 + 0.3);
+        });
+      } catch (e) {}
+    }
+
+    // SFX: Deactivation Sound (Power Down)
+    playOffSound() {
+      try {
+        const ctx = this.getAudioContext();
+        const t = ctx.currentTime;
+        
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        
+        osc.type = 'sawtooth'; // Buzzier sound
+        osc.frequency.setValueAtTime(200, t);
+        osc.frequency.exponentialRampToValueAtTime(50, t + 0.4); // Pitch drop
+        
+        gain.gain.setValueAtTime(0.05, t);
+        gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+        
+        // Lowpass filter to dampen the sawtooth
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.value = 1000;
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+        
+        osc.start(t);
+        osc.stop(t + 0.4);
+      } catch (e) {}
     }
   }
 
-  // Restore persisted state (no autoplay due to policy)
-  if (localStorage.getItem(LS_KEY)==='1'){
-    document.documentElement.classList.add('vocaloid');
-    ensureAudio();
-  }
-
-  // Simple Konami Code listener
-  const seq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-  let buf = [];
-  window.addEventListener('keydown', (e)=>{
-    const k = e.key.length===1 ? e.key.toLowerCase() : e.key;
-    buf.push(k); if (buf.length>seq.length) buf.shift();
-    if (seq.every((s,i)=> buf[i]===s)) activateVocaloidEgg();
-  });
-
-  function activateVocaloidEgg(){
-    if (document.documentElement.classList.contains('konami-active')) return;
-    document.documentElement.classList.add('konami-active');
-
-    // Banner
-    const banner = document.createElement('div');
-    banner.textContent = 'VOCALOID MODE';
-    Object.assign(banner.style, {
-      position:'fixed', top:'16px', right:'16px', padding:'8px 12px',
-      color:'#00ffd1', background:'rgba(0,0,0,.6)', border:'1px solid rgba(255,255,255,.15)',
-      borderRadius:'10px', backdropFilter:'blur(6px)', zIndex:60, fontWeight:'800', letterSpacing:'1px'
-    });
-    document.body.appendChild(banner);
-
-    // Melody via WebAudio
-    try{
-      // Safari fallback for prefixed AudioContext; build key name to avoid TS warnings
-      const w = /** @type {any} */ (window);
-      const prefKey = 'webkit' + 'AudioContext';
-      const Ctor = (window as any).AudioContext || (w as any)[prefKey];
-      const ctx = new Ctor();
-      const melody = [
-        { f:523, d:.15, g:.15 }, { f:659, d:.15, g:.15 }, { f:784, d:.15, g:.15 },
-        { f:987, d:.30, g:.20 }, { f:1319, d:.30, g:.20 }, { f:1175, d:.30, g:.18 },
-        { f:987, d:.20, g:.15 }, { f:880, d:.20, g:.15 }, { f:784, d:.25, g:.18 },
-        { f:1047, d:.15, g:.20 }, { f:1319, d:.40, g:.22 }
-      ];
-      let t = ctx.currentTime + 0.05;
-      for (const n of melody){
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        const filt = ctx.createBiquadFilter();
-        osc.type='sine'; osc.frequency.value = n.f; filt.type='lowpass'; filt.frequency.value = 6000;
-        osc.connect(filt); filt.connect(gain); gain.connect(ctx.destination);
-        gain.gain.setValueAtTime(0.001, t);
-        gain.gain.linearRampToValueAtTime(n.g, t+0.05);
-        gain.gain.exponentialRampToValueAtTime(n.g*0.3, t+n.d-0.05);
-        gain.gain.exponentialRampToValueAtTime(0.001, t+n.d);
-        osc.start(t); osc.stop(t+n.d);
-        t += n.d - 0.05;
-      }
-      // gentle pad
-      const pad = ctx.createOscillator(); const pg = ctx.createGain(); const pf = ctx.createBiquadFilter();
-      pad.type='sine'; pad.frequency.value=523; pf.type='lowpass'; pf.frequency.value=3000;
-      pad.connect(pf); pf.connect(pg); pg.connect(ctx.destination);
-      const ps = ctx.currentTime + 0.05, pe = ps + 2.8;
-      pg.gain.setValueAtTime(0.001, ps);
-      pg.gain.linearRampToValueAtTime(0.08, ps+0.3);
-      pg.gain.exponentialRampToValueAtTime(0.001, pe-0.2);
-      pad.start(ps); pad.stop(pe);
-      setTimeout(()=>{ try{ ctx.close(); }catch{} }, 3200);
-    }catch{}
-
-    // Toggle persistent vocaloid mode
-    const active = document.documentElement.classList.contains('vocaloid');
-    setVocaloid(!active);
-
-    setTimeout(()=>{ banner.remove(); document.documentElement.classList.remove('konami-active'); }, 8000);
-  }
-
-  function bannerPopup(text: string, on=true){
-    const el = document.createElement('div');
-    el.textContent = text;
-    Object.assign(el.style, {
-      position:'fixed', bottom:'20px', right:'20px', padding:'10px 14px',
-      background:'rgba(0,0,0,0.6)', border:'1px solid rgba(255,255,255,0.15)',
-      color: on? '#00ffd1' : '#e11d48', borderRadius:'10px', zIndex:60, fontWeight:'600',
-      backdropFilter:'blur(6px)'
-    });
-    document.body.appendChild(el);
-    setTimeout(()=> el.remove(), 3000);
-  }
+  // Initialize
+  new EasterEggManager();
 </script>

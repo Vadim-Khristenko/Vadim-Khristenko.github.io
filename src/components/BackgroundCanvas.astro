@@ -8,206 +8,237 @@
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 <script>
   // @ts-nocheck
-  // Reimagined background: aurora blobs + parallax stars + constellation lines + gentle waves
-  // Smooth, performant, and responsive to VOCALOID mode tint via localStorage('vocaloidMode')
+  // Cosmic Background: Deep space, Nebulas, Stars, Constellations, Shooting Stars
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!reduce) {
     const el = document.getElementById('bg-canvas');
     /** @type {HTMLCanvasElement | null} */
     const cvs = el instanceof HTMLCanvasElement ? el : null;
-    if (!cvs) { /* no canvas present */ }
+    if (!cvs) { /* no canvas */ }
     /** @type {CanvasRenderingContext2D | null} */
     const ctx = cvs?.getContext('2d');
     const DPR = Math.min(window.devicePixelRatio || 1, 2);
 
-    let W = 0, H = 0, T = 0; // canvas size and time accumulator (ms)
-    let last = 0;             // last rAF ts
+    let W = 0, H = 0, T = 0;
+    let last = 0;
 
-    // Palette (switches subtly in VOCALOID mode)
+    // Palette: Deep Space vs Vocaloid Pop
     function isVocaloid() {
       try { return localStorage.getItem('vocaloidMode') === 'on'; } catch { return false; }
     }
-    function palette() {
-      return isVocaloid()
-        ? { p1: 'rgba(255,105,180,0.18)', p2: 'rgba(0,255,209,0.16)', p3: 'rgba(82,113,255,0.13)', star: 'rgba(255,255,255,', link: 'rgba(255,114,228,' }
-        : { p1: 'rgba(124,58,237,0.18)', p2: 'rgba(0,199,255,0.16)', p3: 'rgba(0,255,209,0.13)', star: 'rgba(255,255,255,', link: 'rgba(0,255,209,' };
+    
+    function getPalette() {
+      const v = isVocaloid();
+      return {
+        bg: v ? ['#1a0b2e', '#2d1b4e'] : ['#05070a', '#0b1021'], // Darker backgrounds
+        nebula: v 
+          ? ['rgba(255,105,180,0.12)', 'rgba(0,255,209,0.1)', 'rgba(82,113,255,0.08)'] 
+          : ['rgba(124,58,237,0.15)', 'rgba(56,189,248,0.12)', 'rgba(16,185,129,0.08)'],
+        star: v ? '255,200,255' : '220,240,255',
+        link: v ? 'rgba(255,114,228,' : 'rgba(100,200,255,'
+      };
     }
 
-    // Pointer parallax
-    let pmx = 0, pmy = 0;     // pointer target in -1..1
-    let mx = 0, my = 0;       // smoothed pointer
+    // Pointer Parallax
+    let pmx = 0, pmy = 0;
+    let mx = 0, my = 0;
     window.addEventListener('pointermove', (e) => {
-      const x = e.clientX / (innerWidth || 1);
-      const y = e.clientY / (innerHeight || 1);
-      pmx = x * 2 - 1; // -1..1
-      pmy = y * 2 - 1; // -1..1
+      pmx = (e.clientX / window.innerWidth) * 2 - 1;
+      pmy = (e.clientY / window.innerHeight) * 2 - 1;
     }, { passive: true });
 
     // Stars
-    const STAR_COUNT = 140;
-    // Explicitly type the stars array to satisfy TS strict settings
-    /** @type {any[]} */
+    const STAR_COUNT = 200; // More stars
     let stars = [];
+    
+    // Shooting Stars
+    let shootingStar = {
+      active: false,
+      x: 0, y: 0,
+      dx: 0, dy: 0,
+      len: 0,
+      speed: 0,
+      life: 0
+    };
 
     function resetStars() {
       stars = Array.from({ length: STAR_COUNT }, () => ({
         x: Math.random(),
         y: Math.random(),
-        z: 0.25 + Math.random() * 0.75, // depth (parallax scaling)
-        tw: 0.6 + Math.random() * 1.1,  // twinkle speed
-        ph: Math.random() * Math.PI * 2  // twinkle phase
+        z: Math.random(), // depth 0..1
+        size: Math.random(),
+        tw: Math.random() * 2 + 0.5, // twinkle speed
+        ph: Math.random() * Math.PI * 2
       }));
     }
 
-    // Aurora blobs (metaball-like radial gradients)
-    const AURORA = [
-      { a: Math.random()*Math.PI*2, s: 0.00008, r: 0.55 },
-      { a: Math.random()*Math.PI*2, s: 0.00006, r: 0.75 },
-      { a: Math.random()*Math.PI*2, s: 0.00005, r: 0.9  }
+    function spawnShootingStar() {
+      if (Math.random() > 0.005 || shootingStar.active) return; // Low chance per frame
+      shootingStar = {
+        active: true,
+        x: Math.random() * W * 0.8 + W * 0.1,
+        y: Math.random() * H * 0.5,
+        dx: -Math.random() * 4 - 2, // Move left
+        dy: Math.random() * 2 + 1,  // Move down
+        len: Math.random() * 80 + 40,
+        speed: Math.random() * 10 + 15,
+        life: 1.0
+      };
+    }
+
+    // Nebula Blobs
+    const NEBULA = [
+      { x: 0.2, y: 0.3, r: 0.4, s: 0.00005, p: 0 },
+      { x: 0.8, y: 0.7, r: 0.5, s: -0.00004, p: 1 },
+      { x: 0.5, y: 0.5, r: 0.6, s: 0.00003, p: 2 }
     ];
 
     function resize() {
-      if (!cvs || !ctx) return;
-      W = cvs.width  = Math.max(1, Math.floor(window.innerWidth  * DPR));
-      H = cvs.height = Math.max(1, Math.floor(window.innerHeight * DPR));
+      if (!cvs) return;
+      W = cvs.width = Math.floor(window.innerWidth * DPR);
+      H = cvs.height = Math.floor(window.innerHeight * DPR);
       cvs.style.width = window.innerWidth + 'px';
       cvs.style.height = window.innerHeight + 'px';
       resetStars();
     }
 
-    function clearAndVignette() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, W, H);
-      // subtle vignette and corner glow
-      const pal = palette();
-      const g = ctx.createRadialGradient(W*0.85, H*0.12, 0, W*0.85, H*0.12, Math.hypot(W, H) * 0.65);
-      g.addColorStop(0.0, pal.p1);
-      g.addColorStop(0.35, pal.p2);
-      g.addColorStop(1.0, 'rgba(0,0,0,0)');
+    function drawBackground(pal) {
+      // Deep gradient fill
+      const g = ctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, pal.bg[0]);
+      g.addColorStop(1, pal.bg[1]);
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, W, H);
     }
 
-    function drawAurora() {
-      if (!ctx) return;
-      const pal = palette();
+    function drawNebula(pal) {
       ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      const cx = W * 0.5 + mx * 30 * DPR;
-      const cy = H * 0.42 + my * 20 * DPR;
-      const baseR = Math.min(W, H) * 0.65;
-      for (let i = 0; i < AURORA.length; i++) {
-        const n = AURORA[i];
-        const a = n.a + T * n.s;
-        const rx = Math.cos(a * (1.0 + i*0.15)) * 0.35;
-        const ry = Math.sin(a * (1.2 + i*0.1))  * 0.28;
-        const x = cx + rx * baseR * 0.35;
-        const y = cy + ry * baseR * 0.30;
-        const R = baseR * n.r * 0.6;
-        const grad = ctx.createRadialGradient(x, y, 0, x, y, R);
-        if (i === 0) { grad.addColorStop(0, pal.p1); grad.addColorStop(1, 'rgba(0,0,0,0)'); }
-        else if (i === 1) { grad.addColorStop(0, pal.p2); grad.addColorStop(1, 'rgba(0,0,0,0)'); }
-        else { grad.addColorStop(0, pal.p3); grad.addColorStop(1, 'rgba(0,0,0,0)'); }
+      ctx.globalCompositeOperation = 'screen'; // Lighter blending for glow
+      ctx.filter = `blur(${40 * DPR}px)`; // Soften edges
+      
+      NEBULA.forEach((n, i) => {
+        const col = pal.nebula[i % pal.nebula.length];
+        const t = T * n.s;
+        const cx = W * (n.x + Math.cos(t) * 0.1) + mx * 40 * DPR;
+        const cy = H * (n.y + Math.sin(t) * 0.1) + my * 40 * DPR;
+        const r = Math.min(W, H) * n.r;
+        
+        const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
+        g.addColorStop(0, col);
+        g.addColorStop(1, 'transparent');
+        
+        ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.fillStyle = grad;
-        ctx.arc(x, y, R, 0, Math.PI * 2);
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
         ctx.fill();
-      }
+      });
       ctx.restore();
     }
 
-    function drawStars() {
-      if (!ctx) return;
-      const pal = palette();
+    function drawStars(pal) {
       ctx.save();
-      ctx.globalCompositeOperation = 'source-over';
-      for (let i = 0; i < stars.length; i++) {
-        const s = stars[i];
-        const px = (s.x * W) + mx * (20 * (1 - s.z)) * DPR;
-        const py = (s.y * H) + my * (18 * (1 - s.z)) * DPR;
-        const tw = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(T * s.tw * 0.006 + s.ph));
-        const r = (0.6 + 1.8 * (1 - s.z)) * DPR;
+      ctx.globalCompositeOperation = 'lighter';
+      
+      stars.forEach(s => {
+        // Parallax
+        const px = (s.x * W) + mx * (30 * s.z) * DPR;
+        const py = (s.y * H) + my * (30 * s.z) * DPR;
+        
+        // Twinkle
+        const alpha = 0.3 + 0.7 * Math.abs(Math.sin(T * 0.001 * s.tw + s.ph));
+        const size = (0.5 + s.size * 1.5) * DPR * (1 - s.z * 0.5); // Closer stars are bigger
+        
+        ctx.fillStyle = `rgba(${pal.star}, ${alpha})`;
         ctx.beginPath();
-        ctx.fillStyle = pal.star + (0.25 + 0.55 * tw) + ')';
-        ctx.arc(px, py, r, 0, Math.PI * 2);
-        ctx.shadowColor = 'rgba(255,255,255,0.35)';
-        ctx.shadowBlur = 2 * DPR;
+        ctx.arc(px, py, size, 0, Math.PI * 2);
         ctx.fill();
-      }
+      });
       ctx.restore();
     }
 
-    function drawConstellations() {
-      if (!ctx) return;
-      const pal = palette();
+    function drawConstellations(pal) {
       ctx.save();
+      ctx.lineWidth = 0.5 * DPR;
       ctx.globalCompositeOperation = 'lighter';
-      ctx.lineWidth = 0.8 * DPR;
-      for (let i = 0; i < stars.length; i++) {
-        const si = stars[i];
-        const xi = (si.x * W) + mx * (20 * (1 - si.z)) * DPR;
-        const yi = (si.y * H) + my * (18 * (1 - si.z)) * DPR;
-        for (let j = i + 1; j < i + 10 && j < stars.length; j++) { // local neighborhood for perf
-          const sj = stars[j];
-          const xj = (sj.x * W) + mx * (20 * (1 - sj.z)) * DPR;
-          const yj = (sj.y * H) + my * (18 * (1 - sj.z)) * DPR;
-          const dx = xi - xj, dy = yi - yj;
-          const d2 = dx*dx + dy*dy;
-          const maxD = (110 * DPR);
-          const maxD2 = maxD * maxD;
-          if (d2 < maxD2) {
-            const a = 1 - d2 / maxD2;
-            ctx.strokeStyle = pal.link + (0.10 * a) + ')';
-            ctx.beginPath(); ctx.moveTo(xi, yi); ctx.lineTo(xj, yj); ctx.stroke();
+      
+      // Only connect close stars
+      for (let i = 0; i < stars.length; i += 2) { // Optimization: skip some
+        const s1 = stars[i];
+        const x1 = (s1.x * W) + mx * (30 * s1.z) * DPR;
+        const y1 = (s1.y * H) + my * (30 * s1.z) * DPR;
+        
+        for (let j = i + 1; j < stars.length; j++) {
+          const s2 = stars[j];
+          const dx = (s2.x * W + mx * 30 * s2.z * DPR) - x1;
+          const dy = (s2.y * H + my * 30 * s2.z * DPR) - y1;
+          const dist = dx*dx + dy*dy;
+          
+          if (dist < 8000 * DPR * DPR) { // Connection distance
+            const alpha = (1 - dist / (8000 * DPR * DPR)) * 0.15;
+            ctx.strokeStyle = pal.link + alpha + ')';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x1 + dx, y1 + dy);
+            ctx.stroke();
           }
         }
       }
       ctx.restore();
     }
 
-    function drawWaves() {
-      if (!ctx) return;
+    function drawShootingStar() {
+      if (!shootingStar.active) return;
+      
       ctx.save();
-      ctx.globalCompositeOperation = 'soft-light';
-      const baseY = H * 0.78 + my * 6 * DPR;
-      const waves = [
-        { amp: 10 * DPR, freq: 0.008, speed: 0.0004, color: 'rgba(255,255,255,0.06)' },
-        { amp: 16 * DPR, freq: 0.006, speed: 0.0003, color: 'rgba(0,255,209,0.07)' },
-        { amp: 12 * DPR, freq: 0.007, speed: 0.00035, color: 'rgba(82,113,255,0.05)' },
-      ];
-      for (const w of waves) {
-        ctx.beginPath();
-        ctx.strokeStyle = w.color;
-        ctx.lineWidth = 2 * DPR;
-        const step = 28 * DPR;
-        for (let x = 0; x <= W + step; x += step) {
-          const y = baseY + Math.sin(x * w.freq + T * w.speed) * w.amp;
-          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-        }
-        ctx.stroke();
+      ctx.lineWidth = 2 * DPR;
+      ctx.lineCap = 'round';
+      
+      const grad = ctx.createLinearGradient(
+        shootingStar.x, shootingStar.y, 
+        shootingStar.x + shootingStar.len, shootingStar.y - shootingStar.len // Trail tail
+      );
+      grad.addColorStop(0, 'rgba(255,255,255,1)');
+      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      
+      ctx.strokeStyle = grad;
+      ctx.beginPath();
+      ctx.moveTo(shootingStar.x, shootingStar.y);
+      ctx.lineTo(shootingStar.x - shootingStar.dx * 4, shootingStar.y - shootingStar.dy * 4); // Trail
+      ctx.stroke();
+      
+      // Update
+      shootingStar.x += shootingStar.dx;
+      shootingStar.y += shootingStar.dy;
+      shootingStar.life -= 0.02;
+      
+      if (shootingStar.x < -100 || shootingStar.y > H + 100 || shootingStar.life <= 0) {
+        shootingStar.active = false;
       }
       ctx.restore();
     }
 
-    function draw() {
-      clearAndVignette();
-      drawAurora();
-      drawStars();
-      drawConstellations();
-      drawWaves();
-    }
-
     function loop() {
-      const ts = performance.now();
-      if (document.hidden) { last = ts; requestAnimationFrame(loop); return; }
-      if (!last) last = ts;
-      const dt = ts - last; last = ts; T += dt;
-      // Smooth pointer toward target for fluid parallax
-      mx += (pmx - mx) * 0.06; // ease
-      my += (pmy - my) * 0.06;
-      // Cap dt to avoid huge jumps on tab switch
-      T = Math.min(T, 1e7);
-      draw();
+      const now = performance.now();
+      if (!last) last = now;
+      const dt = now - last;
+      last = now;
+      T += dt;
+
+      // Smooth mouse
+      mx += (pmx - mx) * 0.05;
+      my += (pmy - my) * 0.05;
+
+      if (ctx) {
+        const pal = getPalette();
+        drawBackground(pal);
+        drawNebula(pal);
+        drawConstellations(pal);
+        drawStars(pal);
+        
+        spawnShootingStar();
+        drawShootingStar();
+      }
+      
       requestAnimationFrame(loop);
     }
 

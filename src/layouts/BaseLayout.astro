@@ -1,12 +1,14 @@
 ---
-const { title = 'Vadim Khristenko — Developer', description = 'Вдохновляющая визитка молодого разработчика: Rust, C++, Python, TypeScript. Музыка, аниме и технологии для людей.' } = Astro.props;
+const { title = 'Vadim Khristenko — Developer', description = 'Вдохновляющая визитка молодого разработчика: Rust, C++, Python, TypeScript. Музыка, аниме и технологии для людей.', lang = 'ru' } = Astro.props;
 import "../styles/global.css";
 import "../styles/markdown.css";
 import BackgroundCanvas from "../components/BackgroundCanvas.astro";
 import EasterEggs from "../components/EasterEggs.astro";
+import { ui, defaultLang } from "../i18n/translations";
 const year = new Date().getFullYear();
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
 ---
-<html lang="ru" class="dark">
+<html lang={lang} class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,8 +43,17 @@ const year = new Date().getFullYear();
     <div class="relative z-10">
       <slot />
       <footer class="py-10 text-center text-white/60 text-sm">
-        <p>© {year} Vadim Khristenko · сделано с кодом и немного безумия</p>
+        <p>© {year} {t['footer.copyright']}</p>
       </footer>
     </div>
+    <script>
+      import AOS from 'aos';
+      import 'aos/dist/aos.css';
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
+      });
+    </script>
   </body>
 </html>

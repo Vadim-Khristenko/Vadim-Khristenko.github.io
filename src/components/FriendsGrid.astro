@@ -1,134 +1,188 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const friends = [
   {
-    name: 'Маша',
-    role: 'особенно близкий человек · художница',
-    description: 'Талантливая художница, которая вдохновляет своим творчеством. Спасибо за поддержку, любовь и веру в мои мечты. Ты моя вдохновляющая звезда.',
+    name: t('friends.masha.name'),
+    role: t('friends.masha.role'),
+    description: t('friends.masha.desc'),
     avatar: '/avatars/Masha.jpg',
-    links: [{ label: 'Telegram', href: 'https://t.me/E_R_R_035' }],
+    links: [{ label: t('friends.link.telegram'), href: 'https://t.me/E_R_R_035' }],
     highlight: true,
     color: 'from-pink-500/30 to-rose-500/20',
     accentColor: '#ff1493',
-    easter: 'ILOVEHER'
+    easter: t('friends.masha.easter')
   },
   {
-    name: 'Раффи',
-    role: 'верный друг · всегда рядом',
-    description: 'Надежный друг, на которого всегда можно рассчитывать. Спасибо за верность, поддержку и за то, что ты рядом во все времена.',
+    name: t('friends.raffi.name'),
+    role: t('friends.raffi.role'),
+    description: t('friends.raffi.desc'),
     avatar: '/avatars/Raffi.jpg',
-    links: [{ label: 'Telegram', href: 'https://t.me/rayzontelegram' }],
+    links: [{ label: t('friends.link.telegram'), href: 'https://t.me/rayzontelegram' }],
     color: 'from-blue-500/20 to-cyan-500/10'
   },
   {
-    name: 'Миша Казарновский',
-    role: 'одноклассник из школы',
-    description: 'Классный товарищ со школьных времён. Спасибо за поддержку, участие в моих начинаниях и за то, что ты рядом. Твоя дружба — бесценна.',
+    name: t('friends.misha.name'),
+    role: t('friends.misha.role'),
+    description: t('friends.misha.desc'),
     avatar: '/avatars/MishaKaz.jpg',
-    links: [{label: 'Telegram', href: 'https://t.me/Mishkka404'}],
+    links: [{label: t('friends.link.telegram'), href: 'https://t.me/Mishkka404'}],
     color: 'from-violet-500/20 to-purple-500/10'
   },
   {
-    name: 'Юрий Кузнецов',
-    role: 'одноклассник из школы',
-    description: 'Верный боевой товарищ из школы. Спасибо за поддержку, помощь и за то, что ты рядом на этом пути. Вместе мы сильнее.',
+    name: t('friends.yuriy.name'),
+    role: t('friends.yuriy.role'),
+    description: t('friends.yuriy.desc'),
     avatar: '/avatars/YuriyKuz.jpg',
-    links: [{label: 'Telegram', href: 'https://t.me/Ukuznecov'}],
+    links: [{label: t('friends.link.telegram'), href: 'https://t.me/Ukuznecov'}],
     color: 'from-amber-500/20 to-orange-500/10'
   },
   {
-    name: 'T‑Образование',
-    role: 'сообщество и развитие',
-    description: 'Благодарю сообщество, которое помогло мне встать на ноги и открыло новые горизонты. Это не просто образовательная платформа — это дружеское сообщество, которое всегда рядом.',
-    avatar: '/avatars/Tbank_Education.jpg',
-    links: [{label: 'Сайт', href: 'https://edu.tbank.ru/'}, {label: 'Telegram', href: 'https://t.me/tbank_education'}],
-    color: 'from-green-500/20 to-emerald-500/10',
-    accentColor: '#FFDD2D',
-    easter: 'Т-БАНК ОН ТАКОЙ ОДИН'
+    name: t('friends.prod.name'),
+    role: t('friends.prod.role'),
+    description: t('friends.prod.desc'),
+    avatar: '/avatars/PROD_Community.png',
+    links: [
+      { label: t('friends.link.site'), href: 'https://prodcontest.com/' },
+      { label: t('friends.link.telegram'), href: 'https://t.me/t_prod' }
+    ],
+    color: 'from-emerald-500/20 to-lime-500/10',
+    accentColor: '#10b981',
+    easter: t('friends.prod.easter')
   },
   {
-    name: 'Сообщество ФоксФорда',
-    role: 'сообщество — крепость и защита',
-    description: 'Компания попыталась разрушить мои идеи и проекты, но крепкое сообщество встало на защиту. Спасибо за то, что помогли мне уйти вовремя и сохранили то, во что я верил.',
+    name: t('friends.tbank.name'),
+    role: t('friends.tbank.role'),
+    description: t('friends.tbank.desc'),
+    avatar: '/avatars/Tbank_Education.jpg',
+    links: [{label: t('friends.link.site'), href: 'https://edu.tbank.ru/'}, {label: t('friends.link.telegram'), href: 'https://t.me/tbank_education'}],
+    color: 'from-yellow-400/20 to-yellow-600/10',
+    accentColor: '#FFDD2D',
+    easter: t('friends.tbank.easter')
+  },
+  {
+    name: 'EkeVoki ✍️',
+    role: t('friends.ekevoki.role'),
+    description: t('friends.ekevoki.desc'),
+    avatar: '/avatars/EkeVoki.jpg',
+    links: [
+      { label: t('friends.link.telegram'), href: 'https://t.me/Official_EkeVoki' },
+      { label: t('friends.link.github'), href: 'https://github.com/EkeVoki' }
+    ],
+    color: 'from-orange-400/20 to-red-500/10',
+    badge: t('friends.badge.refugee')
+  },
+  {
+    name: t('friends.foxford.name'),
+    role: t('friends.foxford.role'),
+    description: t('friends.foxford.desc'),
     avatar: '/avatars/Foxford.jpg',
-    links: [{label: 'Сообщество', href: 'https://foxford.ru/'}],
-    color: 'from-red-500/20 to-pink-500/10'
+    links: [{label: t('friends.link.community'), href: 'https://foxford.ru/'}],
+    color: 'from-red-600/30 to-orange-600/20',
+    badge: t('friends.badge.toxic'),
+    isWarning: true
   }
 ];
 ---
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {friends.map(f => (
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {friends.map((f, i) => (
     <article 
-      class={`group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl relative ${
+      data-aos="fade-up"
+      data-aos-delay={i * 100}
+      class={`group relative rounded-2xl overflow-hidden transition-all duration-700 ease-in-out hover:-translate-y-2 ${
         f.highlight 
-          ? 'ring-2 shadow-lg' 
-          : 'bg-white/5 backdrop-blur border border-white/10 hover:border-white/20 hover:shadow-xl'
+          ? 'ring-1 ring-pink-500/50 shadow-[0_0_30px_rgba(255,20,147,0.15)] bg-linear-to-br from-pink-500/10 via-purple-500/5 to-transparent backdrop-blur-md' 
+          : f.isWarning
+            ? 'bg-red-950/10 backdrop-blur-sm border border-red-500/20 hover:border-red-500/50 hover:shadow-[0_0_30px_rgba(239,68,68,0.1)]'
+            : 'bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/30 hover:shadow-xl hover:shadow-white/5'
       }`}
-      style={f.highlight ? {
-        backgroundImage: `linear-gradient(135deg, rgba(255,105,180,0.15), rgba(0,255,209,0.1))`,
-        borderColor: `${f.accentColor}99`,
-        boxShadow: `0 0 20px ${f.accentColor}22, inset 0 0 20px ${f.accentColor}11`
-      } : undefined}
     >
-      <!-- Easter egg overlay for Маша -->
+      {/* Special Glow for Highlighted (Masha) */}
+      {f.highlight && (
+        <div class="absolute inset-0 bg-linear-to-r from-pink-500/10 to-purple-600/10 opacity-50 animate-pulse pointer-events-none transition-opacity duration-1000" />
+      )}
+
+      {/* Easter egg overlay */}
       {f.easter && (
-        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20 pointer-events-none rounded-2xl">
-          <div class="text-5xl font-black" style={{color: f.accentColor, textShadow: `0 0 20px ${f.accentColor}88`}}>
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out flex items-center justify-center z-30 pointer-events-none">
+          <div class="text-3xl md:text-4xl font-black tracking-tighter text-center px-4 transform scale-75 group-hover:scale-100 transition-transform duration-700 ease-out" 
+               style={{color: f.accentColor || '#fff', textShadow: `0 0 30px ${f.accentColor || '#fff'}88`}}>
             {f.easter}
           </div>
         </div>
       )}
 
-      <!-- Header with avatar and glow effect -->
-      <div class="relative h-32 bg-linear-to-br from-white/10 to-transparent overflow-hidden">
-        <div class={`absolute inset-0 bg-linear-to-br ${f.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      {/* Header with avatar */}
+      <div class="relative h-36 overflow-hidden">
+        {/* Dynamic Background Gradient */}
+        <div class={`absolute inset-0 bg-linear-to-br ${f.color} opacity-40 group-hover:opacity-70 transition-opacity duration-1000 ease-in-out`}></div>
+        
+        {/* Decorative Circle */}
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-1000"></div>
+
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-linear-to-t from-black/90 to-transparent transition-opacity duration-700"></div>
+
         <img 
           src={f.avatar} 
           alt={f.name} 
-          class="absolute -bottom-2 left-4 w-24 h-24 rounded-xl object-cover border-4 border-white/20 shadow-lg group-hover:scale-105 transition-transform duration-300" 
+          class={`absolute left-6 top-6 w-28 h-28 rounded-2xl object-cover border-4 border-[#121212] shadow-[0_8px_30px_rgb(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-700 ease-out z-10 ${f.highlight ? 'ring-2 ring-pink-500/50' : f.isWarning ? 'grayscale group-hover:grayscale-0 border-red-900/50' : ''}`}
           loading="lazy" 
         />
       </div>
 
-      <!-- Content -->
-      <div class="px-5 pb-5 pt-14">
-        <div>
-          <h3 class="font-extrabold text-xl leading-tight text-white">{f.name}</h3>
-          <p class={`text-sm font-medium mt-1 transition-colors duration-300 ${
-            f.highlight 
-              ? `group-hover:opacity-100 opacity-80` 
-              : 'text-white/60'
-          }`}
-          style={f.highlight ? {color: f.accentColor} : undefined}
-          >{f.role}</p>
+      {/* Content */}
+      <div class="px-6 pb-6 pt-24 relative z-0">
+        <div class="flex justify-between items-start">
+          <div>
+            <h3 class={`font-bold text-xl leading-tight transition-all duration-500 ${f.isWarning ? 'text-red-200 group-hover:text-red-500' : 'text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-white/70'}`}>
+              {f.name}
+            </h3>
+            <p class={`text-xs font-bold uppercase tracking-wider mt-1 transition-colors duration-500 ${
+              f.highlight ? 'text-pink-400' : f.isWarning ? 'text-red-400/60 group-hover:text-red-400' : 'text-white/50 group-hover:text-white/70'
+            }`}>
+              {f.role}
+            </p>
+          </div>
+          {f.badge && (
+            <span class={`px-2 py-1 rounded border text-[10px] font-bold uppercase tracking-widest transition-all duration-500 ${
+              f.isWarning 
+                ? 'bg-red-500/20 border-red-500/50 text-red-500 group-hover:bg-red-500 group-hover:text-white animate-pulse' 
+                : 'bg-white/5 border-white/10 text-white/50'
+            }`}>
+              {f.badge}
+            </span>
+          )}
         </div>
 
-        <!-- Description -->
-        <p class="text-white/75 text-sm leading-relaxed mt-3">{f.description}</p>
+        <p class={`text-sm leading-relaxed mt-4 transition-colors duration-700 ${f.isWarning ? 'text-red-200/60 group-hover:text-red-200' : 'text-white/70 group-hover:text-white/90'}`}>
+          {f.description}
+        </p>
 
-        <!-- Links -->
-        {f.links.length ? (
-          <div class="mt-4 flex gap-3 flex-wrap">
+        {/* Links */}
+        {f.links && f.links.length > 0 && (
+          <div class="mt-6 flex gap-2 flex-wrap">
             {f.links.map(l => (
               <a 
-                class={`inline-block px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                class={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-bold uppercase tracking-wide rounded-lg transition-all duration-500 ${
                   f.highlight 
-                    ? 'border-2 text-white/90 hover:text-white' 
-                    : 'border border-white/20 bg-white/10 text-white/80 hover:bg-white/20 hover:border-white/40'
+                    ? 'bg-pink-500/10 text-pink-400 border border-pink-500/20 hover:bg-pink-500/20 hover:border-pink-500/40' 
+                    : f.isWarning
+                      ? 'bg-red-500/10 text-red-400 border border-red-500/20 hover:bg-red-500 hover:text-white'
+                      : 'bg-white/5 text-white/60 border border-white/10 hover:bg-white/10 hover:text-white hover:border-white/30'
                 }`}
-                style={f.highlight ? {
-                  borderColor: f.accentColor,
-                  backgroundColor: `${f.accentColor}15`,
-                  color: f.accentColor
-                } : undefined}
                 href={l.href} 
                 target="_blank" 
                 rel="noopener"
               >
-                {l.label} →
+                {l.label}
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
               </a>
             ))}
           </div>
-        ) : null}
+        )}
       </div>
     </article>
   ))}

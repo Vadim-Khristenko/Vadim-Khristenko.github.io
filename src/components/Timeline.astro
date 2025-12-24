@@ -1,47 +1,81 @@
 ---
+import { ui, defaultLang } from '../i18n/translations';
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const timelineEvents = [
+  {
+    title: t['timeline.curiosity.title'],
+    desc: t['timeline.curiosity.desc'],
+    side: 'left'
+  },
+  {
+    title: t['timeline.stack.title'],
+    desc: t['timeline.stack.desc'],
+    side: 'right'
+  },
+  {
+    title: t['timeline.club.title'],
+    desc: t['timeline.club.desc'],
+    side: 'left'
+  },
+  {
+    title: t['timeline.tbank.title'],
+    desc: t['timeline.tbank.desc'],
+    side: 'right',
+    highlight: true
+  },
+  {
+    title: t['timeline.achievements.title'],
+    desc: t['timeline.achievements.desc'],
+    side: 'left'
+  },
+  {
+    title: t['timeline.growth.title'],
+    desc: t['timeline.growth.desc'],
+    side: 'right'
+  }
+];
 ---
 <section>
-  <h3 class="text-3xl md:text-4xl font-extrabold tracking-tight">Моя история</h3>
-  <p class="text-lg text-white/70 mt-2">Как буквы стали звуком, а код — путём</p>
-  <div class="mt-8 relative">
-    <div class="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-white/10" aria-hidden="true"></div>
-    <div class="space-y-10">
-      <div class="relative md:grid md:grid-cols-2 md:gap-10">
-        <div class="pl-12 md:pl-0 md:text-right">
-          <h4 class="font-bold text-xl">Любопытство</h4>
-          <p class="text-white/70">Как буквы превращаются в звук, картинку, игру. Вопросы зажгли искру.</p>
+  <h3 class="text-3xl md:text-4xl font-extrabold tracking-tight" data-aos="fade-right">{t['timeline.title']}</h3>
+  <p class="text-lg text-white/70 mt-2" data-aos="fade-right" data-aos-delay="100">{t['timeline.subtitle']}</p>
+  <div class="mt-12 relative">
+    <!-- Central Line -->
+    <div class="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-linear-to-b from-transparent via-white/20 to-transparent" aria-hidden="true"></div>
+    
+    <div class="space-y-12">
+      {timelineEvents.map((event, index) => (
+        <div class="relative md:grid md:grid-cols-2 md:gap-10 group">
+          <!-- Content -->
+          <div 
+            class={`pl-12 md:pl-0 ${event.side === 'left' ? 'md:col-start-1 md:text-right md:pr-10' : 'md:col-start-2 md:pl-10'}`}
+            data-aos={event.side === 'left' ? 'fade-right' : 'fade-left'}
+            data-aos-delay={index * 100}
+          >
+            <div class={`inline-block p-4 rounded-xl border transition-all duration-300 hover:scale-[1.02] ${
+              event.highlight 
+                ? 'bg-yellow-500/10 border-yellow-500/30 shadow-[0_0_15px_rgba(234,179,8,0.1)]' 
+                : 'bg-white/5 border-white/10 hover:bg-white/10'
+            }`}>
+              <h4 class={`font-bold text-xl ${event.highlight ? 'text-yellow-200' : 'text-white'}`}>
+                {event.title}
+              </h4>
+              <p class="text-white/70 mt-2 text-sm leading-relaxed">
+                {event.desc}
+              </p>
+            </div>
+          </div>
+
+          <!-- Dot -->
+          <div class={`absolute left-4 md:left-1/2 -translate-x-[5px] md:-translate-x-[5px] top-6 w-3 h-3 rounded-full border-2 transition-all duration-500 z-10 ${
+            event.highlight
+              ? 'bg-yellow-500 border-yellow-200 shadow-[0_0_10px_rgba(234,179,8,0.5)] scale-125'
+              : 'bg-[#0b0f14] border-white/50 group-hover:border-white group-hover:bg-white'
+          }`} aria-hidden="true"></div>
         </div>
-        <div class="relative pl-12 md:pl-0">
-          <span class="absolute left-4 md:left-auto md:right-[calc(50%+2px)] w-3 h-3 rounded-full bg-white/70 top-2" aria-hidden="true"></span>
-        </div>
-      </div>
-      <div class="relative md:grid md:grid-cols-2 md:gap-10">
-        <div class="relative pl-12 md:pl-0 md:order-2">
-          <h4 class="font-bold text-xl">C++ и ASM → Python → Rust</h4>
-          <p class="text-white/70">Первые шаги к металлу, затем прототипы на Python, и надёжность на Rust.</p>
-        </div>
-        <div class="relative pl-12 md:pl-0 md:order-1">
-          <span class="absolute left-4 md:left-[calc(50%-2px)] w-3 h-3 rounded-full bg-white/70 top-2" aria-hidden="true"></span>
-        </div>
-      </div>
-      <div class="relative md:grid md:grid-cols-2 md:gap-10">
-        <div class="pl-12 md:pl-0 md:text-right">
-          <h4 class="font-bold text-xl">Олимпиады и клуб</h4>
-          <p class="text-white/70">Участвую в олимпиадах, веду IT‑клуб и обучаю других. Технологии служат людям.</p>
-        </div>
-        <div class="relative pl-12 md:pl-0">
-          <span class="absolute left-4 md:left-auto md:right-[calc(50%+2px)] w-3 h-3 rounded-full bg-white/70 top-2" aria-hidden="true"></span>
-        </div>
-      </div>
-      <div class="relative md:grid md:grid-cols-2 md:gap-10">
-        <div class="relative pl-12 md:pl-0 md:order-2">
-          <h4 class="font-bold text-xl">Достижения</h4>
-          <p class="text-white/70">От ботов и CLI до GUI. Реальные проекты за пределами GitHub. Ошибки = опыт, код = путь.</p>
-        </div>
-        <div class="relative pl-12 md:pl-0 md:order-1">
-          <span class="absolute left-4 md:left-[calc(50%-2px)] w-3 h-3 rounded-full bg-white/70 top-2" aria-hidden="true"></span>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
