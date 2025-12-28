@@ -1,18 +1,23 @@
 import { ui, defaultLang } from './translations';
 
-export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split('/');
-  if (lang in ui) return lang as keyof typeof ui;
+type Lang = keyof typeof ui;
+
+export function getLangFromUrl(url: URL): Lang {
+  const segments = url.pathname.split('/').filter(Boolean);
+  const lang = segments[0];
+  if (lang && lang in ui) {
+    return lang as Lang;
+  }
   return defaultLang;
 }
 
-export function useTranslations(lang: keyof typeof ui) {
+export function useTranslations(lang: Lang) {
   return function t(key: keyof typeof ui[typeof defaultLang]) {
     return ui[lang][key] || ui[defaultLang][key];
   }
 }
 
-export function useTranslatedPath(lang: keyof typeof ui) {
+export function useTranslatedPath(lang: Lang) {
   return function translatePath(path: string, l: string = lang) {
     const isDefault = l === defaultLang;
     const prefix = isDefault ? '' : `/${l}`;

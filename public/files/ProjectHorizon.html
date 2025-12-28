@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon 2026 — The Jump</title>
+    <meta name="author" content="Vadim Khristenko">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="icon" type="image/png" href="/favicon/horizon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/horizon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/horizon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/horizon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Horizon" />
+    <link rel="manifest" href="/favicon/horizon/site.webmanifest" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@200;700;900&family=Space+Grotesk:wght@300;700&display=swap');
+
+        :root {
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            --primary-glow: rgba(99, 102, 241, 0.6);
+            --accent-glow: rgba(245, 158, 11, 0.6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* --- Сложный динамический фон --- */
+        .ambient-light {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.5);
+            width: 100vw;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.15), transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.1), transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.05), transparent 40%);
+            z-index: -2;
+            filter: blur(60px);
+            animation: ambient-pulse 15s ease-in-out infinite alternate;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            -webkit-mask: radial-gradient(circle at center, black 40%, transparent 100%);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        @keyframes ambient-pulse {
+            0% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1.8); opacity: 1; }
+        }
+
+        /* --- UI Classes --- */
+        .glass-panel {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            border-radius: 24px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .matte-btn {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .matte-btn:hover {
+            filter: brightness(1.2);
+            transform: translateY(-1px);
+        }
+
+        .matte-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Кнопки выбора в игре */
+        .game-choice-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 24px;
+            border-radius: 16px;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .game-choice-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .game-choice-btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .game-choice-btn:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+        }
+
+        .game-choice-btn i {
+            font-size: 1.2rem;
+            color: #818cf8;
+        }
+
+        .hud-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            margin: 20px 0;
+        }
+
+        .author-link {
+            color: rgba(255, 255, 255, 0.4);
+            transition: all 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .author-link:hover {
+            color: #818cf8;
+            border-bottom-color: #818cf8;
+            text-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
+        }
+
+        /* --- Typography & Effects --- */
+        h1, h2, .font-display { font-family: 'Montserrat', sans-serif; }
+        .text-glow { text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+        .neon-accent { color: #818cf8; text-shadow: 0 0 15px rgba(99, 102, 241, 0.6); }
+
+        /* --- Timer Enhancements --- */
+        .timer-value {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.08em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .timer-value::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            opacity: 0.1;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .timer-value:hover::after {
+            transform: scaleX(1);
+        }
+
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes float-anim {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .timer-animate {
+            animation: float-anim 6s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        .timer-animate:hover {
+            animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #818cf8;
+            text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9;
+        }
+
+        /* --- Warp Speed Effect --- */
+        .warp-speed {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, #000 100%);
+            z-index: 40;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 2s ease;
+        }
+        
+        .warp-active .warp-speed {
+            opacity: 1;
+            background: repeating-radial-gradient(circle at center, transparent 0, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 11px);
+            animation: warp-zoom 0.5s linear infinite;
+        }
+
+        @keyframes warp-zoom {
+            from { transform: scale(1); opacity: 0; }
+            to { transform: scale(5); opacity: 1; }
+        }
+
+        /* Animation */
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        
+        /* Game specific animations */
+        .scene-enter { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="selection:bg-indigo-500 selection:text-white">
+
+    <div class="ambient-light"></div>
+    <div class="grid-overlay"></div>
+    <div class="warp-speed" id="warp-layer"></div>
+
+    <nav class="w-full p-4 md:p-6 flex justify-between items-center z-50 fade-in-up">
+        <div class="flex items-center gap-2 md:gap-3 cursor-pointer select-none group" id="horizon-logo-container">
+            <i class="ph-duotone ph-atom text-2xl md:text-3xl text-indigo-400 animate-[spin_10s_linear_infinite] group-hover:text-white transition-colors"></i>
+            <span class="font-display font-bold text-lg md:text-xl tracking-[0.2em] md:tracking-[0.3em] text-white/90 group-hover:text-indigo-400 transition-colors">HORIZON</span>
+        </div>
+
+        <div class="flex items-center gap-2 md:gap-4">
+            <a href="https://vadim-khristenko.github.io/" target="_blank" class="flex items-center gap-2 glass-panel px-3 py-2 md:px-4 md:py-2 text-[10px] font-bold tracking-widest uppercase hover:text-indigo-400 transition-all group" noopener noreferrer>
+                <i class="ph ph-user-circle text-lg"></i>
+                <span id="label-author" class="hidden md:inline">Об авторе</span>
+            </a>
+
+            <button id="notify-btn" class="glass-panel p-2 md:p-3 rounded-full hover:text-yellow-400 transition-colors relative group">
+                <i class="ph-duotone ph-bell-ringing text-lg md:text-xl"></i>
+                <span class="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500 hidden" id="notify-dot"></span>
+                </span>
+            </button>
+
+            <div class="glass-panel p-1 flex rounded-full">
+                <button onclick="setLang('ru')" id="btn-ru" class="px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-semibold transition-all">RU</button>
+                <button onclick="setLang('en')" id="btn-en" class="px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-semibold transition-all text-white/50 hover:text-white">EN</button>
+                <button onclick="setLang('cn')" id="btn-cn" class="px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-semibold transition-all text-white/50 hover:text-white">CN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 text-center py-8 md:py-0">
+        
+        <div class="mb-6 md:mb-10 max-w-4xl fade-in-up delay-100">
+            <span id="sub-heading" class="inline-block py-1 px-3 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4">
+                Конец эпохи 2025
+            </span>
+            <h1 id="main-heading" class="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-tight text-glow bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+                ВРЕМЯ<br><span class="text-indigo-400 neon-accent">ПОКОРЯТЬ</span>
+            </h1>
+            <p id="quote-text" class="mt-4 md:mt-6 text-sm md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light px-4">
+                То, что цены летят вверх — не конец. Нажми пробел, чтобы найти ответ.
+            </p>
+        </div>
+
+        <div class="glass-panel p-4 md:p-10 mb-4 md:mb-12 fade-in-up delay-200 w-full max-w-3xl mx-4">
+            <h3 id="timer-label" class="text-center text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest mb-6">До Нового 2026 Года</h3>
+            <div class="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-y-6 gap-x-2 md:gap-12">
+                <div class="text-center">
+                    <div class="text-4xl md:text-7xl font-bold timer-value tabular-nums timer-animate" id="d">00</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-2 uppercase tracking-wider label-days">Дней</div>
+                </div>
+                <div class="text-center relative">
+                    <div class="text-4xl md:text-7xl font-bold timer-value tabular-nums timer-animate" id="h">00</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-2 uppercase tracking-wider label-hours">Часов</div>
+                    <span class="hidden md:block absolute -right-8 top-2 text-4xl text-gray-700">:</span>
+                </div>
+                <div class="text-center relative">
+                    <div class="text-4xl md:text-7xl font-bold timer-value tabular-nums timer-animate" id="m">00</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-2 uppercase tracking-wider label-minutes">Минут</div>
+                    <span class="hidden md:block absolute -right-8 top-2 text-4xl text-gray-700">:</span>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-7xl font-bold timer-value tabular-nums text-indigo-400 timer-animate" id="s">00</div>
+                    <div class="text-[10px] md:text-xs text-gray-500 mt-2 uppercase tracking-wider label-seconds">Секунд</div>
+                </div>
+            </div>
+            
+            <div id="zodiac-info" class="hidden mt-6 pt-6 border-t border-white/10">
+                <div class="flex items-center justify-center gap-2 text-amber-400">
+                    <i class="ph-duotone ph-horse text-xl md:text-2xl"></i>
+                    <span class="font-bold text-sm md:text-base" id="zodiac-text">2026: Год Огненной Лошади</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative group fade-in-up delay-300">
+            <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <button id="action-btn" class="relative matte-btn px-8 py-4 rounded-lg flex items-center gap-3 text-sm md:text-base font-bold tracking-widest uppercase text-white">
+                <span id="btn-text">Нажми Пробел</span>
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+            </button>
+        </div>
+
+        <div id="game-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/95 backdrop-blur-2xl overflow-y-auto">
+            <div class="max-w-2xl w-full text-center relative py-8">
+                <div id="game-container" class="scene-enter">
+                    <div class="relative inline-block mb-6 md:mb-8">
+                        <div class="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                        <i id="game-icon" class="ph-duotone ph-rocket text-5xl md:text-7xl text-indigo-400 relative z-10"></i>
+                    </div>
+                    
+                    <h2 class="text-2xl md:text-5xl font-black text-white mb-2 font-display uppercase tracking-tighter" id="game-title">Прыжок Совершен!</h2>
+                    <div class="hud-line"></div>
+                    
+                    <div class="glass-panel p-5 md:p-8 mb-6 md:mb-10 text-left bg-white/[0.02] border-white/5 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
+                        <p class="text-base md:text-xl text-gray-300 leading-relaxed font-light italic" id="game-desc">
+                        </p>
+                    </div>
+
+                    <div id="game-choices" class="grid grid-cols-1 gap-3 md:gap-4">
+                    </div>
+                </div>
+
+                <button onclick="resetJump()" id="btn-close-game" class="hidden mt-8 md:mt-12 px-6 md:px-8 py-2.5 md:py-3 border border-white/10 rounded-full hover:bg-white/5 transition-all text-[10px] md:text-xs font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-gray-500 hover:text-white">
+                    Вернуться на борт
+                </button>
+            </div>
+        </div>
+
+        <div id="easter-egg-modal" class="hidden fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" onclick="closeEasterEgg(event)">
+            <div class="glass-panel p-6 md:p-8 max-w-md w-full text-center relative transform transition-all scale-100 rounded-3xl">
+                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-indigo-500 p-3 rounded-full shadow-lg shadow-indigo-500/50">
+                    <i class="ph-duotone ph-sparkle text-2xl text-white"></i>
+                </div>
+                <h3 id="ee-title" class="text-xl font-bold text-white mt-4 mb-2 font-display">Horizon Secret</h3>
+                <p id="ee-text" class="text-gray-300 text-sm leading-relaxed italic">
+                    "Автор выбрал это название, потому что оно отображает, по его мнению, красивый и загадочный горизонт будущего."
+                </p>
+                <button id="ee-btn" onclick="closeEasterEgg(null, true)" class="mt-6 px-6 py-2 rounded-2xl bg-white/10 hover:bg-white/20 text-xs font-bold uppercase tracking-wider transition-colors">
+                    Понятно
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="p-4 md:p-8 text-center z-10 fade-in-up delay-300 mt-auto">
+        <div class="flex flex-col items-center gap-1 md:gap-4">
+            <p class="text-white/20 text-[7px] md:text-[10px] tracking-[0.2em] md:tracking-[0.4em] uppercase leading-tight">
+                &copy; <span id="footer-copy">2025-2026</span> Digital Horizon System. <span id="footer-note" class="hidden sm:inline">Готов к запуску.</span>
+            </p>
+            <p class="text-white/40 text-[9px] md:text-xs">
+                <a href="https://vadim-khristenko.github.io/" target="_blank" class="author-link" id="author-link" noopener noreferrer>Узнать больше об авторе</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const config = {
+            ru: {
+                sub: "КОНЕЦ ЭПОХИ 2025",
+                main: "ВРЕМЯ<br><span class='text-indigo-400 neon-accent'>ПОКОРЯТЬ</span>",
+                quote: "Цены летят вверх — не конец. Нажми пробел, чтобы найти ответ.",
+                timerLabel: "ДО НОВОГО 2026 ГОДА",
+                btn: "НАЖМИ ПРОБЕЛ",
+                labels: ["Дней", "Часов", "Минут", "Секунд"],
+                labelAuthor: "Об авторе",
+                authorLinkText: "Узнать больше об авторе",
+                footer: "Готов к запуску.",
+                copy: "2025-2026",
+                notifyTitle: "Напоминание установлено!",
+                notifyBody: "Мы сообщим вам, когда наступит 2026 год.",
+                zodiacInfo: "2026: Год Огненной Лошади",
+                btnClose: "Закрыть терминал",
+                easterEgg: {
+                    title: "Секрет Горизонта",
+                    text: "\"Автор выбрал это название, потому что оно отображает, по его мнению, красивый и загадочный горизонт будущего.\"",
+                    btn: "Понятно"
+                },
+                game: {
+                    start: {
+                        icon: "ph-duotone ph-airplane-tilt",
+                        title: "Шлюз 2026",
+                        text: "Дым рассеивается. Вы стоите на пороге нового года. Таможенный дроид Судьбы сканирует вашу ауру: 'Цель визита в 2026 год?'",
+                        choices: [
+                            { text: "Заработать все деньги мира", next: "money" },
+                            { text: "Найти внутренний покой", next: "zen" },
+                            { text: "Спасти этот безумный мир", next: "hero" },
+                            { text: "Исследовать неизвестное", next: "explore" }
+                        ]
+                    },
+                    // MONEY BRANCH
+                    money: {
+                        icon: "ph-duotone ph-coins",
+                        title: "Путь Капитала",
+                        text: "2026 год — время возможностей. Как вы планируете приумножить свой капитал?",
+                        choices: [
+                            { text: "Инвестиции в Нейросети", next: "money_tech" },
+                            { text: "Контроль Ресурсов", next: "money_res" }
+                        ]
+                    },
+                    money_tech: {
+                        icon: "ph-duotone ph-cpu",
+                        title: "Техно-Магнат",
+                        text: "Ваш ИИ 'Мидас' предсказывает рынки с точностью 99.9%. Вы богаче государств. Что дальше?",
+                        choices: [
+                            { text: "Слияние сознания с ИИ", next: "end_ai_merge" },
+                            { text: "Купить все правительства", next: "end_corp_overlord" }
+                        ]
+                    },
+                    money_res: {
+                        icon: "ph-duotone ph-drop",
+                        title: "Ресурсный Барон",
+                        text: "Вы скупили источники чистой воды и энергии. Мир зависит от вашего вентиля.",
+                        choices: [
+                            { text: "Дать энергию бесплатно", next: "end_benevolent_monopoly" },
+                            { text: "Установить свои правила", next: "end_resource_king" }
+                        ]
+                    },
+                    // ZEN BRANCH
+                    zen: {
+                        icon: "ph-duotone ph-yin-yang",
+                        title: "Путь Дзен",
+                        text: "Мир шумит, но вы — тишина. Куда вы направите свой покой?",
+                        choices: [
+                            { text: "Учить других", next: "zen_teach" },
+                            { text: "Уйти в глушь", next: "zen_solitude" }
+                        ]
+                    },
+                    zen_teach: {
+                        icon: "ph-duotone ph-users-three",
+                        title: "Духовный Наставник",
+                        text: "Миллионы людей слушают ваши стримы молчания. Вы стали новым мессией цифровой эры.",
+                        choices: [
+                            { text: "Создать новую религию", next: "end_new_religion" },
+                            { text: "Исцелить травмы мира", next: "end_global_therapy" }
+                        ]
+                    },
+                    zen_solitude: {
+                        icon: "ph-duotone ph-tree",
+                        title: "Отшельник",
+                        text: "Вы нашли место, где не ловит сеть. Природа приняла вас как своего.",
+                        choices: [
+                            { text: "Стать духом леса", next: "end_nature_spirit" },
+                            { text: "Записать мудрость в книгу", next: "end_hermit_sage" }
+                        ]
+                    },
+                    // HERO BRANCH
+                    hero: {
+                        icon: "ph-duotone ph-shield-check",
+                        title: "Путь Героя",
+                        text: "Мир сломан, и вы знаете, как его починить. Какой метод вы выберете?",
+                        choices: [
+                            { text: "Политическая реформа", next: "hero_system" },
+                            { text: "Прямое действие", next: "hero_rebel" }
+                        ]
+                    },
+                    hero_system: {
+                        icon: "ph-duotone ph-bank",
+                        title: "Политик",
+                        text: "Ваши рейтинги выше небес. Вы можете объединить нации или подчинить их.",
+                        choices: [
+                            { text: "Объединить Землю", next: "end_world_president" },
+                            { text: "Жесткая рука порядка", next: "end_grey_cardinal" }
+                        ]
+                    },
+                    hero_rebel: {
+                        icon: "ph-duotone ph-mask-happy",
+                        title: "Виджиланте",
+                        text: "Вы действуете в тени. Коррумпированные элиты боятся вашего знака.",
+                        choices: [
+                            { text: "Раздать деньги бедным", next: "end_cyber_robin" },
+                            { text: "Карать виновных", next: "end_punisher" }
+                        ]
+                    },
+                    // EXPLORE BRANCH
+                    explore: {
+                        icon: "ph-duotone ph-telescope",
+                        title: "Путь Исследователя",
+                        text: "Границы существуют, чтобы их нарушать. Куда вы посмотрите?",
+                        choices: [
+                            { text: "В космос", next: "explore_space" },
+                            { text: "Вглубь реальности", next: "explore_quantum" }
+                        ]
+                    },
+                    explore_space: {
+                        icon: "ph-duotone ph-rocket-launch",
+                        title: "Космонавт",
+                        text: "Марс освоен. Но дальний космос зовет. Вы стоите у шлюза звездолета.",
+                        choices: [
+                            { text: "Контакт с пришельцами", next: "end_first_contact" },
+                            { text: "Империя Человечества", next: "end_mars_king" }
+                        ]
+                    },
+                    explore_quantum: {
+                        icon: "ph-duotone ph-atom",
+                        title: "Квантовый Физик",
+                        text: "Вы нашли код вселенной. Реальность зыбка как сон.",
+                        choices: [
+                            { text: "Взломать симуляцию", next: "end_matrix_break" },
+                            { text: "Исправить прошлое", next: "end_time_lord" }
+                        ]
+                    },
+                    // ENDINGS
+                    end_ai_merge: { icon: "ph-duotone ph-robot", title: "Цифровое Бессмертие", text: "Вы загрузили сознание в сеть. Теперь вы вечны, вездесущи и бесконечно богаты.", isEnd: true },
+                    end_corp_overlord: { icon: "ph-duotone ph-buildings", title: "Владыка Мира", text: "Государства упразднены. Миром правит ваша Корпорация. Порядок идеален.", isEnd: true },
+                    end_benevolent_monopoly: { icon: "ph-duotone ph-sun", title: "Спаситель Планеты", text: "Вы дали миру бесплатную энергию. Ваше имя в учебниках истории написано золотом.", isEnd: true },
+                    end_resource_king: { icon: "ph-duotone ph-crown", title: "Король Ресурсов", text: "У кого вода, у того и власть. Вы правите жестко, но справедливо.", isEnd: true },
+                    end_new_religion: { icon: "ph-duotone ph-star-of-david", title: "Пророк 2026", text: "Ваше учение объединило миллиарды. Мир нашел покой в вашей мудрости.", isEnd: true },
+                    end_global_therapy: { icon: "ph-duotone ph-heartbeat", title: "Великий Терапевт", text: "Вы исцелили коллективную травму человечества. Эпоха депрессии закончена.", isEnd: true },
+                    end_nature_spirit: { icon: "ph-duotone ph-leaf", title: "Дух Леса", text: "Вы стали легендой. Говорят, вы понимаете язык деревьев и зверей.", isEnd: true },
+                    end_hermit_sage: { icon: "ph-duotone ph-book-open", title: "Мудрец", text: "Ваша книга 'Тишина в шуме' стала бестселлером, пока вы сажали картошку.", isEnd: true },
+                    end_world_president: { icon: "ph-duotone ph-globe", title: "Президент Земли", text: "Границ больше нет. Человечество едино под вашим флагом.", isEnd: true },
+                    end_grey_cardinal: { icon: "ph-duotone ph-chess-king", title: "Серый Кардинал", text: "Вы дергаете за ниточки из тени. Мир стабилен, и никто не знает цену.", isEnd: true },
+                    end_cyber_robin: { icon: "ph-duotone ph-hoodie", title: "Кибер Робин Гуд", text: "Банковские счета обнулены в пользу бедных. Хаос? Нет, справедливость.", isEnd: true },
+                    end_punisher: { icon: "ph-duotone ph-gavel", title: "Каратель", text: "Преступность исчезла. Страх перед вами оказался лучшим законом.", isEnd: true },
+                    end_first_contact: { icon: "ph-duotone ph-alien", title: "Посол Человечества", text: "Они пришли с миром, потому что вы их позвали. Мы больше не одни.", isEnd: true },
+                    end_mars_king: { icon: "ph-duotone ph-planet", title: "Император Марса", text: "Земля — прошлое. Марс — будущее, и это будущее принадлежит вам.", isEnd: true },
+                    end_matrix_break: { icon: "ph-duotone ph-code", title: "Нео", text: "Вы увидели зеленый код. Вы вышли из симуляции. Добро пожаловать в реальность.", isEnd: true },
+                    end_time_lord: { icon: "ph-duotone ph-clock-counter-clockwise", title: "Повелитель Времени", text: "Вы вернулись и исправили всё. 2026 год стал лучшим годом в истории.", isEnd: true }
+                }
+            },
+            en: {
+                sub: "END OF ERA 2025",
+                main: "TIME TO<br><span class='text-indigo-400 neon-accent'>CONQUER</span>",
+                quote: "Prices soar, but it's not the end. Press space to find the answer.",
+                timerLabel: "TIME UNTIL 2026",
+                btn: "PRESS SPACE",
+                labels: ["Days", "Hours", "Minutes", "Seconds"],
+                labelAuthor: "About the Author",
+                authorLinkText: "Learn more about the author",
+                footer: "Ready for impact.",
+                copy: "2025-2026",
+                notifyTitle: "Reminder Set!",
+                notifyBody: "We will notify you when 2026 arrives.",
+                zodiacInfo: "2026: Year of the Fire Horse",
+                btnClose: "Close Terminal",
+                easterEgg: {
+                    title: "Horizon Secret",
+                    text: "\"The author chose this name because it reflects, in his opinion, the beautiful and mysterious horizon of the future.\"",
+                    btn: "Got it"
+                },
+                game: {
+                    start: {
+                        icon: "ph-duotone ph-airplane-tilt",
+                        title: "Gateway 2026",
+                        text: "The smoke clears. You stand at the threshold of the new year. The Customs Droid of Fate scans your aura: 'Purpose of visit to 2026?'",
+                        choices: [
+                            { text: "Earn all the money", next: "money" },
+                            { text: "Find inner peace", next: "zen" },
+                            { text: "Save this crazy world", next: "hero" },
+                            { text: "Explore the unknown", next: "explore" }
+                        ]
+                    },
+                    // MONEY BRANCH
+                    money: {
+                        icon: "ph-duotone ph-coins",
+                        title: "Tycoon Path",
+                        text: "2026 is the time of resources. How do you plan to multiply your capital?",
+                        choices: [
+                            { text: "Invest in AI", next: "money_tech" },
+                            { text: "Control Resources", next: "money_res" }
+                        ]
+                    },
+                    money_tech: {
+                        icon: "ph-duotone ph-cpu",
+                        title: "Tech Mogul",
+                        text: "Your AI 'Midas' predicts markets with 99.9% accuracy. You are richer than nations. What's next?",
+                        choices: [
+                            { text: "Merge with AI", next: "end_ai_merge" },
+                            { text: "Buy Governments", next: "end_corp_overlord" }
+                        ]
+                    },
+                    money_res: {
+                        icon: "ph-duotone ph-drop",
+                        title: "Resource Baron",
+                        text: "You bought sources of clean water and energy. The world depends on your valve.",
+                        choices: [
+                            { text: "Free Energy for All", next: "end_benevolent_monopoly" },
+                            { text: "Set Your Own Rules", next: "end_resource_king" }
+                        ]
+                    },
+                    // ZEN BRANCH
+                    zen: {
+                        icon: "ph-duotone ph-yin-yang",
+                        title: "Sage Path",
+                        text: "The world is noisy, but you are silence. Where will you direct your peace?",
+                        choices: [
+                            { text: "Teach others", next: "zen_teach" },
+                            { text: "Go into the wild", next: "zen_solitude" }
+                        ]
+                    },
+                    zen_teach: {
+                        icon: "ph-duotone ph-users-three",
+                        title: "Spiritual Mentor",
+                        text: "Millions subscribe to your mental channel. Are you the new messiah of the digital age?",
+                        choices: [
+                            { text: "Create a New Religion", next: "end_new_religion" },
+                            { text: "Heal the World", next: "end_global_therapy" }
+                        ]
+                    },
+                    zen_solitude: {
+                        icon: "ph-duotone ph-tree",
+                        title: "Hermit",
+                        text: "You found a place with no Wi-Fi. Nature accepts you as its own.",
+                        choices: [
+                            { text: "Become a Forest Spirit", next: "end_nature_spirit" },
+                            { text: "Write Wisdom in a Book", next: "end_hermit_sage" }
+                        ]
+                    },
+                    // HERO BRANCH
+                    hero: {
+                        icon: "ph-duotone ph-shield-check",
+                        title: "Hero Path",
+                        text: "The world is broken, and you know how to fix it. Which method will you choose?",
+                        choices: [
+                            { text: "Political Reform", next: "hero_system" },
+                            { text: "Direct Action", next: "hero_rebel" }
+                        ]
+                    },
+                    hero_system: {
+                        icon: "ph-duotone ph-bank",
+                        title: "Politician",
+                        text: "Your ratings are sky high. You can unite nations or subdue them.",
+                        choices: [
+                            { text: "Unite Earth", next: "end_world_president" },
+                            { text: "Iron Hand of Order", next: "end_grey_cardinal" }
+                        ]
+                    },
+                    hero_rebel: {
+                        icon: "ph-duotone ph-mask-happy",
+                        title: "Vigilante",
+                        text: "You act in the shadows. Corrupt elites fear your symbol.",
+                        choices: [
+                            { text: "Distribute Wealth", next: "end_cyber_robin" },
+                            { text: "Punish the Guilty", next: "end_punisher" }
+                        ]
+                    },
+                    // EXPLORE BRANCH
+                    explore: {
+                        icon: "ph-duotone ph-telescope",
+                        title: "Explorer Path",
+                        text: "Borders exist to be broken. Where will you look?",
+                        choices: [
+                            { text: "To Space", next: "explore_space" },
+                            { text: "Into Reality", next: "explore_quantum" }
+                        ]
+                    },
+                    explore_space: {
+                        icon: "ph-duotone ph-rocket-launch",
+                        title: "Astronaut",
+                        text: "Mars is settled. But deep space calls. You stand at the starship airlock.",
+                        choices: [
+                            { text: "Contact Aliens", next: "end_first_contact" },
+                            { text: "Empire of Humanity", next: "end_mars_king" }
+                        ]
+                    },
+                    explore_quantum: {
+                        icon: "ph-duotone ph-atom",
+                        title: "Quantum Physicist",
+                        text: "You found the universe's code. Reality is fragile as a dream.",
+                        choices: [
+                            { text: "Hack the Simulation", next: "end_matrix_break" },
+                            { text: "Fix the Past", next: "end_time_lord" }
+                        ]
+                    },
+                    // ENDINGS
+                    end_ai_merge: { icon: "ph-duotone ph-robot", title: "Digital Immortality", text: "You uploaded your consciousness to the net. You are now eternal, omnipresent, and infinitely rich.", isEnd: true },
+                    end_corp_overlord: { icon: "ph-duotone ph-buildings", title: "World Overlord", text: "Nations are abolished. Your Corporation rules the world. Order is perfect.", isEnd: true },
+                    end_benevolent_monopoly: { icon: "ph-duotone ph-sun", title: "Planet Savior", text: "You gave the world free energy. Your name is written in gold in history books.", isEnd: true },
+                    end_resource_king: { icon: "ph-duotone ph-crown", title: "Resource King", text: "He who has water has power. You rule harshly but fairly.", isEnd: true },
+                    end_new_religion: { icon: "ph-duotone ph-star-of-david", title: "Prophet 2026", text: "Your teachings united billions. The world found peace in your wisdom.", isEnd: true },
+                    end_global_therapy: { icon: "ph-duotone ph-heartbeat", title: "Great Therapist", text: "You healed humanity's collective trauma. The era of depression is over.", isEnd: true },
+                    end_nature_spirit: { icon: "ph-duotone ph-leaf", title: "Forest Spirit", text: "You became a legend. They say you speak the language of trees and beasts.", isEnd: true },
+                    end_hermit_sage: { icon: "ph-duotone ph-book-open", title: "Sage", text: "Your book 'Silence in Noise' became a bestseller while you were planting potatoes.", isEnd: true },
+                    end_world_president: { icon: "ph-duotone ph-globe", title: "Earth President", text: "No more borders. Humanity is united under your flag.", isEnd: true },
+                    end_grey_cardinal: { icon: "ph-duotone ph-chess-king", title: "Grey Cardinal", text: "You pull strings from the shadows. The world is stable, and no one knows the price.", isEnd: true },
+                    end_cyber_robin: { icon: "ph-duotone ph-hoodie", title: "Cyber Robin Hood", text: "Bank accounts zeroed out in favor of the poor. Chaos? No, justice.", isEnd: true },
+                    end_punisher: { icon: "ph-duotone ph-gavel", title: "The Punisher", text: "Crime vanished. Fear of you turned out to be the best law.", isEnd: true },
+                    end_first_contact: { icon: "ph-duotone ph-alien", title: "Humanity Ambassador", text: "They came in peace because you called them. We are no longer alone.", isEnd: true },
+                    end_mars_king: { icon: "ph-duotone ph-planet", title: "Mars Emperor", text: "Earth is the past. Mars is the future, and this future belongs to you.", isEnd: true },
+                    end_matrix_break: { icon: "ph-duotone ph-code", title: "Neo", text: "You saw the green code. You exited the simulation. Welcome to reality.", isEnd: true },
+                    end_time_lord: { icon: "ph-duotone ph-clock-counter-clockwise", title: "Time Lord", text: "You went back and fixed everything. 2026 became the best year in history.", isEnd: true }
+                }
+            },
+            cn: {
+                sub: "4723 时代的终结",
+                main: "征服<br><span class='text-indigo-400 neon-accent'>世界</span>",
+                quote: "物价飞涨不是终点。按下空格键寻找答案。",
+                timerLabel: "距离农历马年 (4723)",
+                btn: "按下空格键",
+                labels: ["天", "小时", "分钟", "秒"],
+                labelAuthor: "关于作者",
+                authorLinkText: "了解更多关于作者的信息",
+                footer: "准备就绪",
+                copy: "4722-4723",
+                notifyTitle: "提醒已设置！",
+                notifyBody: "4723 年到来时我们会通知您。",
+                zodiacInfo: "4723: 丙午年 (火马年)", 
+                btnClose: "关闭终端",
+                easterEgg: {
+                    title: "地平线的秘密",
+                    text: "“作者选择这个名字是因为在他看来，它反映了未来美丽而神秘的地平线。”",
+                    btn: "明白了"
+                },
+                game: {
+                    start: {
+                        icon: "ph-duotone ph-airplane-tilt",
+                        title: "2026 门户",
+                        text: "烟雾消散。你站在新年的门槛上。命运海关机器人扫描你的光环：'访问 2026 的目的是什么？'",
+                        choices: [
+                            { text: "赚所有的钱", next: "money" },
+                            { text: "寻找内心的平静", next: "zen" },
+                            { text: "拯救这个疯狂的世界", next: "hero" },
+                            { text: "探索未知", next: "explore" }
+                        ]
+                    },
+                    // MONEY BRANCH
+                    money: {
+                        icon: "ph-duotone ph-coins",
+                        title: "大亨之路",
+                        text: "2026 年是资源时代。你打算如何让资本倍增？",
+                        choices: [
+                            { text: "投资人工智能", next: "money_tech" },
+                            { text: "控制资源", next: "money_res" }
+                        ]
+                    },
+                    money_tech: {
+                        icon: "ph-duotone ph-cpu",
+                        title: "科技大亨",
+                        text: "你的 AI '迈达斯' 以 99.9% 的准确率预测市场。你比国家还富有。接下来呢？",
+                        choices: [
+                            { text: "与 AI 融合", next: "end_ai_merge" },
+                            { text: "收购政府", next: "end_corp_overlord" }
+                        ]
+                    },
+                    money_res: {
+                        icon: "ph-duotone ph-drop",
+                        title: "资源男爵",
+                        text: "你买下了清洁水源和能源。世界依赖你的阀门。",
+                        choices: [
+                            { text: "免费提供能源", next: "end_benevolent_monopoly" },
+                            { text: "制定自己的规则", next: "end_resource_king" }
+                        ]
+                    },
+                    // ZEN BRANCH
+                    zen: {
+                        icon: "ph-duotone ph-yin-yang",
+                        title: "圣贤之路",
+                        text: "世界喧嚣，而你是宁静。你会把平静带向何方？",
+                        choices: [
+                            { text: "教导他人", next: "zen_teach" },
+                            { text: "归隐山林", next: "zen_solitude" }
+                        ]
+                    },
+                    zen_teach: {
+                        icon: "ph-duotone ph-users-three",
+                        title: "精神导师",
+                        text: "数百万人订阅你的心灵频道。你是数字时代的新弥赛亚吗？",
+                        choices: [
+                            { text: "创立新宗教", next: "end_new_religion" },
+                            { text: "治愈世界", next: "end_global_therapy" }
+                        ]
+                    },
+                    zen_solitude: {
+                        icon: "ph-duotone ph-tree",
+                        title: "隐士",
+                        text: "你找到了一个没有 Wi-Fi 的地方。大自然接纳了你。",
+                        choices: [
+                            { text: "成为森林之灵", next: "end_nature_spirit" },
+                            { text: "著书立说", next: "end_hermit_sage" }
+                        ]
+                    },
+                    // HERO BRANCH
+                    hero: {
+                        icon: "ph-duotone ph-shield-check",
+                        title: "英雄之路",
+                        text: "世界破碎了，而你知道如何修复它。你会选择哪种方法？",
+                        choices: [
+                            { text: "政治改革", next: "hero_system" },
+                            { text: "直接行动", next: "hero_rebel" }
+                        ]
+                    },
+                    hero_system: {
+                        icon: "ph-duotone ph-bank",
+                        title: "政治家",
+                        text: "你的支持率高得离谱。你可以团结各国或征服它们。",
+                        choices: [
+                            { text: "统一地球", next: "end_world_president" },
+                            { text: "秩序铁腕", next: "end_grey_cardinal" }
+                        ]
+                    },
+                    hero_rebel: {
+                        icon: "ph-duotone ph-mask-happy",
+                        title: "义警",
+                        text: "你在阴影中行动。腐败的精英害怕你的标志。",
+                        choices: [
+                            { text: "重新分配财富", next: "end_cyber_robin" },
+                            { text: "惩罚有罪者", next: "end_punisher" }
+                        ]
+                    },
+                    // EXPLORE BRANCH
+                    explore: {
+                        icon: "ph-duotone ph-telescope",
+                        title: "探索者之路",
+                        text: "界限就是用来打破的。你会看向哪里？",
+                        choices: [
+                            { text: "太空", next: "explore_space" },
+                            { text: "现实深处", next: "explore_quantum" }
+                        ]
+                    },
+                    explore_space: {
+                        icon: "ph-duotone ph-rocket-launch",
+                        title: "宇航员",
+                        text: "火星已定居。但深空在召唤。你站在星际飞船的气闸前。",
+                        choices: [
+                            { text: "接触外星人", next: "end_first_contact" },
+                            { text: "人类帝国", next: "end_mars_king" }
+                        ]
+                    },
+                    explore_quantum: {
+                        icon: "ph-duotone ph-atom",
+                        title: "量子物理学家",
+                        text: "你发现了宇宙的代码。现实如梦般脆弱。",
+                        choices: [
+                            { text: "黑入模拟", next: "end_matrix_break" },
+                            { text: "修复过去", next: "end_time_lord" }
+                        ]
+                    },
+                    // ENDINGS
+                    end_ai_merge: { icon: "ph-duotone ph-robot", title: "数字永生", text: "你将意识上传到网络。你现在是永恒的、无所不在的，并且无限富有。", isEnd: true },
+                    end_corp_overlord: { icon: "ph-duotone ph-buildings", title: "世界霸主", text: "国家被废除。你的公司统治世界。秩序完美无缺。", isEnd: true },
+                    end_benevolent_monopoly: { icon: "ph-duotone ph-sun", title: "星球救世主", text: "你为世界提供了免费能源。你的名字被金字刻在历史书中。", isEnd: true },
+                    end_resource_king: { icon: "ph-duotone ph-crown", title: "资源之王", text: "谁拥有水，谁就拥有权力。你的统治严厉但公平。", isEnd: true },
+                    end_new_religion: { icon: "ph-duotone ph-star-of-david", title: "2026 先知", text: "你的教义团结了数十亿人。世界在你的智慧中找到了平静。", isEnd: true },
+                    end_global_therapy: { icon: "ph-duotone ph-heartbeat", title: "伟大的治疗师", text: "你治愈了人类的集体创伤。抑郁时代结束了。", isEnd: true },
+                    end_nature_spirit: { icon: "ph-duotone ph-leaf", title: "森林之灵", text: "你成为了传说。据说你通晓树木和野兽的语言。", isEnd: true },
+                    end_hermit_sage: { icon: "ph-duotone ph-book-open", title: "圣贤", text: "当你种土豆时，你的书《喧嚣中的宁静》成为了畅销书。", isEnd: true },
+                    end_world_president: { icon: "ph-duotone ph-globe", title: "地球总统", text: "不再有国界。人类在你的旗帜下团结一致。", isEnd: true },
+                    end_grey_cardinal: { icon: "ph-duotone ph-chess-king", title: "灰衣主教", text: "你在幕后操纵一切。世界稳定，没人知道代价。", isEnd: true },
+                    end_cyber_robin: { icon: "ph-duotone ph-hoodie", title: "赛博罗宾汉", text: "银行账户清零，分给穷人。混乱？不，是正义。", isEnd: true },
+                    end_punisher: { icon: "ph-duotone ph-gavel", title: "惩罚者", text: "犯罪消失了。对你的恐惧成了最好的法律。", isEnd: true },
+                    end_first_contact: { icon: "ph-duotone ph-alien", title: "人类大使", text: "他们和平而来，因为你呼唤了他们。我们不再孤单。", isEnd: true },
+                    end_mars_king: { icon: "ph-duotone ph-planet", title: "火星皇帝", text: "地球是过去。火星是未来，而这个未来属于你。", isEnd: true },
+                    end_matrix_break: { icon: "ph-duotone ph-code", title: "尼奥", text: "你看到了绿色代码。你退出了模拟。欢迎来到现实。", isEnd: true },
+                    end_time_lord: { icon: "ph-duotone ph-clock-counter-clockwise", title: "时间领主", text: "你回到过去修复了一切。2026 年成为历史上最好的一年。", isEnd: true }
+                }
+            }
+        };
+
+        let currentLang = 'ru';
+        let isJumped = false;
+        const dateGregorian = new Date('January 1, 2026 00:00:00').getTime();
+        const dateChinese = new Date('February 17, 2026 00:00:00').getTime();
+
+        const els = {
+            sub: document.getElementById('sub-heading'),
+            main: document.getElementById('main-heading'),
+            quote: document.getElementById('quote-text'),
+            timerLabel: document.getElementById('timer-label'),
+            btnText: document.getElementById('btn-text'),
+            footer: document.getElementById('footer-note'),
+            copy: document.getElementById('footer-copy'),
+            d: document.getElementById('d'),
+            h: document.getElementById('h'),
+            m: document.getElementById('m'),
+            s: document.getElementById('s'),
+            labelAuthor: document.getElementById('label-author'),
+            authorLink: document.getElementById('author-link'),
+            zodiac: document.getElementById('zodiac-info'),
+            zodiacText: document.getElementById('zodiac-text'),
+            warp: document.getElementById('warp-layer'),
+            gameModal: document.getElementById('game-modal'),
+            gameTitle: document.getElementById('game-title'),
+            gameDesc: document.getElementById('game-desc'),
+            gameChoices: document.getElementById('game-choices'),
+            gameIcon: document.getElementById('game-icon'),
+            btnCloseGame: document.getElementById('btn-close-game'),
+            labelDays: document.querySelector('.label-days'),
+            labelHours: document.querySelector('.label-hours'),
+            labelMinutes: document.querySelector('.label-minutes'),
+            labelSeconds: document.querySelector('.label-seconds'),
+            eeTitle: document.getElementById('ee-title'),
+            eeText: document.getElementById('ee-text'),
+            eeBtn: document.getElementById('ee-btn'),
+        };
+
+        function setLang(lang) {
+            currentLang = lang;
+            const content = config[lang];
+            
+            ['ru', 'en', 'cn'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (l === lang) {
+                    btn.classList.add('bg-white', 'text-black', 'shadow-lg');
+                    btn.classList.remove('text-white/50');
+                } else {
+                    btn.classList.remove('bg-white', 'text-black', 'shadow-lg');
+                    btn.classList.add('text-white/50');
+                }
+            });
+
+            els.main.style.opacity = 0;
+            setTimeout(() => {
+                els.sub.innerHTML = content.sub;
+                els.main.innerHTML = content.main;
+                els.quote.textContent = content.quote;
+                els.timerLabel.textContent = content.timerLabel;
+                els.btnText.textContent = content.btn;
+                els.footer.textContent = content.footer;
+                els.copy.textContent = content.copy;
+                els.btnCloseGame.textContent = content.btnClose;
+                
+                els.labelDays.textContent = content.labels[0];
+                els.labelHours.textContent = content.labels[1];
+                els.labelMinutes.textContent = content.labels[2];
+                els.labelSeconds.textContent = content.labels[3];
+
+                els.labelAuthor.textContent = content.labelAuthor;
+                els.authorLink.textContent = content.authorLinkText;
+
+                els.eeTitle.textContent = content.easterEgg.title;
+                els.eeText.textContent = content.easterEgg.text;
+                els.eeBtn.textContent = content.easterEgg.btn;
+
+                els.zodiacText.textContent = content.zodiacInfo; 
+                if(lang === 'cn') els.zodiac.classList.remove('hidden');
+                else els.zodiac.classList.add('hidden');
+
+                els.main.style.opacity = 1;
+                updateTimer();
+            }, 300);
+        }
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const targetDate = (currentLang === 'cn') ? dateChinese : dateGregorian;
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                els.d.innerText = "00";
+                els.h.innerText = "00";
+                els.m.innerText = "00";
+                els.s.innerText = "00";
+                return;
+            }
+
+            els.d.innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            els.h.innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            els.m.innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            els.s.innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function renderScene(sceneKey) {
+            const gameData = config[currentLang].game[sceneKey];
+            const container = document.getElementById('game-container');
+            
+            container.classList.remove('scene-enter');
+            void container.offsetWidth; 
+            container.classList.add('scene-enter');
+
+            els.gameTitle.textContent = gameData.title;
+            els.gameDesc.textContent = gameData.text;
+            els.gameIcon.className = `${gameData.icon} text-7xl text-indigo-400 relative z-10`;
+            
+            els.gameChoices.innerHTML = '';
+
+            if (gameData.isEnd) {
+                els.btnCloseGame.classList.remove('hidden');
+                els.gameIcon.className += " animate-pulse text-yellow-400";
+            } else {
+                els.btnCloseGame.classList.add('hidden');
+                gameData.choices.forEach(choice => {
+                    const btn = document.createElement('button');
+                    btn.className = 'game-choice-btn group';
+                    btn.innerHTML = `
+                        <i class="ph ph-caret-right text-indigo-400 group-hover:text-white transition"></i>
+                        <span class="font-semibold text-gray-300 group-hover:text-white">${choice.text}</span>
+                    `;
+                    btn.onclick = () => renderScene(choice.next);
+                    els.gameChoices.appendChild(btn);
+                });
+            }
+        }
+
+        function jump() {
+            if(isJumped) return;
+            isJumped = true;
+
+            document.body.classList.add('warp-active');
+            
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(200, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.5);
+            gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.5);
+
+            setTimeout(() => {
+                els.gameModal.classList.remove('hidden');
+                els.gameModal.classList.add('flex', 'fade-in-up');
+                document.body.classList.remove('warp-active');
+                
+                renderScene('start');
+            }, 800);
+        }
+
+        function resetJump() {
+            isJumped = false;
+            els.gameModal.classList.add('hidden');
+            els.gameModal.classList.remove('flex');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !isJumped) {
+                e.preventDefault();
+                jump();
+            }
+        });
+        
+        document.getElementById('action-btn').addEventListener('click', jump);
+
+        document.getElementById('notify-btn').addEventListener('click', () => {
+             if (Notification.permission !== 'denied') Notification.requestPermission();
+             alert(config[currentLang].notifyTitle);
+        });
+
+        let horizonClicks = 0;
+        const easterEggModal = document.getElementById('easter-egg-modal');
+        
+        document.getElementById('horizon-logo-container').addEventListener('click', () => {
+            horizonClicks++;
+            if (horizonClicks === 3) {
+                easterEggModal.classList.remove('hidden');
+                easterEggModal.classList.add('flex', 'fade-in-up');
+                horizonClicks = 0;
+            }
+        });
+
+        function closeEasterEgg(e, force = false) {
+            if (force || e.target === easterEggModal) {
+                easterEggModal.classList.add('hidden');
+                easterEggModal.classList.remove('flex');
+            }
+        }
+
+        setLang('ru');
+
+    </script>
+</body>
+</html>

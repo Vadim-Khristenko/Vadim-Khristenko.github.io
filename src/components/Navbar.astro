@@ -1,13 +1,15 @@
 ---
 import { ui, defaultLang } from '../i18n/translations';
+import { useTranslatedPath } from '../i18n/utils';
 import LanguagePicker from './LanguagePicker.astro';
 
 const { lang = defaultLang } = Astro.props;
 const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+const translatePath = useTranslatedPath(lang as keyof typeof ui);
 ---
 <header class="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-black/30">
   <div class="max-w-6xl mx-auto px-4 flex items-center justify-between py-3">
-    <a href="#top" class="font-extrabold tracking-tight text-xl gradient-text">VAI-PROG</a>
+    <a href={translatePath('/')} class="font-extrabold tracking-tight text-xl gradient-text">VAI-PROG</a>
     <nav class="hidden md:flex items-center gap-5">
       <a class="text-sm text-white/80 hover:text-white" href="#about">{t['about.title']}</a>
       <a class="text-sm text-white/80 hover:text-white" href="#skills">{t['skills.title']}</a>

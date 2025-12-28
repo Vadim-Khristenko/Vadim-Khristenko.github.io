@@ -183,7 +183,7 @@ const friends = [
   function initLongPress() {
     const cards = document.querySelectorAll('.friend-card');
     cards.forEach(card => {
-      let timer: number | undefined;
+      let timer: NodeJS.Timeout | number | undefined;
       
       const start = () => {
         timer = setTimeout(() => {

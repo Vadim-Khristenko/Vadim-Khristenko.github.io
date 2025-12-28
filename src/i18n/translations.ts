@@ -143,6 +143,8 @@ export const ui = {
     'miniprojects.tool1.desc': 'Мемная страница для тех, кто хочет всем рассказать о своем дистрибутиве.',
     'miniprojects.tool2.title': 'JustCodeScreen',
     'miniprojects.tool2.desc': 'Быстрое создание красивых скриншотов кода с кастомными фонами (ПК).',
+    'miniprojects.tool3.title': 'Horizon 2026',
+    'miniprojects.tool3.desc': 'Просто прикольный сайт с отсчётом до 2026 и мини-текстовой-новеллой.',
   },
   en: {
     'hero.aka': 'Oh, hi! 👋 I\'m Vadim Khristenko. You might also know me as: VAI PROG, VAI Programmer, VOLT BOT5, VOLT SYNAPSE, VadKh, Just another Coder.',
@@ -280,6 +282,8 @@ export const ui = {
     'miniprojects.tool1.desc': 'A meme page for those who want to tell everyone about their distro.',
     'miniprojects.tool2.title': 'JustCodeScreen',
     'miniprojects.tool2.desc': 'Quickly create beautiful code screenshots with custom backgrounds (PC).',
+    'miniprojects.tool3.title': 'Horizon 2026',
+    'miniprojects.tool3.desc': 'Just a cool site with a countdown to 2026 and a mini text novel.',
   },
   zh: {
     'hero.aka': '哦，嗨！👋 我是 瓦季姆·赫里斯坚科 (Vadim Khristenko)。你可能还知道我的这些笔名：VAI PROG, VAI Programmer, VOLT BOT5, VOLT SYNAPSE, VadKh, Just another Coder。',
@@ -416,5 +420,7 @@ export const ui = {
     'miniprojects.tool1.desc': '一个为那些想向所有人展示自己发行版的人准备的梗页面。',
     'miniprojects.tool2.title': 'JustCodeScreen',
     'miniprojects.tool2.desc': '快速创建带有自定义背景的美丽代码截图（仅限 PC）。',
+    'miniprojects.tool3.title': 'Horizon 2026',
+    'miniprojects.tool3.desc': '一个很酷的网站，带有到 2026 年的倒计时和一个迷你文字小说。',
   }
 };

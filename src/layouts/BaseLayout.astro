@@ -6,7 +6,7 @@ import BackgroundCanvas from "../components/BackgroundCanvas.astro";
 import EasterEggs from "../components/EasterEggs.astro";
 import { ui, defaultLang } from "../i18n/translations";
 const year = new Date().getFullYear();
-const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+const t = ui[lang] || ui[defaultLang];
 ---
 <html lang={lang} class="dark">
   <head>
