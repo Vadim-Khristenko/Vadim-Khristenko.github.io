@@ -1,0 +1,16 @@
+export const hiring = {
+  'hiring.badge': 'Открыт к предложениям',
+  'hiring.title': 'Ищу работу / подработку / фриланс',
+  'hiring.desc': 'Открыт к интересным и необычным проектам.',
+  'hiring.detail': 'Буду рад взять разработку: Ботов, Бэкенда, DevOps, Немного фронтенда. Постараюсь сделать быстро и качественно, чтобы вы были довольны.',
+  'hiring.discount': 'Скидка 5%-15% в зависимости от интересности проекта и сложности, а также хорошего отзыва',
+  'hiring.intern': 'Также рассматриваю участие в стажировках.',
+  'hiring.cta': 'Написать',
+  'hiring.email': 'business@vai-rice.space',
+  'hiring.svc.bots': 'Telegram / Discord боты',
+  'hiring.svc.web': 'Веб-приложения',
+  'hiring.svc.backend': 'Бэкенд API',
+  'hiring.svc.frontend': 'Фронтенд',
+  'hiring.svc.devops': 'DevOps / CI-CD',
+  'hiring.svc.ai': 'ML / AI интеграция',
+} as const;

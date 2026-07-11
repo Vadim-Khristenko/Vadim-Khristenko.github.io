@@ -1,0 +1,15 @@
+export const contact = {
+  'contact.title': 'Контакты',
+  'contact.subtitle': 'Все способы связи — выбирай удобный',
+  'contact.projEmails': 'Проектные контакты',
+  'contact.socials': 'Социальные сети',
+  'contact.copy': 'Скопировать',
+  'contact.copied': 'Скопировано!',
+  'contact.donateTitle': 'Поддержать меня',
+  'contact.donateSubtitle': 'Помоги мне не останавливаться: кофе, фигурка Мику или просто углерод для серверов',
+  'donate.coffee': 'Угостить кофе',
+  'donate.patreon': 'На Patreon',
+  'donate.yoomoney': 'YooMoney',
+  'donate.crypto': 'Криптовалюта',
+  'donate.cryptoSubtitle': 'Нажми на адрес, чтобы скопировать',
+} as const;

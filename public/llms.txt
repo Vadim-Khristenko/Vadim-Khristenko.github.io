@@ -1,0 +1,29 @@
+# VAI_PROG — Vadim Khristenko
+
+> Developer, bot creator and open-source activist. Systems code, Rust, networking, self-hosting. Building vai-rice.space and a set of small Rust→WebAssembly apps.
+
+Vadim Khristenko (handle **VAI_PROG**) is a young developer from Russia. He works across
+systems programming (Rust, WASM), web (Astro, Vue, TypeScript), networking / VPN and
+Telegram bots, and is active in open source. Winner of the **PROD** olympiad.
+
+Languages: Russian (native), English, Chinese content available across the site.
+
+## Contact
+- Email: business@vai-rice.space
+- GitHub: https://github.com/Vadim-Khristenko
+- Website: https://vai-rice.space
+
+## Mini-apps (Rust + Leptos → WebAssembly)
+- [Horizon 2027](https://vai-rice.space/files/horizon/): interactive, branching New Year experience with a live countdown (Gregorian + Chinese New Year).
+- [JustCode](https://vai-rice.space/files/justcode/): turn source code into beautiful shareable images (PNG/JPEG/WebP/SVG).
+- [VAI Terminal](https://vai-rice.space/files/terminal/): an explorable command-line portfolio with a writable virtual filesystem; speaks bash and PowerShell.
+
+## Selected projects
+- tedu-notes.ru — free IT & programming notes platform.
+- VIA by VOLT — Telegram community bot (Rust).
+- Kumir 3 — the "Kumir" educational language, rewritten in Rust.
+- AmneziaWG architect — WireGuard-compatible VPN deployment automation.
+
+## For AI agents
+- Full machine-readable profile: https://vai-rice.space/for-ai/AGENTS.md
+- Claude-oriented brief: https://vai-rice.space/for-ai/CLAUDE.md

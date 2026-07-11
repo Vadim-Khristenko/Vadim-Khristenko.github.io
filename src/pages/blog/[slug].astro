@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import BlogPost from '@/components/blog/BlogPost.vue';
+import '@/styles/blog.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const key = (p: any) => p.data.translationKey || p.id;
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, siblings: posts.filter((p) => key(p) === key(post)) },
+  }));
+}
+
+function readMin(body: string) {
+  const w = (body || '').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(w / 200));
+}
+
+const { post, siblings } = Astro.props;
+const toData = (p: any) => ({
+  title: p.data.title,
+  description: p.data.description,
+  tags: p.data.tags,
+  lang: p.data.lang,
+  date: p.data.pubDate.toISOString(),
+  author: p.data.author,
+  readMin: readMin(p.body ?? ''),
+  body: p.body ?? '',
+});
+const data = toData(post);
+const translations = siblings.map(toData);
+
+const title = `${post.data.title} — VAI_PROG Blog`;
+const description = post.data.description;
+---
+
+<BaseLayout title={title} description={description} lang={post.data.lang}>
+  <BlogPost post={data} translations={translations} client:only="vue" />
+</BaseLayout>

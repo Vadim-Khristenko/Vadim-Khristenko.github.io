@@ -1,0 +1,8 @@
+# Build output goes straight into the site's public/ so Astro ships it at /files/justcode/
+[build]
+dist = "../../public/files/justcode"
+public_url = "/files/justcode/"
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 8082

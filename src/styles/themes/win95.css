@@ -1,0 +1,396 @@
+/* ============================================================
+   THEME · WINDOWS 95 — authentic desktop (ref: the-wall.vai-rice.space)
+   Real windows with title bars, W95FA pixel font, crisp border
+   bevels, menubar nav, teal desktop. Light (default) + High
+   Contrast dark via [data-mode] (see win95-dark.css).
+   Taskbar / Start / BSOD: components/win95/Win95EasterEggs.vue
+   ============================================================ */
+@font-face {
+  font-family: 'W95FA';
+  src: url('/fonts/W95FA.otf') format('opentype');
+  font-display: swap;
+}
+
+[data-theme="win95"] {
+  --win-face: #C0C0C0;      /* window/button face */
+  --win-hi: #FFFFFF;        /* brightest highlight */
+  --win-light: #DFDFDF;     /* group / soft edge */
+  --win-shadow: #808080;    /* soft shadow */
+  --win-dark: #404040;      /* dark edge (not pure black) */
+  --win-title-a: #000080;   /* active title */
+  --win-title-b: #1084D0;
+  --win-led: #33FF66;
+  --field: #FFFFFF;
+  --field-text: #000000;
+  --desktop: #008080;
+
+  --bg: var(--desktop);
+  --bg-elevated: var(--win-face);
+  --bg-card: var(--field);
+  --bg-sunken: var(--field);
+  --border: var(--win-dark);
+  --border-hover: var(--win-dark);
+  --text: #000000;
+  --text-muted: #303030;
+  --text-dim: #555555;
+  --primary: #000080;
+  --primary-muted: var(--win-light);
+  --accent: #000080;
+  --accent-warm: #808000;
+  --success: #008000;
+  --warning: #808000;
+  --error: #800000;
+
+  /* bevel border-colours (crisp, pixel-accurate) */
+  --bevel-out: var(--win-hi) var(--win-dark) var(--win-dark) var(--win-hi);
+  --bevel-in: var(--win-shadow) var(--win-hi) var(--win-hi) var(--win-shadow);
+
+  --font-display: 'W95FA', 'MS Sans Serif', Tahoma, 'Segoe UI', sans-serif;
+  --font-body: 'W95FA', 'MS Sans Serif', Tahoma, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-lg: 1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0; --radius-xl: 0;
+  --shadow-sm: none; --shadow-md: none; --shadow-lg: none;
+  --shadow-glow-primary: none; --shadow-glow-accent: none;
+  --gradient-hero: none; --gradient-text: none; --gradient-surface: none;
+}
+
+html[data-theme="win95"] { image-rendering: pixelated; }
+html[data-theme="win95"] body {
+  background-color: var(--desktop);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' x='0' y='0' fill='%23ffffff' fill-opacity='0.035'/%3E%3Crect width='1' height='1' x='1' y='1' fill='%23000000' fill-opacity='0.05'/%3E%3C/svg%3E");
+  padding-bottom: 40px;                 /* taskbar */
+  -webkit-font-smoothing: none;
+}
+html[data-theme="win95"] * { font-family: var(--font-body); }
+html[data-theme="win95"] ::selection { background: #000080; color: #fff; }
+html[data-theme="win95"] a:not(.hbtn) { color: var(--primary); }
+
+/* ============================================================
+   NAV → MENU BAR (sticky grey strip)
+   ============================================================ */
+html[data-theme="win95"] .nav,
+html[data-theme="win95"] .nav.scrolled {
+  background: var(--win-face);
+  border-top: 2px solid var(--win-hi);
+  border-bottom: 1px solid var(--win-shadow);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  backdrop-filter: none;
+  padding: 0 6px;
+}
+html[data-theme="win95"] .nav-inner { height: 34px; }
+html[data-theme="win95"] .logo-text { font-weight: 700; color: var(--primary); }
+html[data-theme="win95"] .logo-icon { color: var(--primary); }
+html[data-theme="win95"] .nav-link {
+  border-radius: 0;
+  font-weight: 700;
+  color: var(--text);
+  padding: 4px 10px;
+}
+html[data-theme="win95"] .nav-link::after { display: none; }
+html[data-theme="win95"] .nav-link:hover { background: var(--win-title-a); color: #fff; }
+html[data-theme="win95"] .nav-link-icon { opacity: 1; }
+
+/* toolbar buttons (lang / theme / mode) = bevel group */
+html[data-theme="win95"] .lang-btn,
+html[data-theme="win95"] .mob-toggle,
+html[data-theme="win95"] .mode-toggle {
+  border-radius: 0;
+  background: var(--win-face);
+  color: var(--text);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  box-shadow: none;
+}
+html[data-theme="win95"] .lang-btn:active,
+html[data-theme="win95"] .mode-toggle:active,
+html[data-theme="win95"] .mob-toggle:active { border-color: var(--bevel-in); }
+html[data-theme="win95"] .lang-menu {
+  border-radius: 0;
+  background: var(--win-face);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.35);
+}
+html[data-theme="win95"] .lang-opt { border-radius: 0; color: var(--text); }
+html[data-theme="win95"] .lang-opt:hover { background: var(--win-title-a); color: #fff; }
+html[data-theme="win95"] .lang-opt.active { background: var(--win-light); color: var(--text); }
+
+/* ============================================================
+   SECTIONS → WINDOWS (title bar + content area)
+   ============================================================ */
+html[data-theme="win95"] .about-inner,
+html[data-theme="win95"] .skills-inner,
+html[data-theme="win95"] .ach-inner,
+html[data-theme="win95"] .friends-inner,
+html[data-theme="win95"] .insp-inner,
+html[data-theme="win95"] .labs-inner,
+html[data-theme="win95"] .communities-inner,
+html[data-theme="win95"] .proj-inner,
+html[data-theme="win95"] .contact-inner {
+  background: var(--win-face);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  padding: 4px;
+}
+
+/* the h2 becomes the window title bar (breaks out to the frame edges) */
+html[data-theme="win95"] .sec-header { margin: 0; }
+html[data-theme="win95"] .sec-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: -4px -4px 8px;
+  padding: 3px 4px 3px 6px;
+  background: linear-gradient(90deg, var(--win-title-a), var(--win-title-b));
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  letter-spacing: 0;
+}
+html[data-theme="win95"] .sec-header h2::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--win-led);
+  box-shadow: 0 0 5px var(--win-led);
+  flex-shrink: 0;
+}
+html[data-theme="win95"] .sec-header h2::after {
+  content: '_ □ ✕';
+  margin-left: auto;
+  letter-spacing: 2px;
+  font-size: 0.75em;
+  color: var(--text);
+  background: var(--win-face);
+  border: 1px solid; border-color: var(--bevel-out);
+  padding: 0 3px;
+  line-height: 1.4;
+}
+html[data-theme="win95"] .sec-header p {
+  color: var(--text);
+  padding: 0 6px 6px;
+  font-size: var(--font-size-sm);
+}
+/* content sits inside a sunken "client area" */
+html[data-theme="win95"] .skills-grid,
+html[data-theme="win95"] .lang-bars,
+html[data-theme="win95"] .friends-grid,
+html[data-theme="win95"] .best-grid,
+html[data-theme="win95"] .communities-grid,
+html[data-theme="win95"] .proj-grid,
+html[data-theme="win95"] .gh-trophy { padding: 0 6px 6px; }
+
+/* ============================================================
+   HERO — "app window" feel
+   ============================================================ */
+html[data-theme="win95"] .hero-title { font-weight: 700; color: var(--text); letter-spacing: 0; }
+html[data-theme="win95"] .hero-title .gtext { background: none; -webkit-text-fill-color: var(--text); color: var(--text); }
+html[data-theme="win95"] .hero-title::after { display: none; }
+html[data-theme="win95"] .hero-sub,
+html[data-theme="win95"] .hero-aka,
+html[data-theme="win95"] .hero-note,
+html[data-theme="win95"] .hero-born { color: var(--text); font-style: normal; }
+html[data-theme="win95"] .age { color: var(--primary); font-weight: 700; }
+html[data-theme="win95"] .avatar-wrap {
+  padding: 4px; background: var(--win-face);
+  border: 2px solid; border-color: var(--bevel-in);
+}
+html[data-theme="win95"] .avatar-img { border: none; border-radius: 0; box-shadow: none; }
+html[data-theme="win95"] .avatar-ring { display: none; }
+html[data-theme="win95"] .gh-num { color: var(--text); }
+html[data-theme="win95"] .gh-stat { border-color: var(--win-shadow) !important; }
+html[data-theme="win95"] .marquee-item { color: var(--text); font-weight: 700; }
+html[data-theme="win95"] .marquee-dot { color: var(--primary); }
+html[data-theme="win95"] .hero-marquee {
+  background: var(--win-face);
+  border: 2px solid; border-color: var(--bevel-out);
+}
+
+/* ============================================================
+   BUTTONS — raised bevel, press → inset
+   ============================================================ */
+html[data-theme="win95"] .hbtn,
+html[data-theme="win95"] .add-link,
+html[data-theme="win95"] .suggest-link,
+html[data-theme="win95"] .gh-link,
+html[data-theme="win95"] .proj-link {
+  border-radius: 0;
+  background: var(--win-face);
+  color: var(--text);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  box-shadow: none;
+  font-weight: 400;
+  transform: none;
+}
+html[data-theme="win95"] .hbtn-primary { background: var(--win-face); color: var(--text); font-weight: 700; }
+html[data-theme="win95"] .hbtn:hover,
+html[data-theme="win95"] .add-link:hover,
+html[data-theme="win95"] .suggest-link:hover,
+html[data-theme="win95"] .gh-link:hover { background: var(--win-light); color: var(--text); transform: none; }
+html[data-theme="win95"] .hbtn:active,
+html[data-theme="win95"] .add-link:active,
+html[data-theme="win95"] .suggest-link:active,
+html[data-theme="win95"] .gh-link:active,
+html[data-theme="win95"] .proj-link:active { border-color: var(--bevel-in); }
+
+/* ============================================================
+   CARDS — bordered panels (outset), inside a windowed section
+   ============================================================ */
+html[data-theme="win95"] .proj-card,
+html[data-theme="win95"] .friend-card,
+html[data-theme="win95"] .community-card,
+html[data-theme="win95"] .skill-col,
+html[data-theme="win95"] .lang-bar,
+html[data-theme="win95"] .hiring-inner,
+html[data-theme="win95"] .about-main,
+html[data-theme="win95"] .proj-why,
+html[data-theme="win95"] .trophy-card,
+html[data-theme="win95"] .social-card,
+html[data-theme="win95"] .email-card,
+html[data-theme="win95"] .add-friend-hint,
+html[data-theme="win95"] .suggest-hint {
+  background: var(--field);
+  color: var(--field-text);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+}
+html[data-theme="win95"] .proj-card:hover,
+html[data-theme="win95"] .friend-card:hover,
+html[data-theme="win95"] .community-card:hover { transform: none; border-color: var(--bevel-out); }
+html[data-theme="win95"] .proj-desc,
+html[data-theme="win95"] .friend-desc,
+html[data-theme="win95"] .community-desc,
+html[data-theme="win95"] .hiring-detail,
+html[data-theme="win95"] .hiring-lead,
+html[data-theme="win95"] .about-main { color: var(--field-text); }
+
+/* tags = sunken labels */
+html[data-theme="win95"] .stack-tag,
+html[data-theme="win95"] .tag {
+  border-radius: 0;
+  background: var(--win-face);
+  color: var(--text);
+  border: 1px solid; border-color: var(--bevel-in);
+}
+
+/* inputs = sunken white fields */
+html[data-theme="win95"] input,
+html[data-theme="win95"] textarea {
+  border-radius: 0 !important;
+  background: var(--field) !important;
+  color: var(--field-text) !important;
+  border: 2px solid !important;
+  border-color: var(--bevel-in) !important;
+  box-shadow: none;
+}
+
+/* ============================================================
+   FORCE — override legacy per-component [data-theme="win95"]
+   hardcoded colours so DARK mode works everywhere.
+   (component scoped rules have higher specificity → need !important)
+   ============================================================ */
+html[data-theme="win95"] .proj-card,
+html[data-theme="win95"] .friend-card,
+html[data-theme="win95"] .community-card,
+html[data-theme="win95"] .skill-col,
+html[data-theme="win95"] .lang-bar,
+html[data-theme="win95"] .about-main,
+html[data-theme="win95"] .side-card,
+html[data-theme="win95"] .proj-why,
+html[data-theme="win95"] .trophy-card,
+html[data-theme="win95"] .social-card,
+html[data-theme="win95"] .email-card,
+html[data-theme="win95"] .donate-block,
+html[data-theme="win95"] .donate-card,
+html[data-theme="win95"] .crypto-item,
+html[data-theme="win95"] .hiring-inner,
+html[data-theme="win95"] .svc-item,
+html[data-theme="win95"] .discount-block,
+html[data-theme="win95"] .add-friend-hint,
+html[data-theme="win95"] .suggest-hint,
+html[data-theme="win95"] .drop-card {
+  background: var(--field) !important;
+  color: var(--field-text) !important;
+  border: 2px solid !important;
+  border-color: var(--bevel-out) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="win95"] .proj-desc,
+html[data-theme="win95"] .friend-desc,
+html[data-theme="win95"] .friend-role,
+html[data-theme="win95"] .community-desc,
+html[data-theme="win95"] .hiring-detail,
+html[data-theme="win95"] .hiring-lead,
+html[data-theme="win95"] .discount-block,
+html[data-theme="win95"] .proj-name,
+html[data-theme="win95"] .svc-label,
+html[data-theme="win95"] .friend-meta h4,
+html[data-theme="win95"] .community-meta h4 {
+  color: var(--field-text) !important;
+}
+
+html[data-theme="win95"] .tag,
+html[data-theme="win95"] .stack-tag {
+  background: var(--win-face) !important;
+  color: var(--text) !important;
+  border: 1px solid !important;
+  border-color: var(--bevel-in) !important;
+}
+html[data-theme="win95"] .lang-track { background: var(--win-shadow) !important; }
+html[data-theme="win95"] .lang-name,
+html[data-theme="win95"] .lang-pct { color: var(--field-text) !important; }
+
+/* nav toolbar controls + hero buttons (override component hardcodes for dark) */
+html[data-theme="win95"] .lang-btn,
+html[data-theme="win95"] .mob-toggle,
+html[data-theme="win95"] .mode-toggle,
+html[data-theme="win95"] .ts-toggle,
+html[data-theme="win95"] .hbtn,
+html[data-theme="win95"] .hbtn-primary,
+html[data-theme="win95"] .hbtn-ghost {
+  background: var(--win-face) !important;
+  color: var(--text) !important;
+  border: 2px solid !important;
+  border-color: var(--bevel-out) !important;
+  box-shadow: none !important;
+}
+html[data-theme="win95"] .hbtn:active,
+html[data-theme="win95"] .lang-btn:active,
+html[data-theme="win95"] .mode-toggle:active,
+html[data-theme="win95"] .ts-toggle:active {
+  border-color: var(--bevel-in) !important;
+}
+html[data-theme="win95"] .lang-menu,
+html[data-theme="win95"] .ts-menu {
+  background: var(--win-face) !important;
+  border: 2px solid !important;
+  border-color: var(--bevel-out) !important;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.4) !important;
+}
+html[data-theme="win95"] .lang-opt,
+html[data-theme="win95"] .ts-opt {
+  color: var(--text) !important;
+  background: transparent !important;
+}
+html[data-theme="win95"] .lang-opt:hover,
+html[data-theme="win95"] .ts-opt:hover,
+html[data-theme="win95"] .lang-opt.active,
+html[data-theme="win95"] .ts-opt.active {
+  background: var(--win-title-a) !important;
+  color: #fff !important;
+}

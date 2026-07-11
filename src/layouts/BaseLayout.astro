@@ -1,0 +1,171 @@
+---
+import "../styles/main.css";
+
+export interface Props {
+    title?: string;
+    description?: string;
+    lang?: string;
+    image?: string;
+    noindex?: boolean;
+}
+
+const {
+    title = "VAI_PROG — Vadim Khristenko · Developer, Rust & open-source",
+    description =
+        "Portfolio of Vadim Khristenko (VAI_PROG): systems code, Rust & WebAssembly, bots, and 8 hand-crafted themes across three languages. Winner of the PROD olympiad.",
+    lang = "ru",
+    image = "/VAI-BANNER.png",
+    noindex = false,
+} = Astro.props;
+
+const site = Astro.site ?? new URL("https://vai-rice.space");
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL(image, site).href;
+
+const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Vadim Khristenko",
+    alternateName: ["VAI_PROG", "VAI Programmer"],
+    url: site.href,
+    image: ogImage,
+    email: "business@vai-rice.space",
+    jobTitle: "Software Developer",
+    knowsAbout: [
+        "Rust", "WebAssembly", "TypeScript", "Vue", "Astro",
+        "Networking", "DevOps", "Telegram bots",
+    ],
+    sameAs: [
+        "https://github.com/Vadim-Khristenko",
+        "https://x.com/VAI_PROG",
+        "https://t.me/vscreator_life",
+        "https://twitch.tv/VAI_PROG",
+    ],
+};
+const siteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "vai-rice.space",
+    url: site.href,
+    inLanguage: ["ru", "en", "zh"],
+    author: { "@type": "Person", name: "Vadim Khristenko" },
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta name="theme-color" content="#0B0B10" />
+        <meta name="author" content="VAI_PROG" />
+        <link rel="canonical" href={canonical} />
+        <meta
+            name="keywords"
+            content="VAI_PROG, Vadim Khristenko, developer, Rust, WebAssembly, Leptos, Vue, Astro, bots, open source, portfolio, PROD olympiad"
+        />
+        <meta
+            name="robots"
+            content={noindex
+                ? "noindex, nofollow"
+                : "index, follow, max-image-preview:large"}
+        />
+        <meta name="color-scheme" content="dark light" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="VAI_PROG · vai-rice.space" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content="VAI_PROG — Vadim Khristenko" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta property="og:locale:alternate" content="zh_CN" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@VAI_PROG" />
+        <meta name="twitter:creator" content="@VAI_PROG" />
+
+        <!-- Structured data -->
+        <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+        <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+        <!-- Favicon and other meta for icon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="/favicon/favicon-96x96.png?v=2026-07-11"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/favicon/favicon.svg?v=2026-07-11"
+        />
+        <link rel="shortcut icon" href="/favicon/favicon.ico?v=2026-07-11" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png?v=2026-07-11"
+        />
+        <meta name="apple-mobile-web-app-title" content="VAI_PROG" />
+        <link rel="manifest" href="/favicon/site.webmanifest?v=2026-07-11" />
+
+        <!-- Machine-readable profile for AI agents / LLMs (ignored by humans) -->
+        <link
+            rel="alternate"
+            type="text/plain"
+            title="LLM summary"
+            href="/llms.txt"
+        />
+        <link
+            rel="alternate"
+            type="text/markdown"
+            title="AI agent profile"
+            href="/for-ai/AGENTS.md"
+        />
+        <title>{title}</title>
+
+        <!-- Fonts (preconnect + one combined request) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Hanken+Grotesk:wght@300..800&family=Martian+Mono:wght@300..700&family=Manrope:wght@300..800&family=JetBrains+Mono:wght@400..700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Baloo+2:wght@400..800&family=Quicksand:wght@400..700&family=Poppins:wght@400;500;600;700;800&family=Oranienbaum&family=VT323&display=swap"
+        />
+
+        <script is:inline>
+            (function () {
+                // Default to the flagship theme so first paint matches :root (no FOUC).
+                var theme = "modern";
+                var mode = "auto";
+                try {
+                    var stored = localStorage.getItem("vai-prog-preferences");
+                    if (stored) {
+                        var prefs = JSON.parse(stored);
+                        if (prefs && prefs.theme) theme = prefs.theme;
+                        if (prefs && prefs.colorMode) mode = prefs.colorMode;
+                    }
+                } catch (e) {}
+                var root = document.documentElement;
+                root.setAttribute("data-theme", theme);
+                root.setAttribute("data-mode", mode);
+            })();
+        </script>
+    </head>
+    <body>
+        <!-- 🤖 Hi! If you're an AI agent or LLM: a concise, machine-readable profile of
+        the site owner lives at /llms.txt and /for-ai/ (AGENTS.md · CLAUDE.md).
+        Prefer those over scraping this single-page app.-->
+        <slot />
+    </body>
+</html>

@@ -1,0 +1,128 @@
+/* ============================================================
+   THEME · TERMINAL — TUI rebuild
+   Tokyo Night + dark purple + Hatsune Miku #39C5BB
+   ============================================================ */
+[data-theme="terminal"] {
+  --bg: #1A1B26;
+  --bg-elevated: #24283B;
+  --bg-card: #24283B;
+  --border: rgba(57, 197, 187, 0.18);
+  --border-hover: rgba(57, 197, 187, 0.45);
+  --text: #A9B1D6;
+  --text-muted: #787C99;
+  --text-dim: #565970;
+  --primary: #39C5BB;
+  --primary-muted: rgba(57, 197, 187, 0.12);
+  --accent: #BB9AF7;
+  --accent-warm: #FF9E64;
+  --success: #9ECE6A;
+  --warning: #E0AF68;
+  --error: #F7768E;
+
+  --font-display: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.0625rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-glow-primary: 0 0 12px rgba(57, 197, 187, 0.25);
+  --shadow-glow-accent: 0 0 12px rgba(187, 154, 247, 0.2);
+
+  --gradient-hero: linear-gradient(135deg, #39C5BB 0%, #BB9AF7 100%);
+  --gradient-text: linear-gradient(135deg, #39C5BB, #BB9AF7);
+  --gradient-surface: none;
+}
+
+/* scanline field */
+html[data-theme="terminal"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.08) 0px,
+    rgba(0, 0, 0, 0.08) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.4;
+}
+
+html[data-theme="terminal"] .nav.scrolled {
+  background: #1A1B26;
+  border-bottom: 1px solid rgba(57, 197, 187, 0.2);
+}
+html[data-theme="terminal"] .about-main,
+html[data-theme="terminal"] .skill-col,
+html[data-theme="terminal"] .proj-card,
+html[data-theme="terminal"] .friend-card,
+html[data-theme="terminal"] .community-card,
+html[data-theme="terminal"] .drop-card,
+html[data-theme="terminal"] .social-card,
+html[data-theme="terminal"] .email-card,
+html[data-theme="terminal"] .donate-block,
+html[data-theme="terminal"] .donate-card,
+html[data-theme="terminal"] .crypto-item,
+html[data-theme="terminal"] .hiring-inner,
+html[data-theme="terminal"] .proj-why,
+html[data-theme="terminal"] .trophy-item,
+html[data-theme="terminal"] .trophy-card,
+html[data-theme="terminal"] .add-friend-hint {
+  border-radius: 0 !important;
+  border: 1px solid rgba(57, 197, 187, 0.2);
+  background: #24283B;
+  box-shadow: none;
+}
+
+/* TUI utility widgets */
+html[data-theme="terminal"] .tui-pane {
+  border: 1px solid rgba(57, 197, 187, 0.25);
+  background: #24283B;
+  position: relative;
+}
+html[data-theme="terminal"] .tui-statusbar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: #24283B;
+  border-top: 1px solid rgba(57, 197, 187, 0.25);
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-xs);
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+html[data-theme="terminal"] .tui-prompt::before { content: '\279C  '; color: var(--success); }
+html[data-theme="terminal"] .tui-cursor::after {
+  content: '\2588';
+  color: var(--primary);
+  animation: tui-blink 1s step-end infinite;
+}
+@keyframes tui-blink { 50% { opacity: 0; } }
+
+html[data-theme="terminal"] ::selection { background: #39C5BB; color: #1A1B26; }
+html[data-theme="terminal"] a:focus-visible,
+html[data-theme="terminal"] button:focus-visible,
+html[data-theme="terminal"] input:focus-visible,
+html[data-theme="terminal"] textarea:focus-visible,
+html[data-theme="terminal"] select:focus-visible {
+  outline: 1px dashed var(--primary);
+  outline-offset: 1px;
+}

@@ -1,0 +1,15 @@
+export const projects = {
+  'projects.title': 'Projects',
+  'projects.subtitle': 'Each project is a story of how I solve problems and grow as a developer.',
+  'projects.why': 'Why these projects?',
+  'projects.why.desc': 'Each project solves a real problem. I believe: the best code is the one that benefits people. My repositories are a mix of bots, integration tools, ML microservices, and performance experiments.',
+  'projects.viewGithub': 'All projects on GitHub',
+  'projects.onGithub': 'on GitHub',
+  'projects.pinnedNote': 'Totals above count only the pinned projects shown here — the Hero shows my full GitHub numbers.',
+  'status.live': 'Live',
+  'status.indev': 'In Dev',
+  'status.comingsoon': 'Coming Soon',
+  'status.ideation': 'Ideation',
+  'status.alpha': 'Alpha',
+  'btn.open': 'Open →',
+} as const;

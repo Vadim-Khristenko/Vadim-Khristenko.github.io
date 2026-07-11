@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=VT323&display=swap');
+
+/* ============================================================
+   BASE THEME: MODERN (default)
+   Clean, distinctive, non-generic dark portfolio
+   ============================================================ */
+:root {
+  /* Colors */
+  --bg: #0B0B10;
+  --bg-elevated: #15151E;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+  --primary: #E11D48;
+  --primary-muted: rgba(225, 29, 72, 0.15);
+  --accent: #7C3AED;
+  --accent-warm: #F59E0B;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.75rem;
+  --font-size-4xl: 3.5rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 40px rgba(225, 29, 72, 0.2);
+  --shadow-glow-accent: 0 0 40px rgba(124, 58, 237, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #E11D48 0%, #7C3AED 50%, #2563EB 100%);
+  --gradient-text: linear-gradient(135deg, #E11D48, #7C3AED);
+  --gradient-surface: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+}
+
+/* ============================================================
+   WINDOWS 11 THEME
+   Fluent Design, Acrylic, Mica, rounded corners
+   ============================================================ */
+[data-theme="win11"] {
+  --bg: #202020;
+  --bg-elevated: #2D2D2D;
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --text: #FFFFFF;
+  --text-muted: #A0A0A0;
+  --text-dim: #6D6D6D;
+  --primary: #0078D4;
+  --primary-muted: rgba(0, 120, 212, 0.15);
+  --accent: #60CDFF;
+  --accent-warm: #FFB900;
+  --font-display: 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  --font-body: 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.4);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 16px 32px rgba(0,0,0,0.6);
+  --gradient-hero: linear-gradient(135deg, #0078D4 0%, #60CDFF 100%);
+  --gradient-text: linear-gradient(135deg, #0078D4, #60CDFF);
+}
+
+/* ============================================================
+   MACOS 26 THEME
+   Liquid Glass, depth, vibrancy
+   ============================================================ */
+[data-theme="macos26"] {
+  --bg: #000000;
+  --bg-elevated: rgba(30, 30, 40, 0.6);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.25);
+  --text: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-dim: rgba(255, 255, 255, 0.35);
+  --primary: #A78BFA;
+  --primary-muted: rgba(167, 139, 250, 0.15);
+  --accent: #C4B5FD;
+  --accent-warm: #FCD34D;
+  --font-display: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.5);
+  --gradient-hero: linear-gradient(135deg, #A78BFA 0%, #C4B5FD 50%, #818CF8 100%);
+  --gradient-text: linear-gradient(135deg, #A78BFA, #C4B5FD);
+}
+
+/* ============================================================
+   WINDOWS 95 THEME
+   Classic 3D, grey, pixel-perfect
+   ============================================================ */
+[data-theme="win95"] {
+  --bg: #008080;
+  --bg-elevated: #C0C0C0;
+  --bg-card: #C0C0C0;
+  --border: #000000;
+  --border-hover: #000000;
+  --text: #000000;
+  --text-muted: #404040;
+  --text-dim: #808080;
+  --primary: #000080;
+  --primary-muted: #000080;
+  --accent: #000080;
+  --accent-warm: #000000;
+  --font-display: 'MS Sans Serif', 'Tahoma', sans-serif;
+  --font-body: 'MS Sans Serif', 'Tahoma', sans-serif;
+  --font-mono: 'Courier New', monospace;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --shadow-sm: inset 1px 1px #DFDFDF, inset -1px -1px #000000;
+  --shadow-md: inset 1px 1px #FFFFFF, inset -1px -1px #808080;
+  --shadow-lg: inset 1px 1px #FFFFFF, inset -2px -2px #808080;
+  --gradient-hero: none;
+  --gradient-text: none;
+}
+
+/* ============================================================
+   MAC OS CLASSIC THEME
+   Black & white, Chicago, retro
+   ============================================================ */
+[data-theme="macclassic"] {
+  --bg: #F5F5DC;
+  --bg-elevated: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --border: #000000;
+  --border-hover: #000000;
+  --text: #000000;
+  --text-muted: #333333;
+  --text-dim: #666666;
+  --primary: #000000;
+  --primary-muted: #000000;
+  --accent: #000000;
+  --accent-warm: #000000;
+  --font-display: 'VT323', 'Chicago', monospace;
+  --font-body: 'VT323', 'Geneva', sans-serif;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --shadow-sm: 2px 2px 0 #000000;
+  --shadow-md: 3px 3px 0 #000000;
+  --shadow-lg: 4px 4px 0 #000000;
+  --gradient-hero: none;
+  --gradient-text: none;
+}
+
+/* ============================================================
+   SNACKERS THEME
+   VTuber aesthetic, purple-pink neon
+   ============================================================ */
+[data-theme="snackers"] {
+  --bg: #0D0618;
+  --bg-elevated: #1A0F2E;
+  --bg-card: rgba(255, 107, 157, 0.05);
+  --border: rgba(255, 107, 157, 0.15);
+  --border-hover: rgba(255, 107, 157, 0.35);
+  --text: #FFF0F5;
+  --text-muted: #C8A0CF;
+  --text-dim: #8B6FA0;
+  --primary: #FF6B9D;
+  --primary-muted: rgba(255, 107, 157, 0.15);
+  --accent: #C77DFF;
+  --accent-warm: #FFB347;
+  --font-display: 'M PLUS Rounded 1c', 'Quicksand', sans-serif;
+  --font-body: 'M PLUS Rounded 1c', 'Quicksand', sans-serif;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 0 10px rgba(255, 107, 157, 0.2);
+  --shadow-md: 0 0 20px rgba(255, 107, 157, 0.3);
+  --shadow-lg: 0 0 40px rgba(255, 107, 157, 0.4);
+  --shadow-glow-primary: 0 0 40px rgba(255, 107, 157, 0.3);
+  --shadow-glow-accent: 0 0 40px rgba(199, 125, 255, 0.3);
+  --gradient-hero: linear-gradient(135deg, #FF6B9D 0%, #C77DFF 50%, #7B2CBF 100%);
+  --gradient-text: linear-gradient(135deg, #FF6B9D, #C77DFF);
+}
+
+/* ============================================================
+   CLASSIC (TERMINAL) THEME
+   Hacker green on black
+   ============================================================ */
+[data-theme="classic"] {
+  --bg: #050505;
+  --bg-elevated: #0A0A0A;
+  --bg-card: rgba(0, 255, 65, 0.03);
+  --border: rgba(0, 255, 65, 0.15);
+  --border-hover: rgba(0, 255, 65, 0.35);
+  --text: #00FF41;
+  --text-muted: #00AA2A;
+  --text-dim: #006618;
+  --primary: #00FF41;
+  --primary-muted: rgba(0, 255, 65, 0.1);
+  --accent: #00CC33;
+  --accent-warm: #33FF66;
+  --font-display: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'JetBrains Mono', 'Courier New', monospace;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --shadow-sm: 0 0 5px rgba(0, 255, 65, 0.3);
+  --shadow-md: 0 0 10px rgba(0, 255, 65, 0.4);
+  --shadow-lg: 0 0 20px rgba(0, 255, 65, 0.5);
+  --gradient-hero: linear-gradient(135deg, #00FF41 0%, #00AA2A 100%);
+  --gradient-text: linear-gradient(135deg, #00FF41, #00CC33);
+}
+
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-dim);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   THEME-SPECIFIC GLOBAL OVERRIDES
+   ============================================================ */
+
+/* Win95 specific */
+[data-theme="win95"] body {
+  background-image: none;
+}
+
+[data-theme="win95"] ::selection {
+  background: #000080;
+  color: #FFFFFF;
+}
+
+/* Mac Classic specific */
+[data-theme="macclassic"] ::selection {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* Terminal specific */
+[data-theme="classic"] ::selection {
+  background: #00FF41;
+  color: #000000;
+}
+
+/* Snackers specific - subtle sparkle animation */
+[data-theme="snackers"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255,107,157,0.3), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(199,125,255,0.2), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,107,157,0.3), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(199,125,255,0.2), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,107,157,0.3), transparent),
+    radial-gradient(1px 1px at 160px 120px, rgba(199,125,255,0.2), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Terminal specific - scanline effect */
+[data-theme="classic"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}

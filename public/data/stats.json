@@ -1,0 +1,488 @@
+{
+  "generatedAt": "2026-07-11T23:14:49.013Z",
+  "user": {
+    "repos": 38,
+    "publicRepos": 38,
+    "stars": 305,
+    "forks": 20,
+    "followers": 42,
+    "following": 16
+  },
+  "linesOfCode": 235975,
+  "languages": [
+    {
+      "name": "Rust",
+      "bytes": 3058106,
+      "lines": 89944,
+      "percent": 38.3,
+      "color": "#dea584"
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 1278330,
+      "lines": 38737,
+      "percent": 16,
+      "color": "#3178c6"
+    },
+    {
+      "name": "Python",
+      "bytes": 959169,
+      "lines": 31972,
+      "percent": 12,
+      "color": "#3572A5"
+    },
+    {
+      "name": "Vue",
+      "bytes": 559984,
+      "lines": 16470,
+      "percent": 7,
+      "color": "#41b883"
+    },
+    {
+      "name": "CSS",
+      "bytes": 478537,
+      "lines": 17091,
+      "percent": 6,
+      "color": "#563d7c"
+    },
+    {
+      "name": "HTML",
+      "bytes": 434787,
+      "lines": 10352,
+      "percent": 5.5,
+      "color": "#e34c26"
+    },
+    {
+      "name": "Go",
+      "bytes": 388748,
+      "lines": 12958,
+      "percent": 4.9,
+      "color": "#00ADD8"
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 264239,
+      "lines": 8007,
+      "percent": 3.3,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "PowerShell",
+      "bytes": 251174,
+      "lines": 6977,
+      "percent": 3.1,
+      "color": "#8b8b8b"
+    },
+    {
+      "name": "Astro",
+      "bytes": 124821,
+      "lines": 3467,
+      "percent": 1.6,
+      "color": "#ff5a03"
+    }
+  ],
+  "topRepos": [
+    {
+      "name": "AmneziaWG-Architect",
+      "stars": 262,
+      "forks": 14,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.1.0"
+    },
+    {
+      "name": "Tedu_Notes",
+      "stars": 10,
+      "forks": 0,
+      "issues": 5,
+      "language": "Astro",
+      "url": "https://github.com/Vadim-Khristenko/Tedu_Notes",
+      "description": "Some IT Notes bcz we can)"
+    },
+    {
+      "name": "algo_async_api",
+      "stars": 9,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
+      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
+    },
+    {
+      "name": "foxford_api",
+      "stars": 7,
+      "forks": 0,
+      "issues": 1,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/foxford_api",
+      "description": "API FOXFORD | Код написанный на Языке Python который позволяет взаимодействовать с платформой foxford.ru"
+    },
+    {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+    },
+    {
+      "name": "aiogram-3-guide",
+      "stars": 3,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
+      "description": "Пишем Telegram-ботов с aiogram 3.x"
+    }
+  ],
+  "repos": {
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 8,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vai-framework": {
+      "name": "vai-framework",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "PowerShell",
+      "url": "https://github.com/Vadim-Khristenko/vai-framework",
+      "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
+      "release": "v5.2.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
+    "prodhugs": {
+      "name": "PRODHugs",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/PRODHugs",
+      "description": "just for fun. vibecode warning"
+    },
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+    },
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 262,
+      "forks": 14,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.1.0"
+    },
+    "thewall": {
+      "name": "TheWall",
+      "stars": 2,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/TheWall",
+      "description": "A Win95-styled browser extension (and Tampermonkey userscript) for The Wall at filianislost.com "
+    },
+    "whatcode": {
+      "name": "WhatCode",
+      "stars": 2,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/WhatCode",
+      "description": "WhatCode: Uncompromising AI performance meets a bold, unforgettable personality."
+    },
+    "duckthisdocker": {
+      "name": "DuckThisDocker",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/DuckThisDocker",
+      "description": "Production-grade, multi-language Docker build templates with maximum optimization, security, and reproducibility. Multi-stage builds, layer caching, minimal images, and best practices for Rust, Python, C++, Zig, Go, Node.js, and more."
+    },
+    "quoted-matrix": {
+      "name": "quoted-matrix",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/quoted-matrix",
+      "description": "A Matrix bot for quoting messages into stickers"
+    },
+    "algo_async_api": {
+      "name": "algo_async_api",
+      "stars": 9,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
+      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
+    },
+    "aiogram-3-guide": {
+      "name": "aiogram-3-guide",
+      "stars": 3,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
+      "description": "Пишем Telegram-ботов с aiogram 3.x"
+    },
+    "search-for-you": {
+      "name": "Search-for-YOU",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": "CSS",
+      "url": "https://github.com/Vadim-Khristenko/Search-for-YOU",
+      "description": ""
+    },
+    "matrix-telegram-bridge": {
+      "name": "matrix-telegram-bridge",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Go",
+      "url": "https://github.com/Vadim-Khristenko/matrix-telegram-bridge",
+      "description": "A Matrix-Telegram puppeting bridge"
+    },
+    "hatsunemikueditortheme-zed": {
+      "name": "HatsuneMikuEditorTheme-ZED",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-ZED",
+      "description": "Hatsune Miku theme for Zed editor"
+    },
+    "just-meme-i-use-arch-btw": {
+      "name": "just-meme-i-use-arch-btw",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "JavaScript",
+      "url": "https://github.com/Vadim-Khristenko/just-meme-i-use-arch-btw",
+      "description": ""
+    },
+    "vaidcord": {
+      "name": "vaidcord",
+      "stars": 0,
+      "forks": 1,
+      "issues": 2,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/vaidcord",
+      "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more."
+    },
+    "public-policy": {
+      "name": "public-policy",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/public-policy",
+      "description": ""
+    },
+    "prod-bdays": {
+      "name": "prod-bdays",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/prod-bdays",
+      "description": "Реестр дней рождения комьюнити PROD — Международной Олимпиады по Промышленной Разработке."
+    },
+    "prod-parser": {
+      "name": "PROD-Parser",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Go",
+      "url": "https://github.com/Vadim-Khristenko/PROD-Parser",
+      "description": "Telegram parser for PROD chats. Written in GO and I don't have any Idea WHY."
+    },
+    "t-courses": {
+      "name": "t-courses",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/t-courses",
+      "description": ""
+    },
+    "amneziawg-go": {
+      "name": "amneziawg-go",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Go",
+      "url": "https://github.com/Vadim-Khristenko/amneziawg-go",
+      "description": "AmneziaWG VPN protocol"
+    },
+    "hatsunemikueditortheme-vsc": {
+      "name": "HatsuneMikuEditorTheme-VSC",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-VSC",
+      "description": "VS Code packaged theme and source files for Hatsune Miku theme",
+      "release": "v0.0.2"
+    },
+    "prod-2026-ind-docs": {
+      "name": "prod-2026-ind-docs",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/prod-2026-ind-docs",
+      "description": ""
+    },
+    "torpress": {
+      "name": "torpress",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Shell",
+      "url": "https://github.com/Vadim-Khristenko/torpress",
+      "description": "Website in TOR network Docker container"
+    },
+    "tedu_notes": {
+      "name": "Tedu_Notes",
+      "stars": 10,
+      "forks": 0,
+      "issues": 5,
+      "language": "Astro",
+      "url": "https://github.com/Vadim-Khristenko/Tedu_Notes",
+      "description": "Some IT Notes bcz we can)"
+    },
+    "astro-theme-thought-lite": {
+      "name": "astro-theme-thought-lite",
+      "stars": 0,
+      "forks": 0,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/astro-theme-thought-lite",
+      "description": "A modern Astro theme, focused on content creation."
+    },
+    "amneziawg-windows-client": {
+      "name": "amneziawg-windows-client",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/amneziawg-windows-client",
+      "description": "AmneziaWG client for Windows"
+    },
+    "via_info": {
+      "name": "VIA_info",
+      "stars": 1,
+      "forks": 1,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/VIA_info",
+      "description": "Bug tracking system for VIA bot."
+    },
+    "foxford_api": {
+      "name": "foxford_api",
+      "stars": 7,
+      "forks": 0,
+      "issues": 1,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/foxford_api",
+      "description": "API FOXFORD | Код написанный на Языке Python который позволяет взаимодействовать с платформой foxford.ru"
+    },
+    "ejudge-registration": {
+      "name": "ejudge-registration",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/ejudge-registration",
+      "description": "Async Python script for easy user creation and registration in ejudge"
+    },
+    "codeforces-redesign": {
+      "name": "codeforces-redesign",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/codeforces-redesign",
+      "description": ""
+    },
+    "aiogram": {
+      "name": "aiogram",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/aiogram",
+      "description": "aiogram is a modern and fully asynchronous framework for Telegram Bot API written in Python using asyncio"
+    },
+    "telegram-bot-api": {
+      "name": "telegram-bot-api",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Shell",
+      "url": "https://github.com/Vadim-Khristenko/telegram-bot-api",
+      "description": "Aiogram Docker image of Telegram Bot API Server"
+    },
+    "chromecloak": {
+      "name": "chromecloak",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/chromecloak",
+      "description": "Custom Selenium Chromedriver | Zero-Config | Passes ALL bot mitigation systems (like Distil / Imperva/ Datadadome / CloudFlare IUAM)"
+    },
+    "unciv": {
+      "name": "Unciv",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Kotlin",
+      "url": "https://github.com/Vadim-Khristenko/Unciv",
+      "description": "Open-source Android/Desktop remake of Civ V"
+    },
+    "tlbas-docker": {
+      "name": "tlbas-docker",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Shell",
+      "url": "https://github.com/Vadim-Khristenko/tlbas-docker",
+      "description": "TLBAS Docker"
+    },
+    "via-actions": {
+      "name": "VIA-actions",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/VIA-actions",
+      "description": "Multifunctional bot VIA. More details in the documentation."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+# vai-rice.space
+User-agent: *
+Allow: /
+
+# AI agents & LLMs — a concise machine-readable profile lives here:
+#   /llms.txt · /for-ai/AGENTS.md · /for-ai/CLAUDE.md
+
+Sitemap: https://vai-rice.space/sitemap.xml

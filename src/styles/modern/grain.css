@@ -1,0 +1,28 @@
+/* ============================================================
+   MODERN · FILM GRAIN + HAIRLINE ATMOSPHERE
+   A fixed, non-interactive paper-grain overlay. Modern only.
+   ============================================================ */
+html[data-theme="modern"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: var(--grain-opacity, 0.5);
+  mix-blend-mode: var(--grain-blend, multiply);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.86' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+/* respect reduced motion / low-end: grain is static so it's fine,
+   but let users kill it via reduced-transparency preference */
+@media (prefers-reduced-transparency: reduce) {
+  html[data-theme="modern"] body::before { display: none; }
+}
+
+/* reusable hairline utility for editorial rules */
+html[data-theme="modern"] .rule-h {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  height: 0;
+}

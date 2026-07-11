@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import BlogIndex from '@/components/blog/BlogIndex.vue';
+import '@/styles/blog.css';
+
+function readMin(body: string) {
+  const w = (body || '').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(w / 200));
+}
+
+const raw = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const posts = raw.map((p) => ({
+  slug: p.id,
+  title: p.data.title,
+  description: p.data.description,
+  tags: p.data.tags,
+  lang: p.data.lang,
+  date: p.data.pubDate.toISOString(),
+  readMin: readMin(p.body ?? ''),
+  translationKey: p.data.translationKey || p.id,
+}));
+
+const title = 'VAI_PROG — Blog';
+const description = 'Notes, updates and experiments from VAI_PROG.';
+---
+
+<BaseLayout title={title} description={description} lang="ru">
+  <BlogIndex posts={posts} client:only="vue" />
+</BaseLayout>

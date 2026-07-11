@@ -1,0 +1,304 @@
+/* ============================================================
+   THEME · CLASSIC — clean 2016–2018 web (flat / material era)
+   Poppins, generous whitespace, soft elevation, rounded cards,
+   one vibrant indigo→violet accent, tasteful gradient CTA.
+   Light (default) + Dark via [data-mode] (classic-dark.css).
+   ============================================================ */
+[data-theme="classic"] {
+  --bg: #F6F7FB;
+  --bg-elevated: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-sunken: #EEF0F6;
+  --border: rgba(17, 24, 39, 0.08);
+  --border-hover: rgba(99, 102, 241, 0.4);
+  --text: #111827;
+  --text-muted: #6B7280;
+  --text-dim: #9CA3AF;
+  --primary: #6366F1;             /* indigo-500 */
+  --primary-muted: rgba(99, 102, 241, 0.10);
+  --accent: #8B5CF6;              /* violet */
+  --accent-2: #EC4899;           /* pink pop */
+  --accent-warm: #F59E0B;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  --grad: linear-gradient(135deg, #6366F1, #8B5CF6);
+
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Poppins', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --font-size-4xl: clamp(2.4rem, 6vw, 4rem);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.06), 0 1px 2px rgba(17, 24, 39, 0.04);
+  --shadow-md: 0 6px 18px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 18px 40px rgba(17, 24, 39, 0.12);
+  --shadow-glow-primary: 0 10px 28px rgba(99, 102, 241, 0.30);
+  --shadow-glow-accent: 0 10px 28px rgba(139, 92, 246, 0.28);
+
+  --gradient-hero: var(--grad);
+  --gradient-text: var(--grad);
+  --gradient-surface: none;
+}
+
+html[data-theme="classic"] body {
+  background: var(--bg);
+  line-height: 1.65;
+}
+html[data-theme="classic"] ::selection { background: rgba(99, 102, 241, 0.22); color: var(--text); }
+html[data-theme="classic"] a:not(.hbtn) { color: var(--primary); }
+
+/* soft ambient wash behind the hero (tasteful, not slop) */
+html[data-theme="classic"] .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(50vw 40vh at 82% -10%, rgba(139, 92, 246, 0.10), transparent 60%),
+    radial-gradient(46vw 38vh at 8% 8%, rgba(99, 102, 241, 0.08), transparent 60%);
+}
+
+/* ── nav ── */
+html[data-theme="classic"] .nav { padding: 0 1.5rem; }
+html[data-theme="classic"] .nav.scrolled {
+  background: rgba(246, 247, 251, 0.8);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom: 1px solid var(--border);
+}
+html[data-theme="classic"] .logo-text { font-family: var(--font-display); font-weight: 700; }
+html[data-theme="classic"] .logo-icon { color: var(--primary); }
+html[data-theme="classic"] .nav-link {
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+html[data-theme="classic"] .nav-link:hover { background: var(--primary-muted); color: var(--primary); }
+html[data-theme="classic"] .nav-link::after { display: none; }
+html[data-theme="classic"] .lang-btn,
+html[data-theme="classic"] .mob-toggle,
+html[data-theme="classic"] .mode-toggle,
+html[data-theme="classic"] .ts-toggle {
+  border-radius: var(--radius-full);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+html[data-theme="classic"] .lang-menu,
+html[data-theme="classic"] .ts-menu {
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+html[data-theme="classic"] .lang-opt.active,
+html[data-theme="classic"] .ts-opt.active { color: var(--primary); background: var(--primary-muted); }
+
+/* ── hero ── */
+html[data-theme="classic"] .hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+html[data-theme="classic"] .hero-title .gtext {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+html[data-theme="classic"] .hero-title::after { display: none; }
+html[data-theme="classic"] .hero-sub { color: var(--text-muted); font-style: normal; font-weight: 500; }
+html[data-theme="classic"] .hero-note { color: var(--text-dim); }
+html[data-theme="classic"] .age { color: var(--primary); font-weight: 700; }
+html[data-theme="classic"] .avatar-img { border: 4px solid var(--bg-elevated); box-shadow: var(--shadow-lg); }
+html[data-theme="classic"] .avatar-ring { background: var(--grad); opacity: 0.35; }
+html[data-theme="classic"] .marquee-item { font-family: var(--font-display); font-weight: 700; color: var(--text); }
+html[data-theme="classic"] .marquee-dot { color: var(--accent); }
+html[data-theme="classic"] .hero-marquee { border-color: var(--border); }
+
+/* ── buttons: gradient pill + ghost ── */
+html[data-theme="classic"] .hbtn {
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+}
+html[data-theme="classic"] .hbtn-primary {
+  background: var(--grad);
+  color: #fff;
+  border: none;
+  box-shadow: var(--shadow-glow-primary);
+}
+html[data-theme="classic"] .hbtn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(99,102,241,0.38); }
+html[data-theme="classic"] .hbtn-ghost {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+html[data-theme="classic"] .hbtn-ghost:hover { border-color: var(--border-hover); color: var(--primary); box-shadow: var(--shadow-md); }
+
+/* ── cards: rounded, soft elevation, hover lift ── */
+html[data-theme="classic"] .proj-card,
+html[data-theme="classic"] .friend-card,
+html[data-theme="classic"] .community-card,
+html[data-theme="classic"] .skill-col,
+html[data-theme="classic"] .lang-bar,
+html[data-theme="classic"] .about-main,
+html[data-theme="classic"] .side-card,
+html[data-theme="classic"] .proj-why,
+html[data-theme="classic"] .trophy-card,
+html[data-theme="classic"] .social-card,
+html[data-theme="classic"] .email-card,
+html[data-theme="classic"] .hiring-inner,
+html[data-theme="classic"] .add-friend-hint,
+html[data-theme="classic"] .suggest-hint {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-fast);
+}
+html[data-theme="classic"] .proj-card:hover,
+html[data-theme="classic"] .friend-card:hover,
+html[data-theme="classic"] .community-card:hover,
+html[data-theme="classic"] .skill-col:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border);
+}
+html[data-theme="classic"] .stack-tag,
+html[data-theme="classic"] .tag {
+  border-radius: var(--radius-full);
+  background: var(--primary-muted);
+  color: var(--primary);
+  border: 1px solid transparent;
+  font-weight: 500;
+}
+html[data-theme="classic"] .sec-header h2,
+html[data-theme="classic"] .proj-name,
+html[data-theme="classic"] h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+html[data-theme="classic"] input,
+html[data-theme="classic"] textarea {
+  border-radius: var(--radius-md) !important;
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* ============================================================
+   FORCE — override legacy per-component hardcodes for DARK
+   ============================================================ */
+html[data-theme="classic"] .proj-card,
+html[data-theme="classic"] .friend-card,
+html[data-theme="classic"] .community-card,
+html[data-theme="classic"] .skill-col,
+html[data-theme="classic"] .lang-bar,
+html[data-theme="classic"] .about-main,
+html[data-theme="classic"] .side-card,
+html[data-theme="classic"] .proj-why,
+html[data-theme="classic"] .trophy-card,
+html[data-theme="classic"] .social-card,
+html[data-theme="classic"] .email-card,
+html[data-theme="classic"] .donate-block,
+html[data-theme="classic"] .donate-card,
+html[data-theme="classic"] .crypto-item,
+html[data-theme="classic"] .hiring-inner,
+html[data-theme="classic"] .add-friend-hint,
+html[data-theme="classic"] .suggest-hint,
+html[data-theme="classic"] .drop-card {
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+html[data-theme="classic"] .proj-desc,
+html[data-theme="classic"] .friend-desc,
+html[data-theme="classic"] .friend-role,
+html[data-theme="classic"] .community-desc,
+html[data-theme="classic"] .hiring-detail,
+html[data-theme="classic"] .hiring-lead { color: var(--text-muted) !important; }
+html[data-theme="classic"] .proj-name,
+html[data-theme="classic"] .friend-meta h4,
+html[data-theme="classic"] .community-meta h4 { color: var(--text) !important; }
+html[data-theme="classic"] .lang-track { background: var(--bg-sunken) !important; }
+html[data-theme="classic"] .tag,
+html[data-theme="classic"] .stack-tag {
+  background: var(--primary-muted) !important;
+  color: var(--primary) !important;
+  border: 1px solid transparent !important;
+}
+html[data-theme="classic"] .lang-btn,
+html[data-theme="classic"] .mode-toggle,
+html[data-theme="classic"] .ts-toggle {
+  background: var(--bg-card) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border) !important;
+}
+html[data-theme="classic"] .lang-menu,
+html[data-theme="classic"] .ts-menu {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+}
+html[data-theme="classic"] .lang-opt,
+html[data-theme="classic"] .ts-opt { color: var(--text) !important; }
+html[data-theme="classic"] .nav.scrolled {
+  background: color-mix(in srgb, var(--bg) 80%, transparent) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* ============================================================
+   BUTTON FORCE — consistent gradient / ghost across light+dark
+   (overrides HeroSection/ProjectsSection hardcodes, incl. the
+    #FFFFFF ghost button that broke dark mode)
+   ============================================================ */
+html[data-theme="classic"] .hbtn-primary,
+html[data-theme="classic"] .gh-link,
+html[data-theme="classic"] .add-link,
+html[data-theme="classic"] .suggest-link {
+  background: var(--grad) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: var(--shadow-glow-primary) !important;
+}
+html[data-theme="classic"] .hbtn-primary:hover,
+html[data-theme="classic"] .gh-link:hover,
+html[data-theme="classic"] .add-link:hover,
+html[data-theme="classic"] .suggest-link:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 14px 34px rgba(99, 102, 241, 0.36) !important;
+}
+html[data-theme="classic"] .hbtn-ghost {
+  background: var(--bg-card) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+html[data-theme="classic"] .hbtn-ghost:hover {
+  border-color: var(--border-hover) !important;
+  color: var(--primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+html[data-theme="classic"] .proj-link {
+  background: var(--bg-card) !important;
+  color: var(--text-muted) !important;
+  border: 1px solid var(--border) !important;
+}
+html[data-theme="classic"] .proj-link:hover {
+  color: var(--primary) !important;
+  border-color: var(--border-hover) !important;
+}

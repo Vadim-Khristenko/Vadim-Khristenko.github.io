@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import LicenseApp from '@/components/LicenseApp.vue';
+import '@/styles/blog.css';
+
+const title = 'Licenses — VAI_PROG';
+const description =
+  'How the source code and content of vai-rice.space are licensed: VKPPL for code, VAI Content License for posts and stories.';
+---
+
+<BaseLayout title={title} description={description} lang="en">
+  <LicenseApp client:only="vue" />
+</BaseLayout>

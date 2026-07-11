@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VAI Terminal — interactive portfolio</title>
+  <meta name="description" content="An interactive command-line portfolio. Built in Rust + WebAssembly." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/favicon/terminal/favicon-96x96.png?v=2026-07-11" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/terminal/favicon.svg?v=2026-07-11" />
+  <link rel="shortcut icon" href="/favicon/terminal/favicon.ico?v=2026-07-11" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/terminal/apple-touch-icon.png?v=2026-07-11" />
+  <meta name="apple-mobile-web-app-title" content="V-TERM" />
+  <link rel="manifest" href="/favicon/terminal/site.webmanifest?v=2026-07-11" />
+
+  <link rel="stylesheet" href="/files/terminal/styles-6459e6c0c55e6dd6.css" integrity="sha384-9xyrvGXlyuypsh0stmUyRpqTmPgN5vV4jiwRhCSCgrwKPjWqSWQAV8D0ld9gHGVI"/>
+  
+<script type="module">
+import init, * as bindings from '/files/terminal/vai-terminal-c25783d6398f07dd.js';
+const wasm = await init({ module_or_path: '/files/terminal/vai-terminal-c25783d6398f07dd_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+
+  <script>
+    window.tlang = function () {
+      var l = (navigator.language || "en").toLowerCase();
+      if (l.indexOf("ru") === 0) return "ru";
+      if (l.indexOf("zh") === 0) return "zh";
+      return "en";
+    };
+    // tiny persistence bridge (localStorage, namespaced)
+    window.sget = function (k) { try { return localStorage.getItem("vaiterm." + k) || ""; } catch (e) { return ""; } };
+    window.sset = function (k, v) { try { localStorage.setItem("vaiterm." + k, v); } catch (e) {} };
+  </script>
+<link rel="modulepreload" href="/files/terminal/vai-terminal-c25783d6398f07dd.js" crossorigin="anonymous" integrity="sha384-7cJvlPKhVuB4I4dwJmz2TF1M26e5nsGtjRxsL0XWiM3/FjhTWSbvDvdemq+JQSjX"><link rel="preload" href="/files/terminal/vai-terminal-c25783d6398f07dd_bg.wasm" crossorigin="anonymous" integrity="sha384-tVJfXzNyOrg33ZkXk8VRP6ng6Mc3ueMcEelkMEm51otFlQ+2oSxDDRaRXRykvkWL" as="fetch" type="application/wasm"></head>
+<body></body>
+</html>

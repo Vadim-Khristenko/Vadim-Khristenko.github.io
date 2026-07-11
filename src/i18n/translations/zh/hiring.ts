@@ -1,0 +1,16 @@
+export const hiring = {
+  'hiring.badge': '开放合作',
+  'hiring.title': '寻找工作 / 兼职 / 自由职业',
+  'hiring.desc': '对有趣而不寻常的项目开放。',
+  'hiring.detail': '乐于承接开发：机器人、后端、DevOps、少量前端。我会力求又快又好，让你满意。',
+  'hiring.discount': '视项目的趣味性与复杂度，以及好评，提供 5%-15% 的折扣。',
+  'hiring.intern': '也考虑参与实习。',
+  'hiring.cta': '联系我',
+  'hiring.email': 'business@vai-rice.space',
+  'hiring.svc.bots': 'Telegram / Discord 机器人',
+  'hiring.svc.web': 'Web 应用',
+  'hiring.svc.backend': '后端 API',
+  'hiring.svc.frontend': '前端',
+  'hiring.svc.devops': 'DevOps / CI-CD',
+  'hiring.svc.ai': 'ML / AI 集成',
+} as const;

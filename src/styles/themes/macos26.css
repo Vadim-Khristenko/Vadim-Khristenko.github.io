@@ -1,0 +1,183 @@
+/* ============================================================
+   THEME · macOS 26 "Tahoe" — LIQUID GLASS, in space.
+   Translucent glass that refracts a cosmic nebula behind it,
+   specular highlights, deep rounded surfaces, vibrancy.
+   Dock + Spotlight live in components/macos/MacosEasterEggs.vue
+   ============================================================ */
+[data-theme="macos26"] {
+  --bg: #05060E;                          /* deep space */
+  --bg-elevated: rgba(255, 255, 255, 0.09);
+  --bg-card: rgba(255, 255, 255, 0.06);   /* glass */
+  --bg-sunken: #03040A;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-strong: rgba(255, 255, 255, 0.14);
+  --border: rgba(255, 255, 255, 0.14);
+  --border-hover: rgba(255, 255, 255, 0.30);
+  --text: #F6F6FF;
+  --text-muted: rgba(246, 246, 255, 0.68);
+  --text-dim: rgba(246, 246, 255, 0.42);
+  --primary: #7AA2FF;                     /* soft space blue */
+  --primary-muted: rgba(122, 162, 255, 0.16);
+  --accent: #C4A2FF;                      /* violet */
+  --accent-2: #6EE7E7;                    /* nebula teal */
+  --accent-warm: #FFD27A;
+  --success: #7CF0B0;
+  --warning: #FFD27A;
+  --error: #FF8FA3;
+
+  --font-display: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-body: -apple-system, 'SF Pro Text', BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', ui-monospace, monospace;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  --shadow-glow-primary: 0 0 60px rgba(122, 162, 255, 0.25);
+  --shadow-glow-accent: 0 0 60px rgba(196, 162, 255, 0.25);
+
+  --gradient-hero: none;
+  --gradient-text: none;
+  --gradient-surface: none;
+}
+
+/* ── COSMOS: nebula + starfield ── */
+html[data-theme="macos26"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(70vw 60vh at 15% -5%, rgba(122, 100, 255, 0.30), transparent 60%),
+    radial-gradient(65vw 55vh at 100% 20%, rgba(110, 231, 231, 0.16), transparent 60%),
+    radial-gradient(80vw 70vh at 60% 110%, rgba(196, 100, 220, 0.22), transparent 60%),
+    radial-gradient(120vw 120vh at 50% 50%, rgba(8, 10, 26, 0.0), #05060E 75%);
+}
+html[data-theme="macos26"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1.5px 1.5px at 200px 160px, #cfe0ff, transparent),
+    radial-gradient(1px 1px at 80px 200px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1.5px 1.5px at 260px 40px, #ffe9cf, transparent),
+    radial-gradient(1px 1px at 320px 260px, rgba(255,255,255,0.85), transparent);
+  background-repeat: repeat;
+  background-size: 360px 360px;
+  opacity: 0.8;
+  animation: macStars 6s ease-in-out infinite;
+}
+@keyframes macStars { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.85; } }
+
+html[data-theme="macos26"] ::selection { background: rgba(122, 162, 255, 0.5); color: #fff; }
+
+/* ── glass utility used by cards/nav ── */
+html[data-theme="macos26"] .nav.scrolled {
+  background: rgba(20, 20, 32, 0.5);
+  backdrop-filter: blur(40px) saturate(1.8);
+  border-bottom: 1px solid var(--border);
+}
+html[data-theme="macos26"] .logo-text { font-family: var(--font-display); font-weight: 600; }
+html[data-theme="macos26"] .logo-icon { color: var(--primary); }
+html[data-theme="macos26"] .nav-link { border-radius: var(--radius-full); }
+html[data-theme="macos26"] .nav-link:hover { background: var(--glass); color: var(--text); }
+html[data-theme="macos26"] .nav-link::after { background: var(--primary); }
+html[data-theme="macos26"] .lang-btn,
+html[data-theme="macos26"] .mob-toggle {
+  border-radius: var(--radius-full);
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+html[data-theme="macos26"] .lang-menu {
+  border-radius: var(--radius-md);
+  background: rgba(28, 28, 42, 0.6);
+  backdrop-filter: blur(50px) saturate(1.8);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── hero ── */
+html[data-theme="macos26"] .hero-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-shadow: 0 2px 40px rgba(122, 162, 255, 0.4);
+}
+html[data-theme="macos26"] .hero-title .gtext { background: none; -webkit-text-fill-color: currentColor; color: var(--text); }
+html[data-theme="macos26"] .hero-sub { color: var(--text-muted); font-style: normal; }
+html[data-theme="macos26"] .age { color: var(--accent-2); }
+html[data-theme="macos26"] .avatar-img {
+  border: 1px solid var(--border-hover);
+  box-shadow: var(--shadow-md), var(--shadow-glow-primary);
+}
+html[data-theme="macos26"] .avatar-ring { background: radial-gradient(circle, rgba(196,162,255,0.5), transparent 70%); }
+html[data-theme="macos26"] .marquee-item { font-family: var(--font-display); font-weight: 600; }
+html[data-theme="macos26"] .marquee-dot { color: var(--accent); }
+
+/* ── buttons: liquid glass ── */
+html[data-theme="macos26"] .hbtn { border-radius: var(--radius-full); font-family: var(--font-body); font-weight: 600; }
+html[data-theme="macos26"] .hbtn-primary {
+  background: linear-gradient(180deg, rgba(122,162,255,0.95), rgba(122,162,255,0.75));
+  color: #08122e;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-sm), var(--shadow-glow-primary);
+}
+html[data-theme="macos26"] .hbtn-primary:hover { transform: translateY(-2px); }
+html[data-theme="macos26"] .hbtn-ghost {
+  background: var(--glass);
+  color: var(--text);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+}
+html[data-theme="macos26"] .hbtn-ghost:hover { background: var(--glass-strong); border-color: var(--border-hover); }
+
+/* ── glass cards with specular highlight ── */
+html[data-theme="macos26"] .proj-card,
+html[data-theme="macos26"] .friend-card,
+html[data-theme="macos26"] .community-card,
+html[data-theme="macos26"] .skill-col,
+html[data-theme="macos26"] .lang-bar,
+html[data-theme="macos26"] .hiring-inner,
+html[data-theme="macos26"] .about-main,
+html[data-theme="macos26"] .proj-why,
+html[data-theme="macos26"] .trophy-card,
+html[data-theme="macos26"] .social-card,
+html[data-theme="macos26"] .email-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(30px) saturate(1.6);
+}
+html[data-theme="macos26"] .proj-card:hover,
+html[data-theme="macos26"] .friend-card:hover,
+html[data-theme="macos26"] .community-card:hover {
+  background: var(--glass-strong);
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+html[data-theme="macos26"] .stack-tag,
+html[data-theme="macos26"] .tag {
+  border-radius: var(--radius-full);
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+html[data-theme="macos26"] .sec-header h2,
+html[data-theme="macos26"] .proj-name,
+html[data-theme="macos26"] h2 { font-family: var(--font-display); font-weight: 600; }
+
+/* leave room for the Dock */
+html[data-theme="macos26"] body { padding-bottom: 92px; }

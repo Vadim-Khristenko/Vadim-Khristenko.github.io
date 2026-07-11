@@ -1,0 +1,15 @@
+export const contact = {
+  'contact.title': 'Contacts',
+  'contact.subtitle': 'All ways to reach me — pick your preferred',
+  'contact.projEmails': 'Project contacts',
+  'contact.socials': 'Social networks',
+  'contact.copy': 'Copy',
+  'contact.copied': 'Copied!',
+  'contact.donateTitle': 'Support me',
+  'contact.donateSubtitle': 'Help me keep going: a coffee, a Miku figure, or just fuel for the servers',
+  'donate.coffee': 'Buy me a coffee',
+  'donate.patreon': 'Patreon',
+  'donate.yoomoney': 'YooMoney',
+  'donate.crypto': 'Cryptocurrency',
+  'donate.cryptoSubtitle': 'Click address to copy',
+} as const;

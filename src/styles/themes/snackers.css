@@ -1,0 +1,215 @@
+/* ============================================================
+   THEME · SNACKERS!!! — Filian / "The Snackers HQ"
+   Candy-grape VTuber energy: white-hair + violet-eye cat-girl.
+   NOT a flat pink→purple gradient (that read as AI slop).
+   Sticker cards, wonky rotations, sparkles, Welch's chaos.
+   Easter eggs live in components/snackers/SnackersEasterEggs.vue
+   ============================================================ */
+[data-theme="snackers"] {
+  --bg: #1B0B2E;            /* deep grape */
+  --bg-elevated: #2A1250;
+  --bg-card: #2E1656;       /* candy card */
+  --bg-sunken: #150823;
+  --border: rgba(255, 143, 209, 0.22);
+  --border-hover: #FF5FA2;
+  --text: #FFF0FB;
+  --text-muted: #D9B8F0;
+  --text-dim: #A483C9;
+  --primary: #FF5FA2;       /* candy pink */
+  --primary-muted: rgba(255, 95, 162, 0.16);
+  --accent: #9B4DFF;        /* grape violet (her eyes) */
+  --accent-2: #7CE38B;      /* fruit-snack lime */
+  --accent-warm: #FFD24A;   /* sunny gummy */
+  --success: #7CE38B;
+  --warning: #FFD24A;
+  --error: #FF6B8A;
+
+  --font-display: 'Baloo 2', 'M PLUS Rounded 1c', system-ui, sans-serif;
+  --font-body: 'Quicksand', 'M PLUS Rounded 1c', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  --shadow-sm: 0 4px 0 rgba(123, 45, 191, 0.5);
+  --shadow-md: 0 6px 0 rgba(123, 45, 191, 0.55), 0 0 24px rgba(255, 95, 162, 0.2);
+  --shadow-lg: 0 10px 0 rgba(123, 45, 191, 0.6), 0 0 48px rgba(255, 95, 162, 0.28);
+  --shadow-glow-primary: 0 0 40px rgba(255, 95, 162, 0.4);
+  --shadow-glow-accent: 0 0 40px rgba(155, 77, 255, 0.4);
+
+  --gradient-hero: none;
+  --gradient-text: none;
+  --gradient-surface: none;
+}
+
+/* ── atmosphere: soft candy glows + sparkle field (no linear gradient) ── */
+html[data-theme="snackers"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60vw 60vw at 12% -8%, rgba(155, 77, 255, 0.28), transparent 60%),
+    radial-gradient(55vw 55vw at 92% 8%, rgba(255, 95, 162, 0.22), transparent 60%),
+    radial-gradient(50vw 50vw at 50% 108%, rgba(124, 227, 139, 0.14), transparent 60%);
+}
+html[data-theme="snackers"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 210, 74, 0.8), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(255, 95, 162, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 60px 160px, rgba(255, 240, 251, 0.7), transparent),
+    radial-gradient(2px 2px at 180px 120px, rgba(155, 77, 255, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 90px 40px, rgba(124, 227, 139, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 220px 220px;
+  opacity: 0.6;
+  animation: snkTwinkle 4s ease-in-out infinite;
+}
+@keyframes snkTwinkle { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.7; } }
+
+html[data-theme="snackers"] ::selection { background: var(--accent-warm); color: #3A1560; }
+
+/* ── nav: bouncy candy ── */
+html[data-theme="snackers"] .nav.scrolled {
+  background: rgba(27, 11, 46, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 2px dashed rgba(255, 95, 162, 0.35);
+}
+html[data-theme="snackers"] .logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--primary);
+}
+html[data-theme="snackers"] .logo-icon { color: var(--accent-warm); }
+html[data-theme="snackers"] .nav-link {
+  font-family: var(--font-body);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+html[data-theme="snackers"] .nav-link:hover {
+  color: var(--bg);
+  background: var(--primary);
+  transform: rotate(-2deg) scale(1.05);
+}
+html[data-theme="snackers"] .nav-link::after { display: none; }
+
+/* ── hero: playful ── */
+html[data-theme="snackers"] .hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--text);
+  text-shadow: 3px 3px 0 var(--accent), 6px 6px 0 rgba(123, 45, 191, 0.4);
+  letter-spacing: 0;
+}
+html[data-theme="snackers"] .hero-title .gtext {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--text);
+}
+html[data-theme="snackers"] .hero-sub { color: var(--accent-warm); font-weight: 600; }
+html[data-theme="snackers"] .age { color: var(--accent-2); }
+
+/* cat ears on the avatar 🐱 */
+html[data-theme="snackers"] .avatar-wrap::before,
+html[data-theme="snackers"] .avatar-wrap::after {
+  content: '';
+  position: absolute;
+  top: -14px;
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 34px solid var(--primary);
+  z-index: 2;
+  filter: drop-shadow(0 -2px 0 rgba(123,45,191,0.4));
+}
+html[data-theme="snackers"] .avatar-wrap::before { left: 18%; transform: rotate(-18deg); }
+html[data-theme="snackers"] .avatar-wrap::after { right: 18%; transform: rotate(18deg); }
+html[data-theme="snackers"] .avatar-img {
+  border: 4px solid var(--primary);
+  box-shadow: var(--shadow-glow-primary);
+}
+html[data-theme="snackers"] .avatar-ring {
+  background: radial-gradient(circle, rgba(255,95,162,0.5), transparent 70%);
+}
+
+/* buttons: chunky candy with press */
+html[data-theme="snackers"] .hbtn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+html[data-theme="snackers"] .hbtn-primary {
+  background: var(--primary);
+  color: #3A1560;
+  border: none;
+  box-shadow: 0 5px 0 #B83A78;
+}
+html[data-theme="snackers"] .hbtn-primary:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: 0 7px 0 #B83A78, var(--shadow-glow-primary); }
+html[data-theme="snackers"] .hbtn-primary:active { transform: translateY(3px); box-shadow: 0 2px 0 #B83A78; }
+html[data-theme="snackers"] .hbtn-ghost {
+  background: var(--bg-card);
+  color: var(--text);
+  border: 2px dashed var(--border-hover);
+}
+
+/* marquee: candy */
+html[data-theme="snackers"] .marquee-item { font-family: var(--font-display); color: var(--text); }
+html[data-theme="snackers"] .marquee-dot { color: var(--accent-warm); }
+html[data-theme="snackers"] .hero-marquee { border-color: rgba(255,95,162,0.35); border-style: dashed; }
+
+/* ── sticker cards everywhere ── */
+html[data-theme="snackers"] .proj-card,
+html[data-theme="snackers"] .friend-card,
+html[data-theme="snackers"] .community-card,
+html[data-theme="snackers"] .skill-col,
+html[data-theme="snackers"] .lang-bar,
+html[data-theme="snackers"] .hiring-inner,
+html[data-theme="snackers"] .about-main,
+html[data-theme="snackers"] .proj-why,
+html[data-theme="snackers"] .trophy-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-hover);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+html[data-theme="snackers"] .proj-card:hover,
+html[data-theme="snackers"] .friend-card:hover,
+html[data-theme="snackers"] .community-card:hover {
+  transform: translateY(-5px) rotate(-1.2deg);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-warm);
+}
+/* alternate a playful tilt so the grid feels hand-placed */
+html[data-theme="snackers"] .friend-card:nth-child(even),
+html[data-theme="snackers"] .community-card:nth-child(even),
+html[data-theme="snackers"] .proj-card:nth-child(even) { transform: rotate(0.8deg); }
+html[data-theme="snackers"] .friend-card:nth-child(even):hover,
+html[data-theme="snackers"] .community-card:nth-child(even):hover,
+html[data-theme="snackers"] .proj-card:nth-child(even):hover { transform: translateY(-5px) rotate(1.2deg); }
+
+html[data-theme="snackers"] .stack-tag,
+html[data-theme="snackers"] .tag {
+  border-radius: var(--radius-full);
+  background: var(--primary-muted);
+  border: 1px solid var(--border-hover);
+  color: var(--text);
+}
+html[data-theme="snackers"] .sec-header h2,
+html[data-theme="snackers"] .proj-name,
+html[data-theme="snackers"] h2 { font-family: var(--font-display); }
+
+/* section headings get a gummy underline */
+html[data-theme="snackers"] .sec-header h2 {
+  display: inline-block;
+  text-decoration: underline wavy var(--accent-warm) 2px;
+  text-underline-offset: 6px;
+}

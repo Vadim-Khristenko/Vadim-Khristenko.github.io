@@ -1,0 +1,70 @@
+/* ============================================================
+   THEME · MODERN — DARK MODE
+   Same Swiss Editorial system, inverted to warm near-black.
+   Cobalt + vermilion survive on dark (brightened a touch).
+   Applied two ways:
+     • explicit:  html[data-theme="modern"][data-mode="dark"]
+     • automatic: prefers-color-scheme + [data-mode="auto"]
+   ============================================================ */
+
+/* Shared dark declarations — kept in one custom block so the
+   explicit selector and the auto media-query stay identical. */
+html[data-theme="modern"][data-mode="dark"] {
+  --bg: #15140F;
+  --bg-elevated: #1E1C16;
+  --bg-card: #1A1813;
+  --bg-sunken: #100F0B;
+
+  --text: #F2EFE7;
+  --text-muted: #A8A296;
+  --text-dim: #6E695E;
+
+  --border: rgba(242, 239, 231, 0.14);
+  --rule: #F2EFE7;
+  --border-hover: #6B78FF;
+
+  --primary: #6B78FF;
+  --primary-muted: rgba(107, 120, 255, 0.16);
+  --accent: #FF5A32;
+  --accent-muted: rgba(255, 90, 50, 0.14);
+  --accent-warm: #FF5A32;
+  --success: #56C98A;
+  --warning: #E0A54B;
+  --error: #FF6B5B;
+
+  --grain-blend: overlay;
+  --grain-opacity: 0.6;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="modern"][data-mode="auto"] {
+    --bg: #15140F;
+    --bg-elevated: #1E1C16;
+    --bg-card: #1A1813;
+    --bg-sunken: #100F0B;
+
+    --text: #F2EFE7;
+    --text-muted: #A8A296;
+    --text-dim: #6E695E;
+
+    --border: rgba(242, 239, 231, 0.14);
+    --rule: #F2EFE7;
+    --border-hover: #6B78FF;
+
+    --primary: #6B78FF;
+    --primary-muted: rgba(107, 120, 255, 0.16);
+    --accent: #FF5A32;
+    --accent-muted: rgba(255, 90, 50, 0.14);
+    --accent-warm: #FF5A32;
+    --success: #56C98A;
+    --warning: #E0A54B;
+    --error: #FF6B5B;
+
+    --grain-blend: overlay;
+    --grain-opacity: 0.6;
+  }
+}
+
+/* dark meta polish */
+html[data-theme="modern"][data-mode="dark"] .hbtn-primary,
+html[data-theme="modern"][data-mode="dark"] .hero-title::after { color: #fff; }
