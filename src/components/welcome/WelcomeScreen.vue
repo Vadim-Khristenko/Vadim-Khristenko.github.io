@@ -8,29 +8,25 @@
         <div class="grid-overlay"></div>
       </div>
       
+      <button class="welcome-skip" @click="skipAll">{{ t('welcome.skip') }} ✕</button>
+
       <div class="intro-content">
         <!-- Logo mark -->
-        <div class="logo-mark" @click="handleLogoClick">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M20 2L4 10v20l16 8 16-8V10L20 2z" stroke="url(#grad)" stroke-width="2" fill="none"/>
-            <path d="M20 12L12 16v8l8 4 8-4v-8l-8-4z" fill="url(#grad)" opacity="0.3"/>
-            <defs>
-              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:var(--primary)"/>
-                <stop offset="100%" style="stop-color:var(--accent)"/>
-              </linearGradient>
-            </defs>
-          </svg>
+        <div class="logo-mark" @click="handleLogoClick" :title="mikuHint">
+          <BrandMark :size="56" />
+          <span v-if="mikuUnlocked" class="miku-spark">♪</span>
         </div>
-        
+
         <h1 class="intro-heading">
           {{ greeting }}
         </h1>
-        
+
         <p class="intro-sub">
           {{ t('welcome.intro') }} <span class="brand">VAI_PROG</span>
         </p>
-        
+
+        <p class="intro-facts">{{ facts }}</p>
+
         <!-- Name input -->
         <div class="name-box">
           <label class="name-label">{{ t('welcome.namePrompt') }}</label>
@@ -126,14 +122,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, computed, onMounted, nextTick } from 'vue';
 import { usePreferencesStore } from '@/stores/preferences';
 import { useI18n } from '@/composables/useI18n';
 import { themes } from '@/i18n/themes';
 import type { ThemeMode } from '@/types/theme';
+import BrandMark from '../ui/BrandMark.vue';
 
 const store = usePreferencesStore();
 const { t, locale } = useI18n();
+
+const emit = defineEmits<{ done: [] }>();
 
 const step = ref<'intro' | 'themes'>('intro');
 const userName = ref(store.userName || '');
@@ -141,7 +140,31 @@ const selected = ref<ThemeMode>(store.theme);
 const nameInput = ref<HTMLInputElement>();
 const logoClicks = ref(0);
 
-const greeting = locale.value === 'ru' ? 'Привет!' : locale.value === 'zh' ? '你好!' : 'Hey!';
+// Time-aware greeting — a small "this was written for you, right now" touch.
+const greeting = (() => {
+  const h = new Date().getHours();
+  const part = h < 5 ? 'night' : h < 12 ? 'morning' : h < 18 ? 'day' : 'evening';
+  const m: Record<string, Record<string, string>> = {
+    ru: { night: 'Доброй ночи!', morning: 'Доброе утро!', day: 'Добрый день!', evening: 'Добрый вечер!' },
+    en: { night: 'Good night!', morning: 'Good morning!', day: 'Hey there!', evening: 'Good evening!' },
+    zh: { night: '夜深了！', morning: '早上好！', day: '你好！', evening: '晚上好！' },
+  };
+  return (m[locale.value] || m.en)[part];
+})();
+
+const facts = locale.value === 'ru'
+  ? '8 тем · 3 Rust-лаборатории · три языка'
+  : locale.value === 'zh'
+    ? '8 套主题 · 3 个 Rust 实验 · 三种语言'
+    : '8 themes · 3 Rust labs · trilingual';
+
+const mikuHint = locale.value === 'ru'
+  ? 'нажми три раза…'
+  : locale.value === 'zh'
+    ? '点三下…'
+    : 'tap three times…';
+
+const mikuUnlocked = computed(() => store.isMikuUnlocked);
 
 onMounted(() => {
   nextTick(() => nameInput.value?.focus());
@@ -149,7 +172,7 @@ onMounted(() => {
 
 function handleLogoClick() {
   logoClicks.value++;
-  if (logoClicks.value >= 3) {
+  if (logoClicks.value >= 3 && !store.isMikuUnlocked) {
     store.findEasterEgg('miku');
     logoClicks.value = 0;
   }
@@ -184,9 +207,17 @@ function themeStyle(t: typeof themes[0]) {
 }
 
 function finish() {
+  if (userName.value.trim()) store.setName(userName.value.trim());
   if (selected.value) store.setTheme(selected.value);
   store.markVisited();
-  window.location.reload();
+  emit('done');
+}
+
+// Bail out at any point — still counts as "visited" so it won't nag again.
+function skipAll() {
+  if (userName.value.trim()) store.setName(userName.value.trim());
+  store.markVisited();
+  emit('done');
 }
 </script>
 
@@ -261,8 +292,27 @@ function finish() {
   width: 56px;
   height: 56px;
   margin: 0 auto 2rem;
+  color: var(--primary);
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+/* staggered entrance for the intro block */
+.intro-content > * {
+  animation: introUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.intro-content > *:nth-child(1) { animation-delay: 0.05s; }
+.intro-content > *:nth-child(2) { animation-delay: 0.12s; }
+.intro-content > *:nth-child(3) { animation-delay: 0.19s; }
+.intro-content > *:nth-child(4) { animation-delay: 0.26s; }
+.intro-content > *:nth-child(5) { animation-delay: 0.33s; }
+.intro-content > *:nth-child(6) { animation-delay: 0.40s; }
+@keyframes introUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-content > * { animation: none; }
 }
 
 .logo-mark:hover {
@@ -289,13 +339,59 @@ function finish() {
 .intro-sub {
   font-size: var(--font-size-lg);
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .brand {
   color: var(--text);
   font-weight: 600;
+}
+
+.intro-facts {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: 2.25rem;
+}
+
+/* skip-to-site affordance */
+.welcome-skip {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 3;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.welcome-skip:hover {
+  color: var(--text);
+  border-color: var(--border-hover);
+  background: var(--bg-card);
+}
+
+/* miku spark that appears once the egg is unlocked */
+.logo-mark { position: relative; }
+.miku-spark {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  font-size: 1.1rem;
+  color: #39C5BB;
+  text-shadow: 0 0 8px rgba(57, 197, 187, 0.6);
+  animation: mikuFloat 2.2s ease-in-out infinite;
+}
+@keyframes mikuFloat {
+  0%, 100% { transform: translateY(0) rotate(-8deg); opacity: 0.85; }
+  50% { transform: translateY(-5px) rotate(8deg); opacity: 1; }
 }
 
 /* Name input */

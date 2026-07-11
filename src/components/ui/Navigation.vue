@@ -4,10 +4,7 @@
       <!-- Logo -->
       <a href="#" class="nav-logo" @click.prevent="logoClick">
         <div class="logo-icon" :class="{ miku: isMikuActive }">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M20 2L4 10v20l16 8 16-8V10L20 2z" stroke="currentColor" stroke-width="2"/>
-            <path d="M20 12l-8 4v8l8 4 8-4v-8l-8-4z" fill="currentColor" opacity="0.25"/>
-          </svg>
+          <BrandMark :size="28" />
         </div>
         <span class="logo-text" :class="{ 'miku-text': isMikuActive }">VAI-PROG</span>
       </a>
@@ -75,6 +72,7 @@ import { usePreferencesStore } from '@/stores/preferences';
 import { useI18n } from '@/composables/useI18n';
 import ThemeSwitcher from '../theme/ThemeSwitcher.vue';
 import ModeToggle from '../modern/ModeToggle.vue';
+import BrandMark from './BrandMark.vue';
 
 const store = usePreferencesStore();
 const { t, locale, availableLocales, setLocale } = useI18n();

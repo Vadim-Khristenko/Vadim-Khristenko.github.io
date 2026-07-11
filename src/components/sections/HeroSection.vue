@@ -349,13 +349,16 @@ onUnmounted(() => {
 /* GitHub stats */
 .gh-stats {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  max-width: 100%;
 }
 
 .gh-stat {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .gh-num {

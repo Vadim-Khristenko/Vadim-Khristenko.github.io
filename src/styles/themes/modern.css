@@ -318,20 +318,20 @@ html[data-theme="modern"] .hbtn-ghost:hover {
 
 /* GitHub stats — Swiss data row, big numerals + mono labels */
 html[data-theme="modern"] .gh-stats {
-  gap: 0;
+  gap: 0.75rem 0;
   border-top: 1px solid var(--rule);
   padding-top: 1.25rem;
 }
 html[data-theme="modern"] .gh-stat {
-  padding-right: 2rem;
-  margin-right: 2rem;
+  padding-right: 1.4rem;
+  margin-right: 1.4rem;
   border-right: 1px solid var(--border);
 }
 html[data-theme="modern"] .gh-stat:last-child { border-right: none; }
 html[data-theme="modern"] .gh-num {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.65rem;
   color: var(--text);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;

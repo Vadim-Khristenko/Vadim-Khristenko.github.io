@@ -10,6 +10,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
   <div class="ed-page">
     <div class="ed-shell">
+      <!-- comfortable way out -->
+      <a href="/blog/" class="ed-exit" title="Вернуться в блог">
+        <span class="ed-exit-mark">
+          <img src="/favicon/web-app-manifest-192x192.png" alt="" />
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 2L4 10v20l16 8 16-8V10L20 2z" stroke="currentColor" stroke-width="2.4"/></svg>
+        </span>
+        <span>Вернуться в блог</span>
+      </a>
+
       <!-- author-only notice -->
       <div class="ed-notice" role="note">
         <span class="ed-notice-badge">🔒 private</span>
@@ -310,6 +319,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     .ed-page { min-height: 100vh; background: var(--bg); color: var(--text); padding: 96px 1.25rem 48px; font-family: var(--font-body); }
     .ed-shell { max-width: 1440px; margin: 0 auto; }
 
+    .ed-exit { display: inline-flex; align-items: center; gap: 0.55rem; margin-bottom: 1rem; color: var(--text-muted);
+      text-decoration: none; font-size: var(--font-size-sm); font-weight: 600; transition: color .2s, transform .2s; }
+    .ed-exit:hover { color: var(--text); transform: translateX(-2px); }
+    .ed-exit-mark { position: relative; display: inline-flex; width: 22px; height: 22px; color: var(--primary); transform: rotate(-9deg); }
+    .ed-exit-mark svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .ed-exit-mark img { position: absolute; inset: 16%; width: 68%; height: 68%; object-fit: cover;
+      clip-path: polygon(50% 2%, 95% 26%, 95% 74%, 50% 98%, 5% 74%, 5% 26%); }
     .ed-notice {
       display: flex; align-items: center; gap: 0.9rem;
       background: color-mix(in srgb, var(--primary) 8%, var(--bg-card));

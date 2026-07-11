@@ -3,10 +3,7 @@
     <div class="footer-inner">
       <div class="footer-left">
         <div class="footer-logo">
-          <svg viewBox="0 0 40 40" fill="none">
-            <path d="M20 2L4 10v20l16 8 16-8V10L20 2z" stroke="currentColor" stroke-width="2"/>
-            <path d="M20 12l-8 4v8l8 4 8-4v-8l-8-4z" fill="currentColor" opacity="0.2"/>
-          </svg>
+          <BrandMark :size="24" />
         </div>
         <span class="footer-name">VAI-PROG</span>
       </div>
@@ -30,6 +27,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useI18n } from '@/composables/useI18n';
+import BrandMark from './BrandMark.vue';
 
 const { t } = useI18n();
 

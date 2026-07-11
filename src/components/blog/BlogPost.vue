@@ -1,7 +1,7 @@
 <template>
   <div class="blog-root">
     <nav class="blog-nav">
-      <a href="/" class="blog-nav-home"><span class="chev">←</span> VAI_PROG</a>
+      <a href="/" class="blog-nav-home"><BrandMark :size="20" /> VAI_PROG</a>
       <span class="blog-nav-tag">{{ t('blog.journal') }}</span>
       <span class="blog-nav-spacer"></span>
       <a href="/blog/" class="blog-nav-link">{{ t('blog.allPosts') }}</a>
@@ -58,6 +58,7 @@ import { marked } from 'marked';
 import { useI18n } from '@/composables/useI18n';
 import BlogControls from './BlogControls.vue';
 import BlogFooter from './BlogFooter.vue';
+import BrandMark from '../ui/BrandMark.vue';
 
 interface PostData { title: string; description: string; tags: string[]; lang: string; date: string; author: string; readMin: number; body: string; }
 const props = defineProps<{ post: PostData; translations?: PostData[] }>();
