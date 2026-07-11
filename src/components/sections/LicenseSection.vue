@@ -66,7 +66,7 @@
       <footer class="lic-foot">
         <p>{{ tl(T.copyright) }}</p>
         <p class="lic-contact">
-          {{ tl(T.contact) }} <a href="mailto:just@vai-prog.ru">just@vai-prog.ru</a>
+          {{ tl(T.contact) }} <a href="mailto:business@vai-rice.space">business@vai-rice.space</a>
         </p>
       </footer>
     </div>

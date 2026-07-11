@@ -35,6 +35,18 @@ export function useI18n() {
     resolveLocalized(value, locale.value)
   );
 
+  /**
+   * Plural-aware translate. Picks the CLDR plural category for the current
+   * locale (`one` / `few` / `many` / `other`) and looks up `${key}.${category}`,
+   * falling back to `${key}.other` then the flat `${key}`. Russian gets correct
+   * 1 / 2–4 / 5+ forms; English gets one/other; Chinese always resolves to other.
+   */
+  const tc = computed(() => (key: string, count: number): string => {
+    const dict = (translations[locale.value] || translations.ru) as Record<string, string>;
+    const cat = new Intl.PluralRules(locale.value).select(count);
+    return dict[`${key}.${cat}`] ?? dict[`${key}.other`] ?? dict[key] ?? key;
+  });
+
   const availableLocales = [
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -49,6 +61,7 @@ export function useI18n() {
     locale,
     t: t.value,
     tl: tl.value,
+    tc: tc.value,
     availableLocales,
     setLocale,
   };

@@ -10,7 +10,7 @@
     <div class="blog-page">
       <div class="blog-wrap">
         <header class="blog-masthead">
-          <div class="blog-kicker">{{ t('blog.journal') }} · {{ articles.length }} {{ articles.length === 1 ? t('blog.entry') : t('blog.entries') }}</div>
+          <div class="blog-kicker">{{ t('blog.journal') }} · {{ articles.length }} {{ tc('blog.entries', articles.length) }}</div>
           <h1>{{ t('blog.title') }}</h1>
           <p>{{ t('blog.subtitle') }}</p>
 
@@ -80,7 +80,7 @@ import BlogFooter from './BlogFooter.vue';
 
 interface Post { slug: string; title: string; description: string; tags: string[]; lang: string; date: string; readMin: number; translationKey: string; }
 const props = defineProps<{ posts: Post[] }>();
-const { t, locale } = useI18n();
+const { t, tc, locale } = useI18n();
 
 const query = ref('');
 const activeTag = ref('');

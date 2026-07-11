@@ -10,11 +10,11 @@
       <div class="gh-trophy">
         <div class="trophy-item">
           <Star :size="15" />
-          <span>{{ fmt(pinnedStars) }} {{ t('hero.stats.stars') }}</span>
+          <span>{{ fmt(pinnedStars) }} {{ tc('hero.stats.stars', pinnedStars) }}</span>
         </div>
         <div class="trophy-item">
           <GitFork :size="15" />
-          <span>{{ fmt(pinnedForks) }} {{ t('hero.stats.forks') }}</span>
+          <span>{{ fmt(pinnedForks) }} {{ tc('hero.stats.forks', pinnedForks) }}</span>
         </div>
         <div class="trophy-item">
           <FolderGit2 :size="15" />
@@ -88,7 +88,7 @@ import { useStats } from '@/composables/useStats';
 import { projects } from '@/data/projects';
 import type { Project } from '@/data/types';
 
-const { t, tl } = useI18n();
+const { t, tl, tc } = useI18n();
 
 const { stats } = useStats();
 // Projects banner intentionally sums ONLY the pinned projects shown below —

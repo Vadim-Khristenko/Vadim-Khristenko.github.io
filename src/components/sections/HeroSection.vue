@@ -37,19 +37,19 @@
         <div v-if="ghStats" class="gh-stats">
           <div class="gh-stat">
             <span class="gh-num">{{ ghStats.repos }}</span>
-            <span class="gh-lbl">{{ t('hero.stats.repos') }}</span>
+            <span class="gh-lbl">{{ tc('hero.stats.repos', ghStats.repos) }}</span>
           </div>
           <div class="gh-stat">
             <span class="gh-num">{{ fmt(ghStats.stars) }}</span>
-            <span class="gh-lbl">{{ t('hero.stats.stars') }}</span>
+            <span class="gh-lbl">{{ tc('hero.stats.stars', ghStats.stars) }}</span>
           </div>
           <div class="gh-stat">
             <span class="gh-num">{{ fmt(ghStats.forks) }}</span>
-            <span class="gh-lbl">{{ t('hero.stats.forks') }}</span>
+            <span class="gh-lbl">{{ tc('hero.stats.forks', ghStats.forks) }}</span>
           </div>
           <div v-if="ghStats.followers != null" class="gh-stat">
             <span class="gh-num">{{ fmt(ghStats.followers) }}</span>
-            <span class="gh-lbl">{{ t('hero.stats.followers') }}</span>
+            <span class="gh-lbl">{{ tc('hero.stats.followers', ghStats.followers) }}</span>
           </div>
         </div>
         <p v-if="statsDate" class="gh-updated">↻ {{ t('hero.stats.updated') }} {{ fmtDate(statsDate) }}</p>
@@ -83,7 +83,7 @@ import { useI18n } from '@/composables/useI18n';
 import { useStats } from '@/composables/useStats';
 import { usePreferencesStore } from '@/stores/preferences';
 
-const { t } = useI18n();
+const { t, tc } = useI18n();
 const store = usePreferencesStore();
 
 const isModern = computed(() => store.theme === 'modern');
