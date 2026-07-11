@@ -6,7 +6,7 @@ authors = ["Vadim Khristenko <business@vai-rice.space>"]
 description = "JustCode 2027 — turn code into beautiful screenshots (Rust + Leptos + WASM)"
 
 [dependencies]
-leptos = { version = "0.6", features = ["csr"] }
+leptos = { version = "0.8", features = ["csr"] }
 console_error_panic_hook = "0.1"
 wasm-bindgen = "0.2"
 
