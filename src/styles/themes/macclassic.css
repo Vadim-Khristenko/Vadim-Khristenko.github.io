@@ -1,0 +1,339 @@
+/* ============================================================
+   THEME · MAC OS CLASSIC — 1-bit black & white (System 7 era)
+   Chicago font, striped title bars, windows with a close box,
+   dithered desktop. Ref techniques: sakofchit system.css.
+   Light (default) + inverted Dark via [data-mode].
+   Menu-bar clock / bomb / About: components/macclassic/*
+   ============================================================ */
+@font-face {
+  font-family: 'ChicagoFLF';
+  src: url('/fonts/ChicagoFLF.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geneva9';
+  src: url('/fonts/FindersKeepers.woff2') format('woff2');
+  font-display: swap;
+}
+
+[data-theme="macclassic"] {
+  --paper: #FFFFFF;             /* windows / content */
+  --ink: #000000;              /* borders + text */
+  --desktop: #9C9C9C;          /* grey desktop */
+  --dim: #808080;
+  --disabled: #B6B7B8;
+
+  --bg: var(--desktop);
+  --bg-elevated: var(--paper);
+  --bg-card: var(--paper);
+  --bg-sunken: var(--paper);
+  --border: var(--ink);
+  --border-hover: var(--ink);
+  --text: var(--ink);
+  --text-muted: #333333;
+  --text-dim: #666666;
+  --primary: var(--ink);
+  --primary-muted: transparent;
+  --accent: var(--ink);
+  --accent-warm: var(--ink);
+  --success: var(--ink);
+  --warning: var(--ink);
+  --error: var(--ink);
+
+  --font-display: 'ChicagoFLF', 'Chicago', 'Geneva9', system-ui, sans-serif;
+  --font-body: 'ChicagoFLF', 'Chicago', 'Geneva9', system-ui, sans-serif;
+  --font-mono: 'Geneva9', 'Monaco', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.0625rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 3rem;
+
+  --radius-sm: 0; --radius-md: 0; --radius-lg: 0; --radius-xl: 0;
+  --shadow-sm: none; --shadow-md: none; --shadow-lg: none;
+  --shadow-glow-primary: none; --shadow-glow-accent: none;
+  --gradient-hero: none; --gradient-text: none; --gradient-surface: none;
+
+  /* horizontal racing stripes for title bars */
+  --stripes: repeating-linear-gradient(var(--ink) 0 1px, transparent 1px 2px);
+}
+
+html[data-theme="macclassic"] { image-rendering: pixelated; }
+html[data-theme="macclassic"] body {
+  background-color: var(--desktop);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1' fill='%23000000' fill-opacity='0.16'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23ffffff' fill-opacity='0.18'/%3E%3C/svg%3E");
+  padding-top: 22px;                    /* menu bar */
+  -webkit-font-smoothing: none;
+}
+html[data-theme="macclassic"] * { font-family: var(--font-body); }
+html[data-theme="macclassic"] ::selection { background: var(--ink); color: var(--paper); }
+html[data-theme="macclassic"] a:not(.hbtn) { color: var(--ink); text-decoration: underline; }
+
+/* ============================================================
+   NAV → classic MENU BAR (white strip, black underline)
+   ============================================================ */
+html[data-theme="macclassic"] .nav,
+html[data-theme="macclassic"] .nav.scrolled {
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  box-shadow: none;
+  backdrop-filter: none;
+  padding: 0 8px;
+}
+html[data-theme="macclassic"] .nav-inner { height: 26px; }
+html[data-theme="macclassic"] .logo-text { font-weight: 400; color: var(--ink); }
+html[data-theme="macclassic"] .logo-icon { color: var(--ink); }
+html[data-theme="macclassic"] .nav-link {
+  border-radius: 0; color: var(--ink); font-weight: 400; padding: 3px 8px;
+}
+html[data-theme="macclassic"] .nav-link::after { display: none; }
+html[data-theme="macclassic"] .nav-link:hover { background: var(--ink); color: var(--paper); }
+html[data-theme="macclassic"] .nav-link-icon { display: none; }
+
+html[data-theme="macclassic"] .lang-btn,
+html[data-theme="macclassic"] .mob-toggle,
+html[data-theme="macclassic"] .mode-toggle,
+html[data-theme="macclassic"] .ts-toggle {
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: none;
+}
+html[data-theme="macclassic"] .lang-btn:active,
+html[data-theme="macclassic"] .mode-toggle:active,
+html[data-theme="macclassic"] .ts-toggle:active { background: var(--ink); color: var(--paper); }
+html[data-theme="macclassic"] .lang-menu,
+html[data-theme="macclassic"] .ts-menu {
+  border-radius: 0; background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+html[data-theme="macclassic"] .lang-opt,
+html[data-theme="macclassic"] .ts-opt { border-radius: 0; color: var(--ink); }
+html[data-theme="macclassic"] .lang-opt:hover,
+html[data-theme="macclassic"] .ts-opt:hover { background: var(--ink); color: var(--paper); }
+
+/* ============================================================
+   SECTIONS → WINDOWS (striped title bar + close box)
+   ============================================================ */
+html[data-theme="macclassic"] .about-inner,
+html[data-theme="macclassic"] .skills-inner,
+html[data-theme="macclassic"] .ach-inner,
+html[data-theme="macclassic"] .friends-inner,
+html[data-theme="macclassic"] .insp-inner,
+html[data-theme="macclassic"] .labs-inner,
+html[data-theme="macclassic"] .communities-inner,
+html[data-theme="macclassic"] .proj-inner,
+html[data-theme="macclassic"] .contact-inner {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 4px 4px 8px;
+}
+html[data-theme="macclassic"] .sec-header { margin: 0; }
+html[data-theme="macclassic"] .sec-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  margin: -4px -4px 10px;
+  height: 22px;
+  padding: 0 8px;
+  background: var(--stripes);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  /* white knockout halo so the title reads over the stripes */
+  text-shadow:
+    -2px 0 var(--paper), 2px 0 var(--paper), 0 -2px var(--paper), 0 2px var(--paper),
+    -2px -2px var(--paper), 2px -2px var(--paper), -2px 2px var(--paper), 2px 2px var(--paper);
+}
+/* close box (left) */
+html[data-theme="macclassic"] .sec-header h2::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 50%;
+  transform: translateY(-50%);
+  width: 12px; height: 12px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+html[data-theme="macclassic"] .sec-header p {
+  color: var(--ink);
+  padding: 0 8px 6px;
+  font-size: var(--font-size-sm);
+}
+html[data-theme="macclassic"] .skills-grid,
+html[data-theme="macclassic"] .lang-bars,
+html[data-theme="macclassic"] .friends-grid,
+html[data-theme="macclassic"] .best-grid,
+html[data-theme="macclassic"] .communities-grid,
+html[data-theme="macclassic"] .proj-grid,
+html[data-theme="macclassic"] .gh-trophy,
+html[data-theme="macclassic"] .trophies-row { padding: 0 8px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+html[data-theme="macclassic"] .hero-title { font-weight: 400; color: var(--ink); letter-spacing: 0; }
+html[data-theme="macclassic"] .hero-title .gtext { background: none; -webkit-text-fill-color: var(--ink); color: var(--ink); }
+html[data-theme="macclassic"] .hero-title::after { display: none; }
+html[data-theme="macclassic"] .hero-sub,
+html[data-theme="macclassic"] .hero-aka,
+html[data-theme="macclassic"] .hero-note,
+html[data-theme="macclassic"] .hero-born { color: var(--ink); font-style: normal; }
+html[data-theme="macclassic"] .age { color: var(--ink); font-weight: 400; text-decoration: underline; }
+html[data-theme="macclassic"] .avatar-wrap { padding: 3px; background: var(--paper); border: 1px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); }
+html[data-theme="macclassic"] .avatar-img { border: none; border-radius: 0; box-shadow: none; filter: grayscale(1) contrast(1.4); }
+html[data-theme="macclassic"] .avatar-ring { display: none; }
+html[data-theme="macclassic"] .gh-num { color: var(--ink); }
+html[data-theme="macclassic"] .marquee-item { color: var(--ink); font-weight: 400; }
+html[data-theme="macclassic"] .marquee-dot { color: var(--ink); }
+html[data-theme="macclassic"] .hero-marquee { background: var(--paper); border: 1px solid var(--ink); }
+
+/* ============================================================
+   BUTTONS — rounded 1-bit, press → inverted
+   ============================================================ */
+html[data-theme="macclassic"] .hbtn,
+html[data-theme="macclassic"] .add-link,
+html[data-theme="macclassic"] .suggest-link,
+html[data-theme="macclassic"] .gh-link,
+html[data-theme="macclassic"] .proj-link {
+  border-radius: 9px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: none;
+  font-weight: 400;
+  transform: none;
+}
+/* default button = double ring */
+html[data-theme="macclassic"] .hbtn-primary {
+  box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink);
+}
+html[data-theme="macclassic"] .hbtn:hover,
+html[data-theme="macclassic"] .add-link:hover,
+html[data-theme="macclassic"] .suggest-link:hover,
+html[data-theme="macclassic"] .gh-link:hover { background: var(--paper); color: var(--ink); transform: none; }
+html[data-theme="macclassic"] .hbtn:active,
+html[data-theme="macclassic"] .add-link:active,
+html[data-theme="macclassic"] .suggest-link:active,
+html[data-theme="macclassic"] .gh-link:active { background: var(--ink); color: var(--paper); }
+
+/* ============================================================
+   CARDS — white panels, 1px ink border, hard shadow
+   ============================================================ */
+html[data-theme="macclassic"] .proj-card,
+html[data-theme="macclassic"] .friend-card,
+html[data-theme="macclassic"] .community-card,
+html[data-theme="macclassic"] .skill-col,
+html[data-theme="macclassic"] .lang-bar,
+html[data-theme="macclassic"] .about-main,
+html[data-theme="macclassic"] .proj-why,
+html[data-theme="macclassic"] .trophy-card,
+html[data-theme="macclassic"] .social-card,
+html[data-theme="macclassic"] .email-card,
+html[data-theme="macclassic"] .hiring-inner,
+html[data-theme="macclassic"] .add-friend-hint,
+html[data-theme="macclassic"] .suggest-hint {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--ink);
+  transform: none;
+}
+html[data-theme="macclassic"] .proj-card:hover,
+html[data-theme="macclassic"] .friend-card:hover,
+html[data-theme="macclassic"] .community-card:hover { transform: none; box-shadow: 2px 2px 0 var(--ink); }
+
+html[data-theme="macclassic"] .stack-tag,
+html[data-theme="macclassic"] .tag {
+  border-radius: 0; background: var(--paper); color: var(--ink);
+  border: 1px solid var(--ink);
+}
+html[data-theme="macclassic"] input,
+html[data-theme="macclassic"] textarea {
+  border-radius: 0 !important;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--ink) !important;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.3);
+}
+html[data-theme="macclassic"] .lang-track { background: var(--ink) !important; }
+html[data-theme="macclassic"] .lang-fill { background: var(--ink) !important; }
+/* the tiny Geneva mono makes % unreadable — use Chicago, bigger */
+html[data-theme="macclassic"] .lang-pct,
+html[data-theme="macclassic"] .lang-name {
+  font-family: var(--font-display) !important;
+  font-size: var(--font-size-base) !important;
+  color: var(--ink) !important;
+}
+
+/* ============================================================
+   FORCE — override legacy per-component macclassic hardcodes
+   so DARK (inverted) mode works everywhere.
+   ============================================================ */
+html[data-theme="macclassic"] .proj-card,
+html[data-theme="macclassic"] .friend-card,
+html[data-theme="macclassic"] .community-card,
+html[data-theme="macclassic"] .skill-col,
+html[data-theme="macclassic"] .lang-bar,
+html[data-theme="macclassic"] .about-main,
+html[data-theme="macclassic"] .side-card,
+html[data-theme="macclassic"] .proj-why,
+html[data-theme="macclassic"] .trophy-card,
+html[data-theme="macclassic"] .social-card,
+html[data-theme="macclassic"] .email-card,
+html[data-theme="macclassic"] .donate-block,
+html[data-theme="macclassic"] .donate-card,
+html[data-theme="macclassic"] .crypto-item,
+html[data-theme="macclassic"] .hiring-inner,
+html[data-theme="macclassic"] .svc-item,
+html[data-theme="macclassic"] .discount-block,
+html[data-theme="macclassic"] .add-friend-hint,
+html[data-theme="macclassic"] .suggest-hint,
+html[data-theme="macclassic"] .drop-card {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--ink) !important;
+  box-shadow: 2px 2px 0 var(--ink) !important;
+}
+html[data-theme="macclassic"] .proj-desc,
+html[data-theme="macclassic"] .friend-desc,
+html[data-theme="macclassic"] .friend-role,
+html[data-theme="macclassic"] .community-desc,
+html[data-theme="macclassic"] .hiring-detail,
+html[data-theme="macclassic"] .hiring-lead,
+html[data-theme="macclassic"] .proj-name,
+html[data-theme="macclassic"] .svc-label,
+html[data-theme="macclassic"] .friend-meta h4,
+html[data-theme="macclassic"] .community-meta h4 { color: var(--ink) !important; }
+html[data-theme="macclassic"] .tag,
+html[data-theme="macclassic"] .stack-tag {
+  background: var(--paper) !important; color: var(--ink) !important; border: 1px solid var(--ink) !important;
+}
+html[data-theme="macclassic"] .lang-btn,
+html[data-theme="macclassic"] .mob-toggle,
+html[data-theme="macclassic"] .mode-toggle,
+html[data-theme="macclassic"] .ts-toggle,
+html[data-theme="macclassic"] .hbtn,
+html[data-theme="macclassic"] .hbtn-primary,
+html[data-theme="macclassic"] .hbtn-ghost {
+  background: var(--paper) !important; color: var(--ink) !important; border: 1px solid var(--ink) !important;
+}
+html[data-theme="macclassic"] .hbtn-primary { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--ink) !important; }
+html[data-theme="macclassic"] .lang-menu,
+html[data-theme="macclassic"] .ts-menu { background: var(--paper) !important; border: 1px solid var(--ink) !important; box-shadow: 2px 2px 0 var(--ink) !important; }
+html[data-theme="macclassic"] .lang-opt,
+html[data-theme="macclassic"] .ts-opt { color: var(--ink) !important; background: transparent !important; }
+html[data-theme="macclassic"] .lang-opt:hover,
+html[data-theme="macclassic"] .ts-opt:hover { background: var(--ink) !important; color: var(--paper) !important; }

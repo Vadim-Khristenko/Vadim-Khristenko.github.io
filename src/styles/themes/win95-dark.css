@@ -1,0 +1,44 @@
+/* ============================================================
+   THEME · WINDOWS 95 — DARK "High Contrast" scheme
+   (values mirror the-wall.vai-rice.space body.dark). Bevels
+   recompute automatically (they reference --win-* / --field).
+   Applied via [data-mode="dark"] or prefers-color-scheme+auto.
+   ============================================================ */
+html[data-theme="win95"][data-mode="dark"] {
+  --win-face: #2C2C2C;
+  --win-hi: #5A5A5A;
+  --win-light: #3A3A3A;
+  --win-shadow: #141414;
+  --win-dark: #000000;
+  --win-title-a: #3838AA;
+  --win-title-b: #1084D0;
+  --win-led: #2D924D;
+  --field: #0F0F0F;
+  --field-text: #FFFFFF;
+  --desktop: #003030;
+  --text: #FFFFFF;
+  --text-muted: #CFCFCF;
+  --text-dim: #AAAAAA;
+  --primary: #2889FF;
+  --accent: #2889FF;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme="win95"][data-mode="auto"] {
+    --win-face: #2C2C2C;
+    --win-hi: #5A5A5A;
+    --win-light: #3A3A3A;
+    --win-shadow: #141414;
+    --win-dark: #000000;
+    --win-title-a: #3838AA;
+    --win-title-b: #1084D0;
+    --win-led: #2D924D;
+    --field: #0F0F0F;
+    --field-text: #FFFFFF;
+    --desktop: #003030;
+    --text: #FFFFFF;
+    --text-muted: #CFCFCF;
+    --text-dim: #AAAAAA;
+    --primary: #2889FF;
+    --accent: #2889FF;
+  }
+}

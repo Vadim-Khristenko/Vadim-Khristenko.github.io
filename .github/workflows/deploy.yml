@@ -1,0 +1,107 @@
+name: 🚀 Deploy · vai-rice.space
+
+# Build the Astro site with Bun and publish it to GitHub Pages.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # redeploy after the stats cron commits a fresh stats.json
+  # (bot commits via GITHUB_TOKEN don't fire the push trigger)
+  workflow_run:
+    workflows: ["📊 Update stats"]
+    types: [completed]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live deploy at a time; a newer run cancels the in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: 🏗️  Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: ⬇️  Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main # always the tip of main (fresh stats.json on workflow_run)
+
+      - name: 🥟  Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: ♻️  Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.bun/install/cache
+            node_modules
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock', 'package.json') }}
+          restore-keys: bun-${{ runner.os }}-
+
+      - name: 📦  Install
+        run: bun install
+
+      - name: 🔨  Build
+        run: bun run build
+
+      - name: 🔗  Verify internal links
+        run: bun run verify
+        continue-on-error: true
+
+      - name: 📊  Build report
+        if: always()
+        run: |
+          cd dist
+          files=$(find . -type f | wc -l | tr -d ' ')
+          size=$(du -sh . | cut -f1)
+          html=$(find . -name '*.html' | wc -l | tr -d ' ')
+          assets=$(find ./_astro -type f 2>/dev/null | wc -l | tr -d ' ')
+          labs=$(find ./files -maxdepth 1 -type d 2>/dev/null | tail -n +2 | wc -l | tr -d ' ')
+          {
+            echo "## 🚀 Deploy report"
+            echo ""
+            echo "| Metric | Value |"
+            echo "|---|---|"
+            echo "| 📄 HTML pages | ${html} |"
+            echo "| 🧩 Bundled assets | ${assets} |"
+            echo "| 🧪 Labs shipped | ${labs} |"
+            echo "| 🗂️ Total files | ${files} |"
+            echo "| 📦 Total size | ${size} |"
+            echo "| 🔖 Commit | \`${GITHUB_SHA::7}\` |"
+            echo "| 🌿 Trigger | \`${{ github.event_name }}\` |"
+            echo ""
+            echo "### 🏋️ Heaviest assets"
+            echo ""
+            echo '```'
+            find ./_astro -type f 2>/dev/null -exec du -h {} + | sort -rh | head -5 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 📤  Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    name: 🌍  Deploy to Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: 🌍  Publish
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: ✅  Summary
+        run: echo "### ✅ Live at ${{ steps.deploy.outputs.page_url }}" >> "$GITHUB_STEP_SUMMARY"

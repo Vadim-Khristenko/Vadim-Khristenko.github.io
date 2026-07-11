@@ -1,0 +1,78 @@
+name: "🌐 Community · Сообщество · 社区"
+description: "Suggest a community · Предложить сообщество · 推荐一个社区"
+title: "[Community] "
+labels: ["communities"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **RU** — Заполни поля ниже, так карточку легко добавить.
+        **EN** — Fill in the fields below so the card is easy to add.
+        **中文** — 请填写以下字段，方便添加卡片。
+  - type: input
+    id: name
+    attributes:
+      label: "Название · Name · 名称"
+      placeholder: "The Snackers HQ"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "Тип · Kind · 类型"
+      options:
+        - "community · сообщество · 社区"
+        - "platform · платформа · 平台"
+    validations:
+      required: true
+  - type: textarea
+    id: about
+    attributes:
+      label: "Что это? · What is it? · 这是什么？"
+      description: "Пара предложений: чем занимается и почему интересно. · A couple of sentences: what it is and why it's cool. · 简述：它是什么、为什么有趣。"
+      placeholder: "Уютное сообщество вокруг… · A cosy community around… · 一个围绕……的社区"
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: "Теги · Tags · 标签"
+      description: "Через запятую. · Comma-separated. · 用逗号分隔。"
+      placeholder: "gamedev, art, rust"
+  - type: input
+    id: members
+    attributes:
+      label: "Участников (примерно) · Members (approx.) · 成员数（大约）"
+      placeholder: "12k"
+  - type: input
+    id: links
+    attributes:
+      label: "Ссылки · Links · 链接"
+      description: "Сайт, Discord, Telegram… через запятую. · Website, Discord, Telegram… comma-separated. · 网站、Discord、Telegram……用逗号分隔。"
+      placeholder: "https://discord.gg/… , https://t.me/…"
+    validations:
+      required: true
+  - type: textarea
+    id: avatar
+    attributes:
+      label: "Аватар / логотип · Avatar / logo · 头像 / 徽标"
+      description: "Перетащи картинку сюда ИЛИ вставь ссылку. · Drag an image here OR paste a URL. · 把图片拖到这里，或粘贴链接。"
+      placeholder: "https://… .png"
+  - type: textarea
+    id: banner
+    attributes:
+      label: "Баннер (широкая обложка) · Banner (wide cover) · 横幅（宽封面）"
+      description: "Необязательно. Перетащи картинку или вставь ссылку. · Optional. Drag an image or paste a URL. · 可选。拖入图片或粘贴链接。"
+  - type: input
+    id: accent
+    attributes:
+      label: "Акцентный цвет · Accent color · 强调色"
+      description: "Необязательно, hex. · Optional, hex. · 可选，十六进制。"
+      placeholder: "#9B4DFF"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: "Подтверждение · Confirm · 确认"
+      options:
+        - label: "Это реальное активное сообщество · This is a real, active community · 这是一个真实、活跃的社区"
+          required: true

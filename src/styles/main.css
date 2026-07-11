@@ -1,0 +1,29 @@
+/* ============================================================
+   VAI_PROG — STYLE ENTRY
+   Single source of truth. Small modular files, no monolith.
+   Fonts are loaded via <link> in BaseLayout.astro (preconnect).
+   Load order: base tokens/reset → Modern (also :root defaults)
+   → the other themes (attribute-scoped, order-independent).
+   ============================================================ */
+
+/* base */
+@import './base/tokens.css';
+@import './base/reset.css';
+
+/* flagship theme (defines :root defaults) + its feature partials */
+@import './themes/modern.css';
+@import './themes/modern-dark.css';
+@import './modern/grain.css';
+@import './modern/grid-debug.css';
+
+/* alternate themes */
+@import './themes/classic.css';
+@import './themes/classic-dark.css';
+@import './themes/terminal.css';
+@import './themes/win11.css';
+@import './themes/macos26.css';
+@import './themes/win95.css';
+@import './themes/win95-dark.css';
+@import './themes/macclassic.css';
+@import './themes/macclassic-dark.css';
+@import './themes/snackers.css';

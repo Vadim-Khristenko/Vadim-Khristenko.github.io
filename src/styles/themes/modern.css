@@ -1,0 +1,564 @@
+/* ============================================================
+   THEME · MODERN — "SWISS EDITORIAL"
+   International Typographic Style × editorial warmth.
+   Warm paper, black ink, cobalt (structure) + vermilion (heat).
+   Fonts: Bricolage Grotesque / Fraunces / Hanken Grotesk / Martian Mono
+   Flat, sharp, hairline rules, big numerals, asymmetric grid.
+   NO gradients. NO blur-glow. Grain + rules instead.
+   ============================================================ */
+:root,
+[data-theme="modern"] {
+  /* ── Surface: warm newsprint ── */
+  --bg: #F3F1EC;
+  --bg-elevated: #FBFAF7;
+  --bg-card: #FFFFFF;
+  --bg-sunken: #EAE7DE;
+
+  /* ── Ink ── */
+  --text: #14140F;
+  --text-muted: #55524A;
+  --text-dim: #8B877C;
+
+  /* ── Rules & borders (Swiss hairlines are near-black) ── */
+  --border: rgba(20, 20, 15, 0.14);
+  --rule: #14140F;                 /* solid hairline for column rules */
+  --border-hover: #1E2AFF;
+
+  /* ── Two-accent system ── */
+  --primary: #1E2AFF;              /* cobalt — structure, links, active */
+  --primary-muted: rgba(30, 42, 255, 0.08);
+  --accent: #FF4A1C;              /* vermilion — the "now", hot stamps */
+  --accent-muted: rgba(255, 74, 28, 0.10);
+  --accent-warm: #FF4A1C;
+  --success: #1E7A4B;
+  --warning: #B26A00;
+  --error: #D23B2C;
+
+  /* ── Type ── */
+  --font-display: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif;
+  --font-serif: 'Fraunces', 'Times New Roman', Georgia, serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'Martian Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.1875rem;
+  --font-size-xl: 1.625rem;
+  --font-size-2xl: 2.25rem;
+  --font-size-3xl: 3.25rem;
+  --font-size-4xl: clamp(2.25rem, 9vw, 7.5rem);
+
+  /* ── Swiss = flat & sharp ── */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 2px;
+  --radius-xl: 2px;
+  --radius-full: 9999px;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-glow-primary: none;
+  --shadow-glow-accent: none;
+
+  --gradient-hero: none;
+  --gradient-text: none;
+  --gradient-surface: none;
+
+  --transition-fast: 140ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-base: 300ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-slow: 640ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ============================================================
+   ATMOSPHERE — paper grain + faint column field
+   (grain overlay itself lives in modern/grain.css)
+   ============================================================ */
+html[data-theme="modern"] body {
+  line-height: 1.62;
+  letter-spacing: -0.003em;
+}
+
+/* Selection uses the hot accent for a printed-marker feel */
+html[data-theme="modern"] ::selection {
+  background: var(--accent);
+  color: #FFF;
+}
+
+/* ============================================================
+   NAVIGATION → newspaper masthead strip
+   (bump specificity with html[...] to beat scoped component styles)
+   ============================================================ */
+html[data-theme="modern"] .nav {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: none;
+}
+html[data-theme="modern"] .nav.scrolled {
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: saturate(1) blur(2px);
+  border-bottom: 1px solid var(--rule);
+}
+html[data-theme="modern"] .nav-inner { height: 58px; }
+
+html[data-theme="modern"] .logo-icon { color: var(--primary); }
+html[data-theme="modern"] .logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+html[data-theme="modern"] .nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  border-radius: 0;
+}
+html[data-theme="modern"] .nav-link:hover {
+  background: transparent;
+  color: var(--text);
+}
+html[data-theme="modern"] .nav-link::after {
+  height: 2px;
+  background: var(--primary);
+  border-radius: 0;
+  bottom: 2px;
+}
+html[data-theme="modern"] .nav-link:hover::after { width: 100%; }
+html[data-theme="modern"] .nav-link-icon { display: none; }
+
+html[data-theme="modern"] .lang-btn,
+html[data-theme="modern"] .mob-toggle {
+  border-radius: 0;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+}
+html[data-theme="modern"] .lang-menu {
+  border-radius: 0;
+  border: 1px solid var(--rule);
+  background: var(--bg-elevated);
+  box-shadow: none;
+}
+html[data-theme="modern"] .lang-opt { border-radius: 0; font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+html[data-theme="modern"] .lang-opt.active { color: var(--primary); background: var(--primary-muted); }
+html[data-theme="modern"] .mob-menu {
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ============================================================
+   HERO → editorial front page
+   ============================================================ */
+html[data-theme="modern"] .hero {
+  padding: 116px 2rem 64px;
+  min-height: 100vh;
+}
+/* kill the blurry glow atmosphere entirely */
+html[data-theme="modern"] .hero-bg,
+html[data-theme="modern"] .glow-1,
+html[data-theme="modern"] .glow-2 { display: none; }
+/* keep a faint structural grid instead */
+html[data-theme="modern"] .grid-lines {
+  background-image:
+    linear-gradient(rgba(20,20,15,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20,20,15,0.035) 1px, transparent 1px);
+  background-size: 96px 96px;
+  display: block;
+}
+
+html[data-theme="modern"] .hero-inner {
+  max-width: var(--measure);
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, 0.7fr);
+  gap: 0;
+  column-gap: 3rem;
+  align-items: stretch;
+}
+html[data-theme="modern"] .hero-left {
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* masthead strip (component renders .hero-masthead only for modern) */
+html[data-theme="modern"] .hero-masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+html[data-theme="modern"] .hero-masthead:hover { color: var(--text); }
+html[data-theme="modern"] .mh-issue { letter-spacing: 0.02em; }
+html[data-theme="modern"] .mh-rec {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+html[data-theme="modern"] .rec-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent);
+  animation: mrec 1.4s steps(2, end) infinite;
+}
+@keyframes mrec { 50% { opacity: 0.15; } }
+
+/* kicker */
+html[data-theme="modern"] .hero-aka {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+html[data-theme="modern"] .hero-aka::before { content: "["; color: var(--accent); margin-right: 0.5rem; }
+html[data-theme="modern"] .hero-aka::after { content: "]"; color: var(--accent); margin-left: 0.5rem; }
+
+/* headline — huge grotesque, ink, tight */
+html[data-theme="modern"] .hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 9vw, var(--font-size-4xl));
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+}
+html[data-theme="modern"] .hero-title .gtext {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--text);
+}
+/* the cobalt underline bar */
+html[data-theme="modern"] .hero-title::after {
+  content: "";
+  display: block;
+  width: min(360px, 62%);
+  height: 8px;
+  margin-top: 1.1rem;
+  background: var(--primary);
+}
+
+html[data-theme="modern"] .hero-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--text);
+  max-width: 32ch;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+html[data-theme="modern"] .hero-born {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 2.25rem;
+}
+html[data-theme="modern"] .age { color: var(--accent); font-weight: 700; }
+
+/* buttons — square, one solid cobalt, one hairline ghost */
+html[data-theme="modern"] .hbtn {
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.85rem 1.4rem;
+  transition: all var(--transition-fast);
+}
+html[data-theme="modern"] .hbtn-primary {
+  background: var(--primary);
+  color: #FFF;
+  border: 1px solid var(--primary);
+  box-shadow: none;
+}
+html[data-theme="modern"] .hbtn-primary::after { content: " \2192"; white-space: pre; }
+html[data-theme="modern"] .hbtn-primary:hover {
+  transform: none;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: none;
+}
+html[data-theme="modern"] .hbtn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--rule);
+}
+html[data-theme="modern"] .hbtn-ghost:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+/* GitHub stats — Swiss data row, big numerals + mono labels */
+html[data-theme="modern"] .gh-stats {
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.25rem;
+}
+html[data-theme="modern"] .gh-stat {
+  padding-right: 2rem;
+  margin-right: 2rem;
+  border-right: 1px solid var(--border);
+}
+html[data-theme="modern"] .gh-stat:last-child { border-right: none; }
+html[data-theme="modern"] .gh-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+html[data-theme="modern"] .gh-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+}
+
+/* portrait — framed photo with newspaper caption */
+html[data-theme="modern"] .hero-right {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3.4rem 0 0 3rem;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-left: 1px solid var(--border);
+}
+html[data-theme="modern"] .avatar-wrap {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 4 / 5;
+  height: auto;
+}
+html[data-theme="modern"] .avatar-ring { display: none; }
+html[data-theme="modern"] .avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 1px solid var(--rule);
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter var(--transition-slow);
+}
+html[data-theme="modern"] .avatar-wrap:hover .avatar-img { filter: grayscale(0) contrast(1); }
+html[data-theme="modern"] .avatar-cap {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 260px;
+  line-height: 1.3;
+}
+html[data-theme="modern"] .avatar-cap::before { content: "\2014 "; color: var(--accent); }
+
+/* kinetic marquee — Swiss crop */
+html[data-theme="modern"] .hero-marquee {
+  border-color: var(--rule);
+  margin-top: var(--space-8);
+}
+html[data-theme="modern"] .marquee-item {
+  letter-spacing: -0.035em;
+}
+html[data-theme="modern"] .marquee-dot { color: var(--accent); }
+html[data-theme="modern"] .hero-note {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   SHARED SECTIONS — flat Swiss cards, hairline borders,
+   cobalt links, no glow anywhere
+   ============================================================ */
+html[data-theme="modern"] .about-main,
+html[data-theme="modern"] .skill-col,
+html[data-theme="modern"] .proj-card,
+html[data-theme="modern"] .friend-card,
+html[data-theme="modern"] .community-card,
+html[data-theme="modern"] .drop-card,
+html[data-theme="modern"] .social-card,
+html[data-theme="modern"] .email-card,
+html[data-theme="modern"] .donate-block,
+html[data-theme="modern"] .donate-card,
+html[data-theme="modern"] .crypto-item,
+html[data-theme="modern"] .hiring-inner,
+html[data-theme="modern"] .proj-why,
+html[data-theme="modern"] .trophy-item,
+html[data-theme="modern"] .trophy-card,
+html[data-theme="modern"] .add-friend-hint {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+html[data-theme="modern"] .proj-card:hover,
+html[data-theme="modern"] .friend-card:hover,
+html[data-theme="modern"] .community-card:hover,
+html[data-theme="modern"] .drop-card:hover,
+html[data-theme="modern"] .social-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* flatten every decorative AI-gradient / glow into Swiss surfaces.
+   (higher specificity than the components' scoped .featured/.special rules) */
+html[data-theme="modern"] .hiring-inner {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+html[data-theme="modern"] .hiring-inner:hover {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+html[data-theme="modern"] .hiring-glow,
+html[data-theme="modern"] .drop-glow,
+html[data-theme="modern"] .friend-glow,
+html[data-theme="modern"] .community-glow { display: none; }
+html[data-theme="modern"] .proj-card.featured,
+html[data-theme="modern"] .drop-card:first-child,
+html[data-theme="modern"] .friend-card.special,
+html[data-theme="modern"] .trophy-card,
+html[data-theme="modern"] .trophy-badge {
+  background: var(--bg-card);
+  border-color: var(--border);
+  color: var(--text);
+}
+html[data-theme="modern"] .proj-card.featured { border-left: 3px solid var(--accent); }
+
+/* Hiring — editorial "open to work" spread */
+html[data-theme="modern"] .hiring-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+html[data-theme="modern"] .svc-icon { color: var(--text); }
+html[data-theme="modern"] .svc-item:hover { background: var(--primary-muted); }
+html[data-theme="modern"] .svc-item:hover .svc-icon { color: var(--primary); }
+html[data-theme="modern"] .svc-item:hover .svc-num { color: var(--accent); }
+html[data-theme="modern"] .discount-block {
+  border-radius: 0;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-muted);
+}
+html[data-theme="modern"] .discount-block svg { color: var(--accent); }
+html[data-theme="modern"] .hbtn-primary { border-radius: 0; }
+html[data-theme="modern"] .hiring-services { border-top-color: var(--rule); }
+
+/* section headings — display grotesque, tight, uppercase */
+html[data-theme="modern"] .section-title,
+html[data-theme="modern"] .sec-title,
+html[data-theme="modern"] h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+}
+
+/* any gradient-text left in components → solid ink */
+html[data-theme="modern"] .gtext {
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  color: var(--text) !important;
+}
+
+/* links pick up cobalt — but NOT the filled CTA buttons (would wash them out) */
+html[data-theme="modern"] a:not(.hbtn):not(.nav-logo):not(.nav-link):not(.add-link):not(.suggest-link):not(.gh-link):hover { color: var(--primary); }
+/* keep filled CTAs readable on hover */
+html[data-theme="modern"] .add-link:hover,
+html[data-theme="modern"] .suggest-link:hover { background: var(--accent); color: #fff; }
+
+/* ============================================================
+   EASTER EGG · NEWSPAPER FLIP
+   toggled via html.newspaper (set by ModernEasterEggs.vue)
+   Hero becomes a printed black-on-white front page.
+   ============================================================ */
+html[data-theme="modern"].newspaper {
+  --bg: #FBFBF9;
+  --text: #0A0A08;
+  --primary: #0A0A08;
+  --accent: #0A0A08;
+}
+html[data-theme="modern"].newspaper body { filter: grayscale(1); }
+html[data-theme="modern"].newspaper .hero-masthead {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px double #0A0A08;
+  border-top: 1px solid #0A0A08;
+  padding: 0.75rem 0;
+  gap: 0.25rem;
+}
+html[data-theme="modern"].newspaper .hero-masthead::before {
+  content: "THE VAI TIMES";
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+html[data-theme="modern"].newspaper .mh-rec { color: #0A0A08; }
+html[data-theme="modern"].newspaper .rec-dot { display: none; }
+html[data-theme="modern"].newspaper .hero-title { font-family: var(--font-serif); text-transform: none; }
+html[data-theme="modern"].newspaper .hero-title::after { display: none; }
+html[data-theme="modern"].newspaper .hero-sub {
+  columns: 2;
+  column-gap: 2rem;
+  column-rule: 1px solid #0A0A08;
+  max-width: none;
+  font-size: 1rem;
+}
+html[data-theme="modern"].newspaper .avatar-img { filter: grayscale(1) contrast(1.3); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  html[data-theme="modern"] .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  html[data-theme="modern"] .hero-left { min-width: 0; }
+  html[data-theme="modern"] .hero-right {
+    order: 2;
+    padding: 2rem 0 0 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  html[data-theme="modern"] .avatar-wrap { max-width: 200px; }
+}
+
+@media (max-width: 560px) {
+  html[data-theme="modern"] .hero-masthead { flex-wrap: wrap; gap: 0.4rem 1rem; }
+  html[data-theme="modern"] .hero-sub { font-size: 1.15rem; max-width: none; }
+  html[data-theme="modern"] .hero-note { max-width: none; }
+  html[data-theme="modern"] .hero-title::after { width: min(220px, 55%); height: 6px; margin-top: 0.9rem; }
+}

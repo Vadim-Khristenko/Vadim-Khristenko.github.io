@@ -1,0 +1,77 @@
+# Issue / PR labels for vai-rice.space
+# Synced automatically by .github/workflows/labels.yml (EndBug/label-sync).
+# Colors are hex without the leading '#'.
+
+# ── content ──
+- name: friends
+  color: "F5A9C7"
+  description: "Suggest / add a person to the Friends section"
+- name: communities
+  color: "9B4DFF"
+  description: "Suggest / add a community"
+- name: labs
+  color: "10B3A2"
+  description: "Mini-apps under /files/*"
+
+# ── type ──
+- name: bug
+  color: "E0475E"
+  description: "Something isn't working"
+- name: enhancement
+  color: "5B8DEF"
+  description: "New feature or request"
+- name: design
+  color: "A86CF0"
+  description: "UI / UX / visual polish"
+- name: docs
+  color: "0AA678"
+  description: "Documentation"
+- name: i18n
+  color: "F59E0B"
+  description: "Translations & localization"
+- name: performance
+  color: "22C55E"
+  description: "Speed & bundle size"
+- name: security
+  color: "B91C1C"
+  description: "Security-related"
+- name: question
+  color: "8B5CF6"
+  description: "Further information is requested"
+
+# ── stack ──
+- name: rust
+  color: "CE7B52"
+  description: "Rust / WASM projects (Horizon · JustCode · Terminal)"
+- name: web
+  color: "1E88E5"
+  description: "Astro / Vue site"
+
+# ── workflow / meta ──
+- name: dependencies
+  color: "0366D6"
+  description: "Dependency updates"
+- name: ci
+  color: "2B3137"
+  description: "CI / CD & automation"
+- name: "good first issue"
+  color: "7FDBB6"
+  description: "Good for newcomers"
+- name: "help wanted"
+  color: "16A34A"
+  description: "Extra attention is welcome"
+- name: "in progress"
+  color: "FBBF24"
+  description: "Actively being worked on"
+- name: "priority: high"
+  color: "D73A4A"
+  description: "Time-sensitive"
+- name: "priority: low"
+  color: "C5DEF5"
+  description: "Nice to have, no rush"
+- name: wontfix
+  color: "6B7280"
+  description: "This will not be worked on"
+- name: duplicate
+  color: "9CA3AF"
+  description: "Already reported / exists"

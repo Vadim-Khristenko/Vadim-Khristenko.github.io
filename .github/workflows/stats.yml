@@ -1,0 +1,71 @@
+name: 📊 Update stats
+
+# Refresh GitHub stats (stars, forks, language breakdown) into public/data/stats.json
+# so the site always shows fresh numbers without per-visitor API calls.
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch: # one-click manual refresh
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stats
+  cancel-in-progress: true
+
+jobs:
+  stats:
+    name: 🔄  Refresh GitHub stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: ⬇️  Checkout
+        uses: actions/checkout@v4
+
+      - name: 🟢  Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 🛰️  Generate stats.json
+        run: node scripts/update-stats.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📈  Report
+        if: always()
+        run: |
+          if [ -f public/data/stats.json ]; then
+            node -e '
+              const s = require("./public/data/stats.json");
+              const u = s.user || {};
+              const langs = (s.languages || []).slice(0, 6)
+                .map(l => `${l.name} ${l.percent}%`).join(" · ");
+              const out = [
+                "## 📊 Stats refreshed",
+                "",
+                "| Metric | Value |",
+                "|---|---|",
+                `| ⭐ Stars | ${u.stars ?? "?"} |`,
+                `| 🍴 Forks | ${u.forks ?? "?"} |`,
+                `| 📦 Repos | ${u.repos ?? "?"} |`,
+                `| 👥 Followers | ${u.followers ?? "?"} |`,
+                `| 🧬 Top languages | ${langs} |`,
+                `| 🕔 Generated | ${s.generatedAt ?? "?"} |`,
+              ].join("\n");
+              require("fs").appendFileSync(process.env.GITHUB_STEP_SUMMARY, out + "\n");
+            '
+          fi
+
+      - name: 💾  Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/stats.json
+          if git diff --staged --quiet; then
+            echo "No stat changes."
+          else
+            git commit -m "chore(stats): refresh GitHub stats [auto]"
+            git push
+          fi

@@ -1,0 +1,8 @@
+# Build output goes straight into the site's public/ so Astro ships it at /files/horizon/
+[build]
+dist = "../../public/files/horizon"
+public_url = "/files/horizon/"
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 8081

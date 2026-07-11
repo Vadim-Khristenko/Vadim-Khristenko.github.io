@@ -1,0 +1,25 @@
+/* ============================================================
+   THEME · MAC OS CLASSIC — DARK (inverted 1-bit)
+   White ink on black paper. Everything is var-driven so it
+   just inverts. Applied via [data-mode="dark"] / auto.
+   ============================================================ */
+html[data-theme="macclassic"][data-mode="dark"] {
+  --paper: #000000;
+  --ink: #FFFFFF;
+  --desktop: #1A1A1A;
+  --dim: #808080;
+  --disabled: #555555;
+  --text-muted: #CCCCCC;
+  --text-dim: #999999;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme="macclassic"][data-mode="auto"] {
+    --paper: #000000;
+    --ink: #FFFFFF;
+    --desktop: #1A1A1A;
+    --dim: #808080;
+    --disabled: #555555;
+    --text-muted: #CCCCCC;
+    --text-dim: #999999;
+  }
+}

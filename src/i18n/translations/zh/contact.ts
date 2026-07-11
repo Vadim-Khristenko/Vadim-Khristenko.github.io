@@ -1,0 +1,15 @@
+export const contact = {
+  'contact.title': '联系方式',
+  'contact.subtitle': '所有联系方式 — 选择你喜欢的',
+  'contact.projEmails': '项目联系',
+  'contact.socials': '社交网络',
+  'contact.copy': '点击复制',
+  'contact.copied': '已复制！',
+  'contact.donateTitle': '支持我',
+  'contact.donateSubtitle': '帮助我继续前进：一杯咖啡、一个 Miku 手办，或者只是服务器的燃料',
+  'donate.coffee': '请我喝咖啡',
+  'donate.patreon': 'Patreon',
+  'donate.yoomoney': 'YooMoney',
+  'donate.crypto': '加密货币',
+  'donate.cryptoSubtitle': '点击地址复制',
+} as const;

@@ -1,0 +1,15 @@
+export const projects = {
+  'projects.title': 'Проекты',
+  'projects.subtitle': 'Каждый проект — это история, как я решаю проблемы и расту как разработчик.',
+  'projects.why': 'Почему эти проекты?',
+  'projects.why.desc': 'Каждый проект решает реальную проблему. Я верю: лучший код — тот, что приносит пользу людям. Мои репозитории — это боты, инструменты интеграции, ML микросервисы и эксперименты с производительностью.',
+  'projects.viewGithub': 'Все проекты на GitHub',
+  'projects.trophies': 'Трофеев',
+  'projects.languages': 'Топ языков',
+  'status.live': 'Live',
+  'status.indev': 'In Dev',
+  'status.comingsoon': 'Coming Soon',
+  'status.ideation': 'Ideation',
+  'status.alpha': 'Alpha',
+  'btn.open': 'Открыть →',
+} as const;

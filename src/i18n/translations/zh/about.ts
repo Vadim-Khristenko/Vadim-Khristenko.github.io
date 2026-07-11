@@ -1,0 +1,17 @@
+export const about = {
+  'about.title': '我是谁？',
+  'about.subtitle': '有个性的后端、一点 ML，以及对故事的热爱。',
+  'about.desc': '我写的代码既实用又带点趣味。后端服务、真正帮助他人的机器人、以及对性能敏感的模块 — 这些是我的日常。空闲时我会创作微故事、技术小笔记和实验性项目，去学习新东西 — 有时有用，有时奇怪，但总有收获。',
+  'about.ml': 'ML 与 API',
+  'about.ml.desc': '有使用 OpenAI API 及其他模型的实战经验；把模型推理集成进真实服务。Fine-tuning、提示工程，以及构建高效的流水线。深入使用各类平台 API。',
+  'about.devops': 'DevOps 与运维',
+  'about.devops.desc': 'Linux 与 Windows 服务器管理：部署、备份、监控、事故响应。Docker、CI/CD、nginx、systemd。基于 Postgres、Redis、RabbitMQ 的可靠流水线。',
+  'about.exp': '值得一提的经验',
+  'about.exp.desc': '面向 Telegram 与 Discord 的生产级机器人、webhook 基础设施与自动化工具。性能优化（Python + Cython）；C++ 与 Rust 的系统级代码。',
+  'about.work': '我的工作方式',
+  'about.work.desc': '我偏好务实、可测试的方案。快速原型 → 验证 → 加固上生产。',
+  'about.music': '音乐',
+  'about.music.desc': '电子乐、J-Pop、K-Pop 和 EDM 让我兴奋。我的歌单里永远有初音未来（尤其是 DECO*27）、重音Teto、DraGonis、Ado、Cosmograph 和 StarlingEDM。',
+  'about.vibes': '兴趣与氛围',
+  'about.vibes.desc': '我热爱动漫和漫画。绝对最爱是《刀剑神域》。漫画方面：《异世界返品》《A.I. Doctor》《邻家小姐很担心》《转生就是剑》。',
+} as const;

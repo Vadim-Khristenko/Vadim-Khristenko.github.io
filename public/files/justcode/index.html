@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JustCode 2027 — beautiful code screenshots</title>
+  <meta name="description" content="Turn source code into beautiful shareable images. Built in Rust + WebAssembly." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&family=Fira+Code:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/files/justcode/styles-fb26eed16d0dacac.css" integrity="sha384-rZ/NhD5rO/1iGCnjU3DnRaNpAQGOwLRXDK+0415JXXQOj02lJa6kH0I5OGIsi8ls"/>
+  
+<script type="module">
+import init, * as bindings from '/files/justcode/justcode-82843c7b36c0d06e.js';
+const wasm = await init({ module_or_path: '/files/justcode/justcode-82843c7b36c0d06e_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+
+  <link rel="icon" type="image/png" href="/favicon/justcode/favicon-96x96.png?v=2026-07-11" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/justcode/favicon.svg?v=2026-07-11" />
+  <link rel="shortcut icon" href="/favicon/justcode/favicon.ico?v=2026-07-11" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/justcode/apple-touch-icon.png?v=2026-07-11" />
+  <meta name="apple-mobile-web-app-title" content="JustCode" />
+  <link rel="manifest" href="/favicon/justcode/site.webmanifest?v=2026-07-11" />
+
+  <!-- Highlighting + rasterization libs (loaded before wasm so the glue is ready) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+  <script>
+    // Thin JS bridge — Rust calls these three globals.
+    (function () {
+      function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+      window.jcHighlight = function (code, lang) {
+        try {
+          if (window.hljs && lang && lang !== "plain" && window.hljs.getLanguage(lang)) {
+            return window.hljs.highlight(code, { language: lang, ignoreIllegals: true }).value;
+          }
+          if (window.hljs) return window.hljs.highlightAuto(code).value;
+        } catch (e) {}
+        return esc(code);
+      };
+      function download(dataUrl, name, ext) {
+        var a = document.createElement("a");
+        a.download = name.replace(/[^\w.-]+/g, "_") + "." + ext;
+        a.href = dataUrl;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      window.jcExport = function (scale, filename, format) {
+        var node = document.getElementById("jc-card");
+        if (!node || !window.htmlToImage) return;
+        var name = filename && filename.length ? filename : "justcode";
+        var opt = { pixelRatio: scale || 2, cacheBust: true };
+        var lib = window.htmlToImage;
+        if (format === "jpeg") {
+          lib.toJpeg(node, Object.assign({ quality: 0.96, backgroundColor: "#ffffff" }, opt))
+            .then(function (u) { download(u, name, "jpg"); }).catch(err);
+        } else if (format === "svg") {
+          lib.toSvg(node, opt).then(function (u) { download(u, name, "svg"); }).catch(err);
+        } else if (format === "webp") {
+          lib.toCanvas(node, opt).then(function (c) { download(c.toDataURL("image/webp", 0.96), name, "webp"); }).catch(err);
+        } else {
+          lib.toPng(node, opt).then(function (u) { download(u, name, "png"); }).catch(err);
+        }
+        function err(e) { console.error("jcExport failed", e); }
+      };
+      window.jcCopyPng = function (scale) {
+        var node = document.getElementById("jc-card");
+        if (!node || !window.htmlToImage) return;
+        if (!navigator.clipboard || !window.ClipboardItem) {
+          console.warn("Clipboard image API unavailable — use Export instead.");
+          return;
+        }
+        var opt = { pixelRatio: scale || 2, cacheBust: true };
+        // Pass a Promise<Blob> to ClipboardItem so the write stays inside the
+        // user gesture (required by Safari; works in Chromium/Firefox too).
+        try {
+          var item = new ClipboardItem({
+            "image/png": window.htmlToImage.toBlob(node, opt).then(function (b) { return b; }),
+          });
+          navigator.clipboard.write([item]).catch(function (e) {
+            console.error("copy image failed", e);
+          });
+        } catch (e) {
+          window.htmlToImage.toBlob(node, opt).then(function (blob) {
+            if (!blob) return;
+            navigator.clipboard.write([new ClipboardItem({ "image/png": blob })])
+              .catch(function (er) { console.error("copy image failed", er); });
+          });
+        }
+      };
+      window.jcCopyText = function (text) {
+        if (navigator.clipboard) navigator.clipboard.writeText(text).catch(function () {});
+      };
+      window.jcLang = function () {
+        var l = (navigator.language || "en").toLowerCase();
+        if (l.indexOf("ru") === 0) return "ru";
+        if (l.indexOf("zh") === 0) return "zh";
+        return "en";
+      };
+      // preset persistence (localStorage, namespaced)
+      window.jcGet = function (k) { try { return localStorage.getItem("justcode." + k) || ""; } catch (e) { return ""; } };
+      window.jcSet = function (k, v) { try { localStorage.setItem("justcode." + k, v); } catch (e) {} };
+    })();
+  </script>
+<link rel="modulepreload" href="/files/justcode/justcode-82843c7b36c0d06e.js" crossorigin="anonymous" integrity="sha384-11C/WeucK5XTBP93Gw3qX28eBHzUW70S52xpjHBljeLk+2I6vgK+u0wPXPj7K2er"><link rel="preload" href="/files/justcode/justcode-82843c7b36c0d06e_bg.wasm" crossorigin="anonymous" integrity="sha384-iPtAl3bOs0rQACHS8tg004nIySdRp+GgRM4bzyP/77pHBUXKwwU139wiVOOeIC8W" as="fetch" type="application/wasm"></head>
+<body></body>
+</html>

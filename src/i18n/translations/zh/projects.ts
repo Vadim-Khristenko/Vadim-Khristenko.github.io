@@ -1,0 +1,15 @@
+export const projects = {
+  'projects.title': '项目',
+  'projects.subtitle': '每个项目都是一个故事 — 关于我如何解决问题、如何成长为开发者。',
+  'projects.why': '为什么是这些项目？',
+  'projects.why.desc': '每个项目都解决了一个真实问题。我相信：最好的代码是能造福他人的代码。我的仓库是机器人、集成工具、ML 微服务和性能实验。',
+  'projects.viewGithub': '在 GitHub 上查看全部',
+  'projects.trophies': '奖杯',
+  'projects.languages': '主要语言',
+  'status.live': '在线',
+  'status.indev': '开发中',
+  'status.comingsoon': '即将推出',
+  'status.ideation': '构思中',
+  'status.alpha': '测试版',
+  'btn.open': '打开 →',
+} as const;

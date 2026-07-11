@@ -1,0 +1,17 @@
+export const about = {
+  'about.title': 'Who am I?',
+  'about.subtitle': 'Backend with character, a pinch of ML, and a passion for stories.',
+  'about.desc': 'I write code that feels both practical and a little playful. Backend services, bots that actually help people, and performance-sensitive modules are my day-to-day. When the clock is free I craft micro-stories, small technical notes, and experimental projects to learn something new — sometimes useful, sometimes weird, always instructive.',
+  'about.ml': 'ML & APIs',
+  'about.ml.desc': 'Hands-on with OpenAI API and other model APIs; integrating inference into real services. Fine-tuning, prompt engineering, efficient pipelines. Extensive platform API work.',
+  'about.devops': 'DevOps & Admin',
+  'about.devops.desc': 'Linux & Windows server administration: deployments, backups, monitoring, incident response. Docker, CI/CD, nginx, systemd. Reliable pipelines with Postgres, Redis, RabbitMQ.',
+  'about.exp': 'Notable Experience',
+  'about.exp.desc': 'Production Telegram and Discord bots, webhook infrastructure, automation tools. Performance tuning (Python + Cython); systems code in C++ and Rust.',
+  'about.work': 'How I Work',
+  'about.work.desc': 'I favor pragmatic, testable solutions. Fast prototypes → validate → harden for production.',
+  'about.music': 'Music',
+  'about.music.desc': "I'm driven by Electronics, J-Pop, K-Pop, and EDM. Playlist always features Hatsune Miku (DECO*27), Kasane Teto, DraGonis, Ado, Cosmograph and StarlingEDM.",
+  'about.vibes': 'Vibes & Interests',
+  'about.vibes.desc': 'I love anime and manga. Absolute favorite: Sword Art Online. Manga: "Isegye Pyeondol-i", "A.I. Doctor", "Rinjin-chan ga Shinpai", "Tensei Shitara Ken deshita".',
+} as const;

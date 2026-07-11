@@ -1,0 +1,52 @@
+/* ============================================================
+   THEME · CLASSIC — DARK (2016–2018 dark UI)
+   Deep indigo-slate, same violet accent, brighter primary.
+   Applied via [data-mode="dark"] / prefers-color-scheme + auto.
+   ============================================================ */
+html[data-theme="classic"][data-mode="dark"] {
+  --bg: #0F1220;
+  --bg-elevated: #1A1E30;
+  --bg-card: #191D2E;
+  --bg-sunken: #14172440;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(129, 140, 248, 0.5);
+  --text: #F3F4F6;
+  --text-muted: #9AA3B2;
+  --text-dim: #6B7280;
+  --primary: #818CF8;
+  --primary-muted: rgba(129, 140, 248, 0.14);
+  --accent: #A78BFA;
+  --grad: linear-gradient(135deg, #818CF8, #A78BFA);
+  --gradient-hero: var(--grad);
+  --gradient-text: var(--grad);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.55);
+  --shadow-glow-primary: 0 12px 30px rgba(129, 140, 248, 0.32);
+  --shadow-glow-accent: 0 12px 30px rgba(167, 139, 250, 0.30);
+}
+@media (prefers-color-scheme: dark) {
+  html[data-theme="classic"][data-mode="auto"] {
+    --bg: #0F1220;
+    --bg-elevated: #1A1E30;
+    --bg-card: #191D2E;
+    --bg-sunken: #14172440;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(129, 140, 248, 0.5);
+    --text: #F3F4F6;
+    --text-muted: #9AA3B2;
+    --text-dim: #6B7280;
+    --primary: #818CF8;
+    --primary-muted: rgba(129, 140, 248, 0.14);
+    --accent: #A78BFA;
+    --grad: linear-gradient(135deg, #818CF8, #A78BFA);
+    --gradient-hero: var(--grad);
+    --gradient-text: var(--grad);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.55);
+    --shadow-glow-primary: 0 12px 30px rgba(129, 140, 248, 0.32);
+    --shadow-glow-accent: 0 12px 30px rgba(167, 139, 250, 0.30);
+  }
+}

@@ -1,0 +1,91 @@
+name: "🤝 Friend · Друг · 朋友"
+description: "Add a person to Friends · Предложить человека в друзья · 添加一个人到朋友"
+title: "[Friend] "
+labels: ["friends"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **RU** — Заполни поля, так карточку легко добавить. Имя можно на нескольких языках.
+        **EN** — Fill in the fields so the card is easy to add. The name may be in several languages.
+        **中文** — 请填写字段，方便添加卡片。名字可以用多种语言。
+  - type: input
+    id: name
+    attributes:
+      label: "Имя / ник · Name / handle · 名字 / 昵称"
+      placeholder: "Filian"
+    validations:
+      required: true
+  - type: input
+    id: name_localized
+    attributes:
+      label: "Имя на других языках · Name in other languages · 其他语言的名字"
+      description: "Необязательно: ru / en / zh, если пишется по-разному. · Optional: ru / en / zh if written differently. · 可选：如写法不同，填 ru / en / zh。"
+      placeholder: "ru: Филиан · zh: 菲莉安"
+  - type: input
+    id: role
+    attributes:
+      label: "Кто это / роль · Who they are / role · 身份 / 角色"
+      placeholder: "VTuber · Rust dev · designer…"
+  - type: input
+    id: birthday
+    attributes:
+      label: "Дата рождения · Birthday · 生日"
+      description: "Формат ГГГГ-ММ-ДД — возраст считается сам. Необязательно. · Format YYYY-MM-DD — age is computed. Optional. · 格式 YYYY-MM-DD —— 年龄自动计算。可选。"
+      placeholder: "2005-07-11"
+  - type: input
+    id: age
+    attributes:
+      label: "Возраст · Age · 年龄"
+      description: "Если даты рождения нет. Необязательно. · If there's no birthday. Optional. · 若无生日。可选。"
+      placeholder: "20"
+  - type: input
+    id: location
+    attributes:
+      label: "Откуда · Location · 所在地"
+      placeholder: "Москва · Berlin · 上海"
+  - type: input
+    id: tags
+    attributes:
+      label: "Теги · Tags · 标签"
+      description: "Через запятую. · Comma-separated. · 用逗号分隔。"
+      placeholder: "artist, gamer, rust"
+  - type: textarea
+    id: about
+    attributes:
+      label: "Пара слов · A few words · 简介"
+      description: "Чем занимается, чем близки, почему стоит упомянуть. · What they do, how you're connected, why they belong here. · TA 做什么、你们的联系、为何值得提及。"
+    validations:
+      required: true
+  - type: input
+    id: links
+    attributes:
+      label: "Ссылки · Links · 链接"
+      description: "Через запятую. · Comma-separated. · 用逗号分隔。"
+      placeholder: "https://twitch.tv/… , https://x.com/…"
+    validations:
+      required: true
+  - type: textarea
+    id: avatar
+    attributes:
+      label: "Аватар · Avatar · 头像"
+      description: "Перетащи фото сюда ИЛИ вставь ссылку. · Drag a photo here OR paste a URL. · 把照片拖到这里，或粘贴链接。"
+  - type: textarea
+    id: banner
+    attributes:
+      label: "Баннер (обложка) · Banner (cover) · 横幅（封面）"
+      description: "Необязательно. Перетащи картинку или вставь ссылку. · Optional. Drag an image or paste a URL. · 可选。拖入图片或粘贴链接。"
+  - type: dropdown
+    id: tier
+    attributes:
+      label: "Уровень · Tier · 级别"
+      options:
+        - "friend · друг · 朋友"
+        - "best · близкий друг · 挚友"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: "Подтверждение · Confirm · 确认"
+      options:
+        - label: "Человек не против упоминания · The person is okay with being mentioned · 对方同意被提及"
+          required: true

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+.astro/
+.output/
+original-site/
+
+# Rust / WASM build cache
+target/
+**/target/
+projects/**/dist/
+
+# Session / agent working files — DO NOT COMMIT
+session-*.md
+*.session.md
+.claude/
+.agents/
+/docs/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+
+# Verification / screenshot artifacts
+.playwright-mcp/
+/*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

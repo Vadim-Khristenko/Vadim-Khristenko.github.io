@@ -1,0 +1,389 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Content Studio — VAI_PROG (private)"
+  description="Author-only content studio."
+  lang="ru"
+  noindex={true}
+>
+  <div class="ed-page">
+    <div class="ed-shell">
+      <!-- author-only notice -->
+      <div class="ed-notice" role="note">
+        <span class="ed-notice-badge">🔒 private</span>
+        <p>
+          Эта студия — <b>только для автора сайта</b>. Опубликовать что-либо отсюда нельзя:
+          она лишь генерирует Markdown/Astro, который автор вручную кладёт в репозиторий.
+          Обычным посетителям она ничего не даёт.
+        </p>
+      </div>
+
+      <header class="ed-head">
+        <div class="ed-title">
+          <span class="ed-dot"></span>
+          <h1>Content Studio</h1>
+          <span class="ed-ver">v2</span>
+        </div>
+        <div class="ed-stats" id="ed-stats">
+          <span id="st-words">0 words</span>
+          <span id="st-chars">0 chars</span>
+          <span id="st-read">~1 min</span>
+          <span id="st-saved" class="st-saved"></span>
+        </div>
+      </header>
+
+      <div class="ed-grid">
+        <!-- editor -->
+        <section class="ed-panel ed-editor">
+          <div class="ed-toolbar" id="ed-toolbar">
+            <button data-md="bold" title="Bold (Ctrl+B)"><b>B</b></button>
+            <button data-md="italic" title="Italic (Ctrl+I)"><i>I</i></button>
+            <button data-md="strike" title="Strikethrough"><s>S</s></button>
+            <span class="tb-sep"></span>
+            <button data-md="h1" title="Heading 1">H1</button>
+            <button data-md="h2" title="Heading 2">H2</button>
+            <button data-md="h3" title="Heading 3">H3</button>
+            <span class="tb-sep"></span>
+            <button data-md="ul" title="Bullet list">• List</button>
+            <button data-md="ol" title="Numbered list">1. List</button>
+            <button data-md="quote" title="Quote">❝</button>
+            <button data-md="task" title="Task list">☑</button>
+            <span class="tb-sep"></span>
+            <button data-md="link" title="Link (Ctrl+K)">🔗</button>
+            <button data-md="image" title="Image">🖼</button>
+            <button data-md="code" title="Inline code">‹›</button>
+            <button data-md="codeblock" title="Code block">{ }</button>
+            <button data-md="table" title="Table">▦</button>
+            <button data-md="hr" title="Divider">―</button>
+          </div>
+          <textarea
+            id="md-input"
+            class="ed-textarea"
+            spellcheck="false"
+            placeholder="# Заголовок&#10;&#10;Пиши тут. Ctrl+B / Ctrl+I / Ctrl+K работают."></textarea>
+        </section>
+
+        <!-- frontmatter -->
+        <aside class="ed-panel ed-meta">
+          <div class="ed-panel-h">Frontmatter</div>
+          <div class="ed-fields">
+            <label><span>Title</span><input id="m-title" type="text" placeholder="Post title" /></label>
+            <label><span>Description</span><textarea id="m-desc" rows="2" placeholder="Short description"></textarea></label>
+            <label class="row2">
+              <span class="lbl-inline">Slug <button type="button" id="m-slug-auto" class="mini-link">auto</button></span>
+              <input id="m-slug" type="text" placeholder="my-post" />
+            </label>
+            <div class="row-2col">
+              <label><span>Lang</span>
+                <select id="m-lang"><option value="ru">RU</option><option value="en">EN</option><option value="zh">ZH</option></select>
+              </label>
+              <label><span>Author</span><input id="m-author" type="text" value="VAI_PROG" /></label>
+            </div>
+            <label><span>Translation key <small>(shared across langs)</small></span><input id="m-tkey" type="text" placeholder="my-article" /></label>
+            <label><span>Cover image URL <small>(optional)</small></span><input id="m-cover" type="text" placeholder="/covers/…png" /></label>
+            <div class="row-2col">
+              <label><span>Published</span><input id="m-pub" type="date" /></label>
+              <label><span>Updated <small>(auto)</small></span><input id="m-upd" type="date" readonly /></label>
+            </div>
+            <label>
+              <span>Tags</span>
+              <div class="tag-box" id="tag-box">
+                <input id="m-tag-input" type="text" placeholder="type + Enter" />
+              </div>
+            </label>
+          </div>
+          <div class="ed-panel-h ed-actions-h">Export</div>
+          <div class="ed-exports">
+            <button id="x-md" class="x-btn primary">⬇ Markdown</button>
+            <button id="x-copy" class="x-btn">⧉ Copy</button>
+            <button id="x-astro" class="x-btn">⬇ Astro page</button>
+            <button id="x-clear" class="x-btn danger">Clear draft</button>
+            <p class="ed-hint">Публикация: положи <code>.md</code> в <code>src/content/blog/</code> и запушь.</p>
+          </div>
+        </aside>
+
+        <!-- preview -->
+        <section class="ed-panel ed-preview">
+          <div class="ed-panel-h">
+            Preview
+            <span class="ed-cover-note" id="pv-cover-note"></span>
+          </div>
+          <div class="pv-scroll">
+            <img id="pv-cover" class="pv-cover" alt="" hidden />
+            <h1 id="pv-title" class="pv-title"></h1>
+            <div id="pv-meta" class="pv-meta"></div>
+            <article id="pv-body" class="pv-body"></article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline type="module">
+    import { marked } from 'https://cdn.jsdelivr.net/npm/marked@18/lib/marked.esm.js';
+    marked.setOptions({ breaks: true, gfm: true });
+    (function () {
+      const $ = (id) => document.getElementById(id);
+      const md = $('md-input'), pv = $('pv-body'), pvTitle = $('pv-title'), pvMeta = $('pv-meta');
+      const mTitle = $('m-title'), mDesc = $('m-desc'), mSlug = $('m-slug'), mLang = $('m-lang'),
+            mAuthor = $('m-author'), mTkey = $('m-tkey'), mCover = $('m-cover'), mPub = $('m-pub'), mUpd = $('m-upd'),
+            tagInput = $('m-tag-input'), tagBox = $('tag-box');
+      const today = () => new Date().toISOString().split('T')[0];
+      let tags = [];
+      let slugTouched = false;
+
+      /* ---------- tags ---------- */
+      function renderTags() {
+        tagBox.querySelectorAll('.tag-chip').forEach((n) => n.remove());
+        tags.forEach((t, i) => {
+          const chip = document.createElement('span');
+          chip.className = 'tag-chip';
+          chip.innerHTML = t + '<b data-i="' + i + '">×</b>';
+          tagBox.insertBefore(chip, tagInput);
+        });
+      }
+      tagBox.addEventListener('click', (e) => {
+        const x = e.target.closest('b[data-i]');
+        if (x) { tags.splice(+x.dataset.i, 1); renderTags(); save(); }
+        else tagInput.focus();
+      });
+      tagInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ',') {
+          e.preventDefault();
+          const v = tagInput.value.trim().replace(/,$/, '');
+          if (v && !tags.includes(v)) { tags.push(v); renderTags(); save(); }
+          tagInput.value = '';
+        } else if (e.key === 'Backspace' && !tagInput.value && tags.length) {
+          tags.pop(); renderTags(); save();
+        }
+      });
+
+      /* ---------- slug ---------- */
+      function slugify(s) {
+        return (s || '').toLowerCase().trim()
+          .replace(/[^a-z0-9Ѐ-ӿ\s-]/g, '')
+          .replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      }
+      mTitle.addEventListener('input', () => { if (!slugTouched) mSlug.value = slugify(mTitle.value); render(); });
+      mSlug.addEventListener('input', () => { slugTouched = true; });
+      $('m-slug-auto').addEventListener('click', () => { slugTouched = false; mSlug.value = slugify(mTitle.value); save(); });
+
+      /* ---------- markdown toolbar ---------- */
+      function wrap(before, after, placeholder) {
+        const s = md.selectionStart, e = md.selectionEnd, val = md.value;
+        const sel = val.slice(s, e) || placeholder || '';
+        md.value = val.slice(0, s) + before + sel + after + val.slice(e);
+        md.focus();
+        md.selectionStart = s + before.length;
+        md.selectionEnd = s + before.length + sel.length;
+        render(); save();
+      }
+      function linePrefix(prefix) {
+        const s = md.selectionStart, val = md.value;
+        const lineStart = val.lastIndexOf('\n', s - 1) + 1;
+        md.value = val.slice(0, lineStart) + prefix + val.slice(lineStart);
+        md.focus(); md.selectionStart = md.selectionEnd = s + prefix.length;
+        render(); save();
+      }
+      const actions = {
+        bold: () => wrap('**', '**', 'bold'),
+        italic: () => wrap('*', '*', 'italic'),
+        strike: () => wrap('~~', '~~', 'text'),
+        code: () => wrap('`', '`', 'code'),
+        h1: () => linePrefix('# '), h2: () => linePrefix('## '), h3: () => linePrefix('### '),
+        ul: () => linePrefix('- '), ol: () => linePrefix('1. '), quote: () => linePrefix('> '),
+        task: () => linePrefix('- [ ] '),
+        link: () => wrap('[', '](https://)', 'text'),
+        image: () => wrap('![', '](https://)', 'alt'),
+        codeblock: () => wrap('\n```\n', '\n```\n', 'code'),
+        hr: () => { const s = md.selectionStart, v = md.value; md.value = v.slice(0, s) + '\n\n---\n\n' + v.slice(s); render(); save(); },
+        table: () => { const s = md.selectionStart, v = md.value; md.value = v.slice(0, s) + '\n| A | B |\n|---|---|\n| 1 | 2 |\n' + v.slice(s); render(); save(); },
+      };
+      $('ed-toolbar').addEventListener('click', (e) => {
+        const b = e.target.closest('button[data-md]'); if (b && actions[b.dataset.md]) actions[b.dataset.md]();
+      });
+      md.addEventListener('keydown', (e) => {
+        if (!(e.ctrlKey || e.metaKey)) return;
+        const k = e.key.toLowerCase();
+        if (k === 'b') { e.preventDefault(); actions.bold(); }
+        else if (k === 'i') { e.preventDefault(); actions.italic(); }
+        else if (k === 'k') { e.preventDefault(); actions.link(); }
+      });
+
+      /* ---------- preview + stats ---------- */
+      function render() {
+        const raw = md.value || '';
+        pv.innerHTML = marked.parse(raw);
+        pvTitle.textContent = mTitle.value || '';
+        pvTitle.style.display = mTitle.value ? '' : 'none';
+        const cover = $('pv-cover');
+        if (mCover.value) { cover.src = mCover.value; cover.hidden = false; } else { cover.hidden = true; }
+        const w = raw.trim().split(/\s+/).filter(Boolean).length;
+        pvMeta.textContent = [mLang.value.toUpperCase(), mAuthor.value, tags.join(' · ')].filter(Boolean).join('  •  ');
+        $('st-words').textContent = w + ' words';
+        $('st-chars').textContent = raw.length + ' chars';
+        $('st-read').textContent = '~' + Math.max(1, Math.round(w / 200)) + ' min';
+      }
+      ['input', 'change'].forEach((ev) => {
+        [md, mTitle, mDesc, mLang, mAuthor, mCover].forEach((el) => el.addEventListener(ev, () => { render(); save(); }));
+      });
+
+      /* ---------- autosave ---------- */
+      const KEY = 'vai.studio.draft';
+      let saveT;
+      function save() {
+        clearTimeout(saveT);
+        saveT = setTimeout(() => {
+          const data = { md: md.value, title: mTitle.value, desc: mDesc.value, slug: mSlug.value, slugTouched,
+            lang: mLang.value, author: mAuthor.value, tkey: mTkey.value, cover: mCover.value, pub: mPub.value, tags };
+          try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {}
+          const s = $('st-saved'); s.textContent = 'saved ✓'; setTimeout(() => (s.textContent = ''), 1200);
+        }, 400);
+      }
+      [mSlug, mTkey, mPub].forEach((el) => el.addEventListener('input', save));
+      function load() {
+        try {
+          const d = JSON.parse(localStorage.getItem(KEY) || 'null');
+          if (d) {
+            md.value = d.md || ''; mTitle.value = d.title || ''; mDesc.value = d.desc || '';
+            mSlug.value = d.slug || ''; slugTouched = !!d.slugTouched; mLang.value = d.lang || 'ru';
+            mAuthor.value = d.author || 'VAI_PROG'; mTkey.value = d.tkey || ''; mCover.value = d.cover || '';
+            mPub.value = d.pub || today(); tags = Array.isArray(d.tags) ? d.tags : [];
+          } else { mPub.value = today(); }
+        } catch (e) { mPub.value = today(); }
+        mUpd.value = today();
+        renderTags(); render();
+      }
+
+      /* ---------- frontmatter + export ---------- */
+      function frontmatter() {
+        const q = (s) => "'" + String(s || '').replace(/'/g, "\\'") + "'";
+        const lines = [
+          '---',
+          'title: ' + q(mTitle.value || 'Untitled'),
+          'description: ' + q(mDesc.value),
+          'pubDate: ' + (mPub.value || today()),
+          'updatedDate: ' + today(),
+          'author: ' + q(mAuthor.value || 'VAI_PROG'),
+          'tags: [' + tags.map(q).join(', ') + ']',
+          'lang: ' + mLang.value,
+        ];
+        if (mTkey.value) lines.push('translationKey: ' + q(mTkey.value));
+        if (mCover.value) lines.push('cover: ' + q(mCover.value));
+        lines.push('---', '');
+        return lines.join('\n');
+      }
+      function fullMarkdown() { return frontmatter() + (md.value || ''); }
+      function download(name, content, type) {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([content], { type }));
+        a.download = name; document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(a.href);
+      }
+      const fname = () => (mSlug.value || slugify(mTitle.value) || 'post');
+      $('x-md').addEventListener('click', () => download(fname() + '.md', fullMarkdown(), 'text/markdown'));
+      $('x-copy').addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(fullMarkdown()); $('x-copy').textContent = '✓ Copied'; setTimeout(() => ($('x-copy').textContent = '⧉ Copy'), 1200); } catch (e) {}
+      });
+      $('x-astro').addEventListener('click', () => {
+        const astro = "---\nimport BaseLayout from '@/layouts/BaseLayout.astro';\n---\n\n<BaseLayout title=" +
+          JSON.stringify((mTitle.value || 'Post') + ' — VAI_PROG') + " description=" + JSON.stringify(mDesc.value) +
+          " lang=" + JSON.stringify(mLang.value) + ">\n  <article class=\"blog-post-content\">\n" +
+          (pv.innerHTML).split('\n').map((l) => '    ' + l).join('\n') + "\n  </article>\n</BaseLayout>\n";
+        download(fname() + '.astro', astro, 'text/plain');
+      });
+      $('x-clear').addEventListener('click', () => {
+        if (!confirm('Clear the draft?')) return;
+        localStorage.removeItem(KEY);
+        md.value = ''; [mTitle, mDesc, mSlug, mTkey, mCover].forEach((el) => (el.value = ''));
+        mAuthor.value = 'VAI_PROG'; mPub.value = today(); tags = []; slugTouched = false;
+        renderTags(); render();
+      });
+
+      load();
+    })();
+  </script>
+
+  <style>
+    .ed-page { min-height: 100vh; background: var(--bg); color: var(--text); padding: 96px 1.25rem 48px; font-family: var(--font-body); }
+    .ed-shell { max-width: 1440px; margin: 0 auto; }
+
+    .ed-notice {
+      display: flex; align-items: center; gap: 0.9rem;
+      background: color-mix(in srgb, var(--primary) 8%, var(--bg-card));
+      border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--border));
+      border-radius: var(--radius-lg); padding: 0.85rem 1.1rem; margin-bottom: 1.25rem;
+    }
+    .ed-notice-badge { flex: 0 0 auto; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--primary);
+      border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent); border-radius: 999px; padding: 0.2rem 0.6rem; }
+    .ed-notice p { font-size: var(--font-size-sm); color: var(--text-muted); line-height: 1.5; }
+
+    .ed-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+    .ed-title { display: flex; align-items: center; gap: 0.7rem; }
+    .ed-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--gradient-hero); animation: edp 2s ease-in-out infinite; }
+    @keyframes edp { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.3); opacity: 0.6; } }
+    .ed-title h1 { font-family: var(--font-display); font-size: var(--font-size-2xl); font-weight: 700; }
+    .ed-ver { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-dim); border: 1px solid var(--border); border-radius: 6px; padding: 0.1rem 0.35rem; }
+    .ed-stats { display: flex; gap: 1rem; font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--text-dim); }
+    .st-saved { color: var(--success, #22c55e); min-width: 52px; }
+
+    .ed-grid { display: grid; grid-template-columns: 1fr 320px 1fr; gap: 1rem; align-items: start; }
+    .ed-panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; min-height: 560px; }
+    .ed-panel-h { padding: 0.7rem 1rem; background: var(--bg-elevated); border-bottom: 1px solid var(--border); font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-dim); display: flex; justify-content: space-between; align-items: center; }
+
+    .ed-toolbar { display: flex; flex-wrap: wrap; gap: 2px; padding: 0.5rem; background: var(--bg-elevated); border-bottom: 1px solid var(--border); }
+    .ed-toolbar button { min-width: 30px; height: 30px; padding: 0 0.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); font-size: 0.8rem; cursor: pointer; transition: all var(--transition-fast); }
+    .ed-toolbar button:hover { color: var(--text); border-color: var(--primary); }
+    .tb-sep { width: 1px; background: var(--border); margin: 2px 4px; }
+
+    .ed-textarea { flex: 1; width: 100%; padding: 1.1rem; background: transparent; border: none; color: var(--text); font-family: var(--font-mono); font-size: var(--font-size-sm); line-height: 1.75; resize: none; outline: none; min-height: 480px; }
+    .ed-textarea::placeholder { color: var(--text-dim); }
+
+    .ed-fields { padding: 1rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .ed-fields label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .ed-fields label small { text-transform: none; letter-spacing: 0; color: var(--text-dim); }
+    .row-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .lbl-inline { display: flex; justify-content: space-between; align-items: center; }
+    .mini-link { background: none; border: none; color: var(--primary); font-size: 0.6rem; cursor: pointer; text-transform: uppercase; }
+    .ed-fields input, .ed-fields select, .ed-fields textarea { padding: 0.55rem 0.7rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-family: var(--font-body); font-size: var(--font-size-sm); outline: none; resize: vertical; }
+    .ed-fields input:focus, .ed-fields select:focus, .ed-fields textarea:focus { border-color: var(--primary); }
+    .ed-fields input[readonly] { opacity: 0.6; }
+
+    .tag-box { display: flex; flex-wrap: wrap; gap: 0.3rem; padding: 0.4rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+    .tag-box input { flex: 1; min-width: 90px; border: none; background: transparent; padding: 0.15rem; }
+    .tag-chip { display: inline-flex; align-items: center; gap: 0.3rem; background: color-mix(in srgb, var(--primary) 12%, transparent); border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent); border-radius: 999px; padding: 0.1rem 0.5rem; font-size: 0.72rem; color: var(--text); text-transform: none; }
+    .tag-chip b { cursor: pointer; color: var(--text-dim); font-weight: 400; }
+    .tag-chip b:hover { color: var(--primary); }
+
+    .ed-actions-h { border-top: 1px solid var(--border); }
+    .ed-exports { padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .x-btn { padding: 0.6rem 0.9rem; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text); font-weight: 600; font-size: var(--font-size-sm); cursor: pointer; transition: all var(--transition-fast); }
+    .x-btn:hover { border-color: var(--border-hover); background: var(--bg-elevated); }
+    .x-btn.primary { background: var(--gradient-hero); border: none; color: #fff; }
+    .x-btn.danger { color: #ef4444; }
+    .ed-hint { font-size: 0.68rem; color: var(--text-dim); line-height: 1.4; margin-top: 0.3rem; }
+    .ed-hint code { font-family: var(--font-mono); color: var(--text-muted); }
+
+    .pv-scroll { flex: 1; overflow-y: auto; padding: 1.5rem; }
+    .pv-cover { width: 100%; border-radius: var(--radius-md); margin-bottom: 1.25rem; }
+    .pv-title { font-family: var(--font-display); font-size: var(--font-size-2xl); font-weight: 800; line-height: 1.15; margin-bottom: 0.5rem; }
+    .pv-meta { font-family: var(--font-mono); font-size: var(--font-size-xs); color: var(--text-dim); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .pv-body { line-height: 1.75; color: var(--text-muted); }
+    .pv-body h1, .pv-body h2, .pv-body h3 { color: var(--text); font-family: var(--font-display); margin: 1.5rem 0 0.6rem; line-height: 1.25; }
+    .pv-body p, .pv-body ul, .pv-body ol, .pv-body blockquote, .pv-body pre, .pv-body table { margin-bottom: 1rem; }
+    .pv-body a { color: var(--primary); }
+    .pv-body code { font-family: var(--font-mono); background: var(--bg-elevated); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+    .pv-body pre { background: var(--bg-elevated); padding: 1rem; border-radius: var(--radius-md); overflow-x: auto; }
+    .pv-body pre code { background: none; padding: 0; }
+    .pv-body blockquote { border-left: 3px solid var(--primary); padding-left: 1rem; color: var(--text-dim); }
+    .pv-body img { max-width: 100%; border-radius: var(--radius-md); }
+    .pv-body table { border-collapse: collapse; width: 100%; }
+    .pv-body th, .pv-body td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+
+    @media (max-width: 1160px) { .ed-grid { grid-template-columns: 1fr; } .ed-panel { min-height: 340px; } }
+    @media (max-width: 640px) { .ed-page { padding: 80px 1rem 40px; } }
+  </style>
+</BaseLayout>

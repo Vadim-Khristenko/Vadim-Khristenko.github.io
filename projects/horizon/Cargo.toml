@@ -1,0 +1,17 @@
+[package]
+name = "horizon"
+version = "0.2.0"
+edition = "2024"
+authors = ["Vadim Khristenko <business@vai-rice.space>"]
+description = "Horizon 2027 — an interactive, branching New Year experience (Rust + Leptos + WASM)"
+
+[dependencies]
+leptos = { version = "0.6", features = ["csr"] }
+console_error_panic_hook = "0.1"
+js-sys = "0.3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
