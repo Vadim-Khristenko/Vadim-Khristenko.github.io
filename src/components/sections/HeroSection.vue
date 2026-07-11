@@ -346,11 +346,11 @@ onUnmounted(() => {
   background: var(--bg-elevated);
 }
 
-/* GitHub stats */
+/* GitHub stats — clean grid: 4 in a row → 2 per row → 1 per row */
 .gh-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, max-content));
+  gap: 1rem 1.75rem;
   max-width: 100%;
 }
 
@@ -359,6 +359,15 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 0.25rem;
   min-width: 0;
+}
+
+/* 2 per row where four no longer fit comfortably */
+@media (max-width: 620px) {
+  .gh-stats { grid-template-columns: repeat(2, minmax(0, max-content)); }
+}
+/* last resort — stack one per row */
+@media (max-width: 360px) {
+  .gh-stats { grid-template-columns: minmax(0, max-content); }
 }
 
 .gh-num {

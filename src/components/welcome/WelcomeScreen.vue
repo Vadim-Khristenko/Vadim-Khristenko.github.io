@@ -12,9 +12,9 @@
 
       <div class="intro-content">
         <!-- Logo mark -->
-        <div class="logo-mark" @click="handleLogoClick" :title="mikuHint">
-          <BrandMark :size="56" />
-          <span v-if="mikuUnlocked" class="miku-spark">♪</span>
+        <div class="logo-mark" :class="{ playing: musicOn }" @click="handleLogoClick" :title="mikuHint">
+          <BrandMark :size="72" />
+          <span v-if="mikuUnlocked || musicOn" class="miku-spark">♪</span>
         </div>
 
         <h1 class="intro-heading">
@@ -48,6 +48,17 @@
         
         <p class="locale-hint">{{ t('welcome.youCanChange') }}</p>
       </div>
+
+      <!-- Miku music easter egg popup -->
+      <Transition name="mikupop">
+        <div v-if="showMikuPop" class="miku-pop" role="status">
+          <span class="miku-pop-note">♪</span>
+          <div class="miku-pop-txt">
+            <b>{{ mikuPop.title }}</b>
+            <p>{{ mikuPop.body }}</p>
+          </div>
+        </div>
+      </Transition>
     </div>
 
     <!-- STEP 2: THEME SELECTOR -->
@@ -122,7 +133,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue';
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import { usePreferencesStore } from '@/stores/preferences';
 import { useI18n } from '@/composables/useI18n';
 import { themes } from '@/i18n/themes';
@@ -166,14 +177,69 @@ const mikuHint = locale.value === 'ru'
 
 const mikuUnlocked = computed(() => store.isMikuUnlocked);
 
+// Miku music easter egg: 3 taps on the mark start the track + a popup; 3 more
+// stop it. Leaving the welcome screen (unmount) also stops it.
+const musicOn = ref(false);
+const showMikuPop = ref(false);
+let audio: HTMLAudioElement | null = null;
+let popTimer: ReturnType<typeof setTimeout> | undefined;
+
+const mikuPop = computed(() => {
+  const m: Record<string, { title: string; body: string }> = {
+    ru: {
+      title: 'Играет Мику! ♪',
+      body: 'Наслаждайся красотой, которая существует. Музыка остановится, когда ты уйдёшь с этого экрана — или тыкни иконку ещё три раза.',
+    },
+    en: {
+      title: 'Miku is playing! ♪',
+      body: 'Enjoy the beauty that exists. The music stops when you leave this screen — or tap the icon three more times.',
+    },
+    zh: {
+      title: '初音在唱！♪',
+      body: '尽情享受这份存在的美好吧。离开此界面时音乐会停止 — 或再点击图标三次。',
+    },
+  };
+  return m[locale.value] || m.en;
+});
+
+function toggleMusic() {
+  if (!audio) {
+    audio = new Audio('/music/Anamanaguchi_Miku-Ft_Hatsune_Miku.mp3');
+    audio.loop = true;
+    audio.volume = 0.55;
+  }
+  if (musicOn.value) {
+    audio.pause();
+    musicOn.value = false;
+    showMikuPop.value = false;
+    if (popTimer) clearTimeout(popTimer);
+  } else {
+    audio.play().catch(() => {});
+    musicOn.value = true;
+    store.findEasterEgg('miku');
+    showMikuPop.value = true;
+    if (popTimer) clearTimeout(popTimer);
+    popTimer = setTimeout(() => { showMikuPop.value = false; }, 9000);
+  }
+}
+
+function stopMusic() {
+  if (audio) { audio.pause(); audio.currentTime = 0; }
+  musicOn.value = false;
+  showMikuPop.value = false;
+  if (popTimer) clearTimeout(popTimer);
+}
+
 onMounted(() => {
   nextTick(() => nameInput.value?.focus());
 });
 
+onUnmounted(() => stopMusic());
+
 function handleLogoClick() {
   logoClicks.value++;
-  if (logoClicks.value >= 3 && !store.isMikuUnlocked) {
-    store.findEasterEgg('miku');
+  if (logoClicks.value >= 3) {
+    toggleMusic();
     logoClicks.value = 0;
   }
 }
@@ -289,12 +355,19 @@ function skipAll() {
 }
 
 .logo-mark {
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 2rem;
   color: var(--primary);
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+.logo-mark.playing {
+  animation: mikuBop 0.9s ease-in-out infinite;
+}
+@keyframes mikuBop {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
 }
 
 /* staggered entrance for the intro block */
@@ -393,6 +466,37 @@ function skipAll() {
   0%, 100% { transform: translateY(0) rotate(-8deg); opacity: 0.85; }
   50% { transform: translateY(-5px) rotate(8deg); opacity: 1; }
 }
+
+/* Miku music popup */
+.miku-pop {
+  position: fixed;
+  left: 50%;
+  bottom: 1.75rem;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: min(92vw, 420px);
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(57,197,187,0.16), rgba(255,95,162,0.14)), var(--bg-card);
+  border: 1px solid color-mix(in srgb, #39C5BB 45%, transparent);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28), 0 0 20px rgba(57,197,187,0.2);
+  text-align: left;
+}
+.miku-pop-note {
+  flex: none;
+  font-size: 1.5rem;
+  color: #39C5BB;
+  text-shadow: 0 0 10px rgba(57,197,187,0.7);
+  animation: mikuFloat 1.4s ease-in-out infinite;
+}
+.miku-pop-txt b { display: block; font-size: var(--font-size-sm); color: var(--text); margin-bottom: 0.2rem; }
+.miku-pop-txt p { font-size: var(--font-size-xs); color: var(--text-muted); line-height: 1.45; }
+
+.mikupop-enter-active, .mikupop-leave-active { transition: opacity 0.35s ease, transform 0.35s ease; }
+.mikupop-enter-from, .mikupop-leave-to { opacity: 0; transform: translate(-50%, 12px); }
 
 /* Name input */
 .name-box {

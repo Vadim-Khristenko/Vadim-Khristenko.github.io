@@ -318,16 +318,15 @@ html[data-theme="modern"] .hbtn-ghost:hover {
 
 /* GitHub stats — Swiss data row, big numerals + mono labels */
 html[data-theme="modern"] .gh-stats {
-  gap: 0.75rem 0;
+  gap: 0.9rem 1.9rem;
   border-top: 1px solid var(--rule);
   padding-top: 1.25rem;
 }
 html[data-theme="modern"] .gh-stat {
-  padding-right: 1.4rem;
-  margin-right: 1.4rem;
-  border-right: 1px solid var(--border);
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
 }
-html[data-theme="modern"] .gh-stat:last-child { border-right: none; }
 html[data-theme="modern"] .gh-num {
   font-family: var(--font-display);
   font-weight: 800;
