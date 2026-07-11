@@ -182,6 +182,13 @@ html[data-theme="macclassic"] .gh-trophy { padding: 0 8px; }
 /* ============================================================
    HERO
    ============================================================ */
+/* give the hero the same paper-panel backing the other sections get */
+html[data-theme="macclassic"] .hero-inner {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 20px;
+}
 html[data-theme="macclassic"] .hero-title { font-weight: 400; color: var(--ink); letter-spacing: 0; }
 html[data-theme="macclassic"] .hero-title .gtext { background: none; -webkit-text-fill-color: var(--ink); color: var(--ink); }
 html[data-theme="macclassic"] .hero-title::after { display: none; }

@@ -193,6 +193,14 @@ html[data-theme="win95"] .gh-trophy { padding: 0 6px 6px; }
 /* ============================================================
    HERO — "app window" feel
    ============================================================ */
+/* give the hero the same raised window backing the other sections get */
+html[data-theme="win95"] .hero-inner {
+  background: var(--win-face);
+  border: 2px solid;
+  border-color: var(--bevel-out);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  padding: 20px;
+}
 html[data-theme="win95"] .hero-title { font-weight: 700; color: var(--text); letter-spacing: 0; }
 html[data-theme="win95"] .hero-title .gtext { background: none; -webkit-text-fill-color: var(--text); color: var(--text); }
 html[data-theme="win95"] .hero-title::after { display: none; }
