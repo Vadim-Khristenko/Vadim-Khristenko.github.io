@@ -111,7 +111,7 @@ export const friends: Friend[] = [
     avatar: '/avatars/Kaito.png',
     badge: 'EXTERA',
     tier: 'friend',
-    age: 15,
+    age: 16,
     tags: ['Matrix', 'Rust'],
     website: 'https://rustyraven.pw/',
     socials: [
