@@ -148,14 +148,44 @@ const siteLd = {
                 // Default to the flagship theme so first paint matches :root (no FOUC).
                 var theme = "modern";
                 var mode = "auto";
-                try {
-                    var stored = localStorage.getItem("vai-prog-preferences");
-                    if (stored) {
-                        var prefs = JSON.parse(stored);
-                        if (prefs && prefs.theme) theme = prefs.theme;
-                        if (prefs && prefs.colorMode) mode = prefs.colorMode;
+                var STORE = "vai-prog-preferences";
+                var VALID_THEMES = ["modern","win11","macos26","win95","macclassic","snackers","classic","terminal"];
+                var VALID_LANGS = ["ru","en","zh"];
+
+                var params = null;
+                try { params = new URLSearchParams(window.location.search); } catch (e) {}
+
+                // ?reset=1|true|yes — wipe all stored state, then strip the param
+                if (params) {
+                    var reset = (params.get("reset") || "").toLowerCase();
+                    if (reset === "1" || reset === "true" || reset === "yes") {
+                        try { localStorage.clear(); } catch (e) {}
+                        params.delete("reset");
+                        try {
+                            var q = params.toString();
+                            history.replaceState(null, "", window.location.pathname + (q ? "?" + q : "") + window.location.hash);
+                        } catch (e) {}
                     }
+                }
+
+                var prefs = {};
+                try {
+                    var stored = localStorage.getItem(STORE);
+                    if (stored) prefs = JSON.parse(stored) || {};
+                    if (prefs.theme) theme = prefs.theme;
+                    if (prefs.colorMode) mode = prefs.colorMode;
                 } catch (e) {}
+
+                // ?theme= / ?lang= — override and persist so the Vue store agrees
+                if (params) {
+                    var changed = false;
+                    var qt = (params.get("theme") || "").toLowerCase();
+                    if (VALID_THEMES.indexOf(qt) !== -1) { theme = qt; prefs.theme = qt; changed = true; }
+                    var ql = (params.get("lang") || "").toLowerCase();
+                    if (VALID_LANGS.indexOf(ql) !== -1) { prefs.locale = ql; changed = true; }
+                    if (changed) { try { localStorage.setItem(STORE, JSON.stringify(prefs)); } catch (e) {} }
+                }
+
                 var root = document.documentElement;
                 root.setAttribute("data-theme", theme);
                 root.setAttribute("data-mode", mode);

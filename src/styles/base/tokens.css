@@ -15,7 +15,7 @@
   --space-12: 3rem;
   --space-16: 4rem;
   --space-20: 5rem;
-  --space-24: 6rem;
+  --space-24: 5rem; /* section vertical rhythm — trimmed a touch on desktop */
   --space-32: 8rem;
 
   /* Type scale (fluid-ish defaults; themes retune) */
@@ -42,4 +42,13 @@
 
   /* Content measure */
   --measure: 1200px;
+}
+
+/* Tighten the section rhythm on smaller screens — the 5rem desktop gap
+   feels huge on phones. --space-24 is used only for section top/bottom padding. */
+@media (max-width: 900px) {
+  :root { --space-24: 3.5rem; }
+}
+@media (max-width: 600px) {
+  :root { --space-24: 2.5rem; }
 }

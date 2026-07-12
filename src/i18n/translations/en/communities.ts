@@ -11,6 +11,6 @@ export const communities = {
   'communities.tbank.desc': 'I am grateful to the community that helped me get on my feet and opened new horizons. It\'s not just an educational platform — it\'s a friendly community that is always there.',
   'communities.foxford.desc': 'The company tried to destroy my ideas and projects, but a strong community stood up for me. Thank you for helping me leave in time and preserving what I believed in.',
   'communities.github.desc': '39 public repositories, 280+ stars. Open source for everyone.',
-  'communities.tgdev.desc': 'Telegram channel about development, projects and life in IT.',
+  'communities.tgdev.desc': "Contributed to the Aiogram library and its guides — translating MasterGroosha's aiogram guide into other languages. Plus my own tooling in Rust and C++: a modernised Bot API server and a custom client. Coming soon — a free Telegram home-server with all the features and almost no limits.",
   'communities.snackers.desc': 'The most insane and coolest community rolled into one — no less crazy than their VTuber, yet warm, friendly and supportive. A whole world in one place.',
 } as const;
