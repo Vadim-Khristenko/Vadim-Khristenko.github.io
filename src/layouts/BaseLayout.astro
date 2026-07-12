@@ -183,6 +183,9 @@ const siteLd = {
                     if (VALID_THEMES.indexOf(qt) !== -1) { theme = qt; prefs.theme = qt; changed = true; }
                     var ql = (params.get("lang") || "").toLowerCase();
                     if (VALID_LANGS.indexOf(ql) !== -1) { prefs.locale = ql; changed = true; }
+                    // ?mode=light|dark|auto — only meaningful on themes with a toggle, harmless elsewhere
+                    var qm = (params.get("mode") || "").toLowerCase();
+                    if (qm === "light" || qm === "dark" || qm === "auto") { mode = qm; prefs.colorMode = qm; changed = true; }
                     if (changed) { try { localStorage.setItem(STORE, JSON.stringify(prefs)); } catch (e) {} }
                 }
 

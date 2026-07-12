@@ -135,7 +135,6 @@ const FriendCard = defineComponent({
           style: { '--card-accent': accent },
         },
         [
-          props.best && h('span', { class: 'friend-best' }, [h(Star, { size: 11 }), ' BEST']),
           f.banner
             ? h('div', { class: 'fr-banner', style: { backgroundImage: `url(${f.banner})` } })
             : null,
@@ -148,7 +147,8 @@ const FriendCard = defineComponent({
               ),
               h('div', { class: 'friend-meta' }, [
                 h('h4', { class: 'friend-name-row' }, [
-                  h('span', nm),
+                  h('span', { class: 'friend-name' }, nm),
+                  props.best ? h('span', { class: 'friend-best' }, [h(Star, { size: 10 }), ' BEST']) : null,
                   badge ? h('span', { class: 'friend-badge' }, badge) : null,
                 ]),
                 role() ? h('span', { class: 'friend-role' }, role()) : null,
@@ -350,21 +350,21 @@ const FriendCard = defineComponent({
     var(--bg-card);
 }
 .friend-best {
-  position: absolute;
-  top: var(--space-4);
-  right: var(--space-4);
   display: inline-flex;
   align-items: center;
   gap: 0.2rem;
+  flex: none;
   font-family: var(--font-mono);
-  font-size: 0.5625rem;
+  font-size: 0.5rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 0.2rem 0.45rem;
+  letter-spacing: 0.08em;
+  padding: 0.12rem 0.4rem;
   color: var(--card-accent);
-  border: 1px solid color-mix(in srgb, var(--card-accent) 40%, transparent);
+  background: color-mix(in srgb, var(--card-accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 35%, transparent);
   border-radius: var(--radius-full);
 }
+.friend-name-row .friend-name { min-width: 0; word-break: break-word; }
 .friend-top {
   display: flex;
   align-items: center;
