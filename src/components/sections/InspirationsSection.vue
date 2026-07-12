@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { ref, computed, defineComponent, h } from 'vue';
-import { Search, Sparkles } from 'lucide-vue-next';
+import { Search } from 'lucide-vue-next';
 import { useI18n } from '@/composables/useI18n';
 import { inspirations } from '@/data/inspirations';
 import type { Inspiration } from '@/data/types';
@@ -76,16 +76,16 @@ const InspCard = defineComponent({
             : null,
           h('div', { class: 'fr-body' }, [
             h('div', { class: 'friend-top' }, [
-              h(
-                'div',
-                { class: 'friend-avatar', style: { background: `${accent}1F`, color: accent } },
-                [h('img', { src: p.avatar || PLACEHOLDER, alt: nm, loading: 'lazy' })]
-              ),
+              h('div', { class: 'insp-ava', title: 'On the radar — someday' }, [
+                h(
+                  'div',
+                  { class: 'friend-avatar', style: { background: `${accent}1F`, color: accent } },
+                  [h('img', { src: p.avatar || PLACEHOLDER, alt: nm, loading: 'lazy', decoding: 'async' })]
+                ),
+                h('span', { class: 'insp-star', 'aria-hidden': 'true' }, '✦'),
+              ]),
               h('div', { class: 'friend-meta' }, [
-                h('h4', { class: 'insp-name-row' }, [
-                  h('span', { class: 'insp-name' }, nm),
-                  h('span', { class: 'insp-someday' }, [h(Sparkles, { size: 10 }), ' SOMEDAY']),
-                ]),
+                h('h4', { class: 'insp-name' }, nm),
                 role() ? h('span', { class: 'friend-role' }, role()) : null,
               ]),
             ]),
@@ -161,26 +161,32 @@ const InspCard = defineComponent({
   padding: var(--space-8) 0;
 }
 
-/* SOMEDAY chip — inline in the name row, tinted with the card's accent so it
-   reads intentionally across every theme (uses --card-accent set on the card) */
-.insp-name-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+/* Inspiration signature — a haloed avatar + a north-star glyph instead of a text
+   chip. Self-contained (no overlap) and tinted from the card accent, so it reads
+   as "someday / on the radar" and fits every theme. */
 .insp-name { min-width: 0; word-break: break-word; font-size: var(--font-size-base); font-weight: 600; }
-.insp-someday {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-  flex: none;
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.14rem 0.42rem;
-  color: var(--card-accent, var(--primary));
-  background: color-mix(in srgb, var(--card-accent, var(--primary)) 13%, transparent);
-  border: 1px solid color-mix(in srgb, var(--card-accent, var(--primary)) 40%, transparent);
-  border-radius: var(--radius-full);
+.insp-ava { position: relative; flex-shrink: 0; }
+.insp-grid .friend-avatar {
+  box-shadow:
+    0 0 0 2px var(--bg-card),
+    0 0 0 4px color-mix(in srgb, var(--card-accent, var(--primary)) 45%, transparent);
 }
+.insp-star {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 0.72rem;
+  line-height: 1;
+  color: var(--card-accent, var(--primary));
+  text-shadow: 0 0 6px color-mix(in srgb, var(--card-accent, var(--primary)) 60%, transparent);
+  pointer-events: none;
+  animation: inspTwinkle 3.2s ease-in-out infinite;
+}
+@keyframes inspTwinkle {
+  0%, 100% { opacity: 0.55; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) { .insp-star { animation: none; } }
 /* a light accent wash on the tag chips so they sit in the theme, not on top of it */
 .insp-grid .fr-tag {
   border-color: color-mix(in srgb, var(--card-accent, var(--primary)) 30%, var(--border));

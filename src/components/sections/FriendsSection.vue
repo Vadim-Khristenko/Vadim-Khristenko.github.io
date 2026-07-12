@@ -143,7 +143,7 @@ const FriendCard = defineComponent({
               h(
                 'div',
                 { class: 'friend-avatar', style: { background: `${accent}1F`, color: accent } },
-                [h('img', { src: f.avatar || PLACEHOLDER, alt: nm, loading: 'lazy' })]
+                [h('img', { src: f.avatar || PLACEHOLDER, alt: nm, loading: 'lazy', decoding: 'async' })]
               ),
               h('div', { class: 'friend-meta' }, [
                 h('h4', { class: 'friend-name-row' }, [

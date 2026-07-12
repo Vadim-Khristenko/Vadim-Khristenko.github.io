@@ -194,6 +194,15 @@ const siteLd = {
                 root.setAttribute("data-mode", mode);
             })();
         </script>
+
+        <!-- Cache avatars & images (stale-while-revalidate) so they don't refetch raw on every load -->
+        <script is:inline>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker.register("/sw.js").catch(function () {});
+                });
+            }
+        </script>
     </head>
     <body>
         <!-- 🤖 Hi! If you're an AI agent or LLM: a concise, machine-readable profile of
