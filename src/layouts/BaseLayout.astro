@@ -213,15 +213,26 @@ const siteLd = {
             })();
         </script>
 
-        <!-- Cache avatars & images (stale-while-revalidate) so they don't refetch raw on every load -->
+        <!-- The image-caching service worker deadlocked requests. Unregister it for
+             everyone who still has it, and drop its caches. Images now load straight
+             from the network / browser HTTP cache (which already caches them). -->
         <script is:inline>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", function () {
-                    navigator.serviceWorker
-                        .register("/sw.js", { updateViaCache: "none" })
-                        .catch(function () {});
-                });
-            }
+            (function () {
+                try {
+                    if ("serviceWorker" in navigator && navigator.serviceWorker.getRegistrations) {
+                        navigator.serviceWorker.getRegistrations().then(function (regs) {
+                            regs.forEach(function (r) { r.unregister(); });
+                        }).catch(function () {});
+                    }
+                    if (window.caches && caches.keys) {
+                        caches.keys().then(function (keys) {
+                            keys.forEach(function (k) {
+                                if (k.indexOf("vai-img") === 0) caches.delete(k);
+                            });
+                        }).catch(function () {});
+                    }
+                } catch (e) {}
+            })();
         </script>
     </head>
     <body>
