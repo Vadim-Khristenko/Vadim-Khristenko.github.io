@@ -155,17 +155,35 @@ const siteLd = {
                 var params = null;
                 try { params = new URLSearchParams(window.location.search); } catch (e) {}
 
+                function truthy(v) { v = (v || "").toLowerCase(); return v === "1" || v === "true" || v === "yes"; }
+                function stripParam(name) {
+                    if (!params) return;
+                    params.delete(name);
+                    try {
+                        var q = params.toString();
+                        history.replaceState(null, "", window.location.pathname + (q ? "?" + q : "") + window.location.hash);
+                    } catch (e) {}
+                }
+
                 // ?reset=1|true|yes — wipe all stored state, then strip the param
-                if (params) {
-                    var reset = (params.get("reset") || "").toLowerCase();
-                    if (reset === "1" || reset === "true" || reset === "yes") {
-                        try { localStorage.clear(); } catch (e) {}
-                        params.delete("reset");
-                        try {
-                            var q = params.toString();
-                            history.replaceState(null, "", window.location.pathname + (q ? "?" + q : "") + window.location.hash);
-                        } catch (e) {}
-                    }
+                if (params && truthy(params.get("reset"))) {
+                    try { localStorage.clear(); } catch (e) {}
+                    stripParam("reset");
+                }
+
+                // ?drop-img-cache=1 — clear the service-worker image cache (test flag)
+                if (params && truthy(params.get("drop-img-cache"))) {
+                    try {
+                        if (window.caches && caches.keys) {
+                            caches.keys().then(function (keys) {
+                                keys.forEach(function (k) { if (k.indexOf("vai-img") === 0) caches.delete(k); });
+                            });
+                        }
+                        if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+                            navigator.serviceWorker.controller.postMessage({ type: "drop-img-cache" });
+                        }
+                    } catch (e) {}
+                    stripParam("drop-img-cache");
                 }
 
                 var prefs = {};
@@ -199,7 +217,9 @@ const siteLd = {
         <script is:inline>
             if ("serviceWorker" in navigator) {
                 window.addEventListener("load", function () {
-                    navigator.serviceWorker.register("/sw.js").catch(function () {});
+                    navigator.serviceWorker
+                        .register("/sw.js", { updateViaCache: "none" })
+                        .catch(function () {});
                 });
             }
         </script>

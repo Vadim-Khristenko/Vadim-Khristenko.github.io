@@ -1,26 +1,48 @@
-/* vai-rice.space — tiny image cache.
- * Avatars, banners and other pictures are served stale-while-revalidate:
- * a cached copy paints instantly, and a fresh copy is fetched in the background.
+/* vai-rice.space — image cache (cache-first).
  *
- * IMPORTANT: the network fetch is started IMMEDIATELY, before any Cache Storage
- * access, and cache writes happen in waitUntil() — off the response path. Doing
- * cache open/put inside the response path serializes requests behind the cache
- * write-lock, which made images load one-by-one instead of in parallel.
+ * Why cache-first and not stale-while-revalidate: revalidating on every load
+ * meant a Cache Storage write (put) for every image on every visit. Concurrent
+ * writes hold the cache's write-lock, and the `match` in the response path then
+ * queues behind them — which made images paint one-by-one and slowly. Cache-first
+ * serves hits with ZERO writes, so all `match` reads run in parallel and repaint
+ * instantly. Only genuine misses hit the network (once), then populate the cache
+ * off the response path.
  *
- * Only same-origin images are touched — live stats.json, HTML and hashed JS/CSS
- * bundles are left to the browser. */
-const CACHE = 'vai-img-v2';
+ * Only same-origin images are handled — live stats.json, HTML and hashed JS/CSS
+ * are left to the browser. */
+const CACHE = 'vai-img-v3';
 const IMG_RE = /\.(?:png|jpe?g|webp|avif|gif|svg|ico)$/i;
+
+// Reuse a single open handle instead of caches.open() per request.
+let cacheP;
+function imgCache() {
+  return (cacheP ||= caches.open(CACHE));
+}
 
 self.addEventListener('install', () => self.skipWaiting());
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches
-      .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)));
+      await self.clients.claim();
+    })()
   );
+});
+
+// Let the page drop the image cache on demand (?drop-img-cache=1).
+self.addEventListener('message', (event) => {
+  const data = event.data || {};
+  if (data.type === 'drop-img-cache') {
+    event.waitUntil(
+      (async () => {
+        await caches.delete(CACHE);
+        cacheP = null;
+        if (event.source) event.source.postMessage({ type: 'img-cache-dropped' });
+      })()
+    );
+  }
 });
 
 self.addEventListener('fetch', (event) => {
@@ -38,25 +60,24 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     (async () => {
-      // Kick the network off first so every image fetch runs in parallel —
-      // never gated behind a Cache Storage lock.
-      const fetching = fetch(req)
-        .then((res) => {
-          if (res && res.ok) {
-            const copy = res.clone();
-            // Populate the cache off the response path.
-            event.waitUntil(caches.open(CACHE).then((c) => c.put(req, copy)).catch(() => {}));
-          }
-          return res;
-        })
-        .catch(() => null);
+      const cache = await imgCache();
 
-      // Instant paint from cache if we have it; the fetch above still refreshes it.
-      const cached = await caches.match(req);
+      // Cache-first: a hit returns instantly with no write, so reads never queue.
+      const cached = await cache.match(req);
       if (cached) return cached;
 
-      const res = await fetching;
-      return res || Response.error();
+      // Miss → fetch once, then populate off the response path.
+      try {
+        const res = await fetch(req);
+        if (res && res.ok) {
+          const copy = res.clone();
+          event.waitUntil(cache.put(req, copy).catch(() => {}));
+        }
+        return res;
+      } catch (e) {
+        // last-ditch: maybe another in-flight request populated it
+        return (await cache.match(req)) || Response.error();
+      }
     })()
   );
 });
