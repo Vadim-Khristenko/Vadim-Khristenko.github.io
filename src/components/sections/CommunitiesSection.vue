@@ -36,9 +36,9 @@
           <div class="c-body" :class="{ 'has-banner': c.banner }">
             <div class="community-top">
               <div class="community-icon" :style="iconStyle(c)">
-                <img v-if="c.avatar" :src="c.avatar" :alt="nameOf(c)" loading="lazy" />
+                <CachedImg v-if="c.avatar" :src="c.avatar" :alt="nameOf(c)" />
                 <component v-else-if="c.icon" :is="c.icon" :size="22" />
-                <img v-else :src="PLACEHOLDER" :alt="nameOf(c)" loading="lazy" />
+                <CachedImg v-else :src="PLACEHOLDER" :alt="nameOf(c)" />
               </div>
               <div class="community-meta">
                 <h4>
@@ -98,6 +98,7 @@ import { useI18n } from '@/composables/useI18n';
 import { communities } from '@/data/communities';
 import type { Community } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tl } = useI18n();
 

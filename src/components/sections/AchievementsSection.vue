@@ -16,7 +16,7 @@
         >
           <div class="ach-top">
             <span class="ach-ico">
-              <img v-if="a.image" :src="a.image" :alt="tl(a.title)" loading="lazy" />
+              <CachedImg v-if="a.image" :src="a.image" :alt="tl(a.title)" />
               <component v-else-if="a.icon" :is="a.icon" :size="22" />
             </span>
             <div class="ach-meta">
@@ -40,6 +40,7 @@
 import { ExternalLink } from 'lucide-vue-next';
 import { useI18n } from '@/composables/useI18n';
 import { achievements } from '@/data/achievements';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tl } = useI18n();
 </script>

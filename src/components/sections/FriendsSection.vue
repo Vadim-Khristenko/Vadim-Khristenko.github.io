@@ -64,6 +64,7 @@ import { useI18n } from '@/composables/useI18n';
 import { friends } from '@/data/friends';
 import type { Friend } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tl } = useI18n();
 
@@ -143,7 +144,7 @@ const FriendCard = defineComponent({
               h(
                 'div',
                 { class: 'friend-avatar', style: { background: `${accent}1F`, color: accent } },
-                [h('img', { src: f.avatar || PLACEHOLDER, alt: nm, loading: 'lazy', decoding: 'async' })]
+                [h(CachedImg, { src: f.avatar || PLACEHOLDER, alt: nm })]
               ),
               h('div', { class: 'friend-meta' }, [
                 h('h4', { class: 'friend-name-row' }, [

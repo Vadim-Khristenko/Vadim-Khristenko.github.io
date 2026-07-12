@@ -171,17 +171,11 @@ const siteLd = {
                     stripParam("reset");
                 }
 
-                // ?drop-img-cache=1 — clear the service-worker image cache (test flag)
+                // ?drop-img-cache=1 — force-reset the image cache (clear the bucket + warm flag)
                 if (params && truthy(params.get("drop-img-cache"))) {
                     try {
-                        if (window.caches && caches.keys) {
-                            caches.keys().then(function (keys) {
-                                keys.forEach(function (k) { if (k.indexOf("vai-img") === 0) caches.delete(k); });
-                            });
-                        }
-                        if (navigator.serviceWorker && navigator.serviceWorker.controller) {
-                            navigator.serviceWorker.controller.postMessage({ type: "drop-img-cache" });
-                        }
+                        if (window.caches && caches.delete) caches.delete("vai-img-cache");
+                        localStorage.removeItem("vai-img-warm");
                     } catch (e) {}
                     stripParam("drop-img-cache");
                 }
@@ -213,9 +207,9 @@ const siteLd = {
             })();
         </script>
 
-        <!-- The image-caching service worker deadlocked requests. Unregister it for
-             everyone who still has it, and drop its caches. Images now load straight
-             from the network / browser HTTP cache (which already caches them). -->
+        <!-- The old image-caching service worker deadlocked requests. Unregister it for
+             anyone who still has it and drop ONLY its versioned caches (vai-img-v*).
+             The new page-level cache (vai-img-cache) is populated in the app, not here. -->
         <script is:inline>
             (function () {
                 try {
@@ -227,7 +221,7 @@ const siteLd = {
                     if (window.caches && caches.keys) {
                         caches.keys().then(function (keys) {
                             keys.forEach(function (k) {
-                                if (k.indexOf("vai-img") === 0) caches.delete(k);
+                                if (k.indexOf("vai-img-v") === 0) caches.delete(k);
                             });
                         }).catch(function () {});
                     }

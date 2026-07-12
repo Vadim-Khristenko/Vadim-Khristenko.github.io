@@ -18,7 +18,7 @@
         >
           <div class="lab-top">
             <span class="lab-ico">
-              <img v-if="lab.image" :src="lab.image" :alt="lab.name" loading="lazy" />
+              <CachedImg v-if="lab.image" :src="lab.image" :alt="lab.name" />
               <component v-else :is="lab.icon" :size="22" />
             </span>
             <span class="lab-kind" :class="`k-${lab.kind || 'fun'}`">
@@ -49,6 +49,7 @@
 import { ArrowUpRight } from 'lucide-vue-next';
 import { useI18n } from '@/composables/useI18n';
 import { labs } from '@/data/labs';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tl } = useI18n();
 </script>

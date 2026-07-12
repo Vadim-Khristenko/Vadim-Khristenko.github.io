@@ -58,7 +58,7 @@
       <div class="hero-right">
         <div class="avatar-wrap">
           <div class="avatar-ring"></div>
-          <img src="/avatars/VAI_PROG.png" alt="VAI-PROG" class="avatar-img" />
+          <CachedImg src="/avatars/VAI_PROG.png" alt="VAI-PROG" class="avatar-img" />
         </div>
         <figcaption v-if="isModern" class="avatar-cap">Fig. 1 — the author, aged {{ age }}, at work.</figcaption>
       </div>
@@ -82,6 +82,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from '@/composables/useI18n';
 import { useStats } from '@/composables/useStats';
 import { usePreferencesStore } from '@/stores/preferences';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tc } = useI18n();
 const store = usePreferencesStore();

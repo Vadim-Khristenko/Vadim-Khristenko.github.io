@@ -34,6 +34,7 @@ import { useI18n } from '@/composables/useI18n';
 import { inspirations } from '@/data/inspirations';
 import type { Inspiration } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
+import CachedImg from '../ui/CachedImg.vue';
 
 const { t, tl } = useI18n();
 
@@ -80,7 +81,7 @@ const InspCard = defineComponent({
                 h(
                   'div',
                   { class: 'friend-avatar', style: { background: `${accent}1F`, color: accent } },
-                  [h('img', { src: p.avatar || PLACEHOLDER, alt: nm, loading: 'lazy', decoding: 'async' })]
+                  [h(CachedImg, { src: p.avatar || PLACEHOLDER, alt: nm })]
                 ),
                 h('span', { class: 'insp-star', 'aria-hidden': 'true' }, '✦'),
               ]),
