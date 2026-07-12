@@ -71,7 +71,6 @@ const InspCard = defineComponent({
         'div',
         { class: ['friend-card', { 'has-banner': !!p.banner }], style: { '--card-accent': accent } },
         [
-          h('span', { class: 'friend-best insp-someday' }, [h(Sparkles, { size: 11 }), ' SOMEDAY']),
           p.banner
             ? h('div', { class: 'fr-banner', style: { backgroundImage: `url(${p.banner})` } })
             : null,
@@ -83,7 +82,10 @@ const InspCard = defineComponent({
                 [h('img', { src: p.avatar || PLACEHOLDER, alt: nm, loading: 'lazy' })]
               ),
               h('div', { class: 'friend-meta' }, [
-                h('h4', nm),
+                h('h4', { class: 'insp-name-row' }, [
+                  h('span', { class: 'insp-name' }, nm),
+                  h('span', { class: 'insp-someday' }, [h(Sparkles, { size: 10 }), ' SOMEDAY']),
+                ]),
                 role() ? h('span', { class: 'friend-role' }, role()) : null,
               ]),
             ]),
@@ -157,6 +159,32 @@ const InspCard = defineComponent({
   color: var(--text-dim);
   font-size: var(--font-size-sm);
   padding: var(--space-8) 0;
+}
+
+/* SOMEDAY chip — inline in the name row, tinted with the card's accent so it
+   reads intentionally across every theme (uses --card-accent set on the card) */
+.insp-name-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+.insp-name { min-width: 0; word-break: break-word; font-size: var(--font-size-base); font-weight: 600; }
+.insp-someday {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.14rem 0.42rem;
+  color: var(--card-accent, var(--primary));
+  background: color-mix(in srgb, var(--card-accent, var(--primary)) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--card-accent, var(--primary)) 40%, transparent);
+  border-radius: var(--radius-full);
+}
+/* a light accent wash on the tag chips so they sit in the theme, not on top of it */
+.insp-grid .fr-tag {
+  border-color: color-mix(in srgb, var(--card-accent, var(--primary)) 30%, var(--border));
+  color: color-mix(in srgb, var(--card-accent, var(--primary)) 55%, var(--text-muted));
 }
 
 [data-theme="win95"] .insp-search-input { border-radius: 0; background: #FFF; color: #000; border: 2px solid; border-color: #808080 #DFDFDF #DFDFDF #808080; }

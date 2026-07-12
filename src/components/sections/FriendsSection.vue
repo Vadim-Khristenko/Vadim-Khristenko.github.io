@@ -333,10 +333,10 @@ const FriendCard = defineComponent({
 .fr-tag {
   padding: 0.2rem 0.55rem;
   background: color-mix(in srgb, var(--card-accent) 8%, transparent);
-  border: 1px solid var(--border);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 30%, var(--border));
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
-  color: var(--text-muted);
+  color: color-mix(in srgb, var(--card-accent) 50%, var(--text-muted));
 }
 .friend-card:hover {
   transform: translateY(-4px);
