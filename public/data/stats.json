@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T23:14:49.013Z",
+  "generatedAt": "2026-07-12T02:25:19.427Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -8,19 +8,19 @@
     "followers": 42,
     "following": 16
   },
-  "linesOfCode": 235975,
+  "linesOfCode": 236800,
   "languages": [
     {
       "name": "Rust",
       "bytes": 3058106,
       "lines": 89944,
-      "percent": 38.3,
+      "percent": 38.2,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 1278330,
-      "lines": 38737,
+      "bytes": 1281653,
+      "lines": 38838,
       "percent": 16,
       "color": "#3178c6"
     },
@@ -33,15 +33,15 @@
     },
     {
       "name": "Vue",
-      "bytes": 559984,
-      "lines": 16470,
-      "percent": 7,
+      "bytes": 582100,
+      "lines": 17121,
+      "percent": 7.3,
       "color": "#41b883"
     },
     {
       "name": "CSS",
-      "bytes": 478537,
-      "lines": 17091,
+      "bytes": 478862,
+      "lines": 17102,
       "percent": 6,
       "color": "#563d7c"
     },
@@ -49,7 +49,7 @@
       "name": "HTML",
       "bytes": 434787,
       "lines": 10352,
-      "percent": 5.5,
+      "percent": 5.4,
       "color": "#e34c26"
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 264239,
-      "lines": 8007,
+      "bytes": 265233,
+      "lines": 8037,
       "percent": 3.3,
       "color": "#f1e05a"
     },
@@ -75,8 +75,8 @@
     },
     {
       "name": "Astro",
-      "bytes": 124821,
-      "lines": 3467,
+      "bytes": 125971,
+      "lines": 3499,
       "percent": 1.6,
       "color": "#ff5a03"
     }
@@ -143,7 +143,7 @@
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
       "forks": 0,
-      "issues": 8,
+      "issues": 0,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
