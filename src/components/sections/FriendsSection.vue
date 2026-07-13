@@ -26,7 +26,7 @@
           {{ t('friends.best') }}
         </div>
         <div class="friends-grid best-grid">
-          <FriendCard v-for="(f, i) in bestFriends" :key="'b' + i" :friend="f" best />
+          <FriendCard v-for="f in bestFriends" :key="nameOf(f)" :friend="f" best />
         </div>
       </template>
 
@@ -34,7 +34,7 @@
       <template v-if="regularFriends.length">
         <div class="group-label">{{ t('friends.more') }}</div>
         <div class="friends-grid">
-          <FriendCard v-for="(f, i) in regularFriends" :key="i" :friend="f" />
+          <FriendCard v-for="f in regularFriends" :key="nameOf(f)" :friend="f" />
         </div>
       </template>
 
@@ -119,12 +119,14 @@ const FriendCard = defineComponent({
     best: { type: Boolean, default: false },
   },
   setup(props) {
-    const f = props.friend;
-    const accent = f.accent || 'var(--primary)';
-    const role = () => (f.roleKey ? t(f.roleKey as any) : tl(f.role));
-    const desc = () => (f.descKey ? t(f.descKey as any) : tl(f.desc));
-
+    // Read props.friend INSIDE the render so the card stays reactive when Vue
+    // reuses this instance for a different friend (filtering). Capturing it in
+    // setup made every reused slot render its first-ever friend (the Masha bug).
     return () => {
+      const f = props.friend;
+      const accent = f.accent || 'var(--primary)';
+      const role = f.roleKey ? t(f.roleKey as any) : tl(f.role);
+      const desc = f.descKey ? t(f.descKey as any) : tl(f.desc);
       const nm = nameOf(f);
       const age = ageOf(f);
       const loc = f.location ? tl(f.location) : '';
@@ -158,11 +160,11 @@ const FriendCard = defineComponent({
                   props.best ? h('span', { class: 'friend-best' }, [h(Star, { size: 10 }), ' BEST']) : null,
                   badge ? h('span', { class: 'friend-badge' }, badge) : null,
                 ]),
-                role() ? h('span', { class: 'friend-role' }, role()) : null,
+                role ? h('span', { class: 'friend-role' }, role) : null,
                 facts.length ? h('div', { class: 'friend-facts' }, facts) : null,
               ]),
             ]),
-            desc() ? h('p', { class: 'friend-desc' }, desc()) : null,
+            desc ? h('p', { class: 'friend-desc' }, desc) : null,
             tags.length
               ? h('div', { class: 'fr-tags' }, tags.map((tg, ti) => h('span', { class: 'fr-tag', key: ti }, tg)))
               : null,

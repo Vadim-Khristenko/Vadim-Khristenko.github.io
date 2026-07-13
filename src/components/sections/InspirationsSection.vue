@@ -20,7 +20,7 @@
       </div>
 
       <div v-if="filtered.length" class="insp-grid">
-        <InspCard v-for="(p, i) in filtered" :key="i" :person="p" />
+        <InspCard v-for="p in filtered" :key="nameOf(p)" :person="p" />
       </div>
       <p v-else class="insp-empty">{{ t('inspirations.noResults') }}</p>
     </div>
@@ -66,12 +66,13 @@ const filtered = computed(() => inspirations.filter(matches));
 const InspCard = defineComponent({
   props: { person: { type: Object as () => Inspiration, required: true } },
   setup(props) {
-    const p = props.person;
-    const accent = p.accent || 'var(--primary)';
-    const role = () => tl(p.role);
-    const desc = () => tl(p.desc);
-
+    // Read props.person inside the render so filtering can't leave a reused
+    // instance stuck on its first-ever person (same bug as FriendCard).
     return () => {
+      const p = props.person;
+      const accent = p.accent || 'var(--primary)';
+      const role = tl(p.role);
+      const desc = tl(p.desc);
       const nm = nameOf(p);
       const tags = tagsOf(p);
       return h(
@@ -93,10 +94,10 @@ const InspCard = defineComponent({
               ]),
               h('div', { class: 'friend-meta' }, [
                 h('h4', { class: 'insp-name' }, nm),
-                role() ? h('span', { class: 'friend-role' }, role()) : null,
+                role ? h('span', { class: 'friend-role' }, role) : null,
               ]),
             ]),
-            desc() ? h('p', { class: 'friend-desc' }, desc()) : null,
+            desc ? h('p', { class: 'friend-desc' }, desc) : null,
             tags.length
               ? h('div', { class: 'fr-tags' }, tags.map((tg, ti) => h('span', { class: 'fr-tag', key: ti }, tg)))
               : null,
