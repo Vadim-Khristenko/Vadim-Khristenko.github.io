@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T19:00:18.639Z",
+  "generatedAt": "2026-07-13T02:26:43.747Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -8,7 +8,7 @@
     "followers": 43,
     "following": 16
   },
-  "linesOfCode": 237014,
+  "linesOfCode": 237123,
   "languages": [
     {
       "name": "Rust",
@@ -19,8 +19,8 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 1282555,
-      "lines": 38865,
+      "bytes": 1286222,
+      "lines": 38976,
       "percent": 16,
       "color": "#3178c6"
     },
@@ -33,8 +33,8 @@
     },
     {
       "name": "Vue",
-      "bytes": 584444,
-      "lines": 17190,
+      "bytes": 584926,
+      "lines": 17204,
       "percent": 7.3,
       "color": "#41b883"
     },
@@ -56,13 +56,13 @@
       "name": "Go",
       "bytes": 388748,
       "lines": 12958,
-      "percent": 4.9,
+      "percent": 4.8,
       "color": "#00ADD8"
     },
     {
       "name": "JavaScript",
-      "bytes": 266585,
-      "lines": 8078,
+      "bytes": 264896,
+      "lines": 8027,
       "percent": 3.3,
       "color": "#f1e05a"
     },
@@ -75,8 +75,8 @@
     },
     {
       "name": "Astro",
-      "bytes": 128263,
-      "lines": 3563,
+      "bytes": 129539,
+      "lines": 3598,
       "percent": 1.6,
       "color": "#ff5a03"
     }
