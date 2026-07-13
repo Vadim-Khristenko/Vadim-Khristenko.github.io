@@ -21,8 +21,8 @@
 
       <div v-if="filtered.length" class="communities-grid">
         <article
-          v-for="(c, i) in filtered"
-          :key="i"
+          v-for="c in filtered"
+          :key="nameOf(c)"
           class="community-card"
           :class="c.kind"
           :style="{ '--card-accent': c.accent || 'var(--primary)' }"
