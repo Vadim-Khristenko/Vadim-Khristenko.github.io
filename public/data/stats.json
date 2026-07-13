@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T02:26:43.747Z",
+  "generatedAt": "2026-07-13T09:19:07.137Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -8,33 +8,33 @@
     "followers": 43,
     "following": 16
   },
-  "linesOfCode": 237123,
+  "linesOfCode": 237545,
   "languages": [
     {
       "name": "Rust",
       "bytes": 3058106,
       "lines": 89944,
-      "percent": 38.2,
+      "percent": 38.1,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 1286222,
-      "lines": 38976,
-      "percent": 16,
+      "bytes": 1294388,
+      "lines": 39224,
+      "percent": 16.1,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 959169,
       "lines": 31972,
-      "percent": 12,
+      "percent": 11.9,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
-      "bytes": 584926,
-      "lines": 17204,
+      "bytes": 587289,
+      "lines": 17273,
       "percent": 7.3,
       "color": "#41b883"
     },
@@ -75,9 +75,9 @@
     },
     {
       "name": "Astro",
-      "bytes": 129539,
-      "lines": 3598,
-      "percent": 1.6,
+      "bytes": 133294,
+      "lines": 3703,
+      "percent": 1.7,
       "color": "#ff5a03"
     }
   ],
