@@ -4,14 +4,13 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { resolveCachedImg } from '@/composables/useCachedImg';
+import { resolveCachedImg, memoedBlob, isCached } from '@/composables/useCachedImg';
 
 const props = defineProps<{ src?: string; alt?: string }>();
 
-// Start with the real URL and re-resolve whenever it changes — so when Vue reuses
-// this instance for a different item (filtering/search) the image updates instantly
-// instead of sticking on the previous one. A token guards against out-of-order
-// async swaps if src changes again before the cache lookup resolves.
+// Reactive to props.src so a reused instance (search/filter) never sticks on the
+// previous image. Priority: session blob (instant) → known-cached (wait ~ms for
+// the blob, zero network) → unknown (show the real URL now, upgrade to blob later).
 const resolved = ref<string | undefined>(props.src);
 let token = 0;
 
@@ -19,9 +18,26 @@ watch(
   () => props.src,
   (url) => {
     const my = ++token;
-    resolved.value = url; // correct image immediately, never sticky
+
+    const memoed = memoedBlob(url);
+    if (memoed) {
+      resolved.value = memoed;
+      return;
+    }
+
+    // known-cached → hold for the blob (avoids a needless network hit); otherwise
+    // show the real URL straight away so the image is always correct.
+    resolved.value = isCached(url) ? undefined : url;
+
+    // safety net: never stay blank if the cache lookup stalls.
+    if (resolved.value === undefined) {
+      setTimeout(() => {
+        if (my === token && resolved.value === undefined) resolved.value = url;
+      }, 120);
+    }
+
     resolveCachedImg(url).then((blob) => {
-      if (my === token && blob) resolved.value = blob; // upgrade to cached blob if we have it
+      if (my === token) resolved.value = blob ?? url;
     });
   },
   { immediate: true }

@@ -171,10 +171,11 @@ const siteLd = {
                     stripParam("reset");
                 }
 
-                // ?drop-img-cache=1 — force-reset the image cache (clear the bucket + warm flag)
+                // ?drop-img-cache=1 — force-reset the image cache (bucket + sync index)
                 if (params && truthy(params.get("drop-img-cache"))) {
                     try {
                         if (window.caches && caches.delete) caches.delete("vai-img-cache");
+                        localStorage.removeItem("vai-img-index");
                         localStorage.removeItem("vai-img-warm");
                     } catch (e) {}
                     stripParam("drop-img-cache");
