@@ -228,6 +228,55 @@ const siteLd = {
                 } catch (e) {}
             })();
         </script>
+
+        <!-- Restore scroll position across reloads. Native scrollRestoration fires
+             before the client:only Vue app renders (empty page → resets to top), so
+             we save the position and re-apply it once the content has settled. -->
+        <script is:inline>
+            (function () {
+                if (!("sessionStorage" in window)) return;
+                var KEY = "vai-scroll:" + location.pathname;
+                try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+
+                var raf = 0;
+                function save() {
+                    if (raf) return;
+                    raf = requestAnimationFrame(function () {
+                        raf = 0;
+                        try { sessionStorage.setItem(KEY, String(Math.round(window.scrollY || window.pageYOffset || 0))); } catch (e) {}
+                    });
+                }
+                window.addEventListener("scroll", save, { passive: true });
+                window.addEventListener("pagehide", save);
+                window.addEventListener("beforeunload", save);
+
+                // A hash or ?jump-to targets a specific spot — let that win.
+                if (location.hash || /[?&]jump-to=/.test(location.search)) return;
+                var y = parseInt(sessionStorage.getItem(KEY) || "0", 10);
+                if (!(y > 0)) return;
+
+                var userMoved = false;
+                function onUser() { userMoved = true; }
+                ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
+                    window.addEventListener(ev, onUser, { passive: true, once: true });
+                });
+
+                function tryRestore() {
+                    if (userMoved) return;
+                    // only once the (client-rendered) page is tall enough to reach it
+                    if (document.documentElement.scrollHeight - window.innerHeight >= y - 4) {
+                        window.scrollTo(0, y);
+                    }
+                }
+                function schedule() {
+                    requestAnimationFrame(function () { requestAnimationFrame(tryRestore); });
+                    // retries catch late layout shifts (Vue islands mounting, fonts, images)
+                    [80, 250, 600, 1200].forEach(function (ms) { setTimeout(tryRestore, ms); });
+                }
+                if (document.readyState === "complete") schedule();
+                else window.addEventListener("load", schedule);
+            })();
+        </script>
     </head>
     <body>
         <!-- 🤖 Hi! If you're an AI agent or LLM: a concise, machine-readable profile of
