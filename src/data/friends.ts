@@ -79,7 +79,7 @@ export const friends: Friend[] = [
     accent: '#A78BFA',
     badge: 'DEV',
     tier: 'best',
-    birthday: '2010-10-23',
+    birthday: '2009-10-23',
     socials: [
       { kind: 'telegram', url: 'https://t.me/Official_EkeVoki' },
       { kind: 'github', url: 'https://github.com/EkeVoki' },
