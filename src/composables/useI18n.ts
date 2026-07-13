@@ -47,6 +47,12 @@ export function useI18n() {
     return dict[`${key}.${cat}`] ?? dict[`${key}.other`] ?? dict[key] ?? key;
   });
 
+  /** A translation key resolved in EVERY locale — used to build search haystacks. */
+  const tAll = (key: string): string[] =>
+    (Object.keys(translations) as Locale[])
+      .map((l) => (translations[l] as Record<string, string>)[key])
+      .filter(Boolean);
+
   const availableLocales = [
     { code: 'ru', name: 'Русский', flag: '🇷🇺' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
@@ -62,6 +68,7 @@ export function useI18n() {
     t: t.value,
     tl: tl.value,
     tc: tc.value,
+    tAll,
     availableLocales,
     setLocale,
   };

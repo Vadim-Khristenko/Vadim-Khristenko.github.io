@@ -229,15 +229,17 @@ const siteLd = {
             })();
         </script>
 
-        <!-- Restore scroll position across reloads. Native scrollRestoration fires
-             before the client:only Vue app renders (empty page → resets to top), so
-             we save the position and re-apply it once the content has settled. -->
+        <!-- Scroll handling for the client:only app. Native scroll/hash restoration
+             fires before Vue renders (empty page → wrong spot), so we take it over:
+             priority is ?jump-to → #hash → saved position, applied once content settles.
+             ?jump-to removes itself from the URL after it lands. -->
         <script is:inline>
             (function () {
                 if (!("sessionStorage" in window)) return;
                 var KEY = "vai-scroll:" + location.pathname;
                 try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
 
+                // save current position (throttled) for reload restore
                 var raf = 0;
                 function save() {
                     if (raf) return;
@@ -250,28 +252,48 @@ const siteLd = {
                 window.addEventListener("pagehide", save);
                 window.addEventListener("beforeunload", save);
 
-                // A hash or ?jump-to targets a specific spot — let that win.
-                if (location.hash || /[?&]jump-to=/.test(location.search)) return;
-                var y = parseInt(sessionStorage.getItem(KEY) || "0", 10);
-                if (!(y > 0)) return;
-
+                // stop auto-scroll the moment the user takes over
                 var userMoved = false;
-                function onUser() { userMoved = true; }
                 ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (ev) {
-                    window.addEventListener(ev, onUser, { passive: true, once: true });
+                    window.addEventListener(ev, function () { userMoved = true; }, { passive: true, once: true });
                 });
 
-                function tryRestore() {
+                // resolve the target: ?jump-to > #hash > saved position
+                var params = null;
+                try { params = new URLSearchParams(location.search); } catch (e) {}
+                var jump = params ? params.get("jump-to") : null;
+                var targetId = ((jump || "") || (location.hash ? location.hash.slice(1) : "")).replace(/^#/, "");
+                var savedY = parseInt(sessionStorage.getItem(KEY) || "0", 10);
+
+                var jumpStripped = false;
+                function stripJump() {
+                    if (jumpStripped || !jump || !params) return;
+                    jumpStripped = true;
+                    try {
+                        params.delete("jump-to");
+                        var q = params.toString();
+                        history.replaceState(null, "", location.pathname + (q ? "?" + q : "") + location.hash);
+                    } catch (e) {}
+                }
+
+                function pass() {
                     if (userMoved) return;
-                    // only once the (client-rendered) page is tall enough to reach it
-                    if (document.documentElement.scrollHeight - window.innerHeight >= y - 4) {
-                        window.scrollTo(0, y);
+                    if (targetId) {
+                        var el = document.getElementById(targetId);
+                        if (el) {
+                            el.scrollIntoView({ block: "start" });
+                            stripJump();
+                        }
+                        return; // keep retrying until the element exists / layout settles
+                    }
+                    if (savedY > 0 && document.documentElement.scrollHeight - window.innerHeight >= savedY - 4) {
+                        window.scrollTo(0, savedY);
                     }
                 }
                 function schedule() {
-                    requestAnimationFrame(function () { requestAnimationFrame(tryRestore); });
-                    // retries catch late layout shifts (Vue islands mounting, fonts, images)
-                    [80, 250, 600, 1200].forEach(function (ms) { setTimeout(tryRestore, ms); });
+                    requestAnimationFrame(function () { requestAnimationFrame(pass); });
+                    // retries catch late layout (Vue islands mounting, fonts, images)
+                    [80, 250, 600, 1200, 2000].forEach(function (ms) { setTimeout(pass, ms); });
                 }
                 if (document.readyState === "complete") schedule();
                 else window.addEventListener("load", schedule);

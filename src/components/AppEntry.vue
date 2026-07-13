@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import { createPinia, setActivePinia } from 'pinia';
 import MainPage from './MainPage.vue';
 import WelcomeScreen from './welcome/WelcomeScreen.vue';
@@ -14,32 +14,21 @@ import { usePreferencesStore } from '@/stores/preferences';
 
 // Initialize Pinia before any component uses usePreferencesStore()
 // This is required for client:only islands where app.use() is not called.
-// Note: ?lang / ?theme / ?reset are handled pre-paint by the inline script in
-// BaseLayout (which also persists them), so the store already reflects them here.
+// Note: ?lang / ?theme / ?mode / ?reset are handled pre-paint by the inline script
+// in BaseLayout (which also persists them), and ?jump-to / #hash scrolling + scroll
+// restoration are handled by BaseLayout's scroll script — so nothing to do here but
+// decide whether the welcome screen shows.
 setActivePinia(createPinia());
 
 const store = usePreferencesStore();
 
-const jumpTarget =
-  typeof window !== 'undefined'
-    ? new URLSearchParams(window.location.search).get('jump-to')
-    : null;
+const hasScrollTarget =
+  typeof window !== 'undefined' &&
+  (!!new URLSearchParams(window.location.search).get('jump-to') || !!window.location.hash);
 
 // The welcome screen shows exactly once — the first visit. A deep link
-// (?jump-to=...) skips it so the target section is actually visible.
-const showWelcome = ref(store.isFirstVisit && !jumpTarget);
-
-onMounted(() => {
-  if (!jumpTarget) return;
-  const id = jumpTarget.replace(/^#/, '');
-  // wait for the islands to render the sections, then smooth-scroll
-  requestAnimationFrame(() =>
-    requestAnimationFrame(() => {
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    })
-  );
-});
+// (?jump-to=... or #hash) skips it so the target section is actually visible.
+const showWelcome = ref(store.isFirstVisit && !hasScrollTarget);
 </script>
 
 <style scoped>

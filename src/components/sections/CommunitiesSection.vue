@@ -99,8 +99,9 @@ import { communities } from '@/data/communities';
 import type { Community } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
 import CachedImg from '../ui/CachedImg.vue';
+import { matchesQuery, localizedAll, haystack } from '@/lib/search';
 
-const { t, tl } = useI18n();
+const { t, tl, tAll } = useI18n();
 
 const PLACEHOLDER = '/avatars/PHOTO_NOT_FOUND.png';
 const q = ref('');
@@ -124,14 +125,15 @@ function iconStyle(c: Community) {
   return c.avatar ? {} : { background: tint(c.accent), color: c.accent };
 }
 
-const filtered = computed(() => {
-  const needle = q.value.trim().toLowerCase();
-  if (!needle) return communities;
-  return communities.filter((c) => {
-    const hay = [nameOf(c), descOf(c), c.badge ?? '', ...tagsOf(c)].join(' ').toLowerCase();
-    return hay.includes(needle);
-  });
-});
+function haystackOf(c: Community): string {
+  return haystack(
+    localizedAll(c.name),
+    c.descKey ? tAll(c.descKey) : localizedAll(c.desc),
+    c.badge ? localizedAll(c.badge) : undefined,
+    (c.tags ?? []).flatMap((tag) => localizedAll(tag))
+  );
+}
+const filtered = computed(() => communities.filter((c) => matchesQuery(haystackOf(c), q.value)));
 </script>
 
 <style scoped>

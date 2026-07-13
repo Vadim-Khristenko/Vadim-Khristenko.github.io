@@ -35,6 +35,7 @@ import { inspirations } from '@/data/inspirations';
 import type { Inspiration } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
 import CachedImg from '../ui/CachedImg.vue';
+import { matchesQuery, localizedAll, haystack } from '@/lib/search';
 
 const { t, tl } = useI18n();
 
@@ -47,11 +48,16 @@ function nameOf(p: Inspiration): string {
 function tagsOf(p: Inspiration): string[] {
   return (p.tags ?? []).map((tag) => tl(tag)).filter(Boolean);
 }
+function haystackOf(p: Inspiration): string {
+  return haystack(
+    localizedAll(p.name),
+    localizedAll(p.role),
+    localizedAll(p.desc),
+    (p.tags ?? []).flatMap((tag) => localizedAll(tag))
+  );
+}
 function matches(p: Inspiration): boolean {
-  const needle = q.value.trim().toLowerCase();
-  if (!needle) return true;
-  const hay = [nameOf(p), tl(p.role), tl(p.desc), ...tagsOf(p)].join(' ').toLowerCase();
-  return hay.includes(needle);
+  return matchesQuery(haystackOf(p), q.value);
 }
 
 const filtered = computed(() => inspirations.filter(matches));

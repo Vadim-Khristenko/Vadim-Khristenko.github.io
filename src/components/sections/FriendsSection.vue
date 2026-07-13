@@ -65,8 +65,9 @@ import { friends } from '@/data/friends';
 import type { Friend } from '@/data/types';
 import SocialLinks from '../ui/SocialLinks.vue';
 import CachedImg from '../ui/CachedImg.vue';
+import { matchesQuery, localizedAll, haystack } from '@/lib/search';
 
-const { t, tl } = useI18n();
+const { t, tl, tAll } = useI18n();
 
 const PLACEHOLDER = '/avatars/PHOTO_NOT_FOUND.png';
 const q = ref('');
@@ -77,14 +78,19 @@ function nameOf(f: Friend): string {
 function tagsOf(f: Friend): string[] {
   return (f.tags ?? []).map((tag) => tl(tag)).filter(Boolean);
 }
+/** Searchable text for a friend, across ALL languages (name, role, desc, tags…). */
+function haystackOf(f: Friend): string {
+  return haystack(
+    localizedAll(f.name),
+    f.roleKey ? tAll(f.roleKey) : localizedAll(f.role),
+    f.descKey ? tAll(f.descKey) : localizedAll(f.desc),
+    localizedAll(f.location),
+    (f.tags ?? []).flatMap((tag) => localizedAll(tag)),
+    f.badge ? localizedAll(f.badge) : undefined
+  );
+}
 function matches(f: Friend): boolean {
-  const needle = q.value.trim().toLowerCase();
-  if (!needle) return true;
-  const role = f.roleKey ? t(f.roleKey as any) : tl(f.role);
-  const desc = f.descKey ? t(f.descKey as any) : tl(f.desc);
-  const loc = f.location ? tl(f.location) : '';
-  const hay = [nameOf(f), role, desc, loc, ...tagsOf(f)].join(' ').toLowerCase();
-  return hay.includes(needle);
+  return matchesQuery(haystackOf(f), q.value);
 }
 
 const bestFriends = computed(() => friends.filter((f) => f.tier === 'best' && matches(f)));
