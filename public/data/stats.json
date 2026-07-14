@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-14T02:06:05.629Z",
+  "generatedAt": "2026-07-14T07:56:57.467Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 306,
+    "stars": 307,
     "forks": 20,
     "followers": 43,
     "following": 16
@@ -139,15 +139,15 @@
     }
   ],
   "repos": {
-    "vaidcord": {
-      "name": "vaidcord",
-      "stars": 0,
-      "forks": 1,
+    "hatsunemikueditortheme-vsc": {
+      "name": "HatsuneMikuEditorTheme-VSC",
+      "stars": 2,
+      "forks": 0,
       "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/vaidcord",
-      "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more.",
-      "release": "rust-v0.2.0"
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-VSC",
+      "description": "VS Code packaged theme and source files for Hatsune Miku theme",
+      "release": "v0.0.2"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -157,6 +157,16 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vaidcord": {
+      "name": "vaidcord",
+      "stars": 0,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/vaidcord",
+      "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more.",
+      "release": "rust-v0.2.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -339,16 +349,6 @@
       "language": "Go",
       "url": "https://github.com/Vadim-Khristenko/amneziawg-go",
       "description": "AmneziaWG VPN protocol"
-    },
-    "hatsunemikueditortheme-vsc": {
-      "name": "HatsuneMikuEditorTheme-VSC",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-VSC",
-      "description": "VS Code packaged theme and source files for Hatsune Miku theme",
-      "release": "v0.0.2"
     },
     "prod-2026-ind-docs": {
       "name": "prod-2026-ind-docs",
