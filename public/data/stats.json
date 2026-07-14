@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T19:19:42.749Z",
+  "generatedAt": "2026-07-14T02:06:05.629Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -8,76 +8,76 @@
     "followers": 43,
     "following": 16
   },
-  "linesOfCode": 237545,
+  "linesOfCode": 258053,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 3058106,
-      "lines": 89944,
-      "percent": 38.1,
+      "bytes": 3246783,
+      "lines": 95494,
+      "percent": 37.5,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 1294388,
       "lines": 39224,
-      "percent": 16.1,
+      "percent": 14.9,
       "color": "#3178c6"
     },
     {
       "name": "Python",
-      "bytes": 959169,
-      "lines": 31972,
-      "percent": 11.9,
+      "bytes": 1245469,
+      "lines": 41516,
+      "percent": 14.4,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 587289,
       "lines": 17273,
-      "percent": 7.3,
+      "percent": 6.8,
       "color": "#41b883"
+    },
+    {
+      "name": "Go",
+      "bytes": 551162,
+      "lines": 18372,
+      "percent": 6.4,
+      "color": "#00ADD8"
     },
     {
       "name": "CSS",
       "bytes": 479206,
       "lines": 17115,
-      "percent": 6,
+      "percent": 5.5,
       "color": "#563d7c"
     },
     {
       "name": "HTML",
       "bytes": 434787,
       "lines": 10352,
-      "percent": 5.4,
+      "percent": 5,
       "color": "#e34c26"
-    },
-    {
-      "name": "Go",
-      "bytes": 388748,
-      "lines": 12958,
-      "percent": 4.8,
-      "color": "#00ADD8"
     },
     {
       "name": "JavaScript",
       "bytes": 264896,
       "lines": 8027,
-      "percent": 3.3,
+      "percent": 3.1,
       "color": "#f1e05a"
     },
     {
       "name": "PowerShell",
       "bytes": 251174,
       "lines": 6977,
-      "percent": 3.1,
+      "percent": 2.9,
       "color": "#8b8b8b"
     },
     {
       "name": "Astro",
       "bytes": 133294,
       "lines": 3703,
-      "percent": 1.7,
+      "percent": 1.5,
       "color": "#ff5a03"
     }
   ],
@@ -139,6 +139,16 @@
     }
   ],
   "repos": {
+    "vaidcord": {
+      "name": "vaidcord",
+      "stars": 0,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/vaidcord",
+      "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more.",
+      "release": "rust-v0.2.0"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -284,15 +294,6 @@
       "language": "JavaScript",
       "url": "https://github.com/Vadim-Khristenko/just-meme-i-use-arch-btw",
       "description": ""
-    },
-    "vaidcord": {
-      "name": "vaidcord",
-      "stars": 0,
-      "forks": 1,
-      "issues": 3,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/vaidcord",
-      "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more."
     },
     "public-policy": {
       "name": "public-policy",
