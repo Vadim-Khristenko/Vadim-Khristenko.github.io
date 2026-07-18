@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-18T07:43:17.473Z",
+  "generatedAt": "2026-07-18T13:06:03.528Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 310,
+    "stars": 311,
     "forks": 20,
     "followers": 45,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 266,
+      "stars": 267,
       "forks": 14,
       "issues": 1,
       "language": "Vue",
@@ -139,14 +139,15 @@
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 2,
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 267,
+      "forks": 14,
+      "issues": 1,
       "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.1.0"
     },
     "whatcode": {
       "name": "WhatCode",
@@ -157,15 +158,14 @@
       "url": "https://github.com/Vadim-Khristenko/WhatCode",
       "description": "WhatCode: Uncompromising AI performance meets a bold, unforgettable personality."
     },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 266,
-      "forks": 14,
-      "issues": 1,
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 2,
       "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.1.0"
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
