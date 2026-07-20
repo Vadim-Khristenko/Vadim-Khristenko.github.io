@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-07-20T13:58:22.271Z",
+  "generatedAt": "2026-07-20T19:39:55.173Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 312,
+    "stars": 313,
     "forks": 22,
     "followers": 45,
     "following": 16
   },
-  "linesOfCode": 284002,
+  "linesOfCode": 289320,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 3511144,
-      "lines": 103269,
-      "percent": 36.7,
+      "bytes": 3772633,
+      "lines": 110960,
+      "percent": 38.7,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 1770123,
       "lines": 53640,
-      "percent": 18.5,
+      "percent": 18.2,
       "color": "#3178c6"
     },
     {
       "name": "Python",
-      "bytes": 1245469,
-      "lines": 41516,
-      "percent": 13,
+      "bytes": 1166423,
+      "lines": 38881,
+      "percent": 12,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 587289,
       "lines": 17273,
-      "percent": 6.1,
+      "percent": 6,
       "color": "#41b883"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 5.8,
+      "percent": 5.7,
       "color": "#00ADD8"
     },
     {
       "name": "HTML",
-      "bytes": 548591,
-      "lines": 13062,
-      "percent": 5.7,
+      "bytes": 549633,
+      "lines": 13087,
+      "percent": 5.6,
       "color": "#e34c26"
     },
     {
       "name": "CSS",
       "bytes": 487263,
       "lines": 17402,
-      "percent": 5.1,
+      "percent": 5,
       "color": "#563d7c"
     },
     {
       "name": "JavaScript",
-      "bytes": 290012,
-      "lines": 8788,
-      "percent": 3,
+      "bytes": 297819,
+      "lines": 9025,
+      "percent": 3.1,
       "color": "#f1e05a"
     },
     {
@@ -129,28 +129,19 @@
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     {
-      "name": "aiogram-3-guide",
+      "name": "TheWall",
       "stars": 3,
-      "forks": 1,
+      "forks": 0,
       "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
-      "description": "Пишем Telegram-ботов с aiogram 3.x"
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/TheWall",
+      "description": "A Win95-styled browser extension (and Tampermonkey userscript) for The Wall at filianislost.com "
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 2,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "thewall": {
       "name": "TheWall",
-      "stars": 2,
+      "stars": 3,
       "forks": 0,
       "issues": 0,
       "language": "TypeScript",
@@ -162,9 +153,18 @@
       "stars": 0,
       "forks": 0,
       "issues": 0,
-      "language": "Python",
+      "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 2,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
