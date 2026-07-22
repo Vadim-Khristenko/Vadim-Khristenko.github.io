@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T02:14:05.685Z",
+  "generatedAt": "2026-07-22T08:22:17.978Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -139,15 +139,14 @@
     }
   ],
   "repos": {
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 270,
-      "forks": 15,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.1.0"
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,14 +157,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 270,
+      "forks": 15,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.1.0"
     },
     "thewall": {
       "name": "TheWall",
