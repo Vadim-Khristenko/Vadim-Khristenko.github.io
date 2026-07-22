@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-21T19:15:11.040Z",
+  "generatedAt": "2026-07-22T02:14:05.685Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 317,
-    "forks": 21,
+    "stars": 315,
+    "forks": 20,
     "followers": 46,
     "following": 16
   },
@@ -84,8 +84,8 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 272,
-      "forks": 16,
+      "stars": 270,
+      "forks": 15,
       "issues": 1,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
@@ -141,8 +141,8 @@
   "repos": {
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
-      "stars": 272,
-      "forks": 16,
+      "stars": 270,
+      "forks": 15,
       "issues": 1,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
