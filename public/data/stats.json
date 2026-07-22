@@ -1,90 +1,90 @@
 {
-  "generatedAt": "2026-07-22T08:22:17.978Z",
+  "generatedAt": "2026-07-22T13:43:10.570Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 315,
+    "stars": 316,
     "forks": 20,
     "followers": 46,
     "following": 16
   },
-  "linesOfCode": 289320,
+  "linesOfCode": 305321,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 3772633,
-      "lines": 110960,
-      "percent": 38.7,
+      "bytes": 3871177,
+      "lines": 113858,
+      "percent": 37.2,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 1770123,
       "lines": 53640,
-      "percent": 18.2,
+      "percent": 17,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 12,
+      "percent": 11.2,
       "color": "#3572A5"
+    },
+    {
+      "name": "HTML",
+      "bytes": 1076819,
+      "lines": 25639,
+      "percent": 10.4,
+      "color": "#e34c26"
     },
     {
       "name": "Vue",
       "bytes": 587289,
       "lines": 17273,
-      "percent": 6,
+      "percent": 5.7,
       "color": "#41b883"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 5.7,
+      "percent": 5.3,
       "color": "#00ADD8"
     },
     {
-      "name": "HTML",
-      "bytes": 549633,
-      "lines": 13087,
-      "percent": 5.6,
-      "color": "#e34c26"
-    },
-    {
       "name": "CSS",
-      "bytes": 487263,
-      "lines": 17402,
-      "percent": 5,
+      "bytes": 502479,
+      "lines": 17946,
+      "percent": 4.8,
       "color": "#563d7c"
     },
     {
       "name": "JavaScript",
-      "bytes": 297819,
-      "lines": 9025,
-      "percent": 3.1,
+      "bytes": 298066,
+      "lines": 9032,
+      "percent": 2.9,
       "color": "#f1e05a"
     },
     {
       "name": "PowerShell",
       "bytes": 251174,
       "lines": 6977,
-      "percent": 2.6,
+      "percent": 2.4,
       "color": "#8b8b8b"
     },
     {
       "name": "Astro",
       "bytes": 133294,
       "lines": 3703,
-      "percent": 1.4,
+      "percent": 1.3,
       "color": "#ff5a03"
     }
   ],
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 270,
+      "stars": 271,
       "forks": 15,
       "issues": 1,
       "language": "Vue",
@@ -139,14 +139,14 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
       "issues": 0,
       "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -159,13 +159,22 @@
     },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
-      "stars": 270,
+      "stars": 271,
       "forks": 15,
       "issues": 1,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
       "release": "v3.1.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "thewall": {
       "name": "TheWall",
@@ -223,15 +232,6 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/PRODHugs",
       "description": "just for fun. vibecode warning"
-    },
-    "kumir3-core": {
-      "name": "kumir3-core",
-      "stars": 4,
-      "forks": 2,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "duckthisdocker": {
       "name": "DuckThisDocker",
