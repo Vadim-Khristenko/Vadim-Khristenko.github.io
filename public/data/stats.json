@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-23T19:09:35.550Z",
+  "generatedAt": "2026-07-24T02:22:15.299Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 318,
+    "stars": 319,
     "forks": 20,
     "followers": 46,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 273,
+      "stars": 274,
       "forks": 15,
       "issues": 1,
       "language": "Vue",
@@ -139,14 +139,15 @@
     }
   ],
   "repos": {
-    "kumir3-core": {
-      "name": "kumir3-core",
-      "stars": 4,
-      "forks": 2,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 274,
+      "forks": 15,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.1.0"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -157,15 +158,14 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 273,
-      "forks": 15,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.1.0"
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
