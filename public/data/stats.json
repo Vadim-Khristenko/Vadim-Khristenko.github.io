@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-24T02:22:15.299Z",
+  "generatedAt": "2026-07-24T08:21:28.773Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 319,
+    "stars": 320,
     "forks": 20,
     "followers": 46,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 274,
+      "stars": 275,
       "forks": 15,
       "issues": 1,
       "language": "Vue",
@@ -141,13 +141,22 @@
   "repos": {
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
-      "stars": 274,
+      "stars": 275,
       "forks": 15,
       "issues": 1,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
       "release": "v3.1.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -166,15 +175,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "thewall": {
       "name": "TheWall",
