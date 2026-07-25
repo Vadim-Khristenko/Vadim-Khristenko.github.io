@@ -101,6 +101,10 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
+          # Without this the action packs the artifact with `--exclude=.[^/]*`,
+          # dropping every dot-entry — including .well-known/, which is what
+          # makes @user:vai-rice.space resolve to the homeserver.
+          include-hidden-files: true
 
   deploy:
     name: 🌍  Deploy to Pages
