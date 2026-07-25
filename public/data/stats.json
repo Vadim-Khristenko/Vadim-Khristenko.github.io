@@ -1,96 +1,96 @@
 {
-  "generatedAt": "2026-07-25T13:16:43.924Z",
+  "generatedAt": "2026-07-25T19:02:02.858Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 321,
+    "stars": 323,
     "forks": 20,
     "followers": 46,
     "following": 16
   },
-  "linesOfCode": 310025,
+  "linesOfCode": 317566,
   "languages": [
     {
       "name": "Rust",
       "bytes": 4000869,
       "lines": 117673,
-      "percent": 37.9,
+      "percent": 37,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 1787088,
-      "lines": 54154,
-      "percent": 16.9,
+      "bytes": 1984005,
+      "lines": 60121,
+      "percent": 18.3,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 11.1,
+      "percent": 10.8,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
       "bytes": 1092585,
       "lines": 26014,
-      "percent": 10.4,
+      "percent": 10.1,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 587289,
-      "lines": 17273,
-      "percent": 5.6,
+      "bytes": 619090,
+      "lines": 18209,
+      "percent": 5.7,
       "color": "#41b883"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 5.2,
+      "percent": 5.1,
       "color": "#00ADD8"
     },
     {
       "name": "CSS",
       "bytes": 502479,
       "lines": 17946,
-      "percent": 4.8,
+      "percent": 4.6,
       "color": "#563d7c"
     },
     {
       "name": "JavaScript",
-      "bytes": 298066,
-      "lines": 9032,
-      "percent": 2.8,
+      "bytes": 319112,
+      "lines": 9670,
+      "percent": 2.9,
       "color": "#f1e05a"
     },
     {
       "name": "PowerShell",
       "bytes": 251174,
       "lines": 6977,
-      "percent": 2.4,
+      "percent": 2.3,
       "color": "#8b8b8b"
     },
     {
       "name": "Astro",
       "bytes": 133294,
       "lines": 3703,
-      "percent": 1.3,
+      "percent": 1.2,
       "color": "#ff5a03"
     }
   ],
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 276,
+      "stars": 278,
       "forks": 15,
       "issues": 1,
-      "language": "Vue",
+      "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.1.0"
+      "release": "v3.2.1"
     },
     {
       "name": "Tedu_Notes",
@@ -143,10 +143,20 @@
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
       "forks": 0,
-      "issues": 2,
+      "issues": 1,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 278,
+      "forks": 15,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.1"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -156,16 +166,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 276,
-      "forks": 15,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.1.0"
     },
     "kumir3-core": {
       "name": "kumir3-core",
