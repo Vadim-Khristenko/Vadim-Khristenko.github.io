@@ -52,6 +52,18 @@ jobs:
       - name: 🔨  Build
         run: bun run build
 
+      # The apex is the Matrix server_name, so losing these files silently
+      # breaks federation and client discovery. Hard-fail instead of shipping.
+      - name: 🪐  Verify Matrix delegation
+        run: |
+          for f in server client; do
+            p="dist/.well-known/matrix/$f"
+            [ -f "$p" ] || { echo "::error::$p missing from build output"; exit 1; }
+            python3 -c "import json; json.load(open('$p'))" \
+              || { echo "::error::$p is not valid JSON"; exit 1; }
+            echo "✓ $p"
+          done
+
       - name: 🔗  Verify internal links
         run: bun run verify
         continue-on-error: true

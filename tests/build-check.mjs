@@ -153,6 +153,21 @@ for (const file of htmlFiles) {
 }
 if (!metaBad) pass(`all ${htmlFiles.length} pages have title/viewport/charset`);
 
+// ── 8. Matrix delegation ─────────────────────────────────────
+// The apex doubles as the Matrix server_name; the homeserver itself lives on
+// matrix.vai-rice.space, so these two files are what makes @user:vai-rice.space work.
+section('8 · Matrix delegation');
+for (const f of ['server', 'client']) {
+  const p = join(DIST, '.well-known', 'matrix', f);
+  if (!existsSync(p)) { fail(`.well-known/matrix/${f} missing from dist/`); continue; }
+  try {
+    JSON.parse(readFileSync(p, 'utf-8'));
+    pass(`.well-known/matrix/${f} present and valid JSON`);
+  } catch {
+    fail(`.well-known/matrix/${f} is not valid JSON`);
+  }
+}
+
 // ── Summary ──────────────────────────────────────────────────
 console.log('\n' + '─'.repeat(48));
 if (failures === 0) {
