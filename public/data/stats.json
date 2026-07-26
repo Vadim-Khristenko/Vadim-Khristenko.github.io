@@ -1,41 +1,41 @@
 {
-  "generatedAt": "2026-07-26T13:12:21.637Z",
+  "generatedAt": "2026-07-26T19:04:54.669Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
-    "stars": 325,
+    "stars": 324,
     "forks": 20,
     "followers": 46,
     "following": 16
   },
-  "linesOfCode": 317566,
+  "linesOfCode": 319023,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 4000869,
-      "lines": 117673,
+      "bytes": 4026313,
+      "lines": 118421,
       "percent": 37,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 1984005,
-      "lines": 60121,
-      "percent": 18.3,
+      "bytes": 2007399,
+      "lines": 60830,
+      "percent": 18.5,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 10.8,
+      "percent": 10.7,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
-      "bytes": 1092585,
+      "bytes": 1092586,
       "lines": 26014,
-      "percent": 10.1,
+      "percent": 10,
       "color": "#e34c26"
     },
     {
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 280,
+      "stars": 279,
       "forks": 15,
       "issues": 1,
       "language": "TypeScript",
@@ -139,9 +139,18 @@
     }
   ],
   "repos": {
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+    },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
-      "stars": 280,
+      "stars": 279,
       "forks": 15,
       "issues": 1,
       "language": "TypeScript",
@@ -166,15 +175,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "kumir3-core": {
-      "name": "kumir3-core",
-      "stars": 4,
-      "forks": 2,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "thewall": {
       "name": "TheWall",
