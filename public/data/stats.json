@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T09:43:03.499Z",
+  "generatedAt": "2026-07-27T14:24:40.431Z",
   "user": {
     "repos": 38,
     "publicRepos": 38,
@@ -8,7 +8,7 @@
     "followers": 46,
     "following": 16
   },
-  "linesOfCode": 319023,
+  "linesOfCode": 319033,
   "languages": [
     {
       "name": "Rust",
@@ -68,8 +68,8 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 251174,
-      "lines": 6977,
+      "bytes": 251522,
+      "lines": 6987,
       "percent": 2.3,
       "color": "#8b8b8b"
     },
@@ -123,7 +123,7 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 0,
+      "issues": 1,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
@@ -139,6 +139,16 @@
     }
   ],
   "repos": {
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 279,
+      "forks": 15,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.1"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -152,20 +162,10 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 0,
+      "issues": 1,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
-    },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 279,
-      "forks": 15,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.1"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
