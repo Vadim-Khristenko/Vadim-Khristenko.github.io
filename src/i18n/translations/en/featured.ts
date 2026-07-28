@@ -14,7 +14,7 @@ export const featured = {
   'proj.crm.name': 'CRM for Contests',
   'proj.crm.desc': 'Open CRM for schools and clubs: tasks, contests, student progress. Accessible, simple and free.',
   'proj.amnezia.desc': 'VPN solution architect based on AmneziaWG. 258+ stars. Automation of WireGuard-compatible server deployment.',
-  'proj.thewall.desc': 'Systems project in Rust. TheWall — network policy and security management tool.',
+  'proj.thewall.desc': 'A utility built for VTuber Filian\'s Pixel Wall — unlocks everything it can do and makes playing it a lot more fun)',
   'proj.whatcode.desc': 'Experimental Rust project. Exploring systems programming capabilities.',
   'proj.algo.desc': 'Asynchronous API for algorithmic tasks. High-performance Python backend.',
   'proj.foxford.desc': 'API client for Foxford educational platform. Python integration with automation.',

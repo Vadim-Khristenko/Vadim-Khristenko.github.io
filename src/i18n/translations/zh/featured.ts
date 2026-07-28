@@ -14,7 +14,7 @@ export const featured = {
   'proj.crm.name': 'CRM for Contests',
   'proj.crm.desc': '面向学校和兴趣小组的开源 CRM：任务、竞赛、学生进度。可及、简单、免费。',
   'proj.amnezia.desc': '基于 AmneziaWG 的 VPN 方案架构。258+ 星标。自动化部署 WireGuard 兼容服务器。',
-  'proj.thewall.desc': '用 Rust 编写的系统级项目。TheWall — 网络策略与安全管理工具。',
+  'proj.thewall.desc': '为 VTuber Filian 的像素墙打造的工具 —— 把它的潜力全部释放出来，玩起来也更有意思)',
   'proj.whatcode.desc': '用 Rust 编写的实验性项目。探索系统级编程的可能性。',
   'proj.algo.desc': '面向算法题的异步 API。高性能 Python 后端。',
   'proj.foxford.desc': 'Foxford 教育平台的 API 客户端。带自动化的 Python 集成。',
