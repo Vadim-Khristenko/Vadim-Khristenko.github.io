@@ -156,7 +156,7 @@ const socials = [
   { name: 'YouTube', handle: '@VAI_PROG', url: 'https://youtube.com/@VAI_PROG', icon: Youtube, brand: siYoutube, class: 'yt' },
   { name: 'Codeberg', handle: '@VAI_PROG', url: 'https://codeberg.org/VAI_PROG', icon: Code2, brand: siCodeberg, class: 'cb' },
   { name: 'Discord', handle: 'VAI_PROG', url: 'https://discordapp.com/users/898576149393846273', icon: MessageCircle, brand: siDiscord, class: 'dc' },
-  { name: 'Matrix', handle: '@vai_prog:matrix.org', url: 'https://matrix.to/#/@vai_prog:matrix.org', icon: Radio, brand: siMatrix, class: 'mx' },
+  { name: 'Matrix', handle: '@vai_prog:vai-rice.space', url: 'https://matrix.to/#/@vai_prog:vai-rice.space', icon: Radio, brand: siMatrix, class: 'mx' },
   { name: 'MosHub', handle: '@VAI_PROG', url: 'https://moshub.ru/user/VAI_PROG', icon: Globe, brand: null, class: 'mh' },
   { name: 'TikTok', handle: '@vai_prog', url: 'https://tiktok.com/@vai_prog', icon: Smartphone, brand: siTiktok, class: 'tt' },
   // { name: 'Reddit', handle: 'u/VAI_PROG', url: 'https://reddit.com/user/VAI_PROG', icon: MessageCircle, class: 'rd' }, - In block
