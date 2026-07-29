@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-29T02:12:56.138Z",
+  "generatedAt": "2026-07-29T08:33:54.152Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 328,
-    "forks": 20,
+    "stars": 329,
+    "forks": 21,
     "followers": 45,
     "following": 16
   },
@@ -129,25 +129,35 @@
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     {
-      "name": "TheWall",
-      "stars": 3,
-      "forks": 0,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/TheWall",
-      "description": "A Win95-styled browser extension (and Tampermonkey userscript) for The Wall at filianislost.com "
-    }
-  ],
-  "repos": {
-    "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 2,
-      "forks": 0,
+      "stars": 3,
+      "forks": 1,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.2.2"
+    }
+  ],
+  "repos": {
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 3,
+      "forks": 1,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
@@ -158,15 +168,6 @@
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
       "release": "v3.2.2"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "kumir3-core": {
       "name": "kumir3-core",
