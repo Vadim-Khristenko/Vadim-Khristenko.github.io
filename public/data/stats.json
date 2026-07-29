@@ -1,47 +1,47 @@
 {
-  "generatedAt": "2026-07-28T19:17:32.200Z",
+  "generatedAt": "2026-07-29T02:12:56.138Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 327,
+    "stars": 328,
     "forks": 20,
     "followers": 45,
     "following": 16
   },
-  "linesOfCode": 331102,
+  "linesOfCode": 341308,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 4394690,
-      "lines": 129256,
-      "percent": 38.9,
+      "bytes": 4711951,
+      "lines": 138587,
+      "percent": 40.5,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 2007557,
-      "lines": 60835,
-      "percent": 17.8,
+      "bytes": 2010565,
+      "lines": 60926,
+      "percent": 17.3,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 10.3,
+      "percent": 10,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
       "bytes": 1092586,
       "lines": 26014,
-      "percent": 9.7,
+      "percent": 9.4,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 619098,
-      "lines": 18209,
+      "bytes": 638517,
+      "lines": 18780,
       "percent": 5.5,
       "color": "#41b883"
     },
@@ -49,21 +49,21 @@
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 4.9,
+      "percent": 4.7,
       "color": "#00ADD8"
     },
     {
       "name": "CSS",
       "bytes": 502479,
       "lines": 17946,
-      "percent": 4.4,
+      "percent": 4.3,
       "color": "#563d7c"
     },
     {
       "name": "JavaScript",
       "bytes": 319112,
       "lines": 9670,
-      "percent": 2.8,
+      "percent": 2.7,
       "color": "#f1e05a"
     },
     {
@@ -75,8 +75,8 @@
     },
     {
       "name": "Shell",
-      "bytes": 138102,
-      "lines": 4932,
+      "bytes": 144058,
+      "lines": 5145,
       "percent": 1.2,
       "color": "#89e051"
     }
@@ -90,7 +90,7 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.1"
+      "release": "v3.2.2"
     },
     {
       "name": "Tedu_Notes",
@@ -139,6 +139,16 @@
     }
   ],
   "repos": {
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 2,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
       "stars": 281,
@@ -147,17 +157,7 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.1"
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.1.0"
+      "release": "v3.2.2"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
