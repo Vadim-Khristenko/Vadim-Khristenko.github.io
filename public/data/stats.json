@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-07-29T08:33:54.152Z",
+  "generatedAt": "2026-07-29T14:01:34.790Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 329,
-    "forks": 21,
+    "stars": 333,
+    "forks": 22,
     "followers": 45,
     "following": 16
   },
-  "linesOfCode": 341308,
+  "linesOfCode": 343315,
   "languages": [
     {
       "name": "Rust",
       "bytes": 4711951,
       "lines": 138587,
-      "percent": 40.5,
+      "percent": 40.2,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 2010565,
-      "lines": 60926,
-      "percent": 17.3,
+      "bytes": 2071223,
+      "lines": 62764,
+      "percent": 17.7,
       "color": "#3178c6"
     },
     {
@@ -35,13 +35,13 @@
       "name": "HTML",
       "bytes": 1092586,
       "lines": 26014,
-      "percent": 9.4,
+      "percent": 9.3,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 638517,
-      "lines": 18780,
+      "bytes": 644050,
+      "lines": 18943,
       "percent": 5.5,
       "color": "#41b883"
     },
@@ -70,13 +70,13 @@
       "name": "PowerShell",
       "bytes": 251522,
       "lines": 6987,
-      "percent": 2.2,
+      "percent": 2.1,
       "color": "#8b8b8b"
     },
     {
       "name": "Shell",
-      "bytes": 144058,
-      "lines": 5145,
+      "bytes": 144223,
+      "lines": 5151,
       "percent": 1.2,
       "color": "#89e051"
     }
@@ -84,13 +84,13 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 281,
+      "stars": 282,
       "forks": 15,
       "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.2"
+      "release": "v3.2.4"
     },
     {
       "name": "Tedu_Notes",
@@ -120,6 +120,16 @@
       "description": "API FOXFORD | Код написанный на Языке Python который позволяет взаимодействовать с платформой foxford.ru"
     },
     {
+      "name": "awg-containers-and-tools",
+      "stars": 6,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
+    {
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
@@ -127,28 +137,28 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
-    },
-    {
-      "name": "awg-containers-and-tools",
-      "stars": 3,
-      "forks": 1,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.2.2"
     }
   ],
   "repos": {
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 3,
-      "forks": 1,
+      "stars": 6,
+      "forks": 2,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.2.2"
+    },
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 282,
+      "forks": 15,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.4"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,16 +168,6 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 281,
-      "forks": 15,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.2"
     },
     "kumir3-core": {
       "name": "kumir3-core",
