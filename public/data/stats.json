@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-30T02:01:51.189Z",
+  "generatedAt": "2026-07-30T08:19:13.167Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 337,
+    "stars": 339,
     "forks": 22,
     "followers": 45,
     "following": 16
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 10,
+      "stars": 12,
       "forks": 2,
       "issues": 0,
       "language": "Rust",
@@ -140,15 +140,6 @@
     }
   ],
   "repos": {
-    "awg-hosting-wiki": {
-      "name": "awg-hosting-wiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
-      "description": ""
-    },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
       "stars": 0,
@@ -160,7 +151,7 @@
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 10,
+      "stars": 12,
       "forks": 2,
       "issues": 0,
       "language": "Rust",
@@ -176,6 +167,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "awg-hosting-wiki": {
+      "name": "awg-hosting-wiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
+      "description": ""
     },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
