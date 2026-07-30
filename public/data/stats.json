@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-29T19:09:01.722Z",
+  "generatedAt": "2026-07-30T02:01:51.189Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 336,
+    "stars": 337,
     "forks": 22,
     "followers": 45,
     "following": 16
@@ -93,6 +93,16 @@
       "release": "v3.2.4"
     },
     {
+      "name": "awg-containers-and-tools",
+      "stars": 10,
+      "forks": 2,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
+    {
       "name": "Tedu_Notes",
       "stars": 10,
       "forks": 0,
@@ -100,16 +110,6 @@
       "language": "Astro",
       "url": "https://github.com/Vadim-Khristenko/Tedu_Notes",
       "description": "Some IT Notes bcz we can)"
-    },
-    {
-      "name": "awg-containers-and-tools",
-      "stars": 9,
-      "forks": 2,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.2.2"
     },
     {
       "name": "algo_async_api",
@@ -149,9 +149,18 @@
       "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
       "description": ""
     },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 9,
+      "stars": 10,
       "forks": 2,
       "issues": 0,
       "language": "Rust",
@@ -186,15 +195,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "thewall": {
       "name": "TheWall",
