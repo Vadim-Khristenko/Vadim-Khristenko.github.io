@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-30T08:19:13.167Z",
+  "generatedAt": "2026-07-30T13:50:22.984Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 339,
+    "stars": 340,
     "forks": 22,
     "followers": 45,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 282,
+      "stars": 283,
       "forks": 15,
       "issues": 1,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 283,
+      "forks": 15,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.4"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
       "stars": 0,
@@ -159,15 +178,6 @@
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.2.2"
     },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
       "stars": 0,
@@ -176,16 +186,6 @@
       "language": null,
       "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
       "description": ""
-    },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 282,
-      "forks": 15,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.4"
     },
     "kumir3-core": {
       "name": "kumir3-core",
