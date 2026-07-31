@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T02:27:39.864Z",
+  "generatedAt": "2026-07-31T08:44:02.034Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -140,15 +140,14 @@
     }
   ],
   "repos": {
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 283,
-      "forks": 15,
-      "issues": 1,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.4"
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,6 +157,16 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 283,
+      "forks": 15,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.4"
     },
     "quoted-matrix": {
       "name": "quoted-matrix",
@@ -176,15 +185,6 @@
       "language": null,
       "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
       "description": ""
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
