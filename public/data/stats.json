@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-01T02:28:02.910Z",
+  "generatedAt": "2026-08-01T08:14:03.872Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 342,
+    "stars": 343,
     "forks": 24,
     "followers": 45,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 285,
+      "stars": 286,
       "forks": 16,
       "issues": 1,
       "language": "TypeScript",
@@ -140,18 +140,9 @@
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "amneziawg-architect": {
       "name": "AmneziaWG-Architect",
-      "stars": 285,
+      "stars": 286,
       "forks": 16,
       "issues": 1,
       "language": "TypeScript",
@@ -167,6 +158,15 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "quoted-matrix": {
       "name": "quoted-matrix",
