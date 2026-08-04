@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-04T14:01:41.874Z",
+  "generatedAt": "2026-08-04T19:26:32.066Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 344,
-    "forks": 24,
-    "followers": 45,
+    "stars": 345,
+    "forks": 25,
+    "followers": 46,
     "following": 16
   },
   "linesOfCode": 351060,
@@ -94,8 +94,8 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 12,
-      "forks": 2,
+      "stars": 13,
+      "forks": 3,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
@@ -140,6 +140,34 @@
     }
   ],
   "repos": {
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 13,
+      "forks": 3,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
+    "awg-hosting-wiki": {
+      "name": "awg-hosting-wiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
+      "description": ""
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -159,15 +187,6 @@
       "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
       "release": "v3.2.4"
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "quoted-matrix": {
       "name": "quoted-matrix",
       "stars": 0,
@@ -176,25 +195,6 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/quoted-matrix",
       "description": "A Matrix bot for quoting messages into stickers"
-    },
-    "awg-hosting-wiki": {
-      "name": "awg-hosting-wiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
-      "description": ""
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 12,
-      "forks": 2,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.2.2"
     },
     "kumir3-core": {
       "name": "kumir3-core",
