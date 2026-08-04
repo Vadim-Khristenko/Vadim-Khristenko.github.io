@@ -10,12 +10,12 @@ import type { Project } from './types';
  */
 export const projects: Project[] = [
   {
-    name: 'AmneziaWG-Architect',
+    name: 'Any-Tech-ARCHITECT',
     status: 'live',
     descKey: 'proj.amnezia.desc',
     accent: '#4FC08D',
     url: 'https://architect.vai-rice.space/',
-    github: 'https://github.com/Vadim-Khristenko/AmneziaWG-Architect',
+    github: 'https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT',
     stack: ['Vue', 'Docker', 'WireGuard'],
     featured: true,
     stars: 258,
