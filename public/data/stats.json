@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-04T02:07:47.285Z",
+  "generatedAt": "2026-08-04T08:30:40.383Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 343,
+    "stars": 344,
     "forks": 24,
     "followers": 45,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "AmneziaWG-Architect",
-      "stars": 286,
+      "stars": 287,
       "forks": 16,
       "issues": 4,
       "language": "TypeScript",
@@ -140,6 +140,16 @@
     }
   ],
   "repos": {
+    "amneziawg-architect": {
+      "name": "AmneziaWG-Architect",
+      "stars": 287,
+      "forks": 16,
+      "issues": 4,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
+      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "release": "v3.2.4"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -148,16 +158,6 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
-    "amneziawg-architect": {
-      "name": "AmneziaWG-Architect",
-      "stars": 286,
-      "forks": 16,
-      "issues": 4,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/AmneziaWG-Architect",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.4"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
