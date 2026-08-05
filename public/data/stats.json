@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T19:26:32.066Z",
+  "generatedAt": "2026-08-05T02:06:39.151Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -8,76 +8,76 @@
     "followers": 46,
     "following": 16
   },
-  "linesOfCode": 351060,
+  "linesOfCode": 397474,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 4711951,
-      "lines": 138587,
-      "percent": 39.4,
+      "bytes": 4711940,
+      "lines": 138586,
+      "percent": 34.9,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 2328435,
-      "lines": 70559,
-      "percent": 19.5,
+      "bytes": 3670126,
+      "lines": 111216,
+      "percent": 27.2,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 9.7,
+      "percent": 8.6,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
-      "bytes": 1092586,
-      "lines": 26014,
-      "percent": 9.1,
+      "bytes": 1093289,
+      "lines": 26031,
+      "percent": 8.1,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 642361,
-      "lines": 18893,
-      "percent": 5.4,
+      "bytes": 766084,
+      "lines": 22532,
+      "percent": 5.7,
       "color": "#41b883"
+    },
+    {
+      "name": "CSS",
+      "bytes": 553496,
+      "lines": 19768,
+      "percent": 4.1,
+      "color": "#563d7c"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 4.6,
+      "percent": 4.1,
       "color": "#00ADD8"
     },
     {
-      "name": "CSS",
-      "bytes": 502479,
-      "lines": 17946,
-      "percent": 4.2,
-      "color": "#563d7c"
-    },
-    {
       "name": "JavaScript",
-      "bytes": 319112,
-      "lines": 9670,
-      "percent": 2.7,
+      "bytes": 328344,
+      "lines": 9950,
+      "percent": 2.4,
       "color": "#f1e05a"
     },
     {
       "name": "PowerShell",
       "bytes": 251522,
       "lines": 6987,
-      "percent": 2.1,
+      "percent": 1.9,
       "color": "#8b8b8b"
     },
     {
       "name": "Shell",
       "bytes": 144223,
       "lines": 5151,
-      "percent": 1.2,
+      "percent": 1.1,
       "color": "#89e051"
     }
   ],
@@ -86,10 +86,10 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 287,
       "forks": 16,
-      "issues": 4,
+      "issues": 1,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v3.2.4"
     },
     {
@@ -140,15 +140,15 @@
     }
   ],
   "repos": {
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 13,
-      "forks": 3,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.2.2"
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 287,
+      "forks": 16,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v3.2.4"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -159,14 +159,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
     },
-    "awg-hosting-wiki": {
-      "name": "awg-hosting-wiki",
-      "stars": 0,
-      "forks": 0,
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 13,
+      "forks": 3,
       "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
-      "description": ""
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -177,15 +178,14 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 287,
-      "forks": 16,
-      "issues": 4,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "AmneziaWG Architect — CPS / mimicry generator UI and host pools",
-      "release": "v3.2.4"
+    "awg-hosting-wiki": {
+      "name": "awg-hosting-wiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
+      "description": ""
     },
     "quoted-matrix": {
       "name": "quoted-matrix",
