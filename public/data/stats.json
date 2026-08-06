@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T19:24:49.100Z",
+  "generatedAt": "2026-08-06T02:11:01.055Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -8,47 +8,47 @@
     "followers": 47,
     "following": 16
   },
-  "linesOfCode": 399605,
+  "linesOfCode": 402432,
   "languages": [
     {
       "name": "Rust",
       "bytes": 4711940,
       "lines": 138586,
-      "percent": 34.7,
+      "percent": 34.5,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 3729784,
-      "lines": 113024,
-      "percent": 27.5,
+      "bytes": 3836582,
+      "lines": 116260,
+      "percent": 28.1,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 8.6,
+      "percent": 8.5,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
       "bytes": 1093289,
       "lines": 26031,
-      "percent": 8.1,
+      "percent": 8,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 777059,
-      "lines": 22855,
-      "percent": 5.7,
+      "bytes": 762331,
+      "lines": 22422,
+      "percent": 5.6,
       "color": "#41b883"
     },
     {
       "name": "CSS",
-      "bytes": 553496,
-      "lines": 19768,
+      "bytes": 554166,
+      "lines": 19792,
       "percent": 4.1,
       "color": "#563d7c"
     },
@@ -56,7 +56,7 @@
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 4.1,
+      "percent": 4,
       "color": "#00ADD8"
     },
     {
@@ -70,7 +70,7 @@
       "name": "PowerShell",
       "bytes": 251522,
       "lines": 6987,
-      "percent": 1.9,
+      "percent": 1.8,
       "color": "#8b8b8b"
     },
     {
