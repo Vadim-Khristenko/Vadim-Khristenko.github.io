@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T18:56:43.960Z",
+  "generatedAt": "2026-08-12T01:38:01.754Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -140,6 +140,15 @@
     }
   ],
   "repos": {
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 294,
@@ -149,15 +158,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v3.2.4"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
