@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T12:30:41.902Z",
+  "generatedAt": "2026-08-22T18:23:23.720Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -8,19 +8,19 @@
     "followers": 50,
     "following": 16
   },
-  "linesOfCode": 403315,
+  "linesOfCode": 405939,
   "languages": [
     {
       "name": "Rust",
       "bytes": 4711940,
       "lines": 138586,
-      "percent": 34.4,
+      "percent": 34.2,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 3861569,
-      "lines": 117017,
+      "bytes": 3882406,
+      "lines": 117649,
       "percent": 28.2,
       "color": "#3178c6"
     },
@@ -35,13 +35,13 @@
       "name": "HTML",
       "bytes": 1093289,
       "lines": 26031,
-      "percent": 8,
+      "percent": 7.9,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
-      "bytes": 766645,
-      "lines": 22548,
+      "bytes": 768609,
+      "lines": 22606,
       "percent": 5.6,
       "color": "#41b883"
     },
@@ -68,15 +68,15 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 251522,
-      "lines": 6987,
-      "percent": 1.8,
+      "bytes": 315460,
+      "lines": 8763,
+      "percent": 2.3,
       "color": "#8b8b8b"
     },
     {
       "name": "Shell",
-      "bytes": 144223,
-      "lines": 5151,
+      "bytes": 148658,
+      "lines": 5309,
       "percent": 1.1,
       "color": "#89e051"
     }
@@ -149,6 +149,16 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v3.2.4"
+    },
+    "vai-framework": {
+      "name": "vai-framework",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "PowerShell",
+      "url": "https://github.com/Vadim-Khristenko/vai-framework",
+      "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
+      "release": "v5.4.0"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -242,16 +252,6 @@
       "url": "https://github.com/Vadim-Khristenko/vaidcord",
       "description": "Async Discord bot SDK for Python / GO / Rust, inspired by aiogram and more.",
       "release": "rust-v0.2.0"
-    },
-    "vai-framework": {
-      "name": "vai-framework",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "PowerShell",
-      "url": "https://github.com/Vadim-Khristenko/vai-framework",
-      "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
-      "release": "v5.2.0"
     },
     "prodhugs": {
       "name": "PRODHugs",
