@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T18:23:23.720Z",
+  "generatedAt": "2026-08-23T01:04:48.764Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -8,7 +8,7 @@
     "followers": 50,
     "following": 16
   },
-  "linesOfCode": 405939,
+  "linesOfCode": 406570,
   "languages": [
     {
       "name": "Rust",
@@ -19,9 +19,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 3882406,
-      "lines": 117649,
-      "percent": 28.2,
+      "bytes": 3901694,
+      "lines": 118233,
+      "percent": 28.3,
       "color": "#3178c6"
     },
     {
@@ -40,8 +40,8 @@
     },
     {
       "name": "Vue",
-      "bytes": 768609,
-      "lines": 22606,
+      "bytes": 770198,
+      "lines": 22653,
       "percent": 5.6,
       "color": "#41b883"
     },
@@ -86,11 +86,11 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 300,
       "forks": 17,
-      "issues": 3,
+      "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v3.2.4"
+      "release": "v4.0.0"
     },
     {
       "name": "awg-containers-and-tools",
@@ -144,11 +144,20 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 300,
       "forks": 17,
-      "issues": 3,
+      "issues": 2,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v3.2.4"
+      "release": "v4.0.0"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "vai-framework": {
       "name": "vai-framework",
@@ -159,15 +168,6 @@
       "url": "https://github.com/Vadim-Khristenko/vai-framework",
       "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
       "release": "v5.4.0"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
