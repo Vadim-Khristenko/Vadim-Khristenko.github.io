@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-08-24T18:34:18.623Z",
+  "generatedAt": "2026-08-25T01:01:59.815Z",
   "user": {
-    "repos": 40,
-    "publicRepos": 40,
-    "stars": 365,
-    "forks": 26,
+    "repos": 39,
+    "publicRepos": 39,
+    "stars": 362,
+    "forks": 24,
     "followers": 50,
     "following": 16
   },
-  "linesOfCode": 406879,
+  "linesOfCode": 407342,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 4711940,
-      "lines": 138586,
+      "bytes": 4718339,
+      "lines": 138775,
       "percent": 34.1,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 3906656,
-      "lines": 118384,
-      "percent": 28.3,
+      "bytes": 3912608,
+      "lines": 118564,
+      "percent": 28.2,
       "color": "#3178c6"
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 328344,
-      "lines": 9950,
+      "bytes": 331148,
+      "lines": 10035,
       "percent": 2.4,
       "color": "#f1e05a"
     },
@@ -75,8 +75,8 @@
     },
     {
       "name": "Shell",
-      "bytes": 148658,
-      "lines": 5309,
+      "bytes": 148903,
+      "lines": 5318,
       "percent": 1.1,
       "color": "#89e051"
     }
@@ -85,7 +85,7 @@
     {
       "name": "Any-Tech-ARCHITECT",
       "stars": 304,
-      "forks": 17,
+      "forks": 16,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
@@ -140,15 +140,25 @@
     }
   ],
   "repos": {
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 304,
-      "forks": 17,
-      "issues": 3,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.0.0"
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 16,
+      "forks": 3,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.2.2"
+    },
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Lua",
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "v0.0.6"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,6 +168,16 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 304,
+      "forks": 16,
+      "issues": 3,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.0.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -177,16 +197,6 @@
       "url": "https://github.com/Vadim-Khristenko/vai-framework",
       "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
       "release": "v5.4.0"
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 16,
-      "forks": 3,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.2.2"
     },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
@@ -233,20 +243,10 @@
       "url": "https://github.com/Vadim-Khristenko/WhatCode",
       "description": "WhatCode: Uncompromising AI performance meets a bold, unforgettable personality."
     },
-    "hatsunemikueditortheme-vsc": {
-      "name": "HatsuneMikuEditorTheme-VSC",
-      "stars": 2,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-VSC",
-      "description": "VS Code packaged theme and source files for Hatsune Miku theme",
-      "release": "v0.0.2"
-    },
     "vaidcord": {
       "name": "vaidcord",
       "stars": 0,
-      "forks": 1,
+      "forks": 0,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/vaidcord",
@@ -306,15 +306,6 @@
       "language": "Go",
       "url": "https://github.com/Vadim-Khristenko/matrix-telegram-bridge",
       "description": "A Matrix-Telegram puppeting bridge"
-    },
-    "hatsunemikueditortheme-zed": {
-      "name": "HatsuneMikuEditorTheme-ZED",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme-ZED",
-      "description": "Hatsune Miku theme for Zed editor"
     },
     "just-meme-i-use-arch-btw": {
       "name": "just-meme-i-use-arch-btw",
