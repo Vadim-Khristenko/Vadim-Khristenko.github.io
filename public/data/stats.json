@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-25T12:39:21.752Z",
+  "generatedAt": "2026-08-25T18:33:46.734Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 365,
+    "stars": 366,
     "forks": 24,
     "followers": 50,
     "following": 16
@@ -86,7 +86,7 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 306,
       "forks": 16,
-      "issues": 3,
+      "issues": 5,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 17,
+      "stars": 18,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -142,23 +142,13 @@
   "repos": {
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 17,
+      "stars": 18,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.3.0"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 306,
-      "forks": 16,
-      "issues": 3,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.0.0"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -168,6 +158,16 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 306,
+      "forks": 16,
+      "issues": 5,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.0.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
