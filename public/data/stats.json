@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-27T07:02:42.673Z",
+  "generatedAt": "2026-08-27T21:40:36.403Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 369,
+    "stars": 371,
     "forks": 24,
     "followers": 50,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 309,
+      "stars": 311,
       "forks": 16,
       "issues": 5,
       "language": "TypeScript",
@@ -140,14 +140,15 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 311,
+      "forks": 16,
+      "issues": 5,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.0.0"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,15 +159,14 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 309,
-      "forks": 16,
-      "issues": 5,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.0.0"
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
