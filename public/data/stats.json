@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-30T03:23:02.614Z",
+  "generatedAt": "2026-08-30T11:09:38.897Z",
   "user": {
     "repos": 39,
     "publicRepos": 39,
-    "stars": 375,
+    "stars": 377,
     "forks": 24,
     "followers": 50,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 315,
+      "stars": 316,
       "forks": 16,
       "issues": 6,
       "language": "TypeScript",
@@ -130,24 +130,24 @@
       "description": "API FOXFORD | Код написанный на Языке Python который позволяет взаимодействовать с платформой foxford.ru"
     },
     {
-      "name": "kumir3-core",
+      "name": "aiogram-3-guide",
       "stars": 4,
-      "forks": 2,
-      "issues": 2,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
+      "description": "Пишем Telegram-ботов с aiogram 3.x"
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    "aiogram-3-guide": {
+      "name": "aiogram-3-guide",
+      "stars": 4,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
+      "description": "Пишем Telegram-ботов с aiogram 3.x"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -160,13 +160,22 @@
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 315,
+      "stars": 316,
       "forks": 16,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.0.0"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
@@ -279,15 +288,6 @@
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/algo_async_api",
       "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
-    },
-    "aiogram-3-guide": {
-      "name": "aiogram-3-guide",
-      "stars": 3,
-      "forks": 1,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
-      "description": "Пишем Telegram-ботов с aiogram 3.x"
     },
     "search-for-you": {
       "name": "Search-for-YOU",
