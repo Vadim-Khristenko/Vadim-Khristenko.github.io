@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-31T03:20:00.055Z",
+  "generatedAt": "2026-08-31T12:34:38.109Z",
   "user": {
-    "repos": 39,
-    "publicRepos": 39,
-    "stars": 380,
+    "repos": 40,
+    "publicRepos": 40,
+    "stars": 381,
     "forks": 24,
     "followers": 51,
     "following": 16
   },
-  "linesOfCode": 409471,
+  "linesOfCode": 409709,
   "languages": [
     {
       "name": "Rust",
@@ -19,8 +19,8 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 3912090,
-      "lines": 118548,
+      "bytes": 3919932,
+      "lines": 118786,
       "percent": 28.1,
       "color": "#3178c6"
     },
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 319,
+      "stars": 320,
       "forks": 16,
       "issues": 6,
       "language": "TypeScript",
@@ -140,15 +140,33 @@
     }
   ],
   "repos": {
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 319,
+      "stars": 320,
       "forks": 16,
       "issues": 6,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.0.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,15 +185,6 @@
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
       "description": "Пишем Telegram-ботов с aiogram 3.x"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
