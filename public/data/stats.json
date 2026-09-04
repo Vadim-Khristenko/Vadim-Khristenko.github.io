@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T02:43:22.896Z",
+  "generatedAt": "2026-09-04T10:30:09.876Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -140,6 +140,15 @@
     }
   ],
   "repos": {
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -168,15 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.3.0"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
