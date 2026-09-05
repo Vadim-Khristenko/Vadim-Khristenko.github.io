@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-05T14:29:39.999Z",
+  "generatedAt": "2026-09-05T19:52:17.797Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 386,
+    "stars": 387,
     "forks": 24,
     "followers": 52,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 323,
+      "stars": 324,
       "forks": 16,
       "issues": 3,
       "language": "TypeScript",
@@ -130,16 +130,35 @@
       "description": "API FOXFORD | Код написанный на Языке Python который позволяет взаимодействовать с платформой foxford.ru"
     },
     {
-      "name": "aiogram-3-guide",
+      "name": "kumir3-core",
       "stars": 4,
-      "forks": 1,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
-      "description": "Пишем Telegram-ботов с aiogram 3.x"
+      "forks": 2,
+      "issues": 2,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 324,
+      "forks": 16,
+      "issues": 3,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.1.0"
+    },
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 2,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,16 +176,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 323,
-      "forks": 16,
-      "issues": 3,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.1.0"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
@@ -233,15 +242,6 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/quoted-matrix",
       "description": "A Matrix bot for quoting messages into stickers"
-    },
-    "kumir3-core": {
-      "name": "kumir3-core",
-      "stars": 4,
-      "forks": 2,
-      "issues": 2,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "thewall": {
       "name": "TheWall",
