@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-05T19:52:17.797Z",
+  "generatedAt": "2026-09-06T02:42:47.370Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 387,
+    "stars": 388,
     "forks": 24,
     "followers": 52,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 324,
+      "stars": 325,
       "forks": 16,
       "issues": 3,
       "language": "TypeScript",
@@ -142,22 +142,13 @@
   "repos": {
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 324,
+      "stars": 325,
       "forks": 16,
       "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.1.0"
-    },
-    "kumir3-core": {
-      "name": "kumir3-core",
-      "stars": 4,
-      "forks": 2,
-      "issues": 2,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
-      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,6 +158,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "kumir3-core": {
+      "name": "kumir3-core",
+      "stars": 4,
+      "forks": 2,
+      "issues": 2,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/kumir3-core",
+      "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
