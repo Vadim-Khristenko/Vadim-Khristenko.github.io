@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T11:28:32.297Z",
+  "generatedAt": "2026-09-07T17:09:17.613Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -133,13 +133,22 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 2,
+      "issues": 3,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     }
   ],
   "repos": {
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
       "stars": 0,
@@ -168,15 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
     },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 20,
@@ -191,7 +191,7 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 2,
+      "issues": 3,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
