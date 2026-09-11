@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-11T02:47:46.365Z",
+  "generatedAt": "2026-09-11T10:31:53.804Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 399,
+    "stars": 400,
     "forks": 24,
     "followers": 52,
     "following": 16
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 21,
+      "stars": 22,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -140,37 +140,9 @@
     }
   ],
   "repos": {
-    "tdesktop": {
-      "name": "tdesktop",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "C++",
-      "url": "https://github.com/Vadim-Khristenko/tdesktop",
-      "description": "Telegram Desktop messaging app"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 335,
-      "forks": 16,
-      "issues": 3,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.2.0"
-    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 21,
+      "stars": 22,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -186,6 +158,34 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "tdesktop": {
+      "name": "tdesktop",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "C++",
+      "url": "https://github.com/Vadim-Khristenko/tdesktop",
+      "description": "Telegram Desktop messaging app"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 335,
+      "forks": 16,
+      "issues": 3,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.2.0"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
