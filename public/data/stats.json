@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-12T02:56:04.509Z",
+  "generatedAt": "2026-09-12T10:00:03.719Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 401,
+    "stars": 400,
     "forks": 24,
     "followers": 52,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 335,
+      "stars": 334,
       "forks": 16,
       "issues": 3,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 334,
+      "forks": 16,
+      "issues": 3,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.2.0"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -159,15 +178,6 @@
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.3.0"
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "tdesktop": {
       "name": "tdesktop",
       "stars": 0,
@@ -176,16 +186,6 @@
       "language": "C++",
       "url": "https://github.com/Vadim-Khristenko/tdesktop",
       "description": "Telegram Desktop messaging app"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 335,
-      "forks": 16,
-      "issues": 3,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.2.0"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
