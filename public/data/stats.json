@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T02:55:50.612Z",
+  "generatedAt": "2026-09-13T11:01:10.699Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,7 +8,7 @@
     "followers": 52,
     "following": 16
   },
-  "linesOfCode": 413806,
+  "linesOfCode": 414173,
   "languages": [
     {
       "name": "Rust",
@@ -19,8 +19,8 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 4031522,
-      "lines": 122167,
+      "bytes": 4043587,
+      "lines": 122533,
       "percent": 28.7,
       "color": "#3178c6"
     },
@@ -40,8 +40,8 @@
     },
     {
       "name": "Vue",
-      "bytes": 777686,
-      "lines": 22873,
+      "bytes": 777724,
+      "lines": 22874,
       "percent": 5.5,
       "color": "#41b883"
     },
@@ -86,7 +86,7 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 335,
       "forks": 16,
-      "issues": 4,
+      "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
@@ -140,20 +140,11 @@
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 335,
       "forks": 16,
-      "issues": 4,
+      "issues": 3,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
@@ -167,6 +158,15 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
