@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13T15:32:20.885Z",
+  "generatedAt": "2026-09-13T20:14:31.957Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,27 +8,27 @@
     "followers": 52,
     "following": 16
   },
-  "linesOfCode": 414909,
+  "linesOfCode": 416175,
   "languages": [
     {
       "name": "Rust",
       "bytes": 4736531,
       "lines": 139310,
-      "percent": 33.6,
+      "percent": 33.5,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4066073,
-      "lines": 123214,
-      "percent": 28.8,
+      "bytes": 4099917,
+      "lines": 124240,
+      "percent": 29,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1166423,
       "lines": 38881,
-      "percent": 8.3,
+      "percent": 8.2,
       "color": "#3572A5"
     },
     {
@@ -40,9 +40,9 @@
     },
     {
       "name": "Vue",
-      "bytes": 779600,
-      "lines": 22929,
-      "percent": 5.5,
+      "bytes": 787749,
+      "lines": 23169,
+      "percent": 5.6,
       "color": "#41b883"
     },
     {
@@ -86,11 +86,11 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 336,
       "forks": 16,
-      "issues": 3,
+      "issues": 4,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.0"
+      "release": "v4.3.1"
     },
     {
       "name": "awg-containers-and-tools",
@@ -144,11 +144,11 @@
       "name": "Any-Tech-ARCHITECT",
       "stars": 336,
       "forks": 16,
-      "issues": 3,
+      "issues": 4,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.0"
+      "release": "v4.3.1"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
