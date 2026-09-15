@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-14T21:23:40.931Z",
+  "generatedAt": "2026-09-15T03:11:57.430Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 403,
+    "stars": 405,
     "forks": 24,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 337,
+      "stars": 338,
       "forks": 16,
       "issues": 4,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "awg-hosting-wiki": {
+      "name": "awg-hosting-wiki",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
+      "description": ""
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 338,
+      "forks": 16,
+      "issues": 4,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.3.1"
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,16 +176,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 337,
-      "forks": 16,
-      "issues": 4,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
@@ -233,15 +242,6 @@
       "url": "https://github.com/Vadim-Khristenko/vai-framework",
       "description": "VAI-Framework — hybrid-registry PowerShell toolkit: modules, SEX runner, AgentHub, Docker, Git, DevBuild. Ship. Execute. eXcite.",
       "release": "v5.4.0"
-    },
-    "awg-hosting-wiki": {
-      "name": "awg-hosting-wiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": null,
-      "url": "https://github.com/Vadim-Khristenko/awg-hosting-wiki",
-      "description": ""
     },
     "quoted-matrix": {
       "name": "quoted-matrix",
