@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T17:47:27.456Z",
+  "generatedAt": "2026-09-21T21:39:15.982Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,41 +8,41 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 424698,
+  "linesOfCode": 429290,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 4851484,
-      "lines": 142691,
-      "percent": 33.6,
+      "bytes": 5003394,
+      "lines": 147159,
+      "percent": 34.3,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 4099917,
       "lines": 124240,
-      "percent": 28.4,
+      "percent": 28.1,
       "color": "#3178c6"
     },
     {
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 8.7,
+      "percent": 8.6,
       "color": "#3572A5"
     },
     {
       "name": "HTML",
-      "bytes": 1141019,
-      "lines": 27167,
-      "percent": 7.9,
+      "bytes": 1146216,
+      "lines": 27291,
+      "percent": 7.8,
       "color": "#e34c26"
     },
     {
       "name": "Vue",
       "bytes": 787749,
       "lines": 23169,
-      "percent": 5.5,
+      "percent": 5.4,
       "color": "#41b883"
     },
     {
@@ -70,7 +70,7 @@
       "name": "PowerShell",
       "bytes": 325906,
       "lines": 9053,
-      "percent": 2.3,
+      "percent": 2.2,
       "color": "#8b8b8b"
     },
     {
@@ -140,6 +140,15 @@
     }
   ],
   "repos": {
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,15 +166,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
