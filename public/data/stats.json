@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-22T03:06:23.814Z",
+  "generatedAt": "2026-09-22T10:53:32.977Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 412,
+    "stars": 413,
     "forks": 27,
     "followers": 53,
     "following": 16
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 24,
+      "stars": 25,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 25,
+      "forks": 3,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.3.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -158,15 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 344,
@@ -176,16 +186,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.3.1"
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 24,
-      "forks": 3,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.3.0"
     },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
