@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T16:11:30.164Z",
+  "generatedAt": "2026-09-22T20:49:47.756Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,47 +8,47 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 429290,
+  "linesOfCode": 443032,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 5003394,
-      "lines": 147159,
-      "percent": 34.3,
+      "bytes": 5273025,
+      "lines": 155089,
+      "percent": 34.9,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 4099917,
       "lines": 124240,
-      "percent": 28.1,
+      "percent": 27.2,
       "color": "#3178c6"
+    },
+    {
+      "name": "HTML",
+      "bytes": 1320955,
+      "lines": 31451,
+      "percent": 8.8,
+      "color": "#e34c26"
     },
     {
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 8.6,
+      "percent": 8.3,
       "color": "#3572A5"
-    },
-    {
-      "name": "HTML",
-      "bytes": 1146216,
-      "lines": 27291,
-      "percent": 7.8,
-      "color": "#e34c26"
     },
     {
       "name": "Vue",
       "bytes": 787749,
       "lines": 23169,
-      "percent": 5.4,
+      "percent": 5.2,
       "color": "#41b883"
     },
     {
       "name": "CSS",
-      "bytes": 597637,
-      "lines": 21344,
+      "bytes": 624880,
+      "lines": 22317,
       "percent": 4.1,
       "color": "#563d7c"
     },
@@ -56,13 +56,13 @@
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 3.8,
+      "percent": 3.7,
       "color": "#00ADD8"
     },
     {
       "name": "JavaScript",
-      "bytes": 360091,
-      "lines": 10912,
+      "bytes": 382500,
+      "lines": 11591,
       "percent": 2.5,
       "color": "#f1e05a"
     },
@@ -77,7 +77,7 @@
       "name": "Shell",
       "bytes": 168338,
       "lines": 6012,
-      "percent": 1.2,
+      "percent": 1.1,
       "color": "#89e051"
     }
   ],
@@ -140,24 +140,14 @@
     }
   ],
   "repos": {
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 345,
-      "forks": 17,
-      "issues": 4,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
       "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
@@ -169,6 +159,25 @@
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.3.0"
     },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 345,
+      "forks": 17,
+      "issues": 4,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.3.1"
+    },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
       "stars": 0,
@@ -177,15 +186,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
