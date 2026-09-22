@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-22T10:53:32.977Z",
+  "generatedAt": "2026-09-22T16:11:30.164Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 413,
+    "stars": 414,
     "forks": 27,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 344,
+      "stars": 345,
       "forks": 17,
       "issues": 4,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 345,
+      "forks": 17,
+      "issues": 4,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.3.1"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 25,
@@ -159,15 +178,6 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
     },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
       "stars": 0,
@@ -176,16 +186,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 344,
-      "forks": 17,
-      "issues": 4,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
     },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
