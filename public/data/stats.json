@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-27T11:18:38.512Z",
+  "generatedAt": "2026-09-27T16:18:52.304Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 422,
+    "stars": 423,
     "forks": 28,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 353,
+      "stars": 354,
       "forks": 17,
       "issues": 5,
       "language": "TypeScript",
@@ -140,18 +140,9 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 353,
+      "stars": 354,
       "forks": 17,
       "issues": 5,
       "language": "TypeScript",
@@ -167,6 +158,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
