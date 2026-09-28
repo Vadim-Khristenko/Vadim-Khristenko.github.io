@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T03:24:04.054Z",
+  "generatedAt": "2026-09-28T12:47:35.661Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,26 +8,26 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 474002,
+  "linesOfCode": 475006,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 5797645,
-      "lines": 170519,
-      "percent": 35.9,
+      "bytes": 5824741,
+      "lines": 171316,
+      "percent": 36,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 4418658,
       "lines": 133899,
-      "percent": 27.4,
+      "percent": 27.3,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1417996,
-      "lines": 33762,
+      "bytes": 1424275,
+      "lines": 33911,
       "percent": 8.8,
       "color": "#e34c26"
     },
@@ -35,7 +35,7 @@
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 7.8,
+      "percent": 7.7,
       "color": "#3572A5"
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 384633,
-      "lines": 11656,
+      "bytes": 386562,
+      "lines": 11714,
       "percent": 2.4,
       "color": "#f1e05a"
     },
@@ -149,6 +149,15 @@
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
     },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -167,15 +176,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.3.1"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
