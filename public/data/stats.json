@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-30T11:51:13.197Z",
+  "generatedAt": "2026-09-30T17:32:16.490Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
     "stars": 428,
-    "forks": 29,
+    "forks": 28,
     "followers": 53,
     "following": 16
   },
@@ -140,6 +140,15 @@
     }
   ],
   "repos": {
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 28,
@@ -168,15 +177,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
@@ -364,7 +364,7 @@
     "t-courses": {
       "name": "t-courses",
       "stars": 0,
-      "forks": 1,
+      "forks": 0,
       "issues": 0,
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/t-courses",
