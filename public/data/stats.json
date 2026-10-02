@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T11:48:51.505Z",
+  "generatedAt": "2026-10-02T17:22:15.590Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,34 +8,34 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 479601,
+  "linesOfCode": 481739,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 5965546,
-      "lines": 175457,
-      "percent": 36.5,
+      "bytes": 6014242,
+      "lines": 176889,
+      "percent": 36.6,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4418658,
-      "lines": 133899,
-      "percent": 27,
+      "bytes": 4420843,
+      "lines": 133965,
+      "percent": 26.9,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1443329,
-      "lines": 34365,
-      "percent": 8.8,
+      "bytes": 1459167,
+      "lines": 34742,
+      "percent": 8.9,
       "color": "#e34c26"
     },
     {
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 7.7,
+      "percent": 7.6,
       "color": "#3572A5"
     },
     {
@@ -47,8 +47,8 @@
     },
     {
       "name": "CSS",
-      "bytes": 634974,
-      "lines": 22678,
+      "bytes": 642355,
+      "lines": 22941,
       "percent": 3.9,
       "color": "#563d7c"
     },
@@ -149,6 +149,15 @@
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
     },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 1,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 29,
@@ -167,15 +176,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 1,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
