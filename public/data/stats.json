@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T21:46:31.189Z",
+  "generatedAt": "2026-10-03T03:36:57.741Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -144,7 +144,7 @@
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
       "forks": 0,
-      "issues": 1,
+      "issues": 4,
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
