@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-03T03:36:57.741Z",
+  "generatedAt": "2026-10-03T11:02:12.572Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 433,
+    "stars": 436,
     "forks": 28,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 360,
+      "stars": 362,
       "forks": 18,
       "issues": 5,
       "language": "TypeScript",
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 29,
+      "stars": 30,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -140,6 +140,35 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 362,
+      "forks": 18,
+      "issues": 5,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.3.1"
+    },
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 30,
+      "forks": 3,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.4.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,35 +186,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 29,
-      "forks": 3,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.4.0"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 360,
-      "forks": 18,
-      "issues": 5,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
     },
     "awg-hosting-wiki": {
       "name": "awg-hosting-wiki",
