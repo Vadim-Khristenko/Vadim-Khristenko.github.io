@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T16:22:36.632Z",
+  "generatedAt": "2026-10-04T20:49:34.830Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,26 +8,26 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 489231,
+  "linesOfCode": 491465,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6213886,
-      "lines": 182761,
-      "percent": 37.2,
+      "bytes": 6274216,
+      "lines": 184536,
+      "percent": 37.4,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4439026,
-      "lines": 134516,
-      "percent": 26.6,
+      "bytes": 4447386,
+      "lines": 134769,
+      "percent": 26.5,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1504456,
-      "lines": 35820,
+      "bytes": 1513088,
+      "lines": 36026,
       "percent": 9,
       "color": "#e34c26"
     },
@@ -42,7 +42,7 @@
       "name": "Vue",
       "bytes": 879884,
       "lines": 25879,
-      "percent": 5.3,
+      "percent": 5.2,
       "color": "#41b883"
     },
     {
@@ -70,7 +70,7 @@
       "name": "PowerShell",
       "bytes": 325906,
       "lines": 9053,
-      "percent": 2,
+      "percent": 1.9,
       "color": "#8b8b8b"
     },
     {
