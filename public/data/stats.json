@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T11:43:44.277Z",
+  "generatedAt": "2026-10-04T16:22:36.632Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,40 +8,40 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 484034,
+  "linesOfCode": 489231,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6082627,
-      "lines": 178901,
-      "percent": 36.9,
+      "bytes": 6213886,
+      "lines": 182761,
+      "percent": 37.2,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4420843,
-      "lines": 133965,
-      "percent": 26.8,
+      "bytes": 4439026,
+      "lines": 134516,
+      "percent": 26.6,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1471035,
-      "lines": 35025,
-      "percent": 8.9,
+      "bytes": 1504456,
+      "lines": 35820,
+      "percent": 9,
       "color": "#e34c26"
     },
     {
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 7.6,
+      "percent": 7.5,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
-      "bytes": 880184,
-      "lines": 25888,
+      "bytes": 879884,
+      "lines": 25879,
       "percent": 5.3,
       "color": "#41b883"
     },
@@ -49,7 +49,7 @@
       "name": "CSS",
       "bytes": 642355,
       "lines": 22941,
-      "percent": 3.9,
+      "percent": 3.8,
       "color": "#563d7c"
     },
     {
@@ -140,14 +140,14 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
       "stars": 0,
-      "forks": 0,
+      "forks": 1,
       "issues": 0,
       "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,6 +158,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 363,
@@ -167,15 +176,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.3.1"
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 1,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
