@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T13:29:12.868Z",
+  "generatedAt": "2026-10-05T23:40:19.248Z",
   "user": {
     "repos": 42,
     "publicRepos": 42,
@@ -133,13 +133,22 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 3,
+      "issues": 4,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
     }
   ],
   "repos": {
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "kivotosdustry": {
       "name": "KivotosDustry",
       "stars": 0,
@@ -167,15 +176,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
@@ -218,7 +218,7 @@
       "name": "kumir3-core",
       "stars": 4,
       "forks": 2,
-      "issues": 3,
+      "issues": 4,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/kumir3-core",
       "description": "Just Kumir 3. Side-project. Made bcz I can and fun)"
