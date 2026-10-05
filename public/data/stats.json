@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-10-05T03:51:11.255Z",
+  "generatedAt": "2026-10-05T13:29:12.868Z",
   "user": {
-    "repos": 41,
-    "publicRepos": 41,
-    "stars": 437,
+    "repos": 42,
+    "publicRepos": 42,
+    "stars": 436,
     "forks": 28,
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 491465,
+  "linesOfCode": 493504,
   "languages": [
     {
       "name": "Rust",
       "bytes": 6274216,
       "lines": 184536,
-      "percent": 37.4,
+      "percent": 37.3,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4447386,
-      "lines": 134769,
-      "percent": 26.5,
+      "bytes": 4514430,
+      "lines": 136801,
+      "percent": 26.8,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1513088,
+      "bytes": 1513099,
       "lines": 36026,
       "percent": 9,
       "color": "#e34c26"
@@ -35,13 +35,13 @@
       "name": "Python",
       "bytes": 1252150,
       "lines": 41738,
-      "percent": 7.5,
+      "percent": 7.4,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
-      "bytes": 879884,
-      "lines": 25879,
+      "bytes": 880133,
+      "lines": 25886,
       "percent": 5.2,
       "color": "#41b883"
     },
@@ -84,13 +84,13 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 363,
+      "stars": 362,
       "forks": 18,
-      "issues": 5,
+      "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
+      "release": "v4.4.0"
     },
     {
       "name": "awg-containers-and-tools",
@@ -140,6 +140,34 @@
     }
   ],
   "repos": {
+    "kivotosdustry": {
+      "name": "KivotosDustry",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/KivotosDustry",
+      "description": "Blue Archive Soundtracks and Cosmetics in Mindustry"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 362,
+      "forks": 18,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.4.0"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,25 +185,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 363,
-      "forks": 18,
-      "issues": 5,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.3.1"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
