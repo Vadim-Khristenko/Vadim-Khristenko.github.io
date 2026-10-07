@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T22:15:23.440Z",
+  "generatedAt": "2026-10-07T04:04:59.634Z",
   "user": {
     "repos": 42,
     "publicRepos": 42,
@@ -8,12 +8,12 @@
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 495844,
+  "linesOfCode": 496053,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6345394,
-      "lines": 186629,
+      "bytes": 6351565,
+      "lines": 186811,
       "percent": 37.5,
       "color": "#dea584"
     },
@@ -26,8 +26,8 @@
     },
     {
       "name": "HTML",
-      "bytes": 1523485,
-      "lines": 36273,
+      "bytes": 1524579,
+      "lines": 36300,
       "percent": 9,
       "color": "#e34c26"
     },
@@ -149,6 +149,15 @@
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
     },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 363,
@@ -158,15 +167,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.4.0"
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
