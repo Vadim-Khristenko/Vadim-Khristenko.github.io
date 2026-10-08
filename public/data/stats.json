@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-10-08T12:44:14.943Z",
+  "generatedAt": "2026-10-08T22:48:55.371Z",
   "user": {
-    "repos": 42,
-    "publicRepos": 42,
+    "repos": 40,
+    "publicRepos": 40,
     "stars": 440,
     "forks": 28,
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 498102,
+  "linesOfCode": 493156,
   "languages": [
     {
       "name": "Rust",
       "bytes": 6351565,
       "lines": 186811,
-      "percent": 37.4,
+      "percent": 37.8,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 4571366,
       "lines": 138526,
-      "percent": 26.9,
+      "percent": 27.2,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1524786,
-      "lines": 36304,
-      "percent": 9,
+      "bytes": 1523160,
+      "lines": 36266,
+      "percent": 9.1,
       "color": "#e34c26"
     },
     {
       "name": "Python",
-      "bytes": 1252150,
-      "lines": 41738,
-      "percent": 7.4,
+      "bytes": 1129395,
+      "lines": 37647,
+      "percent": 6.7,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 891009,
       "lines": 26206,
-      "percent": 5.2,
+      "percent": 5.3,
       "color": "#41b883"
     },
     {
       "name": "CSS",
-      "bytes": 642355,
-      "lines": 22941,
-      "percent": 3.8,
+      "bytes": 629789,
+      "lines": 22492,
+      "percent": 3.7,
       "color": "#563d7c"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 3.2,
+      "percent": 3.3,
       "color": "#00ADD8"
     },
     {
       "name": "JavaScript",
-      "bytes": 386562,
-      "lines": 11714,
-      "percent": 2.3,
+      "bytes": 374682,
+      "lines": 11354,
+      "percent": 2.2,
       "color": "#f1e05a"
     },
     {
@@ -75,8 +75,8 @@
     },
     {
       "name": "Shell",
-      "bytes": 180249,
-      "lines": 6437,
+      "bytes": 180001,
+      "lines": 6429,
       "percent": 1.1,
       "color": "#89e051"
     }
@@ -140,6 +140,24 @@
     }
   ],
   "repos": {
+    "algo_async_api": {
+      "name": "algo_async_api",
+      "stars": 9,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
+      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 365,
@@ -168,15 +186,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
@@ -307,15 +316,6 @@
       "url": "https://github.com/Vadim-Khristenko/DuckThisDocker",
       "description": "Production-grade, multi-language Docker build templates with maximum optimization, security, and reproducibility. Multi-stage builds, layer caching, minimal images, and best practices for Rust, Python, C++, Zig, Go, Node.js, and more."
     },
-    "algo_async_api": {
-      "name": "algo_async_api",
-      "stars": 9,
-      "forks": 1,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
-      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
-    },
     "search-for-you": {
       "name": "Search-for-YOU",
       "stars": 1,
@@ -324,15 +324,6 @@
       "language": "CSS",
       "url": "https://github.com/Vadim-Khristenko/Search-for-YOU",
       "description": ""
-    },
-    "matrix-telegram-bridge": {
-      "name": "matrix-telegram-bridge",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Go",
-      "url": "https://github.com/Vadim-Khristenko/matrix-telegram-bridge",
-      "description": "A Matrix-Telegram puppeting bridge"
     },
     "just-meme-i-use-arch-btw": {
       "name": "just-meme-i-use-arch-btw",
@@ -369,15 +360,6 @@
       "language": "Go",
       "url": "https://github.com/Vadim-Khristenko/PROD-Parser",
       "description": "Telegram parser for PROD chats. Written in GO and I don't have any Idea WHY."
-    },
-    "t-courses": {
-      "name": "t-courses",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/t-courses",
-      "description": ""
     },
     "amneziawg-go": {
       "name": "amneziawg-go",
