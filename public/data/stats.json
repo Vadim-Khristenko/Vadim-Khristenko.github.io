@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-09T12:30:34.219Z",
+  "generatedAt": "2026-10-09T22:11:21.294Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 439,
+    "stars": 438,
     "forks": 28,
-    "followers": 53,
+    "followers": 54,
     "following": 16
   },
   "linesOfCode": 493156,
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 364,
+      "stars": 363,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
@@ -142,22 +142,13 @@
   "repos": {
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 364,
+      "stars": 363,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.5.1"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,6 +158,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "algo_async_api": {
       "name": "algo_async_api",
