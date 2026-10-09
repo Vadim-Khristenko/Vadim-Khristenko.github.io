@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T22:48:55.371Z",
+  "generatedAt": "2026-10-09T04:23:45.533Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -140,15 +140,6 @@
     }
   ],
   "repos": {
-    "algo_async_api": {
-      "name": "algo_async_api",
-      "stars": 9,
-      "forks": 1,
-      "issues": 0,
-      "language": "Python",
-      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
-      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
-    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -157,6 +148,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "algo_async_api": {
+      "name": "algo_async_api",
+      "stars": 9,
+      "forks": 1,
+      "issues": 0,
+      "language": "Python",
+      "url": "https://github.com/Vadim-Khristenko/algo_async_api",
+      "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
