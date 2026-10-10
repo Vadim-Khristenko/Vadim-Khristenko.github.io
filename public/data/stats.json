@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T04:07:57.220Z",
+  "generatedAt": "2026-10-10T11:50:10.044Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
@@ -8,26 +8,26 @@
     "followers": 54,
     "following": 16
   },
-  "linesOfCode": 493156,
+  "linesOfCode": 495806,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6351565,
-      "lines": 186811,
-      "percent": 37.8,
+      "bytes": 6411643,
+      "lines": 188578,
+      "percent": 37.9,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4571366,
-      "lines": 138526,
-      "percent": 27.2,
+      "bytes": 4582464,
+      "lines": 138863,
+      "percent": 27.1,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1523160,
-      "lines": 36266,
+      "bytes": 1532893,
+      "lines": 36497,
       "percent": 9.1,
       "color": "#e34c26"
     },
@@ -61,9 +61,9 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 374682,
-      "lines": 11354,
-      "percent": 2.2,
+      "bytes": 385083,
+      "lines": 11669,
+      "percent": 2.3,
       "color": "#f1e05a"
     },
     {
@@ -140,6 +140,24 @@
     }
   ],
   "repos": {
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 1,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -159,15 +177,6 @@
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.5.1"
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "algo_async_api": {
       "name": "algo_async_api",
       "stars": 9,
@@ -186,15 +195,6 @@
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.4.0"
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 1,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "kivotosdustry": {
       "name": "KivotosDustry",
