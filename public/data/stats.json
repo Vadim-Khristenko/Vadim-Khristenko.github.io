@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-10-10T21:05:48.845Z",
+  "generatedAt": "2026-10-11T03:44:25.132Z",
   "user": {
     "repos": 40,
     "publicRepos": 40,
-    "stars": 438,
+    "stars": 439,
     "forks": 27,
     "followers": 54,
     "following": 16
   },
-  "linesOfCode": 496492,
+  "linesOfCode": 497572,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6432382,
-      "lines": 189188,
-      "percent": 38,
+      "bytes": 6468023,
+      "lines": 190236,
+      "percent": 38.1,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
       "bytes": 4584978,
       "lines": 138939,
-      "percent": 27.1,
+      "percent": 27,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1532893,
-      "lines": 36497,
-      "percent": 9.1,
+      "bytes": 1534217,
+      "lines": 36529,
+      "percent": 9,
       "color": "#e34c26"
     },
     {
@@ -56,7 +56,7 @@
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 3.3,
+      "percent": 3.2,
       "color": "#00ADD8"
     },
     {
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 363,
+      "stars": 364,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
@@ -140,6 +140,16 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 364,
+      "forks": 18,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
+    },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
       "stars": 0,
@@ -166,16 +176,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 363,
-      "forks": 18,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
     },
     "algo_async_api": {
       "name": "algo_async_api",
