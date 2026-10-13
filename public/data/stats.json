@@ -1,55 +1,55 @@
 {
-  "generatedAt": "2026-10-13T13:28:08.382Z",
+  "generatedAt": "2026-10-13T22:15:16.631Z",
   "user": {
-    "repos": 40,
-    "publicRepos": 40,
-    "stars": 442,
+    "repos": 41,
+    "publicRepos": 41,
+    "stars": 443,
     "forks": 27,
     "followers": 54,
     "following": 16
   },
-  "linesOfCode": 501975,
+  "linesOfCode": 507478,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 6617633,
-      "lines": 194636,
-      "percent": 38.7,
+      "bytes": 6754495,
+      "lines": 198662,
+      "percent": 39,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4584978,
-      "lines": 138939,
-      "percent": 26.8,
+      "bytes": 4587405,
+      "lines": 139012,
+      "percent": 26.5,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1534356,
-      "lines": 36532,
-      "percent": 9,
+      "bytes": 1589545,
+      "lines": 37846,
+      "percent": 9.2,
       "color": "#e34c26"
     },
     {
       "name": "Python",
       "bytes": 1129395,
       "lines": 37647,
-      "percent": 6.6,
+      "percent": 6.5,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 891009,
       "lines": 26206,
-      "percent": 5.2,
+      "percent": 5.1,
       "color": "#41b883"
     },
     {
       "name": "CSS",
       "bytes": 629789,
       "lines": 22492,
-      "percent": 3.7,
+      "percent": 3.6,
       "color": "#563d7c"
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 385083,
-      "lines": 11669,
+      "bytes": 388050,
+      "lines": 11759,
       "percent": 2.2,
       "color": "#f1e05a"
     },
@@ -77,7 +77,7 @@
       "name": "Shell",
       "bytes": 180001,
       "lines": 6429,
-      "percent": 1.1,
+      "percent": 1,
       "color": "#89e051"
     }
   ],
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 31,
+      "stars": 32,
       "forks": 3,
       "issues": 0,
       "language": "Rust",
@@ -140,14 +140,33 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
       "stars": 0,
       "forks": 0,
       "issues": 0,
       "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
+    },
+    "slopcontest": {
+      "name": "slopcontest",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": null,
+      "url": "https://github.com/Vadim-Khristenko/slopcontest",
+      "description": ""
+    },
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 32,
+      "forks": 3,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.4.0"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -157,6 +176,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
@@ -168,15 +196,6 @@
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.5.1"
     },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
-    },
     "algo_async_api": {
       "name": "algo_async_api",
       "stars": 9,
@@ -185,16 +204,6 @@
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/algo_async_api",
       "description": "ALGO API | Код написанный на Языке Python который позволяет взаимодействовать с платформой learn.algoritmika.org"
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 31,
-      "forks": 3,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.4.0"
     },
     "kivotosdustry": {
       "name": "KivotosDustry",
