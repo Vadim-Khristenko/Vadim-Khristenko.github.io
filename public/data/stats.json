@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-15T03:00:11.167Z",
+  "generatedAt": "2026-10-15T10:47:30.733Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 443,
-    "forks": 27,
+    "stars": 444,
+    "forks": 28,
     "followers": 54,
     "following": 16
   },
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 367,
+      "stars": 368,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
@@ -95,8 +95,8 @@
     {
       "name": "awg-containers-and-tools",
       "stars": 32,
-      "forks": 3,
-      "issues": 0,
+      "forks": 4,
+      "issues": 1,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 368,
+      "forks": 18,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -158,15 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
-    },
     "slopcontest": {
       "name": "slopcontest",
       "stars": 0,
@@ -179,22 +189,12 @@
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 32,
-      "forks": 3,
-      "issues": 0,
+      "forks": 4,
+      "issues": 1,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.4.0"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 367,
-      "forks": 18,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
     },
     "algo_async_api": {
       "name": "algo_async_api",
