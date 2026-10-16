@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T02:57:54.132Z",
+  "generatedAt": "2026-10-16T10:36:29.932Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 444,
+    "stars": 446,
     "forks": 28,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 368,
+      "stars": 369,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
@@ -140,27 +140,19 @@
     }
   ],
   "repos": {
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
       "stars": 1,
       "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+      "issues": 0,
+      "language": "Lua",
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "v0.1.0"
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 368,
+      "stars": 369,
       "forks": 18,
       "issues": 0,
       "language": "TypeScript",
@@ -176,6 +168,24 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "slopcontest": {
       "name": "slopcontest",
@@ -249,16 +259,6 @@
       "language": "Python",
       "url": "https://github.com/Vadim-Khristenko/aiogram-3-guide",
       "description": "Пишем Telegram-ботов с aiogram 3.x"
-    },
-    "hatsunemikueditortheme": {
-      "name": "HatsuneMikuEditorTheme",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Lua",
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
-      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.1.0"
     },
     "vai-framework": {
       "name": "vai-framework",
