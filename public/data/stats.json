@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-17T10:05:32.437Z",
+  "generatedAt": "2026-10-17T14:52:54.158Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 446,
-    "forks": 28,
+    "stars": 447,
+    "forks": 29,
     "followers": 53,
     "following": 16
   },
@@ -84,8 +84,8 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 369,
-      "forks": 18,
+      "stars": 370,
+      "forks": 19,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
@@ -140,14 +140,15 @@
     }
   ],
   "repos": {
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 370,
+      "forks": 19,
       "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -158,6 +159,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "hatsunemikueditortheme": {
       "name": "HatsuneMikuEditorTheme",
       "stars": 1,
@@ -167,16 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
       "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
       "release": "v0.1.0"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 369,
-      "forks": 18,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
