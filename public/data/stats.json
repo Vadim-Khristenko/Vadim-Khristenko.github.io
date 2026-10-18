@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-18T15:18:45.278Z",
+  "generatedAt": "2026-10-18T20:01:30.339Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 447,
+    "stars": 449,
     "forks": 29,
     "followers": 53,
     "following": 16
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 370,
+      "stars": 371,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -94,13 +94,13 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 32,
+      "stars": 33,
       "forks": 4,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.4.0"
+      "release": "v0.5.0"
     },
     {
       "name": "Tedu_Notes",
@@ -142,13 +142,23 @@
   "repos": {
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 32,
+      "stars": 33,
       "forks": 4,
       "issues": 0,
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.4.0"
+      "release": "v0.5.0"
+    },
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 371,
+      "forks": 19,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,16 +177,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 370,
-      "forks": 19,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
     },
     "hatsunemikueditortheme": {
       "name": "HatsuneMikuEditorTheme",
