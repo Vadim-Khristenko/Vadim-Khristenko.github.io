@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-18T20:01:30.339Z",
+  "generatedAt": "2026-10-19T03:04:01.842Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 449,
+    "stars": 450,
     "forks": 29,
     "followers": 53,
     "following": 16
   },
-  "linesOfCode": 523802,
+  "linesOfCode": 523811,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 7165633,
-      "lines": 210754,
+      "bytes": 7165957,
+      "lines": 210763,
       "percent": 40.1,
       "color": "#dea584"
     },
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 371,
+      "stars": 372,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -140,19 +140,18 @@
     }
   ],
   "repos": {
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 33,
-      "forks": 4,
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
       "issues": 0,
       "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.5.0"
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 371,
+      "stars": 372,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -168,6 +167,16 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 33,
+      "forks": 4,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.5.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -187,15 +196,6 @@
       "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
       "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
       "release": "v0.1.0"
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "slopcontest": {
       "name": "slopcontest",
