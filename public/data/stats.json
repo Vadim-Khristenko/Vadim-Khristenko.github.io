@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T16:17:08.720Z",
+  "generatedAt": "2026-10-20T21:11:54.570Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,27 +8,27 @@
     "followers": 53,
     "following": 17
   },
-  "linesOfCode": 535998,
+  "linesOfCode": 536863,
   "languages": [
     {
       "name": "Rust",
       "bytes": 7275925,
       "lines": 213998,
-      "percent": 39.8,
+      "percent": 39.7,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4805665,
-      "lines": 145626,
-      "percent": 26.3,
+      "bytes": 4829219,
+      "lines": 146340,
+      "percent": 26.4,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
       "bytes": 1638739,
       "lines": 39018,
-      "percent": 9,
+      "percent": 8.9,
       "color": "#e34c26"
     },
     {
@@ -47,8 +47,8 @@
     },
     {
       "name": "CSS",
-      "bytes": 694289,
-      "lines": 24796,
+      "bytes": 698509,
+      "lines": 24947,
       "percent": 3.8,
       "color": "#563d7c"
     },
@@ -140,15 +140,15 @@
     }
   ],
   "repos": {
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 376,
-      "forks": 19,
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
+      "stars": 1,
+      "forks": 0,
       "issues": 0,
       "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "v0.2.3"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -159,15 +159,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "hatsunemikueditortheme": {
-      "name": "HatsuneMikuEditorTheme",
-      "stars": 1,
-      "forks": 0,
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 376,
+      "forks": 19,
       "issues": 0,
       "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
-      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.2.2"
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
