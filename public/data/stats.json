@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T03:13:19.466Z",
+  "generatedAt": "2026-10-20T10:52:31.657Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
@@ -8,19 +8,19 @@
     "followers": 53,
     "following": 17
   },
-  "linesOfCode": 535469,
+  "linesOfCode": 535998,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 7274972,
-      "lines": 213970,
-      "percent": 39.9,
+      "bytes": 7275925,
+      "lines": 213998,
+      "percent": 39.8,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4789364,
-      "lines": 145132,
+      "bytes": 4805665,
+      "lines": 145626,
       "percent": 26.3,
       "color": "#3178c6"
     },
@@ -47,8 +47,8 @@
     },
     {
       "name": "CSS",
-      "bytes": 694083,
-      "lines": 24789,
+      "bytes": 694289,
+      "lines": 24796,
       "percent": 3.8,
       "color": "#563d7c"
     },
@@ -148,17 +148,16 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
       "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.2.0"
+      "release": "v0.2.2"
     },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 375,
-      "forks": 19,
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
       "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -169,14 +168,15 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 375,
+      "forks": 19,
       "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
