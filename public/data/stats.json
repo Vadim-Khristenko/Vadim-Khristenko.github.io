@@ -1,68 +1,68 @@
 {
-  "generatedAt": "2026-10-19T18:38:42.316Z",
+  "generatedAt": "2026-10-20T03:13:19.466Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 452,
+    "stars": 453,
     "forks": 29,
     "followers": 53,
-    "following": 16
+    "following": 17
   },
-  "linesOfCode": 527103,
+  "linesOfCode": 535469,
   "languages": [
     {
       "name": "Rust",
       "bytes": 7274972,
       "lines": 213970,
-      "percent": 40.5,
+      "percent": 39.9,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4589864,
-      "lines": 139087,
-      "percent": 25.5,
+      "bytes": 4789364,
+      "lines": 145132,
+      "percent": 26.3,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1638250,
-      "lines": 39006,
-      "percent": 9.1,
+      "bytes": 1638739,
+      "lines": 39018,
+      "percent": 9,
       "color": "#e34c26"
     },
     {
       "name": "Python",
       "bytes": 1129395,
       "lines": 37647,
-      "percent": 6.3,
+      "percent": 6.2,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 891009,
       "lines": 26206,
-      "percent": 5,
+      "percent": 4.9,
       "color": "#41b883"
     },
     {
       "name": "CSS",
-      "bytes": 629789,
-      "lines": 22492,
-      "percent": 3.5,
+      "bytes": 694083,
+      "lines": 24789,
+      "percent": 3.8,
       "color": "#563d7c"
     },
     {
       "name": "Go",
       "bytes": 551162,
       "lines": 18372,
-      "percent": 3.1,
+      "percent": 3,
       "color": "#00ADD8"
     },
     {
       "name": "JavaScript",
-      "bytes": 419290,
-      "lines": 12706,
+      "bytes": 419686,
+      "lines": 12718,
       "percent": 2.3,
       "color": "#f1e05a"
     },
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 374,
+      "stars": 375,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -140,24 +140,25 @@
     }
   ],
   "repos": {
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "v0.2.0"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 374,
+      "stars": 375,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.5.1"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,6 +168,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
@@ -186,16 +196,6 @@
       "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
       "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
       "release": "v0.5.0"
-    },
-    "hatsunemikueditortheme": {
-      "name": "HatsuneMikuEditorTheme",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": "Lua",
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
-      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.1.0"
     },
     "slopcontest": {
       "name": "slopcontest",
