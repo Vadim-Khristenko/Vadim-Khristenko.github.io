@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-21T03:08:13.931Z",
+  "generatedAt": "2026-10-21T11:04:54.276Z",
   "user": {
     "repos": 41,
     "publicRepos": 41,
-    "stars": 454,
+    "stars": 455,
     "forks": 29,
     "followers": 53,
     "following": 17
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 376,
+      "stars": 377,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 377,
+      "forks": 19,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -158,25 +177,6 @@
       "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
       "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
       "release": "v0.2.3"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 376,
-      "forks": 19,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
