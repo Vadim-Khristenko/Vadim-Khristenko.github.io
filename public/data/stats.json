@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T17:23:14.576Z",
+  "generatedAt": "2026-10-27T21:46:27.967Z",
   "user": {
     "repos": 42,
     "publicRepos": 42,
@@ -8,26 +8,26 @@
     "followers": 53,
     "following": 17
   },
-  "linesOfCode": 536863,
+  "linesOfCode": 540301,
   "languages": [
     {
       "name": "Rust",
-      "bytes": 7275925,
-      "lines": 213998,
-      "percent": 39.7,
+      "bytes": 7279196,
+      "lines": 214094,
+      "percent": 39.5,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4829219,
-      "lines": 146340,
-      "percent": 26.4,
+      "bytes": 4939148,
+      "lines": 149671,
+      "percent": 26.8,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1638739,
-      "lines": 39018,
+      "bytes": 1639237,
+      "lines": 39029,
       "percent": 8.9,
       "color": "#e34c26"
     },
@@ -35,14 +35,14 @@
       "name": "Python",
       "bytes": 1129395,
       "lines": 37647,
-      "percent": 6.2,
+      "percent": 6.1,
       "color": "#3572A5"
     },
     {
       "name": "Vue",
       "bytes": 891009,
       "lines": 26206,
-      "percent": 4.9,
+      "percent": 4.8,
       "color": "#41b883"
     },
     {
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
+      "stars": 1,
+      "forks": 0,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "v0.3.0"
+    },
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
+    },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
       "stars": 1,
@@ -176,25 +195,6 @@
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
       "release": "v4.5.1"
-    },
-    "hatsunemikueditortheme": {
-      "name": "HatsuneMikuEditorTheme",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
-      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.2.3"
-    },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
