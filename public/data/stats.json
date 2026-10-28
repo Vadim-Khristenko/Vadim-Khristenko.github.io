@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-10-28T03:48:07.248Z",
+  "generatedAt": "2026-10-28T12:01:43.329Z",
   "user": {
-    "repos": 42,
-    "publicRepos": 42,
+    "repos": 43,
+    "publicRepos": 43,
     "stars": 456,
     "forks": 29,
-    "followers": 53,
+    "followers": 54,
     "following": 17
   },
-  "linesOfCode": 540301,
+  "linesOfCode": 544855,
   "languages": [
     {
       "name": "Rust",
       "bytes": 7279196,
       "lines": 214094,
-      "percent": 39.5,
+      "percent": 39.1,
       "color": "#dea584"
     },
     {
       "name": "TypeScript",
-      "bytes": 4939148,
-      "lines": 149671,
-      "percent": 26.8,
+      "bytes": 5043233,
+      "lines": 152825,
+      "percent": 27.1,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1639237,
-      "lines": 39029,
-      "percent": 8.9,
+      "bytes": 1639052,
+      "lines": 39025,
+      "percent": 8.8,
       "color": "#e34c26"
     },
     {
@@ -47,9 +47,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 698509,
-      "lines": 24947,
-      "percent": 3.8,
+      "bytes": 737797,
+      "lines": 26350,
+      "percent": 4,
       "color": "#563d7c"
     },
     {
@@ -61,8 +61,8 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 419686,
-      "lines": 12718,
+      "bytes": 419715,
+      "lines": 12719,
       "percent": 2.3,
       "color": "#f1e05a"
     },
@@ -70,7 +70,7 @@
       "name": "PowerShell",
       "bytes": 325906,
       "lines": 9053,
-      "percent": 1.8,
+      "percent": 1.7,
       "color": "#8b8b8b"
     },
     {
@@ -140,15 +140,6 @@
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
     "hatsunemikueditortheme": {
       "name": "HatsuneMikuEditorTheme",
       "stars": 1,
@@ -157,16 +148,17 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
       "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "v0.3.0"
+      "release": "latest"
     },
-    "notanothervtuberwiki": {
-      "name": "NotAnOtherVTUBERwiki",
+    "telegram-theme-action": {
+      "name": "telegram-theme-action",
       "stars": 0,
       "forks": 0,
       "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
-      "description": "A wiki engine for fan communities that refuses to suck."
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/telegram-theme-action",
+      "description": "GitHub Action that keeps Telegram cloud themes in sync with your repository: creates, updates, skips unchanged, one t.me/addtheme link for Android and Desktop.",
+      "release": "v1.0.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
@@ -176,6 +168,24 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "notanothervtuberwiki": {
+      "name": "NotAnOtherVTUBERwiki",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
+      "description": "A wiki engine for fan communities that refuses to suck."
     },
     "ekevoki.github.io": {
       "name": "EkeVoki.github.io",
