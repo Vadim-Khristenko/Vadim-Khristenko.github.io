@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-02T14:40:13.615Z",
+  "generatedAt": "2026-11-03T00:26:32.705Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
-    "stars": 466,
+    "stars": 468,
     "forks": 29,
     "followers": 53,
     "following": 17
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 387,
+      "stars": 389,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -140,6 +140,25 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 389,
+      "forks": 19,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
+    },
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 34,
@@ -158,25 +177,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 387,
-      "forks": 19,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
     },
     "hatsunemikueditortheme": {
       "name": "HatsuneMikuEditorTheme",
