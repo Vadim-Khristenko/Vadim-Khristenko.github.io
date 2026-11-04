@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-04T04:40:37.228Z",
+  "generatedAt": "2026-11-04T13:42:56.876Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
-    "stars": 467,
+    "stars": 469,
     "forks": 29,
     "followers": 53,
     "following": 17
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 388,
+      "stars": 389,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 34,
+      "stars": 35,
       "forks": 4,
       "issues": 0,
       "language": "Rust",
@@ -140,9 +140,19 @@
     }
   ],
   "repos": {
+    "awg-containers-and-tools": {
+      "name": "awg-containers-and-tools",
+      "stars": 35,
+      "forks": 4,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
+      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
+      "release": "v0.5.0"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 388,
+      "stars": 389,
       "forks": 19,
       "issues": 0,
       "language": "TypeScript",
@@ -158,16 +168,6 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
-    },
-    "awg-containers-and-tools": {
-      "name": "awg-containers-and-tools",
-      "stars": 34,
-      "forks": 4,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/awg-containers-and-tools",
-      "description": "Unofficial self-hosted AmneziaWG 1.0/1.5/2.0/3.0 — container images plus a Rust CLI for parameter generation, SSH deployment and server management",
-      "release": "v0.5.0"
     },
     "vadim-khristenko": {
       "name": "Vadim-Khristenko",
