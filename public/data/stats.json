@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-09T04:26:36.534Z",
+  "generatedAt": "2026-11-09T15:01:49.474Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
-    "stars": 475,
-    "forks": 30,
+    "stars": 479,
+    "forks": 31,
     "followers": 53,
     "following": 17
   },
@@ -84,8 +84,8 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 393,
-      "forks": 20,
+      "stars": 396,
+      "forks": 21,
       "issues": 0,
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
@@ -94,7 +94,7 @@
     },
     {
       "name": "awg-containers-and-tools",
-      "stars": 37,
+      "stars": 38,
       "forks": 4,
       "issues": 0,
       "language": "Rust",
@@ -140,18 +140,19 @@
     }
   ],
   "repos": {
-    "vadim-khristenko.github.io": {
-      "name": "Vadim-Khristenko.github.io",
-      "stars": 1,
-      "forks": 0,
-      "issues": 4,
-      "language": "Vue",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
-      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 396,
+      "forks": 21,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.1"
     },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
-      "stars": 37,
+      "stars": 38,
       "forks": 4,
       "issues": 0,
       "language": "Rust",
@@ -168,15 +169,14 @@
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
     },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 393,
-      "forks": 20,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
+    "vadim-khristenko.github.io": {
+      "name": "Vadim-Khristenko.github.io",
+      "stars": 1,
+      "forks": 0,
+      "issues": 4,
+      "language": "Vue",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
+      "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
     },
     "hatsunemikueditortheme": {
       "name": "HatsuneMikuEditorTheme",
