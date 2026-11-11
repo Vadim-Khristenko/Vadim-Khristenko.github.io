@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T13:29:01.967Z",
+  "generatedAt": "2026-11-11T23:59:17.997Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
@@ -8,7 +8,7 @@
     "followers": 53,
     "following": 17
   },
-  "linesOfCode": 549540,
+  "linesOfCode": 549976,
   "languages": [
     {
       "name": "Rust",
@@ -19,9 +19,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 5043233,
-      "lines": 152825,
-      "percent": 26.8,
+      "bytes": 5057587,
+      "lines": 153260,
+      "percent": 26.9,
       "color": "#3178c6"
     },
     {
@@ -40,8 +40,8 @@
     },
     {
       "name": "Vue",
-      "bytes": 891009,
-      "lines": 26206,
+      "bytes": 891052,
+      "lines": 26207,
       "percent": 4.7,
       "color": "#41b883"
     },
@@ -90,7 +90,7 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
+      "release": "v4.5.2"
     },
     {
       "name": "awg-containers-and-tools",
@@ -148,16 +148,7 @@
       "language": "TypeScript",
       "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
       "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.1"
-    },
-    "vadim-khristenko": {
-      "name": "Vadim-Khristenko",
-      "stars": 0,
-      "forks": 0,
-      "issues": 0,
-      "language": "Rust",
-      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
-      "description": "Config files for my GitHub profile."
+      "release": "v4.5.2"
     },
     "vadim-khristenko.github.io": {
       "name": "Vadim-Khristenko.github.io",
@@ -167,6 +158,15 @@
       "language": "Vue",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko.github.io",
       "description": "Just my portfolio website and smth more) (pwd by RUST & VUE & ASTRO)"
+    },
+    "vadim-khristenko": {
+      "name": "Vadim-Khristenko",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "language": "Rust",
+      "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
+      "description": "Config files for my GitHub profile."
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
