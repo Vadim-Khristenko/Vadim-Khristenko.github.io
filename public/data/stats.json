@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-12T19:29:24.509Z",
+  "generatedAt": "2026-11-13T04:52:42.335Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
-    "stars": 481,
+    "stars": 482,
     "forks": 31,
     "followers": 53,
     "following": 17
@@ -84,7 +84,7 @@
   "topRepos": [
     {
       "name": "Any-Tech-ARCHITECT",
-      "stars": 398,
+      "stars": 399,
       "forks": 21,
       "issues": 0,
       "language": "TypeScript",
@@ -140,6 +140,16 @@
     }
   ],
   "repos": {
+    "any-tech-architect": {
+      "name": "Any-Tech-ARCHITECT",
+      "stars": 399,
+      "forks": 21,
+      "issues": 0,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
+      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
+      "release": "v4.5.2"
+    },
     "awg-containers-and-tools": {
       "name": "awg-containers-and-tools",
       "stars": 38,
@@ -167,16 +177,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/Vadim-Khristenko",
       "description": "Config files for my GitHub profile."
-    },
-    "any-tech-architect": {
-      "name": "Any-Tech-ARCHITECT",
-      "stars": 398,
-      "forks": 21,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/Any-Tech-ARCHITECT",
-      "description": "Any Tech ARCHITECT modern obfuscation generator for you.",
-      "release": "v4.5.2"
     },
     "notanothervtuberwiki": {
       "name": "NotAnOtherVTUBERwiki",
