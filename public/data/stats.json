@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-13T13:51:39.691Z",
+  "generatedAt": "2026-11-13T23:11:46.289Z",
   "user": {
     "repos": 43,
     "publicRepos": 43,
-    "stars": 482,
+    "stars": 484,
     "forks": 31,
     "followers": 54,
     "following": 17
   },
-  "linesOfCode": 551097,
+  "linesOfCode": 551538,
   "languages": [
     {
       "name": "Rust",
@@ -19,15 +19,15 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 5057587,
-      "lines": 153260,
-      "percent": 26.8,
+      "bytes": 5072103,
+      "lines": 153700,
+      "percent": 26.9,
       "color": "#3178c6"
     },
     {
       "name": "HTML",
-      "bytes": 1670828,
-      "lines": 39782,
+      "bytes": 1670888,
+      "lines": 39783,
       "percent": 8.9,
       "color": "#e34c26"
     },
@@ -140,6 +140,16 @@
     }
   ],
   "repos": {
+    "hatsunemikueditortheme": {
+      "name": "HatsuneMikuEditorTheme",
+      "stars": 3,
+      "forks": 0,
+      "issues": 1,
+      "language": "TypeScript",
+      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
+      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
+      "release": "latest"
+    },
     "any-tech-architect": {
       "name": "Any-Tech-ARCHITECT",
       "stars": 399,
@@ -186,16 +196,6 @@
       "language": "Rust",
       "url": "https://github.com/Vadim-Khristenko/NotAnOtherVTUBERwiki",
       "description": "A wiki engine for fan communities that refuses to suck."
-    },
-    "hatsunemikueditortheme": {
-      "name": "HatsuneMikuEditorTheme",
-      "stars": 1,
-      "forks": 0,
-      "issues": 0,
-      "language": "TypeScript",
-      "url": "https://github.com/Vadim-Khristenko/HatsuneMikuEditorTheme",
-      "description": "Hatsune Miku themes for VS Code, Zed, JetBrains, Neovim, Sublime, Notepad++",
-      "release": "latest"
     },
     "telegram-theme-action": {
       "name": "telegram-theme-action",
